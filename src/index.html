@@ -1,14 +1,171 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>NgNotadd</title>
-  <base href="/">
+    <meta charset="utf-8">
+    <title>NgNotadd</title>
+    <base href="/">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <style>
+        #notadd-loading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #3f51b5;
+            z-index: 99999;
+            pointer-events: none;
+        }
+
+        .wrapper{
+            width:352px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .spinner{
+            color:transparent;
+            font-family:Arial;
+            font-size:69px;
+            text-decoration:none;
+            font-weight:normal;
+            font-style:normal;
+            text-shadow: rgba(255,255,255,0.98) 0 0 0;
+            animation-name:bounce_inTurnBlurringTextG;
+            -o-animation-name:bounce_inTurnBlurringTextG;
+            -ms-animation-name:bounce_inTurnBlurringTextG;
+            -webkit-animation-name:bounce_inTurnBlurringTextG;
+            -moz-animation-name:bounce_inTurnBlurringTextG;
+            animation-duration:1.641s;
+            -o-animation-duration:1.641s;
+            -ms-animation-duration:1.641s;
+            -webkit-animation-duration:1.641s;
+            -moz-animation-duration:1.641s;
+            animation-iteration-count:infinite;
+            -o-animation-iteration-count:infinite;
+            -ms-animation-iteration-count:infinite;
+            -webkit-animation-iteration-count:infinite;
+            -moz-animation-iteration-count:infinite;
+            animation-direction:normal;
+            -o-animation-direction:normal;
+            -ms-animation-direction:normal;
+            -webkit-animation-direction:normal;
+            -moz-animation-direction:normal;
+        }
+
+        .spinner-1{
+            animation-delay:0.5825s;
+            -o-animation-delay:0.5825s;
+            -ms-animation-delay:0.5825s;
+            -webkit-animation-delay:0.5825s;
+            -moz-animation-delay:0.5825s;
+        }
+        .spinner-2{
+            animation-delay:0.699s;
+            -o-animation-delay:0.699s;
+            -ms-animation-delay:0.699s;
+            -webkit-animation-delay:0.699s;
+            -moz-animation-delay:0.699s;
+        }
+        .spinner-3{
+            animation-delay:0.8155s;
+            -o-animation-delay:0.8155s;
+            -ms-animation-delay:0.8155s;
+            -webkit-animation-delay:0.8155s;
+            -moz-animation-delay:0.8155s;
+        }
+        .spinner-4{
+            animation-delay:0.932s;
+            -o-animation-delay:0.932s;
+            -ms-animation-delay:0.932s;
+            -webkit-animation-delay:0.932s;
+            -moz-animation-delay:0.932s;
+        }
+        .spinner-5{
+            animation-delay:1.0485s;
+            -o-animation-delay:1.0485s;
+            -ms-animation-delay:1.0485s;
+            -webkit-animation-delay:1.0485s;
+            -moz-animation-delay:1.0485s;
+        }
+        .spinner-6{
+            animation-delay:1.165s;
+            -o-animation-delay:1.165s;
+            -ms-animation-delay:1.165s;
+            -webkit-animation-delay:1.165s;
+            -moz-animation-delay:1.165s;
+        }
+
+        @keyframes bounce_inTurnBlurringTextG{
+            0%{
+                text-shadow: rgb(255,255,255) 0 0 0;
+            }
+
+            100%{
+                text-shadow: rgb(255,255,255) 0 0 55px;
+            }
+        }
+
+        @-o-keyframes bounce_inTurnBlurringTextG{
+            0%{
+                text-shadow: rgb(255,255,255) 0 0 0;
+            }
+
+            100%{
+                text-shadow: rgb(255,255,255) 0 0 55px;
+            }
+        }
+
+        @-ms-keyframes bounce_inTurnBlurringTextG{
+            0%{
+                text-shadow: rgb(255,255,255) 0 0 0;
+            }
+
+            100%{
+                text-shadow: rgb(255,255,255) 0 0 55px;
+            }
+        }
+
+        @-webkit-keyframes bounce_inTurnBlurringTextG{
+            0%{
+                text-shadow: rgb(255,255,255) 0 0 0;
+            }
+
+            100%{
+                text-shadow: rgb(255,255,255) 0 0 55px;
+            }
+        }
+
+        @-moz-keyframes bounce_inTurnBlurringTextG{
+            0%{
+                text-shadow: rgb(255,255,255) 0 0 0;
+            }
+
+            100%{
+                text-shadow: rgb(255,255,255) 0 0 55px;
+            }
+        }
+    </style>
 </head>
 <body>
-  <app-root></app-root>
+<notadd-loading id="notadd-loading">
+    <div class="wrapper">
+        <div class="spinner spinner-1">N</div>
+        <div class="spinner spinner-2">o</div>
+        <div class="spinner spinner-3">t</div>
+        <div class="spinner spinner-4">a</div>
+        <div class="spinner spinner-5">d</div>
+        <div class="spinner spinner-6">d</div>
+    </div>
+</notadd-loading>
+<app-root></app-root>
 </body>
 </html>
