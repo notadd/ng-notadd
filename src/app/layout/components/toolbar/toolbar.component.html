@@ -1,0 +1,78 @@
+<mat-toolbar color="primary" class="p-0 mat-elevation-z1">
+
+    <div fxFlex fxFlexFill fxLayout="row" fxLayoutAlign="start center">
+
+        <div class="navbar-logo" fxLayout="row" fxLayoutAlign="space-between center">
+
+            <div class="ml-16" fxFlex="80">
+                <mat-icon class="secondary-text" fontSet="NotaddIcon" fontIcon="icon-logo" aria-hidden="true"></mat-icon>
+            </div>
+
+            <button mat-icon-button
+                    class="navbar-toggle-button"
+                    (click)="toggleSidebarOpen('navbar')">
+                <mat-icon class="secondary-text">menu</mat-icon>
+            </button>
+
+            <div class="toolbar-separator"></div>
+        </div>
+
+    </div>
+
+    <div fxFlex="0 1 auto" fxLayout="row" fxLayoutAlign="start center">
+
+        <button mat-button [matMenuTriggerFor]="userMenu"
+                class="user-button">
+            <div fxLayout="row" fxLayoutAlign="center center">
+                <img class="avatar mr-0 mr-sm-16" src="assets/images/avatars/tianhun.jpg">
+                <span class="username mr-12" fxHide fxShow.gt-sm>天魂</span>
+                <mat-icon class="s-16" fxHide.xs>keyboard_arrow_down</mat-icon>
+            </div>
+        </button>
+
+        <mat-menu #userMenu="matMenu" [overlapTrigger]="false">
+
+            <button mat-menu-item>
+                <mat-icon>account_circle</mat-icon>
+                <span>个人信息</span>
+            </button>
+
+            <button mat-menu-item>
+                <mat-icon>mail</mat-icon>
+                <span>收件箱</span>
+            </button>
+
+            <mat-divider></mat-divider>
+
+            <button mat-menu-item>
+                <mat-icon>exit_to_app</mat-icon>
+                <span>退出</span>
+            </button>
+
+        </mat-menu>
+
+        <div class="toolbar-separator"></div>
+
+        <notadd-search-bar (input)="search($event)"></notadd-search-bar>
+
+        <div class="toolbar-separator"></div>
+
+        <button mat-icon-button
+                [fxHide]="true"
+                [fxHide.gt-sm]="false"
+                class="fullscreen-toggle-button"
+                (click)="toggleFullscreen()">
+            <mat-icon class="secondary-text">{{isFullscreen ? 'fullscreen_exit' : 'fullscreen'}}</mat-icon>
+        </button>
+
+        <div class="toolbar-separator" fxHide fxShow.gt-xs></div>
+
+        <button mat-icon-button
+                class="settings-toggle-button"
+                (click)="toggleSidebarOpen('themeOptionsPanel')">
+            <mat-icon class="secondary-text">settings</mat-icon>
+        </button>
+
+    </div>
+
+</mat-toolbar>

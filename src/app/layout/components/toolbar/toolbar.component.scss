@@ -1,0 +1,52 @@
+@import "src/@notadd/scss/notadd";
+
+:host {
+    position: relative;
+    display: flex;
+    flex: 0 0 auto;
+    z-index: 4;
+
+    &.below {
+        z-index: 2;
+    }
+
+    .mat-toolbar {
+        position: relative;
+        background: inherit;
+        color: inherit;
+    }
+
+    .navbar-logo{
+        width: 280px;
+        mat-icon{
+            font-size: 26px;
+        }
+    }
+
+    .user-button,
+    notadd-search-bar,
+    .fullscreen-toggle-button,
+    .settings-toggle-button {
+        min-width: 64px;
+        height: 64px;
+
+        @include media-breakpoint-down('xs') {
+            height: 56px;
+        }
+    }
+
+    .navbar-toggle-button {
+        min-width: 56px;
+        height: 56px;
+    }
+
+    .toolbar-separator {
+        height: 64px;
+        width: 1px;
+        background: rgba(0, 0, 0, .12);
+
+        @include media-breakpoint-down('xs') {
+            height: 56px;
+        }
+    }
+}
