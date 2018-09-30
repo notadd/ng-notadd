@@ -1,0 +1,40 @@
+/*----------------------------------------------------------------*/
+/*  Avatars
+/*----------------------------------------------------------------*/
+.avatar {
+    width: 40px;
+    min-width: 40px;
+    height: 40px;
+    line-height: 40px;
+    margin: 0 8px 0 0;
+    border-radius: 50%;
+    font-size: 17px;
+    font-weight: 500;
+    text-align: center;
+    color: #FFFFFF;
+
+    &.square {
+        border-radius: 0;
+    }
+
+    &.small {
+        width: 20px;
+        min-width: 20px;
+        height: 20px;
+        line-height: 20px;
+    }
+
+    &.big {
+        width: 72px;
+        min-width: 72px;
+        height: 72px;
+        line-height: 72px;
+    }
+
+    &.huge {
+        width: 96px;
+        min-width: 96px;
+        height: 96px;
+        line-height: 96px;
+    }
+}
