@@ -27,7 +27,14 @@
                             "src/assets"
                         ],
                         "styles": [
-                            "src/styles.scss"
+                            {
+                                "input": "src/styles.scss",
+                                "bundleName": "styles"
+                            },
+                            {
+                                "input": "node_modules/material-design-icons/iconfont/material-icons.css",
+                                "bundleName": "lib"
+                            }
                         ],
                         "scripts": []
                     },

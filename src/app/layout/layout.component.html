@@ -1,0 +1,56 @@
+<main id="main">
+    <!-- toolbar: Above -->
+    <ng-container *ngIf="notaddConfig.layout.toolbar.position === 'above'">
+        <ng-container *ngTemplateOutlet="toolbar"></ng-container>
+    </ng-container>
+
+    <div id="container-1" class="container">
+        <div id="container-2" class="container">
+            <!-- toolbar: Below fixed -->
+            <ng-container *ngIf="notaddConfig.layout.toolbar.position === 'below-fixed'">
+                <ng-container *ngTemplateOutlet="toolbar"></ng-container>
+            </ng-container>
+
+            <div id="container-3" class="container" notaddPerfectScrollbar
+                 [notaddPerfectScrollbarOptions]="{suppressScrollX: true, updateOnRouteChange : true}">
+
+                <!-- toolbar: Below static -->
+                <ng-container *ngIf="notaddConfig.layout.toolbar.position === 'below-static'">
+                    <ng-container *ngTemplateOutlet="toolbar"></ng-container>
+                </ng-container>
+
+                <!-- content -->
+                <div></div>
+
+                <!-- footer: Below static -->
+                <ng-container *ngIf="notaddConfig.layout.footer.position === 'below-static'">
+                    <ng-container *ngTemplateOutlet="footer"></ng-container>
+                </ng-container>
+
+            </div>
+
+            <!-- footer: Below fixed -->
+            <ng-container *ngIf="notaddConfig.layout.footer.position === 'below-fixed'">
+                <ng-container *ngTemplateOutlet="footer"></ng-container>
+            </ng-container>
+        </div>
+    </div>
+
+    <!-- footer: Above -->
+    <ng-container *ngIf="notaddConfig.layout.footer.position === 'above'">
+        <ng-container *ngTemplateOutlet="footer"></ng-container>
+    </ng-container>
+</main>
+
+<!-- toolbar -->
+<ng-template #toolbar>
+    <toolbar *ngIf="!notaddConfig.layout.toolbar.hidden"
+             [ngClass]="[notaddConfig.layout.toolbar.position, notaddConfig.layout.toolbar.background]">
+    </toolbar>
+</ng-template>
+
+<!-- footer -->
+<ng-template #footer>
+    <footer *ngIf="!notaddConfig.layout.footer.hidden"
+            [ngClass]="[notaddConfig.layout.footer.position, notaddConfig.layout.footer.background]"></footer>
+</ng-template>
