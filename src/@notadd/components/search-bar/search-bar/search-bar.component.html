@@ -1,0 +1,22 @@
+<div class="notadd-search-bar" [ngClass]="{'expanded':!collapsed}">
+
+    <div class="notadd-search-bar-content" [ngClass]="notaddConfig.layout.toolbar.background">
+
+        <label for="notadd-search-bar-input">
+            <button mat-icon-button class="notadd-search-bar-expander" aria-label="Expand Search Bar" (click)="expand()"
+                    *ngIf="collapsed">
+                <mat-icon class="s-24 secondary-text">search</mat-icon>
+            </button>
+        </label>
+
+        <input id="notadd-search-bar-input" class="ml-24" type="text" placeholder="搜索" (input)="search($event)"
+               fxFlex>
+
+        <button mat-icon-button class="notadd-search-bar-collapser" (click)="collapse()"
+                aria-label="Collapse Search Bar">
+            <mat-icon class="s-24 secondary-text">close</mat-icon>
+        </button>
+
+    </div>
+
+</div>
