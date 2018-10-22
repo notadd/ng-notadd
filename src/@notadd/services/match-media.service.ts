@@ -12,17 +12,15 @@ export class NotaddMatchMediaService {
     constructor(
         private observableMedia: ObservableMedia
     ) {
-        // Set the defaults
         this.activeMediaQuery = '';
         this.onMediaChange = new BehaviorSubject<string>('');
 
-        // Initialize
         this.init();
 
     }
 
     /**
-     * Initialize
+     * 初始化
      *
      * @private
      */

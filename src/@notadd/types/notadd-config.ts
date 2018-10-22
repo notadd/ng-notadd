@@ -4,10 +4,10 @@ export interface NotaddConfig {
         width: 'fullwidth' | 'boxed',
         navbar: {
             background: string,
+            secondaryBackground: string,
             hidden: boolean,
-            folded: boolean,
-            position: 'left' | 'right' | 'top',
-            variant: string
+            collapsed: boolean,
+            position: 'start' | 'end'
         },
         toolbar: {
             background: string,

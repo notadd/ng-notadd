@@ -19,7 +19,6 @@ export class NotaddConfigService {
     constructor(
         private platform: Platform,
         private router: Router,
-        // provided config (from forRoot)
         @Inject(NOTADD_CONFIG) private customConfig
     ) {
         // 设置默认config

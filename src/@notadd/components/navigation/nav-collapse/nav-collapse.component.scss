@@ -1,0 +1,73 @@
+@mixin md-icon-size($size: 24px) {
+    font-size: $size;
+    height: $size;
+    width: $size;
+    min-width: $size;
+    min-height: $size;
+    line-height: $size;
+}
+
+:host {
+
+    .collapsed & {
+
+        .nav-link {
+
+            justify-content: center;
+
+            > span,
+            .collapsable-arrow {
+                display: none;
+            }
+
+            .nav-link-icon {
+                margin-right: 0;
+                @include md-icon-size(22px);
+            }
+        }
+
+        .nav-collapsed.hover{
+            .nav-link-icon{
+                display: none;
+            }
+
+            .nav-link-title{
+                display: block;
+                width: 90px;
+                text-align: center;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+        }
+
+        &.open {
+
+            .children {
+                display: none !important;
+            }
+        }
+    }
+
+    .nav-link {
+
+        .collapsable-arrow {
+            transition: transform .3s ease-in-out, opacity .25s ease-in-out .1s;
+            transform: rotate(0);
+        }
+    }
+
+    > .children {
+        overflow: hidden;
+    }
+
+    &.open {
+
+        > .nav-link {
+
+            .collapsable-arrow {
+                transform: rotate(90deg);
+            }
+        }
+    }
+}

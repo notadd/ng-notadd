@@ -1,0 +1,26 @@
+:host {
+    .collapsed & {
+
+        > .group-title {
+            align-items: center;
+
+            > span {
+                opacity: 0;
+                transition: opacity 200ms ease;
+            }
+
+            &:before {
+                content: '';
+                display: block;
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                min-width: 2rem;
+                border-top: 2px solid;
+                opacity: 0.2;
+            }
+        }
+
+
+    }
+}

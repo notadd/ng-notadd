@@ -14,6 +14,7 @@
     overflow: hidden;
 
     .theme-options-panel {
+        position: relative;
         display: flex;
         flex-direction: column;
         flex: 1 0 auto;
@@ -22,13 +23,18 @@
     }
 
     .header {
-        height: 64px;
+        height: 66px;
         padding: 0 24px;
         display: flex;
         flex: 0 1 auto;
         align-items: center;
         justify-content: space-between;
         border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+        position: sticky;
+        top: 0;
+        right: 0;
+        background: #FFF;
+        z-index: 1;
 
         .title {
             font-size: 20px;

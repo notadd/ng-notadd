@@ -7,44 +7,31 @@
         .views {
             display: flex;
             flex-direction: column;
-            position: relative;
-            overflow: hidden;
-            min-height: 258px;
-            height: 308px;
+            min-height: 165px;
             background-color: #F7F7F7;
 
             .view {
-                position: absolute;
-                width: 208px;
-                height: 100%;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                top: 0;
+                overflow: hidden;
 
                 .colors {
-                    position: relative;
+                    margin-left: -1px;
                     padding: 4px;
 
                     .color {
                         position: relative;
-                        width: 46px;
-                        height: 46px;
+                        width: 40px;
+                        height: 40px;
                         margin: 2px;
                         border-radius: 0;
                         cursor: pointer;
+                        transition: border-radius .4s cubic-bezier(.25, .8, .25, 1);
 
-                        .label {
-                            padding: 2px;
-                            font-size: 10px;
+                        &:hover {
+                            border-radius: 20%;
                         }
 
-                        mat-icon {
-                            position: absolute;
-                            top: 2px;
-                            right: 2px;
-                            font-size: 16px;
-                            opacity: 0.7;
+                        &.selected {
+                            border-radius: 50% !important;
                         }
                     }
                 }

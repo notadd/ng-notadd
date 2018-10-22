@@ -21,7 +21,6 @@ export class NotaddThemePanelComponent implements OnInit, OnDestroy {
     @HostBinding('class.bar-closed')
     barClosed: boolean;
 
-    // Private
     private ngUnsubscribe: Subject<any>;
 
     constructor(
@@ -30,26 +29,22 @@ export class NotaddThemePanelComponent implements OnInit, OnDestroy {
         private configService: NotaddConfigService,
         private sidebarService: NotaddSidebarService
     ) {
-        // Set the defaults
         this.barClosed = true;
 
-        // Set the private defaults
         this.ngUnsubscribe = new Subject();
     }
 
     ngOnInit() {
-        // Build the config form
-        // noinspection TypeScriptValidateTypes
         this.form = this.formBuilder.group({
             layout: this.formBuilder.group({
                 style: [],
                 width: [],
                 navbar: this.formBuilder.group({
                     background: [],
-                    folded: [],
+                    secondaryBackground: [],
+                    collapsed: [],
                     hidden: [],
-                    position: [],
-                    variant: []
+                    position: []
                 }),
                 toolbar: this.formBuilder.group({
                     background: [],
@@ -69,55 +64,29 @@ export class NotaddThemePanelComponent implements OnInit, OnDestroy {
             customScrollbars: []
         });
 
-        // Subscribe to the config changes
         this.configService.config
             .pipe(takeUntil(this.ngUnsubscribe))
             .subscribe((config) => {
 
-                // Update the stored config
                 this.notaddConfig = config;
 
-                // Set the config form values without emitting an event
-                // so that we don't end up with an infinite loop
                 this.form.setValue(config, {emitEvent: false});
             });
 
-        // Subscribe to the specific form value changes (layout.style)
-        this.form.get('layout.style').valueChanges
-            .pipe(takeUntil(this.ngUnsubscribe))
-            .subscribe((value) => {
-
-                // Reset the form values based on the
-                // selected layout style
-                this.resetFormValues(value);
-
-            });
-
-        // Subscribe to the form value changes
         this.form.valueChanges
             .pipe(takeUntil(this.ngUnsubscribe))
             .subscribe((config) => {
-
-                // Update the config
                 this.configService.config = config;
             });
 
     }
 
     ngOnDestroy(): void {
-        // Unsubscribe from all subscriptions
         this.ngUnsubscribe.next();
         this.ngUnsubscribe.complete();
 
     }
 
-    /**
-     * Reset the form values based on the
-     * selected layout style
-     *
-     * @param type
-     * @private
-     */
     private resetFormValues(type): void {
         const restValue = {
             'vertical-layout': {
@@ -125,10 +94,10 @@ export class NotaddThemePanelComponent implements OnInit, OnDestroy {
                     width: 'fullwidth',
                     navbar: {
                         background: 'mat-notadd-dark-700-bg',
-                        folded: false,
+                        secondaryBackground: 'mat-notadd-dark-900-bg',
+                        collapsed: false,
                         hidden: false,
-                        position: 'left',
-                        variant: 'vertical-style-1'
+                        position: 'left'
                     },
                     toolbar: {
                         background: 'mat-white-500-bg',
@@ -147,11 +116,6 @@ export class NotaddThemePanelComponent implements OnInit, OnDestroy {
         this.form.patchValue(restValue[type]);
     }
 
-    /**
-     * Toggle sidebar open
-     *
-     * @param key
-     */
     toggleSidebarOpen(key): void {
         this.sidebarService.getSidebar(key).toggleOpen();
     }

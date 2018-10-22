@@ -1,0 +1,64 @@
+<ng-container *ngIf="!item.hidden">
+
+    <!-- 导航展开 -->
+    <ng-container *ngIf="!notaddConfig.layout.navbar.collapsed">
+        <div (click)="toggleCollapse($event)"
+             class="nav-link"
+             [ngClass]="item.classes"
+             matRipple>
+            <ng-container *ngTemplateOutlet="itemContent"></ng-container>
+        </div>
+
+        <div class="children" [@slideInOut]="isCollapsed">
+            <ng-container *ngFor="let item of item.children">
+                <notadd-nav-item *ngIf="item.type=='item'" [item]="item"></notadd-nav-item>
+                <notadd-nav-collapse *ngIf="item.type=='collapsable'" [item]="item"></notadd-nav-collapse>
+                <notadd-nav-group *ngIf="item.type=='group'" [item]="item"></notadd-nav-group>
+            </ng-container>
+        </div>
+    </ng-container>
+
+    <!-- 导航折叠 -->
+    <ng-container *ngIf="notaddConfig.layout.navbar.collapsed">
+        <div class="nav-link nav-collapsed"
+             [ngClass]="{'hover': isCollapsed}"
+             [matMenuTriggerFor]="navMenu"
+             #menuTrigger="matMenuTrigger"
+             (mouseenter)="toggleCollapse($event);(item.children.length && menuTrigger.openMenu())">
+            <ng-container *ngTemplateOutlet="itemContent"></ng-container>
+        </div>
+
+        <mat-menu class="nav-menu" #navMenu="matMenu" xPosition="before">
+            <ng-container *ngFor="let item of item.children">
+                <button *ngIf="item.children" mat-menu-item [matMenuTriggerFor]="subMenu" (mouseenter)="setSubMenu(item)">{{item.title}}</button>
+                <button *ngIf="!item.children"
+                        mat-menu-item
+                        [routerLink]="item.url"
+                        routerLinkActive="core-background-blue"
+                        (mouseleave)="changeCollapse(true)"
+                        matRipple>{{item.title}}</button>
+            </ng-container>
+        </mat-menu>
+        <mat-menu #subMenu="matMenu">
+            <button mat-menu-item
+                    *ngFor="let subItem of subMenus"
+                    [routerLink]="subItem.url"
+                    routerLinkActive="core-background-blue"
+                    (mouseleave)="changeCollapse(true)"
+                    matRipple>
+                {{subItem.title}}
+            </button>
+        </mat-menu>
+    </ng-container>
+
+    <ng-template #itemContent>
+        <mat-icon class="nav-link-icon" *ngIf="item.icon">{{item.icon}}</mat-icon>
+        <span class="nav-link-title">{{item.title}}</span>
+        <span class="nav-link-badge" *ngIf="item.badge"
+              [ngStyle]="{'background-color': item.badge.bg,'color': item.badge.fg}">
+            {{item.badge.title}}
+        </span>
+        <mat-icon class="collapsable-arrow">keyboard_arrow_right</mat-icon>
+    </ng-template>
+
+</ng-container>

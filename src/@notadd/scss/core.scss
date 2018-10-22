@@ -1,3 +1,6 @@
+// Perfect scrollbar
+@import '~perfect-scrollbar/css/perfect-scrollbar';
+
 // Notadd
 @import "notadd";
 
@@ -23,6 +26,7 @@
 @import "partials/typography";
 @import "partials/forms";
 @import "partials/toolbar";
+@import "partials/navigation";
 
 // Plugins
 @import "partials/plugins/plugins";

@@ -1,83 +1,64 @@
-import { Component, EventEmitter, Input, OnChanges, Output, ViewEncapsulation } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, Output, ViewEncapsulation, forwardRef } from '@angular/core';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 import { notaddAnimations } from '@notadd/animations';
 import { MatColors } from '@notadd/mat-colors';
+
+export const NOTADD_MATERIAL_COLOR_PICKER_VALUE_ACCESSOR: any = {
+    provide: NG_VALUE_ACCESSOR,
+    useExisting: forwardRef(() => NotaddMaterialColorPickerComponent),
+    multi: true
+};
 
 @Component({
     selector: 'notadd-material-color-picker',
     templateUrl: './material-color-picker.component.html',
     styleUrls: ['./material-color-picker.component.scss'],
     animations: notaddAnimations,
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    providers: [NOTADD_MATERIAL_COLOR_PICKER_VALUE_ACCESSOR]
 })
-export class NotaddMaterialColorPickerComponent implements OnChanges {
+export class NotaddMaterialColorPickerComponent implements ControlValueAccessor {
     colors: any;
     hues: Array<string>;
     selectedColor: any;
     view: string;
-
-    @Input()
     selectedPalette: string;
-
-    @Input()
     selectedHue: string;
-
-    @Input()
     selectedFg: string;
-
-    @Input()
-    value: any;
+    selectedBg: string;
 
     @Output()
-    valueChange: EventEmitter<any>;
-
-    @Output()
-    selectedPaletteChange: EventEmitter<any>;
-
-    @Output()
-    selectedHueChange: EventEmitter<any>;
-
-    @Output()
-    selectedClassChange: EventEmitter<any>;
-
-    @Output()
-    selectedBgChange: EventEmitter<any>;
-
-    @Output()
-    selectedFgChange: EventEmitter<any>;
+    colorChanged: EventEmitter<any>;
 
     private _selectedClass: string;
-    private _selectedBg: string;
+    private _modelChange: (value: any) => void;
+    private _modelTouched: (value: any) => void;
 
     constructor() {
-        // Set the defaults
+        this.colorChanged = new EventEmitter();
         this.colors = MatColors.all;
         this.hues = ['50', '100', '200', '300', '400', '500', '600', '700', '800', '900', 'A100', 'A200', 'A400', 'A700'];
-        this.selectedFg = '';
-        this.selectedHue = '';
-        this.selectedPalette = '';
+        this.selectedHue = '500';
         this.view = 'palettes';
 
-        this.valueChange = new EventEmitter();
-        this.selectedPaletteChange = new EventEmitter();
-        this.selectedHueChange = new EventEmitter();
-        this.selectedClassChange = new EventEmitter();
-        this.selectedBgChange = new EventEmitter();
-        this.selectedFgChange = new EventEmitter();
-
-        // Set the private defaults
+        this.selectedFg = '';
+        this.selectedBg = '';
         this._selectedClass = '';
-        this._selectedBg = '';
+        this._modelChange = () => {
+        };
+        this._modelTouched = () => {
+        };
     }
 
     /**
-     * Selected class
+     * 选择class
      *
      * @param value
      */
     @Input()
     set selectedClass(value) {
-        if (value && this._selectedClass !== value) {
+        if (value && value !== '' && this._selectedClass !== value) {
             const color = value.split('-');
             if (color.length >= 5) {
                 this.selectedPalette = color[1] + '-' + color[2];
@@ -87,6 +68,7 @@ export class NotaddMaterialColorPickerComponent implements OnChanges {
                 this.selectedHue = color[2];
             }
         }
+
         this._selectedClass = value;
     }
 
@@ -95,64 +77,50 @@ export class NotaddMaterialColorPickerComponent implements OnChanges {
     }
 
     /**
-     * Selected bg
+     * 注册由每次原生表单控件值更新时触发的回调函数
      *
-     * @param value
+     * @param fn
      */
-    @Input()
-    set selectedBg(value) {
-        if (value && value !== '' && this._selectedBg !== value) {
-            for (const palette in this.colors) {
-                if (!this.colors.hasOwnProperty(palette)) {
-                    continue;
-                }
-
-                for (const hue of this.hues) {
-                    if (this.colors[palette][hue] === value) {
-                        this.selectedPalette = palette;
-                        this.selectedHue = hue;
-                        break;
-                    }
-                }
-            }
-        }
-        this._selectedBg = value;
-    }
-
-    get selectedBg(): string {
-        return this._selectedBg;
+    registerOnChange(fn: any): void {
+        this._modelChange = fn;
     }
 
     /**
-     * On changes
+     * 注册用户和控件交互时触发的回调函数
      *
-     * @param changes
+     * @param fn
      */
-    ngOnChanges(changes: any): void {
-        if (changes.selectedBg && changes.selectedBg.currentValue === '' ||
-            changes.selectedClass && changes.selectedClass.currentValue === '' ||
-            changes.selectedPalette && changes.selectedPalette.currentValue === '') {
-            this.removeColor(void (0));
+    registerOnTouched(fn: any): void {
+        this._modelTouched = fn;
+    }
+
+    /**
+     * 向视图写入数据
+     *
+     * @param selectedClass
+     */
+    writeValue(selectedClass: any): void {
+        if (!selectedClass) {
             return;
         }
-        if (changes.selectedPalette || changes.selectedHue || changes.selectedClass || changes.selectedBg) {
-            this.updateSelectedColor();
-        }
+
+        this.selectedClass = selectedClass;
+
+        this.updateSelectedColor();
     }
 
     /**
-     * Select palette
+     * 选择palette
      */
     selectPalette(e, palette): void {
         e.stopPropagation();
-
         this.selectedPalette = palette;
         this.updateSelectedColor();
         this.view = 'hues';
     }
 
     /**
-     * Select hue
+     * 选择hue
      */
     selectHue(e, hue): void {
         e.stopPropagation();
@@ -162,7 +130,7 @@ export class NotaddMaterialColorPickerComponent implements OnChanges {
     }
 
     /**
-     * Remove color
+     * 移除color
      */
     removeColor(e): void {
         e && e.stopPropagation();
@@ -174,55 +142,45 @@ export class NotaddMaterialColorPickerComponent implements OnChanges {
     }
 
     /**
-     * Update selected color
+     * 更新选择的color
      */
     updateSelectedColor(): void {
-        setTimeout(() => {
+        if (this.selectedColor && this.selectedColor.palette === this.selectedPalette && this.selectedColor.hue === this.selectedHue) {
+            return;
+        }
+        if (this.selectedPalette !== '' && this.selectedHue !== '') {
+            this.selectedBg = MatColors.getColor(this.selectedPalette)[this.selectedHue];
+            this.selectedFg = MatColors.getColor(this.selectedPalette).contrast[this.selectedHue];
+            this.selectedClass = 'mat-' + this.selectedPalette + '-' + this.selectedHue + '-bg';
+        } else {
+            this.selectedBg = '';
+            this.selectedFg = '';
+        }
 
-            if (this.selectedColor && this.selectedPalette === this.selectedColor.palette && this.selectedHue === this.selectedColor.hue) {
-                return;
-            }
+        this.selectedColor = {
+            palette: this.selectedPalette,
+            hue: this.selectedHue,
+            class: this.selectedClass,
+            bg: this.selectedBg,
+            fg: this.selectedFg
+        };
 
-            if (this.selectedPalette !== '' && this.selectedHue !== '') {
-                this.selectedBg = MatColors.getColor(this.selectedPalette)[this.selectedHue];
-                this.selectedFg = MatColors.getColor(this.selectedPalette).contrast[this.selectedHue];
-                this.selectedClass = 'mat-' + this.selectedPalette + '-' + this.selectedHue + '-bg';
-            } else {
-                this.selectedBg = '';
-                this.selectedFg = '';
-            }
+        // 触发颜色改变的事件
+        this.colorChanged.emit(this.selectedColor);
 
-            this.selectedColor = {
-                palette: this.selectedPalette,
-                hue: this.selectedHue,
-                class: this.selectedClass,
-                bg: this.selectedBg,
-                fg: this.selectedFg
-            };
+        // 将model标记为touched
+        this._modelTouched(this.selectedColor.class);
 
-            this.selectedPaletteChange.emit(this.selectedPalette);
-            this.selectedHueChange.emit(this.selectedHue);
-            this.selectedClassChange.emit(this.selectedClass);
-            this.selectedBgChange.emit(this.selectedBg);
-            this.selectedFgChange.emit(this.selectedFg);
-
-            this.value = this.selectedColor;
-            this.valueChange.emit(this.selectedColor);
-        });
+        // 更新model
+        this._modelChange(this.selectedColor.class);
     }
 
-    /**
-     * Go back to palette selection
-     */
-    backToPaletteSelection(e): void {
-        e.stopPropagation();
+    goToPalettesView(event): void {
+        event.stopPropagation();
 
         this.view = 'palettes';
     }
 
-    /**
-     * On menu open
-     */
     onMenuOpen(): void {
         this.view = this.selectedPalette === '' ? 'palettes' : 'hues';
     }
