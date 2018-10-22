@@ -8,6 +8,7 @@ import { NotaddSidebarModule } from '@notadd/components/sidebar/sidebar.module';
 import { ToolbarModule } from './components/toolbar/toolbar.module';
 import { FooterModule } from './components/footer/footer.module';
 import { NavbarModule } from './components/navbar/navbar.module';
+import { ContentModule } from './components/content/content.module';
 
 import { LayoutComponent } from './layout.component';
 
@@ -21,7 +22,8 @@ import { LayoutComponent } from './layout.component';
 
         ToolbarModule,
         FooterModule,
-        NavbarModule
+        NavbarModule,
+        ContentModule
     ],
     declarations: [
         LayoutComponent
