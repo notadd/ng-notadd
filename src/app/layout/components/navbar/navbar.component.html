@@ -1,0 +1,37 @@
+<div class="navbar-top"
+     [ngClass]="notaddConfig.layout.navbar.secondaryBackground">
+
+    <div class="logo" *ngIf="notaddConfig.layout.navbar.position === 'start'">
+        <mat-icon fontSet="NotaddIcon" fontIcon="icon-logo" aria-hidden="true"></mat-icon>
+    </div>
+
+    <div class="buttons">
+
+        <button mat-icon-button
+                (click)="toggleSidebarCollapsed()">
+            <mat-icon>menu</mat-icon>
+        </button>
+
+    </div>
+
+</div>
+
+<mat-divider [inset]="true"></mat-divider>
+
+<div class="navbar-scroll-container" notaddPerfectScrollbar [notaddPerfectScrollbarOptions]="{suppressScrollX: true}">
+
+    <div class="user" [ngClass]="notaddConfig.layout.navbar.secondaryBackground" fxLayout="column">
+
+        <div class="h3 username">天魂</div>
+        <div class="h5 mt-8 email">tianhun@ibenchu.com</div>
+        <div class="avatar-container" [ngClass]="notaddConfig.layout.navbar.background">
+            <img class="avatar" src="assets/images/avatars/tianhun.jpg">
+        </div>
+
+    </div>
+
+    <div class="navbar-content">
+        <notadd-navigation></notadd-navigation>
+    </div>
+
+</div>

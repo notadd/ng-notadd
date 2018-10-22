@@ -4,14 +4,24 @@
         <ng-container *ngTemplateOutlet="toolbar"></ng-container>
     </ng-container>
 
-    <div id="container-1" class="container">
-        <div id="container-2" class="container">
+    <mat-sidenav-container [class.boxed]="layoutMode" autosize>
+        <!-- navbar -->
+        <mat-sidenav
+            [ngClass]="{'collapsed': notaddConfig.layout.navbar.collapsed}"
+            [opened]="!notaddConfig.layout.navbar.hidden"
+            mode="side"
+            [position]="notaddConfig.layout.navbar.position">
+            <ng-container *ngTemplateOutlet="navbar"></ng-container>
+        </mat-sidenav>
+
+        <!-- container -->
+        <mat-sidenav-content>
             <!-- toolbar: Below fixed -->
             <ng-container *ngIf="notaddConfig.layout.toolbar.position === 'below-fixed'">
                 <ng-container *ngTemplateOutlet="toolbar"></ng-container>
             </ng-container>
 
-            <div id="container-3" class="container" notaddPerfectScrollbar
+            <div class="container" notaddPerfectScrollbar
                  [notaddPerfectScrollbarOptions]="{suppressScrollX: true, updateOnRouteChange : true}">
 
                 <!-- toolbar: Below static -->
@@ -20,7 +30,7 @@
                 </ng-container>
 
                 <!-- content -->
-                <div></div>
+                <div>内容区域</div>
 
                 <!-- footer: Below static -->
                 <ng-container *ngIf="notaddConfig.layout.footer.position === 'below-static'">
@@ -33,8 +43,10 @@
             <ng-container *ngIf="notaddConfig.layout.footer.position === 'below-fixed'">
                 <ng-container *ngTemplateOutlet="footer"></ng-container>
             </ng-container>
-        </div>
-    </div>
+
+        </mat-sidenav-content>
+
+    </mat-sidenav-container>
 
     <!-- footer: Above -->
     <ng-container *ngIf="notaddConfig.layout.footer.position === 'above'">
@@ -52,5 +64,14 @@
 <!-- footer -->
 <ng-template #footer>
     <footer *ngIf="!notaddConfig.layout.footer.hidden"
-            [ngClass]="[notaddConfig.layout.footer.position, notaddConfig.layout.footer.background]"></footer>
+            [ngClass]="[notaddConfig.layout.footer.position, notaddConfig.layout.footer.background]">
+    </footer>
+</ng-template>
+
+
+<!-- navbar -->
+<ng-template #navbar>
+    <navbar class="left-navbar vertical-style"
+            [ngClass]="notaddConfig.layout.navbar.background">
+    </navbar>
 </ng-template>

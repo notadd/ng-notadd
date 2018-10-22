@@ -1,28 +1,28 @@
-import { NotaddConfig } from '@notadd/types/notadd-config';
+import { NotaddConfig } from '@notadd/types';
 
 export const notaddConfig: NotaddConfig = {
-    layout          : {
-        style    : 'vertical-layout-1',
-        width    : 'fullwidth',
-        navbar   : {
+    layout: {
+        style: 'vertical-layout',
+        width: 'fullwidth',
+        navbar: {
             background: 'mat-notadd-dark-700-bg',
-            folded    : false,
-            hidden    : false,
-            position  : 'left',
-            variant   : 'vertical-style-1'
+            secondaryBackground: 'mat-notadd-dark-900-bg',
+            collapsed: false,
+            hidden: false,
+            position: 'start'
         },
-        toolbar  : {
+        toolbar: {
             background: 'mat-notadd-dark-500-bg',
-            hidden    : false,
-            position  : 'below-static'
+            hidden: false,
+            position: 'below-static'
         },
-        footer   : {
+        footer: {
             background: 'mat-notadd-dark-900-bg',
-            hidden    : false,
-            position  : 'below-fixed'
+            hidden: false,
+            position: 'above'
         },
         sidepanel: {
-            hidden  : false,
+            hidden: false,
             position: 'right'
         }
     },

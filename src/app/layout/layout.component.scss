@@ -1,3 +1,5 @@
+$height__main-toolbar: 64px;
+
 layout {
     display: flex;
     flex: 1 1 auto;
@@ -14,45 +16,29 @@ layout {
         z-index: 1;
         min-width: 0;
 
-        // container 1
+        mat-sidenav-container{
+            height: calc(100% - #{$height__main-toolbar});
+        }
+
         > .container {
             position: relative;
             display: flex;
             flex: 1 1 0;
-            width: 100%;
-            min-height: 0;
-            min-width: 0;
+            flex-direction: column;
+            transform: translateZ(0);
+            overflow-x: hidden;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
 
-            // container 2
-            > .container {
-                position: relative;
-                display: flex;
-                flex: 1 1 0;
-                flex-direction: column;
-                min-width: 0;
+            // content component
+            content {
 
-                // container 3 (Scrollable)
-                > .container {
-                    position: relative;
-                    display: flex;
+                &.inner-scroll {
                     flex: 1 1 0;
-                    flex-direction: column;
-                    transform: translateZ(0);
-                    overflow-x: hidden;
-                    overflow-y: auto;
-                    -webkit-overflow-scrolling: touch;
+                    min-height: 0;
 
-                    // content component
-                    content {
-
-                        &.inner-scroll {
-                            flex: 1 1 0;
-                            min-height: 0;
-
-                            > *:not(router-outlet) {
-                                flex: 1 1 0;
-                            }
-                        }
+                    > *:not(router-outlet) {
+                        flex: 1 1 0;
                     }
                 }
             }

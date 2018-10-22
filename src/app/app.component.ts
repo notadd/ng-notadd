@@ -6,6 +6,9 @@ import { takeUntil } from 'rxjs/operators';
 
 import { NotaddConfigService } from '@notadd/services/config.service';
 import { NotaddLoadingService } from '@notadd/services/notadd-loading.service';
+import { NotaddNavigationService } from '@notadd/components/navigation/navigation.service';
+
+import { navigation } from './navigation/navigation';
 
 @Component({
     selector: 'notadd-root',
@@ -14,6 +17,7 @@ import { NotaddLoadingService } from '@notadd/services/notadd-loading.service';
 })
 export class AppComponent implements OnInit, OnDestroy {
     notaddConfig: any;
+    navigation: any;
 
     private ngUnsubscribe: Subject<any>;
 
@@ -21,14 +25,22 @@ export class AppComponent implements OnInit, OnDestroy {
         @Inject(DOCUMENT) private document: any,
         private loadingService: NotaddLoadingService,
         private configService: NotaddConfigService,
+        private navigationService: NotaddNavigationService,
         private platform: Platform
     ) {
-        // Add is-mobile class to the body if the platform is mobile
+        this.navigation = navigation;
+
+        // 注册导航
+        this.navigationService.register('main', this.navigation);
+
+        // 设置key为 `main` 的导航为当前导航
+        this.navigationService.setCurrentNavigation('main');
+
+        // 在移动端平台上添加 `is-mobile` 类
         if (this.platform.ANDROID || this.platform.IOS) {
             this.document.body.classList.add('is-mobile');
         }
 
-        // Set the private defaults
         this.ngUnsubscribe = new Subject();
     }
 
@@ -45,6 +57,7 @@ export class AppComponent implements OnInit, OnDestroy {
     }
 
     ngOnDestroy() {
+        /* 取消订阅 */
         this.ngUnsubscribe.next();
         this.ngUnsubscribe.complete();
     }

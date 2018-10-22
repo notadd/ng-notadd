@@ -1,0 +1,148 @@
+@import "src/@notadd/scss/notadd";
+
+mat-sidenav {
+    overflow: hidden;
+
+    &.collapsed {
+
+        navbar {
+
+            &.vertical-style {
+                width: 90px;
+            }
+
+            .navbar-top {
+                padding: 12px 0;
+                justify-content: center;
+
+                .buttons {
+                    display: none;
+                }
+
+                .logo {
+
+                    mat-icon {
+                        font-size: 16px;
+                        transition: font-size 300ms;
+                    }
+                }
+            }
+
+            .navbar-scroll-container {
+
+                .user {
+                    padding: 12px 0;
+
+                    .avatar-container {
+                        position: relative;
+                        top: auto;
+                        padding: 0;
+                        transform: translateX(0);
+                        left: auto;
+
+                        .avatar {
+                            width: 40px;
+                            height: 40px;
+                        }
+                    }
+
+                    .username,
+                    .email {
+                        display: none;
+                    }
+                }
+
+                .navbar-content {
+                    margin-top: 0;
+                }
+            }
+        }
+    }
+}
+
+navbar {
+
+    &.vertical-style {
+        display: flex;
+        flex-direction: column;
+        flex: 1 1 auto;
+        width: 260px;
+        height: 100%;
+    }
+
+    .navbar-top {
+        display: flex;
+        flex-direction: row;
+        flex: 1 0 auto;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 64px;
+        max-height: 64px;
+        height: 64px;
+        padding: 12px 12px 12px 20px;
+
+        @include media-breakpoint('xs') {
+            min-height: 56px;
+            max-height: 56px;
+            height: 56px;
+        }
+
+        .logo {
+            width: 100%;
+            display: flex;
+            align-items: center;
+
+            mat-icon {
+                font-size: 26px;
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        .buttons {
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    .navbar-scroll-container {
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+
+        background: linear-gradient(rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0) 30%),
+        linear-gradient(rgba(0, 0, 0, 0.25) 0, rgba(0, 0, 0, 0) 40%);
+
+        background-repeat: no-repeat;
+        background-size: 100% 40px, 100% 10px;
+        background-attachment: local, scroll;
+
+        .user {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            width: 100%;
+            padding: 24px 0 64px 0;
+
+            .avatar-container {
+                position: absolute;
+                top: 92px;
+                border-radius: 50%;
+                padding: 8px;
+                transform: translateX(-50%);
+                left: 50%;
+
+                .avatar {
+                    width: 72px;
+                    height: 72px;
+                    margin: 0;
+                }
+            }
+        }
+
+        .navbar-content {
+            flex: 1 1 auto;
+            margin-top: 32px;
+        }
+    }
+}
