@@ -8,11 +8,13 @@ import { NotaddPipesModule } from '@notadd/pipes/pipes.module';
 
 @NgModule({
     imports: [
+        CommonModule,
         FlexLayoutModule,
         NotaddDirectivesModule,
         NotaddPipesModule
     ],
     exports: [
+        CommonModule,
         FlexLayoutModule,
         NotaddDirectivesModule,
         NotaddPipesModule
