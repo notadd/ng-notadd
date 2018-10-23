@@ -1,0 +1,43 @@
+.breadcrumb{
+    .breadcrumb-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        .breadcrumb-item {
+            display: inline-block;
+            position: relative;
+
+            & + .breadcrumb-item::before {
+                display: inline-block;
+                padding-right: .5rem;
+                padding-left: .5rem;
+                padding-top: 5px;
+                color: #868e96;
+                content: "/";
+                vertical-align: bottom;
+            }
+
+            &.active {
+                display: block;
+                margin-top: 5px;
+            }
+        }
+
+        a {
+            font-size: 14px;
+            color: #3f51b5;
+            text-decoration: none;
+            background-color: transparent;
+        }
+
+        span {
+            font-size: 14px;
+        }
+    }
+
+    .current-breadcrumb{
+        font-size: 18px;
+        color: #333;
+    }
+}
