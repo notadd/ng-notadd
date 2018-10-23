@@ -2,7 +2,6 @@
 
     <a class="nav-link"
        *ngIf="item.url"
-       (click)="toggleOpen($event)"
        [ngClass]="item.classes"
        [routerLink]="[item.url]"
        [routerLinkActive]="['active', 'mat-accent-bg']"
