@@ -13,10 +13,10 @@ export const navigation: Array<NotaddNavigationItem> = [
                 icon: 'dashboard',
                 children: [
                     {
-                        id: 'default',
-                        title: '默认页',
+                        id: 'analytics',
+                        title: '分析页',
                         type: 'item',
-                        url: '',
+                        url: '/modules/dashboards/analytics',
                         badge: {
                             title: '25',
                             bg: '#1189fb',

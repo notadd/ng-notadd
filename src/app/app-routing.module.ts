@@ -3,9 +3,13 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
     {
-        path: '',
-        redirectTo: '',
-        pathMatch: 'full',
+        path: 'modules',
+        loadChildren: './main/modules/modules.module#ModulesModule',
+        data: { title: '首页' }
+    },
+    {
+        path: '**',
+        redirectTo: 'modules/dashboards/analytics'
     }
 ];
 
