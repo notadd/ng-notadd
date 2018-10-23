@@ -1,11 +1,19 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+
+import { NotaddSharedModule } from '@notadd/shared.module';
+
+import { HeaderModule } from './header/header.module';
 import { ContentComponent } from './content.component';
 
 @NgModule({
-  imports: [
-    CommonModule
-  ],
-  declarations: [ContentComponent]
+    imports: [
+        NotaddSharedModule,
+        HeaderModule,
+        RouterModule
+    ],
+    declarations: [ ContentComponent ],
+    exports: [ ContentComponent ]
 })
-export class ContentModule { }
+export class ContentModule {
+}
