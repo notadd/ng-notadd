@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
+
 import 'hammerjs';
 
 import { NotaddModule } from '@notadd/notadd.module';
@@ -9,6 +11,8 @@ import { NotaddProgressBarModule, NotaddSidebarModule, NotaddThemePanelModule } 
 import { LayoutModule } from './layout/layout.module';
 
 import { notaddConfig } from './config/notadd.config';
+
+import { GraphQLModule } from './graphql/graphql.module';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -29,7 +33,11 @@ import { AppComponent } from './app.component';
 
         LayoutModule,
 
-        AppRoutingModule
+        AppRoutingModule,
+
+        GraphQLModule,
+
+        HttpClientModule
     ],
     providers: [],
     bootstrap: [ AppComponent ]

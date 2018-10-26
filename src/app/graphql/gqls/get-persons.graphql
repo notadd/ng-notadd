@@ -1,0 +1,10 @@
+query getPersons {
+    persons {
+        age
+        name
+        friends {
+            age
+            name
+        }
+    }
+}
