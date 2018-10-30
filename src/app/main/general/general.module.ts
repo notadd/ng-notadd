@@ -24,5 +24,5 @@ const routs: Routes = [
         ]
     }
 )
-export class ModulesModule {
+export class GeneralModule {
 }
