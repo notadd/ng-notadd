@@ -11,7 +11,6 @@ import { NotaddBreadcrumb } from '@notadd/types';
 export class NotaddBreadcrumbComponent implements OnInit {
 
     breadcrumbs: Array<NotaddBreadcrumb>;
-    currentBreadcrumb: NotaddBreadcrumb;
     breadcrumbData: string;
 
     constructor(
@@ -28,7 +27,6 @@ export class NotaddBreadcrumbComponent implements OnInit {
             filter(event => event instanceof NavigationEnd)
         ).subscribe(event => {
             this.breadcrumbs = this.getBreadcrumbs(this.activatedRoute.root);
-            this.currentBreadcrumb = this.breadcrumbs[this.breadcrumbs.length - 1];
         });
     }
 

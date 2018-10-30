@@ -7,6 +7,7 @@
         .breadcrumb-item {
             display: inline-block;
             position: relative;
+            line-height: 14px;
 
             & + .breadcrumb-item::before {
                 display: inline-block;
@@ -26,7 +27,7 @@
 
         a {
             font-size: 14px;
-            color: #3f51b5;
+            // color: #3f51b5;
             text-decoration: none;
             background-color: transparent;
         }
@@ -38,6 +39,7 @@
 
     .current-breadcrumb{
         font-size: 18px;
+        line-height: 18px;
         color: #333;
     }
 }
