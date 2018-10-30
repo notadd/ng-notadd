@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { KeysPipe } from './keys.pipe';
+import { ThousandsSeparatorPipe } from './thousands-separator.pipe';
 
 @NgModule({
     imports: [
     ],
-    declarations: [ KeysPipe ],
-    exports: [ KeysPipe ]
+    declarations: [ KeysPipe, ThousandsSeparatorPipe ],
+    exports: [ KeysPipe, ThousandsSeparatorPipe ]
 })
 export class NotaddPipesModule {
 }

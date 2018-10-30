@@ -22,7 +22,6 @@ export class AnalysisComponent implements OnInit {
         this.service.getWidgets()
             .subscribe(widgets => {
                 this.widgets = widgets;
-                console.log(widgets);
             });
     }
 

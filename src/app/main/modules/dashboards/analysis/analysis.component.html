@@ -7,7 +7,7 @@
                         <mat-icon>{{widget.titleIcon}}</mat-icon>
                         <span>{{widget.title}}</span>
                     </span>
-                    <span class="grey-700 font-size-30">{{widget.currentAmount}}</span>
+                    <span class="grey-700 font-size-30">{{widget.currentAmount | thousandsSeparator}}</span>
                 </mat-card-title>
                 <mat-card-subtitle class="grey-500">
                     <mat-icon [ngClass]="widget.increase > 0 ? 'arrow-up' : 'arrow-down'">trending_flat</mat-icon>

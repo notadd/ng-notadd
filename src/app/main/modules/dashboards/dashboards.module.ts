@@ -12,6 +12,7 @@ import {
 
 import { NgxEchartsModule } from 'ngx-echarts';
 import { NotaddSharedModule } from '@notadd/shared.module';
+import { NotaddPipesModule } from '@notadd/pipes/pipes.module';
 
 import { AnalysisService } from './analysis/analysis.service';
 import { AnalysisComponent } from './analysis/analysis.component';
@@ -44,6 +45,7 @@ const routes: Routes = [
         MatCardModule,
 
         NotaddSharedModule,
+        NotaddPipesModule,
 
         RouterModule.forChild(routes)
     ],
