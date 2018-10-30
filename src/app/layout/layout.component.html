@@ -30,7 +30,7 @@
                 </ng-container>
 
                 <!-- content -->
-                <content></content>
+                <content [hasHeader]="hasContentHeader"></content>
 
                 <!-- footer: Below static -->
                 <ng-container *ngIf="notaddConfig.layout.footer.position === 'below-static'">
