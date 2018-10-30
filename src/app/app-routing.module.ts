@@ -3,13 +3,18 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
     {
-        path: 'modules',
-        loadChildren: './main/modules/modules.module#ModulesModule',
-        data: { title: '首页' }
+        path: 'general',
+        loadChildren: './main/general/general.module#GeneralModule',
+        data: { title: '常规' }
+    },
+    {
+        path: 'elements',
+        loadChildren: './main/elements/elements.module#ElementsModule',
+        data: { title: 'UI 元素'}
     },
     {
         path: '**',
-        redirectTo: 'modules/dashboards/analytics'
+        redirectTo: 'general/dashboards/analytics'
     }
 ];
 
