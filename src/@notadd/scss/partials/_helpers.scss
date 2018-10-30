@@ -1,6 +1,4 @@
-// ######################
-// POSITION HELPERS
-// ######################
+// 定位
 @each $breakpoint in map-keys($grid-breakpoints) {
 
     @include media-breakpoint-up($breakpoint) {
@@ -21,9 +19,7 @@
     }
 }
 
-// ####################################
-// ABSOLUTE POSITION ALIGNMENT HELPERS
-// ####################################
+// 绝对定位调整
 @each $breakpoint in map-keys($grid-breakpoints) {
 
     @include media-breakpoint-up($breakpoint) {
@@ -48,9 +44,7 @@
     }
 }
 
-// ######################
-// SIZE HELPERS
-// ######################
+// 尺寸
 @each $prop, $abbrev in (height: h, width: w) {
 
     @for $index from 0 through 180 {
@@ -75,9 +69,7 @@
     }
 }
 
-// ######################
-// SPACING HELPERS
-// ######################
+// 间距
 @each $breakpoint in map-keys($grid-breakpoints) {
 
     @include media-breakpoint-up($breakpoint) {
@@ -168,9 +160,7 @@
     }
 }
 
-// ######################
-// BORDER HELPERS
-// ######################
+// 边框
 $border-style: 1px solid rgba(0, 0, 0, 0.12);
 
 .border,
@@ -210,9 +200,7 @@ $border-style: 1px solid rgba(0, 0, 0, 0.12);
     border-bottom: $border-style;
 }
 
-// ######################
-// BORDER RADIUS HELPERS
-// ######################
+// 边框圆角
 .border-radius-100 {
     border-radius: 100%;
 }
@@ -233,9 +221,7 @@ $border-style: 1px solid rgba(0, 0, 0, 0.12);
     border-radius: 16px;
 }
 
-// ######################
-// CURSOR HELPERS
-// ######################
+// 鼠标形状
 .cursor-pointer {
     cursor: pointer;
 }
