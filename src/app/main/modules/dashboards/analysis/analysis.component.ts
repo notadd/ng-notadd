@@ -1,15 +1,29 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Observable } from 'rxjs';
+
+import { AnalysisService } from './analysis.service';
 
 @Component({
-  selector: 'analysis',
-  templateUrl: './analysis.component.html',
-  styleUrls: ['./analysis.component.scss']
+    selector: 'analysis',
+    templateUrl: './analysis.component.html',
+    styleUrls: ['./analysis.component.scss'],
+    encapsulation: ViewEncapsulation.None
 })
 export class AnalysisComponent implements OnInit {
 
-  constructor() { }
+    widgets: Array<any>;
 
-  ngOnInit() {
-  }
+    constructor(
+        private service: AnalysisService
+    ) {
+    }
+
+    ngOnInit() {
+        this.service.getWidgets()
+            .subscribe(widgets => {
+                this.widgets = widgets;
+                console.log(widgets);
+            });
+    }
 
 }

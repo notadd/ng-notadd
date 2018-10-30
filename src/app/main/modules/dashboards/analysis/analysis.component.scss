@@ -1,0 +1,36 @@
+@import "src/@notadd/scss/notadd";
+
+.dashboard-analysis {
+    padding: 20px;
+
+    mat-card {
+        .mat-card-header-text {
+            width: 100%;
+        }
+
+        mat-icon {
+            font-size: 20px !important;
+        }
+
+        .arrow-up {
+            margin-right: -10px;
+            transform: rotate(-90deg);
+            color: #4caf50;
+            vertical-align: bottom;
+        }
+
+        .arrow-down {
+            margin-right: -5px;
+            transform: rotate(90deg);
+            color: #f44336;
+            vertical-align: top;
+        }
+    }
+
+    mat-card-content {
+        div[echarts] {
+            height: 50px;
+            width: 100%;
+        }
+    }
+}

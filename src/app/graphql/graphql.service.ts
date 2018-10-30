@@ -2,60 +2,41 @@
 
 /** the schema allows the following query: */
 export interface Query {
-  posts?: (Post | null)[] | null;
-  author?: Author | null;
-  persons?: (Person | null)[] | null;
+  widgets?: (Widget | null)[] | null;
 }
 
-export interface Post {
-  id: number;
-  title?: string | null;
-  author?: Author | null;
-  votes?: number | null;
+export interface Widget {
+  type?: string | null;
+  chartData?: ChartData | null;
+  increase?: number | null /** 正数为增长，负数为下降 */;
+  currentAmount?: number | null;
 }
 
-export interface Author {
-  id: number;
-  firstName?: string | null;
-  lastName?: string | null;
-  posts?: (Post | null)[] | null;
+export interface ChartData {
+  date?: (string | null)[] | null;
+  amount?: (number | null)[] | null;
 }
 
-export interface Person {
-  name?: string | null;
-  age?: number | null;
-  friends?: (Person | null)[] | null;
-}
-/** this schema allows the following mutation: */
-export interface Mutation {
-  upvotePost?: Post | null;
-}
-export interface AuthorQueryArgs {
-  id: number;
-}
-export interface UpvotePostMutationArgs {
-  postId: number;
-}
-
-export namespace GetPersons {
+export namespace Widgets {
   export type Variables = {};
 
   export type Query = {
     __typename?: "Query";
-    persons?: (Persons | null)[] | null;
+    widgets?: (Widgets | null)[] | null;
   };
 
-  export type Persons = {
-    __typename?: "Person";
-    age?: number | null;
-    name?: string | null;
-    friends?: (Friends | null)[] | null;
+  export type Widgets = {
+    __typename?: "Widget";
+    type?: string | null;
+    chartData?: ChartData | null;
+    increase?: number | null;
+    currentAmount?: number | null;
   };
 
-  export type Friends = {
-    __typename?: "Person";
-    age?: number | null;
-    name?: string | null;
+  export type ChartData = {
+    __typename?: "ChartData";
+    date?: (string | null)[] | null;
+    amount?: (number | null)[] | null;
   };
 }
 
@@ -68,19 +49,17 @@ import gql from "graphql-tag";
 @Injectable({
   providedIn: "root"
 })
-export class GetPersonsGQL extends Apollo.Query<
-  GetPersons.Query,
-  GetPersons.Variables
-> {
+export class WidgetsGQL extends Apollo.Query<Widgets.Query, Widgets.Variables> {
   document: any = gql`
-    query getPersons {
-      persons {
-        age
-        name
-        friends {
-          age
-          name
+    query widgets {
+      widgets {
+        type
+        chartData {
+          date
+          amount
         }
+        increase
+        currentAmount
       }
     }
   `;

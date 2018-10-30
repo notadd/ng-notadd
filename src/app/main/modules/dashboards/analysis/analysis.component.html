@@ -1,3 +1,23 @@
-<p>
-  analysis works!
-</p>
+<div class="dashboard-analysis">
+    <section fxLayout="row nowrap" fxLayoutAlign="space-between center">
+        <mat-card fxFlex="23" *ngFor="let widget of widgets">
+            <mat-card-header>
+                <mat-card-title fxLayout="row nowrap" fxLayoutAlign="space-between center">
+                    <span class="grey-800">
+                        <mat-icon>{{widget.titleIcon}}</mat-icon>
+                        <span>{{widget.title}}</span>
+                    </span>
+                    <span class="grey-700 font-size-30">{{widget.currentAmount}}</span>
+                </mat-card-title>
+                <mat-card-subtitle class="grey-500">
+                    <mat-icon [ngClass]="widget.increase > 0 ? 'arrow-up' : 'arrow-down'">trending_flat</mat-icon>
+                    同比{{widget.increase > 0 ? '增长' : '下降'}}{{widget.increase}}%
+                </mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <div echarts [options]="widget.chartOption"></div>
+            </mat-card-content>
+        </mat-card>
+    </section>
+    <section></section>
+</div>

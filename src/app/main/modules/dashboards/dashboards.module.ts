@@ -1,10 +1,20 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { MatButtonModule, MatFormFieldModule, MatIconModule, MatMenuModule, MatSelectModule, MatTabsModule } from '@angular/material';
+import {
+    MatButtonModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatMenuModule,
+    MatSelectModule,
+    MatTabsModule,
+    MatCardModule
+} from '@angular/material';
 
-import { AnalysisComponent } from './analysis/analysis.component';
-
+import { NgxEchartsModule } from 'ngx-echarts';
 import { NotaddSharedModule } from '@notadd/shared.module';
+
+import { AnalysisService } from './analysis/analysis.service';
+import { AnalysisComponent } from './analysis/analysis.component';
 
 const routes: Routes = [
     {
@@ -15,7 +25,10 @@ const routes: Routes = [
     {
         path: 'analytics',
         component: AnalysisComponent,
-        data: {title: '分析页'}
+        data: {
+            title: '分析页',
+            hasContentHeader: false
+        }
     }
 ];
 
@@ -27,6 +40,8 @@ const routes: Routes = [
         MatMenuModule,
         MatSelectModule,
         MatTabsModule,
+        NgxEchartsModule,
+        MatCardModule,
 
         NotaddSharedModule,
 
@@ -34,6 +49,9 @@ const routes: Routes = [
     ],
     declarations: [
         AnalysisComponent
+    ],
+    providers: [
+        AnalysisService
     ]
 })
 export class DashboardsModule {

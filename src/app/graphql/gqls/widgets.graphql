@@ -1,0 +1,11 @@
+query widgets {
+    widgets {
+        type
+        chartData {
+            date
+            amount
+        }
+        increase
+        currentAmount
+    }
+}
