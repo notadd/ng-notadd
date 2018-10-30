@@ -2,8 +2,8 @@ import { NotaddNavigationItem } from '@notadd/types';
 
 export const navigation: Array<NotaddNavigationItem> = [
     {
-        id: 'main',
-        title: '主导航',
+        id: 'general',
+        title: '常规',
         type: 'group',
         children: [
             {
