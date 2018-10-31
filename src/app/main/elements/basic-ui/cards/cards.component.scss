@@ -1,0 +1,20 @@
+.element-cards {
+    .content-area {
+        width: 100%;
+        margin-bottom: 50px;
+
+        mat-card-content {
+            .card-content-list {
+                .card-content-list-item {
+                    width: 100%;
+                    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+                    padding: 10px 0;
+                }
+            }
+        }
+
+        .card-deck img[mat-card-image] {
+            height: 360px;
+        }
+    }
+}
