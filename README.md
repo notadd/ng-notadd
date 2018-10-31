@@ -4,6 +4,7 @@
 
 **1.0**
 - [x] material2 基础组件
+- [ ] 支持 Apollo-Graqphql
 
 **1.1**
 - [ ] json 生成表单
