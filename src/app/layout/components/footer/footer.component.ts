@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { MatIconRegistry } from '@angular/material';
-import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
     selector: 'footer',
@@ -9,19 +7,10 @@ import { DomSanitizer } from '@angular/platform-browser';
 })
 export class FooterComponent implements OnInit {
 
-    constructor(
-        private matIconRegistry: MatIconRegistry,
-        private domSanitizer: DomSanitizer
-    ) {
+    constructor() {
     }
 
     ngOnInit() {
-        /* 自定义 svg icon */
-        this.matIconRegistry.addSvgIconInNamespace(
-            'notadd-svg',
-            'github',
-            this.domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/github-circle-white-transparent.svg')
-        );
     }
 
 }

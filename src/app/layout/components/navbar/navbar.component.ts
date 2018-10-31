@@ -1,6 +1,5 @@
 import { Component, OnDestroy, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
-import { MatIconRegistry } from '@angular/material';
 
 import { Subject } from 'rxjs';
 import { filter, take, takeUntil } from 'rxjs/operators';
@@ -29,7 +28,6 @@ export class NavbarComponent implements OnInit, OnDestroy {
         private sidebarService: NotaddSidebarService,
         private navigationService: NotaddNavigationService,
         private router: Router,
-        private matIconRegistry: MatIconRegistry
     ) {
         this.ngUnsubscribe = new Subject<any>();
     }
@@ -74,9 +72,6 @@ export class NavbarComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit() {
-        /* 自定义icon font*/
-        this.matIconRegistry.registerFontClassAlias('NotaddIcon', 'notadd-icon');
-
         // 订阅配置改变
         this.configService.config
             .pipe(takeUntil(this.ngUnsubscribe))
