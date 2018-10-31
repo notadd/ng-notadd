@@ -24,7 +24,12 @@
                         "tsConfig": "src/tsconfig.app.json",
                         "assets": [
                             "src/favicon.ico",
-                            "src/assets"
+                            "src/assets",
+                            {
+                                "glob": "mdi.svg",
+                                "input": "node_modules/@mdi/angular-material",
+                                "output": "./assets"
+                            }
                         ],
                         "styles": [
                             {

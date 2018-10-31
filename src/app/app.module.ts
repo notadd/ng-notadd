@@ -6,6 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import 'hammerjs';
 
 import { NotaddModule } from '@notadd/notadd.module';
+import { NotaddMatIconsModule } from '@notadd/mat-icons/mat-icons.module';
 import { NotaddProgressBarModule, NotaddSidebarModule, NotaddThemePanelModule } from '@notadd/components';
 
 import { LayoutModule } from './layout/layout.module';
@@ -27,6 +28,7 @@ import { AppComponent } from './app.component';
 
         /* @notadd modules */
         NotaddModule.forRoot(notaddConfig),
+        NotaddMatIconsModule,
         NotaddProgressBarModule,
         NotaddSidebarModule,
         NotaddThemePanelModule,

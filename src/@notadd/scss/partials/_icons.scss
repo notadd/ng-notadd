@@ -27,3 +27,17 @@ mat-icon {
         }
     }
 }
+
+/* solve the problem where an icon isn't aligned properly when used in a menu item */
+button.mat-menu-item {
+    line-height: 24px !important;
+}
+
+a.mat-menu-item > mat-icon {
+    margin-bottom: 14px;
+}
+
+.mat-icon svg {
+    height: 24px;
+    width: 24px;
+}
