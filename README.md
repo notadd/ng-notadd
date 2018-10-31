@@ -1,4 +1,4 @@
-基于 Angular6  Material2  的中后台解决方案
+基于 Angular7  Material2  的中后台解决方案
 
 ## Roadmap
 
