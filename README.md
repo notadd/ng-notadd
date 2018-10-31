@@ -4,6 +4,7 @@
 
 **0.9**
 - [x] material2 基础组件
+- [x] 主题切换
 - [ ] 支持 Apollo-Graqphql
 
 **1.0**
