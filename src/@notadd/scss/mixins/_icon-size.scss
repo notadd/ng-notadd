@@ -1,0 +1,12 @@
+@mixin iconSize($size){
+    &[size="#{$size}"]{
+        width: 24px*$size;
+        height: 24px*$size;
+
+        svg{
+            path {
+                transform: scale($size);
+            }
+        }
+    }
+}
