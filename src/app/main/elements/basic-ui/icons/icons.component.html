@@ -1,0 +1,51 @@
+<div class="element-icons page-layout card fullwidth table">
+    <div class="header center">
+        <h1 class="mt-16">图标集合</h1>
+    </div>
+    <div class="content-card center mb-24" fxLayout="column nowrap">
+        <h2>Notadd Logo</h2>
+        <div class="content mb-24" fxLayout="row nowrap" fxLayoutAlign="start center" fxLayoutGap="100px">
+            <mat-icon fontSet="NotaddIcon" fontIcon="icon-logo"></mat-icon>
+            <mat-icon fontSet="NotaddIcon" fontIcon="icon-logo" color="primary"></mat-icon>
+            <mat-icon fontSet="NotaddIcon" fontIcon="icon-logo" color="accent"></mat-icon>
+            <mat-icon fontSet="NotaddIcon" fontIcon="icon-logo" color="warn"></mat-icon>
+        </div>
+    </div>
+
+    <div class="content-card center mb-24" fxLayout="column nowrap">
+        <h2>Base Icons</h2>
+        <div class="secondary-text">use Material Icons. view on <a href="https://material.io/tools/icons" target="_blank">https://material.io/tools/icons</a> .</div>
+        <mat-form-field class="w-100-p">
+            <input matInput placeholder="Search an icon..." (input)="filterBaseIcons($event)">
+        </mat-form-field>
+        <ng-container *ngFor="let category of filteredBaseIcons; let last = last;">
+            <div class="h3 mt-16">{{category.name}}</div>
+            <div fxLayout="row wrap">
+                <div class="icon-holder m-16" fxLayout="column" fxLayoutAlign="center center"
+                     *ngFor="let icon of category.icons">
+                    <mat-icon class="secondary-text s-48">{{icon.id}}</mat-icon>
+                    <div class="icon-name secondary-text mt-8">{{icon.id}}</div>
+                </div>
+            </div>
+            <div class="m-32 secondary-text" *ngIf="category.icons.length === 0">No icon found.</div>
+            <mat-divider *ngIf="!last"></mat-divider>
+        </ng-container>
+    </div>
+
+    <div class="content-card center mb-24" fxLayout="column nowrap">
+        <h2>Svg Icons</h2>
+        <div class="secondary-text">use Material Design Icons. view on <a href="https://materialdesignicons.com" target="_blank">https://materialdesignicons.com/</a></div>
+        <mat-form-field class="w-100-p">
+            <input matInput placeholder="Search an icon..." (input)="filterSvgIcons($event)">
+        </mat-form-field>
+        <div fxLayout="row wrap">
+            <div class="icon-holder m-16" fxLayout="column" fxLayoutAlign="center center"
+                 *ngFor="let icon of filteredMdiIcons">
+                <mat-icon size="2" svgIcon="mdi:{{icon.name}}" class="secondary-text s-48"></mat-icon>
+                <div class="icon-name secondary-text mt-8">{{icon.name}}</div>
+            </div>
+        </div>
+        <div class="m-32 secondary-text" *ngIf="filteredMdiIcons?.length === 0">No icon found.</div>
+    </div>
+
+</div>

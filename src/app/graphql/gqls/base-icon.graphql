@@ -1,0 +1,11 @@
+query baseIcon {
+    baseIcon {
+        categories {
+            icons {
+                id
+            }
+            name
+        }
+    }
+
+}

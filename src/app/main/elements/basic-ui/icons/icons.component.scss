@@ -1,0 +1,23 @@
+@import "src/@notadd/scss/notadd";
+
+.element-icons {
+    .content-card {
+        background-color: #FFF;
+    }
+
+    .icon-holder {
+        width: 112px;
+        height: 120px;
+
+        .icon-name {
+            font-size: 12px;
+            word-wrap: break-word;
+            width: 100px;
+            text-align: center;
+        }
+
+        mat-icon {
+            @include iconSize(2);
+        }
+    }
+}

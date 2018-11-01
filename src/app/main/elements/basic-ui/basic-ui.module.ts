@@ -6,12 +6,15 @@ import {
     MatDividerModule,
     MatIconModule,
     MatCardModule,
+    MatFormFieldModule,
+    MatInputModule
 } from '@angular/material';
 
 import { NotaddSharedModule } from '@notadd/shared.module';
 
 import { ButtonsComponent } from './buttons/buttons.component';
 import { CardsComponent } from './cards/cards.component';
+import { IconsComponent } from './icons/icons.component';
 
 const routes: Routes = [
     {
@@ -34,6 +37,14 @@ const routes: Routes = [
             title: '卡片',
             hasContentHeader: true
         }
+    },
+    {
+        path: 'icons',
+        component: IconsComponent,
+        data: {
+            title: '图标',
+            hasContentHeader: false
+        }
     }
 ];
 
@@ -43,13 +54,16 @@ const routes: Routes = [
         MatDividerModule,
         MatIconModule,
         MatCardModule,
+        MatFormFieldModule,
+        MatInputModule,
         NotaddSharedModule,
 
         RouterModule.forChild(routes)
     ],
     declarations: [
         ButtonsComponent,
-        CardsComponent
+        CardsComponent,
+        IconsComponent
     ]
 })
 export class BasicUiModule {

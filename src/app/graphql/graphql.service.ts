@@ -1,8 +1,12 @@
 /* tslint:disable */
 
-/** the schema allows the following query: */
+/** The `Upload` scalar type represents a file upload promise that resolves an object containing `stream`, `filename`, `mimetype` and `encoding`. */
+export type Upload = any;
+
 export interface Query {
   widgets?: (Widget | null)[] | null;
+  baseIcon?: BaseIcon | null;
+  mdiIcons?: (MdiIcon | null)[] | null;
 }
 
 export interface Widget {
@@ -15,6 +19,67 @@ export interface Widget {
 export interface ChartData {
   date?: (string | null)[] | null;
   amount?: (number | null)[] | null;
+}
+
+export interface BaseIcon {
+  categories?: (Category | null)[] | null;
+}
+
+export interface Category {
+  icons?: (Icon | null)[] | null;
+  name?: string | null;
+}
+
+export interface Icon {
+  id?: string | null;
+}
+
+export interface MdiIcon {
+  name?: string | null;
+}
+
+export enum CacheControlScope {
+  PUBLIC = "PUBLIC",
+  PRIVATE = "PRIVATE"
+}
+
+export namespace BaseIcon {
+  export type Variables = {};
+
+  export type Query = {
+    __typename?: "Query";
+    baseIcon?: BaseIcon | null;
+  };
+
+  export type BaseIcon = {
+    __typename?: "BaseIcon";
+    categories?: (Categories | null)[] | null;
+  };
+
+  export type Categories = {
+    __typename?: "Category";
+    icons?: (Icons | null)[] | null;
+    name?: string | null;
+  };
+
+  export type Icons = {
+    __typename?: "Icon";
+    id?: string | null;
+  };
+}
+
+export namespace MdiIcons {
+  export type Variables = {};
+
+  export type Query = {
+    __typename?: "Query";
+    mdiIcons?: (MdiIcons | null)[] | null;
+  };
+
+  export type MdiIcons = {
+    __typename?: "MDIIcon";
+    name?: string | null;
+  };
 }
 
 export namespace Widgets {
@@ -46,6 +111,41 @@ import * as Apollo from "apollo-angular";
 
 import gql from "graphql-tag";
 
+@Injectable({
+  providedIn: "root"
+})
+export class BaseIconGQL extends Apollo.Query<
+  BaseIcon.Query,
+  BaseIcon.Variables
+> {
+  document: any = gql`
+    query baseIcon {
+      baseIcon {
+        categories {
+          icons {
+            id
+          }
+          name
+        }
+      }
+    }
+  `;
+}
+@Injectable({
+  providedIn: "root"
+})
+export class MdiIconsGQL extends Apollo.Query<
+  MdiIcons.Query,
+  MdiIcons.Variables
+> {
+  document: any = gql`
+    query mdiIcons {
+      mdiIcons {
+        name
+      }
+    }
+  `;
+}
 @Injectable({
   providedIn: "root"
 })
