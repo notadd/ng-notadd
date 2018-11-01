@@ -1,12 +1,10 @@
 import { NgModule } from '@angular/core';
 import { MatIconRegistry, MatIconModule } from '@angular/material';
 import { DomSanitizer } from '@angular/platform-browser';
-import { HttpModule } from '@angular/http';
 
 @NgModule({
     imports: [
-        MatIconModule,
-        HttpModule
+        MatIconModule
     ]
 })
 export class NotaddMatIconsModule {
