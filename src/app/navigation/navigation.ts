@@ -55,6 +55,12 @@ export const navigation: Array<NotaddNavigationItem> = [
                         title: '图标',
                         type: 'item',
                         url: '/elements/basic-ui/icons'
+                    },
+                    {
+                        id: 'list',
+                        title: '列表',
+                        type: 'item',
+                        url: '/elements/basic-ui/list'
                     }
                 ]
             }

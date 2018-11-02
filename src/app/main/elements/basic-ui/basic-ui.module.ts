@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
 
 import {
     MatButtonModule,
@@ -7,7 +6,8 @@ import {
     MatIconModule,
     MatCardModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatListModule,
 } from '@angular/material';
 
 import { NotaddSharedModule } from '@notadd/shared.module';
@@ -15,38 +15,9 @@ import { NotaddSharedModule } from '@notadd/shared.module';
 import { ButtonsComponent } from './buttons/buttons.component';
 import { CardsComponent } from './cards/cards.component';
 import { IconsComponent } from './icons/icons.component';
+import { ListComponent } from './list/list.component';
 
-const routes: Routes = [
-    {
-        path: '',
-        redirectTo: 'buttons',
-        pathMatch: 'full',
-    },
-    {
-        path: 'buttons',
-        component: ButtonsComponent,
-        data: {
-            title: '按钮',
-            hasContentHeader: true
-        }
-    },
-    {
-        path: 'cards',
-        component: CardsComponent,
-        data: {
-            title: '卡片',
-            hasContentHeader: true
-        }
-    },
-    {
-        path: 'icons',
-        component: IconsComponent,
-        data: {
-            title: '图标',
-            hasContentHeader: false
-        }
-    }
-];
+import { BasicUiRoutingModule } from './basic-ui-routing.module';
 
 @NgModule({
     imports: [
@@ -56,14 +27,17 @@ const routes: Routes = [
         MatCardModule,
         MatFormFieldModule,
         MatInputModule,
+        MatListModule,
+
         NotaddSharedModule,
 
-        RouterModule.forChild(routes)
+        BasicUiRoutingModule
     ],
     declarations: [
         ButtonsComponent,
         CardsComponent,
-        IconsComponent
+        IconsComponent,
+        ListComponent
     ]
 })
 export class BasicUiModule {

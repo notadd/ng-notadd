@@ -1,0 +1,17 @@
+.element-list {
+    .content {
+        background-color: #FFF;
+
+        mat-list-item {
+            img.item-preview {
+                width: 35px;
+                height: 35px;
+                margin-left: 5px;
+
+                &:hover {
+                    transform: scale(2);
+                }
+            }
+        }
+    }
+}
