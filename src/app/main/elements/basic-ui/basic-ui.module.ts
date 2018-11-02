@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import {
     MatButtonModule,
@@ -10,7 +11,9 @@ import {
     MatListModule,
     MatBadgeModule,
     MatProgressBarModule,
-    MatButtonToggleModule
+    MatButtonToggleModule,
+    MatChipsModule,
+    MatAutocompleteModule
 } from '@angular/material';
 
 import { NotaddSharedModule } from '@notadd/shared.module';
@@ -24,6 +27,7 @@ import { BasicUiRoutingModule } from './basic-ui-routing.module';
 import { BadgesComponent } from './badges/badges.component';
 import { ProgressBarComponent } from './progress-bar/progress-bar.component';
 import { ButtonToggleComponent } from './button-toggle/button-toggle.component';
+import { ChipsComponent } from './chips/chips.component';
 
 @NgModule({
     imports: [
@@ -37,6 +41,11 @@ import { ButtonToggleComponent } from './button-toggle/button-toggle.component';
         MatBadgeModule,
         MatProgressBarModule,
         MatButtonToggleModule,
+        MatChipsModule,
+        MatAutocompleteModule,
+
+        FormsModule,
+        ReactiveFormsModule,
 
         NotaddSharedModule,
 
@@ -49,7 +58,8 @@ import { ButtonToggleComponent } from './button-toggle/button-toggle.component';
         ListComponent,
         BadgesComponent,
         ProgressBarComponent,
-        ButtonToggleComponent
+        ButtonToggleComponent,
+        ChipsComponent
     ]
 })
 export class BasicUiModule {

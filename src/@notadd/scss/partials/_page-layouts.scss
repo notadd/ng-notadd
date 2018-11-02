@@ -157,7 +157,7 @@ $card-header-height-without-toolbar: $card-header-height - $card-toolbar-height;
                 margin-left: 30px;
             }
             &>.content {
-                margin: 30px;
+                margin: 0 30px 30px 30px;
             }
         }
     }

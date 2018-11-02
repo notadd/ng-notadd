@@ -8,6 +8,7 @@ import { ListComponent } from './list/list.component';
 import { BadgesComponent } from './badges/badges.component';
 import { ProgressBarComponent } from './progress-bar/progress-bar.component';
 import { ButtonToggleComponent } from './button-toggle/button-toggle.component';
+import { ChipsComponent } from './chips/chips.component';
 
 const routes: Routes = [
     {
@@ -68,6 +69,14 @@ const routes: Routes = [
         component: ButtonToggleComponent,
         data: {
             title: '开关按钮',
+            hasContentHeader: true
+        }
+    },
+    {
+        path: 'chips',
+        component: ChipsComponent,
+        data: {
+            title: '标签',
             hasContentHeader: true
         }
     }

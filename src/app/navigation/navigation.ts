@@ -79,6 +79,12 @@ export const navigation: Array<NotaddNavigationItem> = [
                         title: '开关按钮',
                         type: 'item',
                         url: '/elements/basic-ui/button-toggle'
+                    },
+                    {
+                        id: 'chips',
+                        title: '标签',
+                        type: 'item',
+                        url: '/elements/basic-ui/chips'
                     }
                 ]
             }
