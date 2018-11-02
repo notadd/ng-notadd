@@ -61,6 +61,12 @@ export const navigation: Array<NotaddNavigationItem> = [
                         title: '列表',
                         type: 'item',
                         url: '/elements/basic-ui/list'
+                    },
+                    {
+                        id: 'badges',
+                        title: '徽章',
+                        type: 'item',
+                        url: '/elements/basic-ui/badges'
                     }
                 ]
             }

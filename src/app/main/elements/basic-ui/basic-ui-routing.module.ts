@@ -5,6 +5,7 @@ import { ButtonsComponent } from './buttons/buttons.component';
 import { CardsComponent } from './cards/cards.component';
 import { IconsComponent } from './icons/icons.component';
 import { ListComponent } from './list/list.component';
+import { BadgesComponent } from './badges/badges.component';
 
 const routes: Routes = [
     {
@@ -41,6 +42,14 @@ const routes: Routes = [
         component: ListComponent,
         data: {
             title: '列表',
+            hasContentHeader: true
+        }
+    },
+    {
+        path: 'badges',
+        component: BadgesComponent,
+        data: {
+            title: '徽章',
             hasContentHeader: true
         }
     }

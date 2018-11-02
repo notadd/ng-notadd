@@ -8,6 +8,7 @@ import {
     MatFormFieldModule,
     MatInputModule,
     MatListModule,
+    MatBadgeModule
 } from '@angular/material';
 
 import { NotaddSharedModule } from '@notadd/shared.module';
@@ -18,6 +19,7 @@ import { IconsComponent } from './icons/icons.component';
 import { ListComponent } from './list/list.component';
 
 import { BasicUiRoutingModule } from './basic-ui-routing.module';
+import { BadgesComponent } from './badges/badges.component';
 
 @NgModule({
     imports: [
@@ -28,6 +30,7 @@ import { BasicUiRoutingModule } from './basic-ui-routing.module';
         MatFormFieldModule,
         MatInputModule,
         MatListModule,
+        MatBadgeModule,
 
         NotaddSharedModule,
 
@@ -37,7 +40,8 @@ import { BasicUiRoutingModule } from './basic-ui-routing.module';
         ButtonsComponent,
         CardsComponent,
         IconsComponent,
-        ListComponent
+        ListComponent,
+        BadgesComponent
     ]
 })
 export class BasicUiModule {
