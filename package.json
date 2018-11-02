@@ -10,7 +10,8 @@
         "e2e": "ng e2e",
         "graphql": "npm run graphql:introspect && npm run graphql:generate",
         "graphql:generate": "CODEGEN_RESOLVERS=false gql-gen --schema graphql.schema.json --template graphql-codegen-apollo-angular-template --out src/app/graphql/graphql.service.ts src/app/graphql/gqls/*.graphql",
-        "graphql:introspect": "gql-gen --schema http://localhost:3000/graphql --template graphql-codegen-introspection-template --out graphql.schema.json"
+        "graphql:introspect": "gql-gen --schema http://localhost:3000/graphql --template graphql-codegen-introspection-template --out graphql.schema.json",
+        "deploy": "ng build --prod --base-href /ng-notadd/ && angular-cli-ghpages --dir ./dist/ng-notadd/"
     },
     "private": true,
     "dependencies": {
@@ -54,6 +55,7 @@
         "@types/jasmine": "~2.8.9",
         "@types/jasminewd2": "~2.0.5",
         "@types/node": "~10.12.0",
+        "angular-cli-ghpages": "^0.5.3",
         "codelyzer": "~4.5.0",
         "graphql-code-generator": "^0.12.6",
         "graphql-codegen-apollo-angular-template": "^0.12.6",
