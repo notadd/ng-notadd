@@ -1,0 +1,66 @@
+<div class="element-button-toggle page-layout card fullwidth">
+    <div class="content center mt-32" fxLayout="column nowrap">
+        <h3>Basic Button-toggles</h3>
+        <div class="content-row" fxLayout="row nowrap" fxLayoutAlign="start center" fxLayoutGap="20px">
+            <mat-button-toggle-group class="info" name="fontStyle" aria-label="Font Style">
+                <mat-button-toggle value="bold">Bold</mat-button-toggle>
+                <mat-button-toggle value="italic">Italic</mat-button-toggle>
+                <mat-button-toggle value="underline">Underline</mat-button-toggle>
+            </mat-button-toggle-group>
+        </div>
+
+        <mat-divider></mat-divider>
+
+        <h3>Checked & Disabled Button-toggles</h3>
+        <div class="content-row" fxLayout="row nowrap" fxLayoutAlign="start center" fxLayoutGap="20px">
+            <mat-button-toggle-group name="fontAlign" aria-label="Font Align">
+                <mat-button-toggle value="left">
+                    <mat-icon color="accent">format_align_left</mat-icon>
+                </mat-button-toggle>
+                <mat-button-toggle value="center" checked="true">
+                    <mat-icon color="accent">format_align_center</mat-icon>
+                </mat-button-toggle>
+                <mat-button-toggle value="right">
+                    <mat-icon color="accent">format_align_right</mat-icon>
+                </mat-button-toggle>
+                <mat-button-toggle value="justify" disabled>
+                    <mat-icon color="accent">format_align_justify</mat-icon>
+                </mat-button-toggle>
+            </mat-button-toggle-group>
+        </div>
+
+        <mat-divider></mat-divider>
+
+        <h3>Multiple Selection Button-toggles</h3>
+        <div class="content-row" fxLayout="row nowrap" fxLayoutAlign="start center" fxLayoutGap="20px">
+            <mat-button-toggle-group multiple name="fontStyle" aria-label="Font Align">
+                <mat-button-toggle value="bold">
+                    <mat-icon color="warn">format_bold</mat-icon>
+                </mat-button-toggle>
+                <mat-button-toggle value="italic" checked="true">
+                    <mat-icon color="warn">format_italic</mat-icon>
+                </mat-button-toggle>
+                <mat-button-toggle value="underlined" checked="true">
+                    <mat-icon color="warn">format_underlined</mat-icon>
+                </mat-button-toggle>
+            </mat-button-toggle-group>
+        </div>
+
+        <mat-divider></mat-divider>
+
+        <h3>Vertical Button-toggles</h3>
+        <div class="content-row" fxLayout="row nowrap" fxLayoutAlign="start center" fxLayoutGap="20px">
+            <mat-button-toggle-group vertical name="fontStyle" aria-label="Font Align">
+                <mat-button-toggle value="bold">
+                    <mat-icon color="warn">format_bold</mat-icon>
+                </mat-button-toggle>
+                <mat-button-toggle value="italic" checked="true">
+                    <mat-icon color="warn">format_italic</mat-icon>
+                </mat-button-toggle>
+                <mat-button-toggle value="underlined">
+                    <mat-icon color="warn">format_underlined</mat-icon>
+                </mat-button-toggle>
+            </mat-button-toggle-group>
+        </div>
+    </div>
+</div>

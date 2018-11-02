@@ -7,6 +7,7 @@ import { IconsComponent } from './icons/icons.component';
 import { ListComponent } from './list/list.component';
 import { BadgesComponent } from './badges/badges.component';
 import { ProgressBarComponent } from './progress-bar/progress-bar.component';
+import { ButtonToggleComponent } from './button-toggle/button-toggle.component';
 
 const routes: Routes = [
     {
@@ -59,6 +60,14 @@ const routes: Routes = [
         component: ProgressBarComponent,
         data: {
             title: '进度条',
+            hasContentHeader: true
+        }
+    },
+    {
+        path: 'button-toggle',
+        component: ButtonToggleComponent,
+        data: {
+            title: '开关按钮',
             hasContentHeader: true
         }
     }

@@ -9,7 +9,8 @@ import {
     MatInputModule,
     MatListModule,
     MatBadgeModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    MatButtonToggleModule
 } from '@angular/material';
 
 import { NotaddSharedModule } from '@notadd/shared.module';
@@ -22,6 +23,7 @@ import { ListComponent } from './list/list.component';
 import { BasicUiRoutingModule } from './basic-ui-routing.module';
 import { BadgesComponent } from './badges/badges.component';
 import { ProgressBarComponent } from './progress-bar/progress-bar.component';
+import { ButtonToggleComponent } from './button-toggle/button-toggle.component';
 
 @NgModule({
     imports: [
@@ -34,6 +36,7 @@ import { ProgressBarComponent } from './progress-bar/progress-bar.component';
         MatListModule,
         MatBadgeModule,
         MatProgressBarModule,
+        MatButtonToggleModule,
 
         NotaddSharedModule,
 
@@ -45,7 +48,8 @@ import { ProgressBarComponent } from './progress-bar/progress-bar.component';
         IconsComponent,
         ListComponent,
         BadgesComponent,
-        ProgressBarComponent
+        ProgressBarComponent,
+        ButtonToggleComponent
     ]
 })
 export class BasicUiModule {

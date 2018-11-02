@@ -1,0 +1,17 @@
+.element-button-toggle {
+    .content {
+        background-color: #FFF;
+    }
+    .content-row {
+        padding: 20px 0;
+
+        .info>.mat-button-toggle {
+            background-color: #03A9F4;
+            color: #FFF;
+
+            &.mat-button-toggle-checked {
+                background-color: #1089f3;
+            }
+        }
+    }
+}

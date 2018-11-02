@@ -73,6 +73,12 @@ export const navigation: Array<NotaddNavigationItem> = [
                         title: '进度条',
                         type: 'item',
                         url: '/elements/basic-ui/progress-bar'
+                    },
+                    {
+                        id: 'button-toggle',
+                        title: '开关按钮',
+                        type: 'item',
+                        url: '/elements/basic-ui/button-toggle'
                     }
                 ]
             }
