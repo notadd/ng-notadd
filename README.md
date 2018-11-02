@@ -1,11 +1,27 @@
+# ng-notadd
+
 基于 Angular7  Material2  的中后台解决方案
 
+#### 相关链接
+
+[DEMO](https://notadd.github.io/ng-notadd)
+
+[ng-notadd-mock-server](https://github.com/notadd/ng-notadd-mock-server)
+
+## Quick start
+
+```bash
+    git clone https://github.com/notadd/ng-notadd.git
+    
+    cd ng-notadd
+    
+    npm install
+    npm start
+    # or use ng cli
+    ng serve
+```
+
 ## Roadmap
-
-**0.8**
-- [x] material2 基础组件
-- [x] 主题切换
-
 
 **0.9**
 - [ ] i18n 多语言支持
