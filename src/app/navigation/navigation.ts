@@ -85,6 +85,12 @@ export const navigation: Array<NotaddNavigationItem> = [
                         title: '标签',
                         type: 'item',
                         url: '/elements/basic-ui/chips'
+                    },
+                    {
+                        id: 'expansion-panel',
+                        title: '可展开面板',
+                        type: 'item',
+                        url: '/elements/basic-ui/expansion-panel'
                     }
                 ]
             }

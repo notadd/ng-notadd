@@ -13,7 +13,10 @@ import {
     MatProgressBarModule,
     MatButtonToggleModule,
     MatChipsModule,
-    MatAutocompleteModule
+    MatAutocompleteModule,
+    MatExpansionModule,
+    MatDatepickerModule,
+    MatNativeDateModule
 } from '@angular/material';
 
 import { NotaddSharedModule } from '@notadd/shared.module';
@@ -28,6 +31,7 @@ import { BadgesComponent } from './badges/badges.component';
 import { ProgressBarComponent } from './progress-bar/progress-bar.component';
 import { ButtonToggleComponent } from './button-toggle/button-toggle.component';
 import { ChipsComponent } from './chips/chips.component';
+import { ExpansionPanelComponent } from './expansion-panel/expansion-panel.component';
 
 @NgModule({
     imports: [
@@ -43,6 +47,9 @@ import { ChipsComponent } from './chips/chips.component';
         MatButtonToggleModule,
         MatChipsModule,
         MatAutocompleteModule,
+        MatExpansionModule,
+        MatDatepickerModule,
+        MatNativeDateModule,
 
         FormsModule,
         ReactiveFormsModule,
@@ -59,7 +66,8 @@ import { ChipsComponent } from './chips/chips.component';
         BadgesComponent,
         ProgressBarComponent,
         ButtonToggleComponent,
-        ChipsComponent
+        ChipsComponent,
+        ExpansionPanelComponent
     ]
 })
 export class BasicUiModule {

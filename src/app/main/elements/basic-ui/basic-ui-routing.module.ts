@@ -9,6 +9,7 @@ import { BadgesComponent } from './badges/badges.component';
 import { ProgressBarComponent } from './progress-bar/progress-bar.component';
 import { ButtonToggleComponent } from './button-toggle/button-toggle.component';
 import { ChipsComponent } from './chips/chips.component';
+import { ExpansionPanelComponent } from './expansion-panel/expansion-panel.component';
 
 const routes: Routes = [
     {
@@ -77,6 +78,14 @@ const routes: Routes = [
         component: ChipsComponent,
         data: {
             title: '标签',
+            hasContentHeader: true
+        }
+    },
+    {
+        path: 'expansion-panel',
+        component: ExpansionPanelComponent,
+        data: {
+            title: '可展开面板',
             hasContentHeader: true
         }
     }
