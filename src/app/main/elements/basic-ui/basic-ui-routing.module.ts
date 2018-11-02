@@ -10,6 +10,7 @@ import { ProgressBarComponent } from './progress-bar/progress-bar.component';
 import { ButtonToggleComponent } from './button-toggle/button-toggle.component';
 import { ChipsComponent } from './chips/chips.component';
 import { ExpansionPanelComponent } from './expansion-panel/expansion-panel.component';
+import { TabsComponent } from './tabs/tabs.component';
 
 const routes: Routes = [
     {
@@ -86,6 +87,14 @@ const routes: Routes = [
         component: ExpansionPanelComponent,
         data: {
             title: '可展开面板',
+            hasContentHeader: true
+        }
+    },
+    {
+        path: 'tabs',
+        component: TabsComponent,
+        data: {
+            title: '选项卡',
             hasContentHeader: true
         }
     }
