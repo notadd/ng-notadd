@@ -89,4 +89,8 @@ export class ToolbarComponent implements OnInit, OnDestroy {
 
         this.configService.config = config;
     }
+
+    search(event): void {
+        console.log(event.value);
+    }
 }
