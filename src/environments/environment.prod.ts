@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+    production: true,
+    apiUrl: 'https://ng-notadd.app.ibenchu.pw/graphql'
 };
