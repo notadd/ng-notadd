@@ -1,0 +1,47 @@
+<div class="element-progress-bar page-layout card">
+
+    <h2 class="header">Progress Mode</h2>
+
+    <div class="content p-24" fxLayout="column nowrap" fxFlex="1 0 0%" fxLayoutGap="50px">
+        <div>
+            <div class="h3">Determinate</div>
+            <div class="secondary-text font-size-14">Operations where the percentage of the operation complete is known should use the determinate indicator.</div>
+        </div>
+        <mat-progress-bar mode="determinate" value="46" color="primary"></mat-progress-bar>
+        <mat-progress-bar mode="determinate" value="46" color="accent"></mat-progress-bar>
+        <mat-progress-bar mode="determinate" value="46" color="warn"></mat-progress-bar>
+    </div>
+
+    <div class="content p-24" fxLayout="column nowrap" fxFlex="1 0 0%" fxLayoutGap="50px">
+        <div>
+            <div class="h3">Indeterminate</div>
+            <div class="secondary-text font-size-14">Operations where the user is asked to wait while something finishes and it’s not necessary to indicate how long it will take should use the indeterminate indicator.</div>
+        </div>
+        <mat-progress-bar mode="indeterminate" color="primary"></mat-progress-bar>
+        <mat-progress-bar mode="indeterminate" color="accent"></mat-progress-bar>
+        <mat-progress-bar mode="indeterminate" color="warn"></mat-progress-bar>
+    </div>
+
+    <div class="content p-24" fxLayout="column nowrap" fxFlex="1 0 0%" fxLayoutGap="50px">
+        <div>
+            <div class="h3">Buffer</div>
+            <div class="secondary-text font-size-14">Operations where the user wants to indicate some activity or loading from the server, use the buffer indicator.</div>
+        </div>
+        <mat-progress-bar mode="buffer" color="primary"></mat-progress-bar>
+        <mat-progress-bar mode="buffer" color="accent"></mat-progress-bar>
+        <mat-progress-bar mode="buffer" color="warn"></mat-progress-bar>
+    </div>
+
+    <div class="content" fxLayout="row nowrap" fxLayoutAlign="space-between start" fxLayoutGap="30px">
+        <div class="p-24" fxLayout="column nowrap" fxFlex="1 0 0%" fxLayoutGap="50px">
+            <div>
+                <div class="h3">Query</div>
+                <div class="secondary-text font-size-14">For situations where the user wants to indicate pre-loading (until the loading can actually be made), use the query indicator.</div>
+            </div>
+            <mat-progress-bar mode="query" color="primary"></mat-progress-bar>
+            <mat-progress-bar mode="query" color="accent"></mat-progress-bar>
+            <mat-progress-bar mode="query" color="warn"></mat-progress-bar>
+        </div>
+    </div>
+
+</div>

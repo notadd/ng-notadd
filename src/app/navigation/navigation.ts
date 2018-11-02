@@ -67,6 +67,12 @@ export const navigation: Array<NotaddNavigationItem> = [
                         title: '徽章',
                         type: 'item',
                         url: '/elements/basic-ui/badges'
+                    },
+                    {
+                        id: 'progress-bar',
+                        title: '进度条',
+                        type: 'item',
+                        url: '/elements/basic-ui/progress-bar'
                     }
                 ]
             }

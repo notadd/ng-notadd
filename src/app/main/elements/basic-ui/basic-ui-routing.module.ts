@@ -6,6 +6,7 @@ import { CardsComponent } from './cards/cards.component';
 import { IconsComponent } from './icons/icons.component';
 import { ListComponent } from './list/list.component';
 import { BadgesComponent } from './badges/badges.component';
+import { ProgressBarComponent } from './progress-bar/progress-bar.component';
 
 const routes: Routes = [
     {
@@ -50,6 +51,14 @@ const routes: Routes = [
         component: BadgesComponent,
         data: {
             title: '徽章',
+            hasContentHeader: true
+        }
+    },
+    {
+        path: 'progress-bar',
+        component: ProgressBarComponent,
+        data: {
+            title: '进度条',
             hasContentHeader: true
         }
     }

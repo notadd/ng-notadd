@@ -8,7 +8,8 @@ import {
     MatFormFieldModule,
     MatInputModule,
     MatListModule,
-    MatBadgeModule
+    MatBadgeModule,
+    MatProgressBarModule
 } from '@angular/material';
 
 import { NotaddSharedModule } from '@notadd/shared.module';
@@ -20,6 +21,7 @@ import { ListComponent } from './list/list.component';
 
 import { BasicUiRoutingModule } from './basic-ui-routing.module';
 import { BadgesComponent } from './badges/badges.component';
+import { ProgressBarComponent } from './progress-bar/progress-bar.component';
 
 @NgModule({
     imports: [
@@ -31,6 +33,7 @@ import { BadgesComponent } from './badges/badges.component';
         MatInputModule,
         MatListModule,
         MatBadgeModule,
+        MatProgressBarModule,
 
         NotaddSharedModule,
 
@@ -41,7 +44,8 @@ import { BadgesComponent } from './badges/badges.component';
         CardsComponent,
         IconsComponent,
         ListComponent,
-        BadgesComponent
+        BadgesComponent,
+        ProgressBarComponent
     ]
 })
 export class BasicUiModule {
