@@ -97,6 +97,12 @@ export const navigation: Array<NotaddNavigationItem> = [
                         title: '选项卡',
                         type: 'item',
                         url: '/elements/basic-ui/tabs'
+                    },
+                    {
+                        id: 'stepper',
+                        title: '步进器',
+                        type: 'item',
+                        url: '/elements/basic-ui/stepper'
                     }
                 ]
             }

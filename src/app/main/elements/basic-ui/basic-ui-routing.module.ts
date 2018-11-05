@@ -11,6 +11,7 @@ import { ButtonToggleComponent } from './button-toggle/button-toggle.component';
 import { ChipsComponent } from './chips/chips.component';
 import { ExpansionPanelComponent } from './expansion-panel/expansion-panel.component';
 import { TabsComponent } from './tabs/tabs.component';
+import { StepperComponent } from './stepper/stepper.component';
 
 const routes: Routes = [
     {
@@ -95,6 +96,14 @@ const routes: Routes = [
         component: TabsComponent,
         data: {
             title: '选项卡',
+            hasContentHeader: true
+        }
+    },
+    {
+        path: 'stepper',
+        component: StepperComponent,
+        data: {
+            title: '步进器',
             hasContentHeader: true
         }
     }

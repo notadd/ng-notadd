@@ -17,7 +17,8 @@ import {
     MatExpansionModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatTabsModule
+    MatTabsModule,
+    MatStepperModule
 } from '@angular/material';
 
 import { NotaddSharedModule } from '@notadd/shared.module';
@@ -34,6 +35,7 @@ import { ButtonToggleComponent } from './button-toggle/button-toggle.component';
 import { ChipsComponent } from './chips/chips.component';
 import { ExpansionPanelComponent } from './expansion-panel/expansion-panel.component';
 import { TabsComponent } from './tabs/tabs.component';
+import { StepperComponent } from './stepper/stepper.component';
 
 @NgModule({
     imports: [
@@ -53,6 +55,7 @@ import { TabsComponent } from './tabs/tabs.component';
         MatDatepickerModule,
         MatNativeDateModule,
         MatTabsModule,
+        MatStepperModule,
 
         FormsModule,
         ReactiveFormsModule,
@@ -71,7 +74,8 @@ import { TabsComponent } from './tabs/tabs.component';
         ButtonToggleComponent,
         ChipsComponent,
         ExpansionPanelComponent,
-        TabsComponent
+        TabsComponent,
+        StepperComponent
     ]
 })
 export class BasicUiModule {
