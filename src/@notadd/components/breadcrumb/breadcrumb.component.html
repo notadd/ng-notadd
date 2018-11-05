@@ -1,12 +1,10 @@
 <div class="breadcrumb">
     <ol class="breadcrumb-list">
         <li class="breadcrumb-item"
-            *ngFor="let breadcrumb of breadcrumbs; let last = last">
+            *ngFor="let breadcrumb of breadcrumbs; let last = last"
+            [ngClass]="{'active': last}">
             <a *ngIf="!last" class="mat-accent" [routerLink]="[breadcrumb.url, breadcrumb.params]">{{ breadcrumb.label }}</a>
             <span *ngIf="last">{{ breadcrumb.label }}</span>
         </li>
     </ol>
-    <div class="current-breadcrumb">
-        {{ breadcrumbs[breadcrumbs.length - 1]?.label }}
-    </div>
 </div>
