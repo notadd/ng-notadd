@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-const routs: Routes = [
+const routes: Routes = [
     {
         path: '',
         redirectTo: 'basic-ui',
@@ -16,7 +16,7 @@ const routs: Routes = [
 
 @NgModule({
   imports: [
-      RouterModule.forChild(routs)
+      RouterModule.forChild(routes)
   ],
   declarations: []
 })
