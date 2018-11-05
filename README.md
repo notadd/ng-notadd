@@ -2,6 +2,14 @@
 
 基于 Angular7  Material2  的中后台解决方案
 
+### 技术栈
+
+- Typescript
+- Angular
+- Material2
+- rxjs
+- Graphql
+
 #### 相关链接
 
 [DEMO](https://notadd.github.io/ng-notadd)
