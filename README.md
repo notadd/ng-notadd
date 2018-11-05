@@ -18,11 +18,22 @@
 
 ## Quick start
 
+#### clone & run mock-server
+```bash
+    git clone https://github.com/notadd/ng-notadd-mock-server.git
+    
+    cd ng-notadd-mock-server
+    
+    npm install
+    npm start
+```
+
+#### clone & run ng-notadd
 ```bash
     git clone https://github.com/notadd/ng-notadd.git
-    
+     
     cd ng-notadd
-    
+     
     npm install
     npm start
     # or use ng cli
