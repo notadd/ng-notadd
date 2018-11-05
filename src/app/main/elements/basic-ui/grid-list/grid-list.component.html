@@ -1,0 +1,43 @@
+<div class="element-grid-list page-layout simple fullwidth">
+    <h3 class="pl-32">Basic Grid List</h3>
+    <div class="content mb-32">
+        <mat-grid-list cols="2" rowHeight="2:1">
+            <mat-grid-tile>
+                <img src="https://i.pinimg.com/564x/9c/57/f7/9c57f75b5b08a0c518595f2456dfd532.jpg">
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <img src="https://i.pinimg.com/564x/0e/36/16/0e36167be99f4ab0309e60319d323ba2.jpg">
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <img src="https://i.pinimg.com/564x/0b/d9/e2/0bd9e272c059e5dcb2ef0eee52720a13.jpg">
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <img src="https://i.pinimg.com/564x/aa/fd/8d/aafd8dce902106108ee2bb053ec44637.jpg">
+            </mat-grid-tile>
+        </mat-grid-list>
+    </div>
+
+    <h3 class="pl-32">Rowspan & Colspan Grid List</h3>
+    <div class="content">
+        <mat-grid-list cols="4" rowHeight="600px">
+            <mat-grid-tile [rowspan]="2">
+                <img src="https://i.pinimg.com/564x/b8/43/42/b8434218b90dbc45b7c0d8156a4131e6.jpg">
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <img src="https://i.pinimg.com/564x/29/da/12/29da12d800c0fa53ec5899e29a3fb50e.jpg">
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <img src="https://i.pinimg.com/564x/11/24/5e/11245e128eb31ecb38471a1a3b54474e.jpg">
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <img src="https://i.pinimg.com/564x/d1/7e/da/d17edaf30276ac0c1cc24cc8bf1d7c41.jpg">
+            </mat-grid-tile>
+            <mat-grid-tile [colspan]="2">
+                <img src="https://i.pinimg.com/564x/b4/8f/f5/b48ff5c6f0932cf3d34beaccd7ca7ea5.jpg">
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <img src="https://i.pinimg.com/564x/83/61/d3/8361d3cea8c217262d0ba0d9a43e4370.jpg">
+            </mat-grid-tile>
+        </mat-grid-list>
+    </div>
+</div>

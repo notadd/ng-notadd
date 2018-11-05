@@ -12,6 +12,7 @@ import { ChipsComponent } from './chips/chips.component';
 import { ExpansionPanelComponent } from './expansion-panel/expansion-panel.component';
 import { TabsComponent } from './tabs/tabs.component';
 import { StepperComponent } from './stepper/stepper.component';
+import { GridListComponent } from './grid-list/grid-list.component';
 
 const routes: Routes = [
     {
@@ -104,6 +105,14 @@ const routes: Routes = [
         component: StepperComponent,
         data: {
             title: '步进器',
+            hasContentHeader: true
+        }
+    },
+    {
+        path: 'grid-list',
+        component: GridListComponent,
+        data: {
+            title: '网格列表',
             hasContentHeader: true
         }
     }

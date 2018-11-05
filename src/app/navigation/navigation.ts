@@ -103,6 +103,12 @@ export const navigation: Array<NotaddNavigationItem> = [
                         title: '步进器',
                         type: 'item',
                         url: '/elements/basic-ui/stepper'
+                    },
+                    {
+                        id: 'grid-list',
+                        title: '网格列表',
+                        type: 'item',
+                        url: '/elements/basic-ui/grid-list'
                     }
                 ]
             }

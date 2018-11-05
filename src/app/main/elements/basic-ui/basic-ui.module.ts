@@ -18,7 +18,8 @@ import {
     MatDatepickerModule,
     MatNativeDateModule,
     MatTabsModule,
-    MatStepperModule
+    MatStepperModule,
+    MatGridListModule
 } from '@angular/material';
 
 import { NotaddSharedModule } from '@notadd/shared.module';
@@ -36,6 +37,7 @@ import { ChipsComponent } from './chips/chips.component';
 import { ExpansionPanelComponent } from './expansion-panel/expansion-panel.component';
 import { TabsComponent } from './tabs/tabs.component';
 import { StepperComponent } from './stepper/stepper.component';
+import { GridListComponent } from './grid-list/grid-list.component';
 
 @NgModule({
     imports: [
@@ -56,6 +58,7 @@ import { StepperComponent } from './stepper/stepper.component';
         MatNativeDateModule,
         MatTabsModule,
         MatStepperModule,
+        MatGridListModule,
 
         FormsModule,
         ReactiveFormsModule,
@@ -75,7 +78,8 @@ import { StepperComponent } from './stepper/stepper.component';
         ChipsComponent,
         ExpansionPanelComponent,
         TabsComponent,
-        StepperComponent
+        StepperComponent,
+        GridListComponent
     ]
 })
 export class BasicUiModule {
