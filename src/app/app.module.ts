@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
+import { TranslateModule } from '@ngx-translate/core';
 
 import 'hammerjs';
 
@@ -26,6 +27,8 @@ import { AppComponent } from './app.component';
         BrowserModule,
         BrowserAnimationsModule,
 
+        TranslateModule.forRoot(),
+
         /* @notadd modules */
         NotaddModule.forRoot(notaddConfig),
         NotaddMatIconsModule,
@@ -35,11 +38,12 @@ import { AppComponent } from './app.component';
 
         LayoutModule,
 
-        AppRoutingModule,
-
         GraphQLModule,
 
-        HttpClientModule
+        HttpClientModule,
+
+        AppRoutingModule,
+
     ],
     providers: [],
     bootstrap: [ AppComponent ]

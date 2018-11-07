@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { MatIconRegistry } from '@angular/material';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
+import { TranslateService } from '@ngx-translate/core';
 
 import * as screenfull from 'screenfull';
 
@@ -20,6 +20,8 @@ export class ToolbarComponent implements OnInit, OnDestroy {
     collapseNavbar: boolean;
     notaddConfig: any;
     isFullscreen = false;
+    languages: Array<any>;
+    currentLanguage: any;
 
     /* 取消订阅主题 */
     private ngUnsubscribe: Subject<any>;
@@ -27,14 +29,29 @@ export class ToolbarComponent implements OnInit, OnDestroy {
     constructor(
         private configService: NotaddConfigService,
         private sidebarService: NotaddSidebarService,
-        private matIconRegistry: MatIconRegistry
+        private translateService: TranslateService
     ) {
         this.ngUnsubscribe = new Subject<any>();
+        this.languages = [
+            {
+                code: 'zh-Hans',
+                title: '简体中文'
+            },
+            {
+                code: 'zh-Hant',
+                title: '繁体中文'
+            },
+            {
+                code: 'en',
+                title: 'English'
+            }
+        ];
     }
 
     ngOnInit() {
-        /* 自定义icon font*/
-        this.matIconRegistry.registerFontClassAlias('NotaddIcon', 'notadd-icon');
+        this.currentLanguage = this.languages.find((language) => {
+            return language.code.includes(this.translateService.currentLang);
+        });
 
         this.configService.config
             .pipe(takeUntil(this.ngUnsubscribe))
@@ -92,5 +109,15 @@ export class ToolbarComponent implements OnInit, OnDestroy {
 
     search(event): void {
         console.log(event.value);
+    }
+
+    /**
+     * 设置语言
+     *
+     * @param lang
+     */
+    setLanguage(lang): void {
+        this.currentLanguage = lang;
+        this.translateService.use(lang.code);
     }
 }

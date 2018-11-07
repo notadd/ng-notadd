@@ -70,6 +70,24 @@
 
         <div class="toolbar-separator" fxHide fxShow.gt-xs></div>
 
+        <button mat-button
+                class="language-button"
+                [matMenuTriggerFor]="languageMenu">
+            <div fxLayout="row" fxLayoutAlign="center center">
+                <mat-icon class="secondary-text">language</mat-icon>
+                <span class="secondary-text mr-12">{{currentLanguage.title}}</span>
+                <mat-icon class="s-16" fxHide.xs>keyboard_arrow_down</mat-icon>
+            </div>
+        </button>
+
+        <mat-menu #languageMenu="matMenu" [overlapTrigger]="false">
+            <button mat-menu-item *ngFor="let lang of languages" (click)="setLanguage(lang)">
+                <span>{{lang.title}}</span>
+            </button>
+        </mat-menu>
+
+        <div class="toolbar-separator" fxHide fxShow.gt-xs></div>
+
         <button mat-icon-button
                 class="settings-toggle-button"
                 (click)="toggleSidebarOpen('themeOptionsPanel')">

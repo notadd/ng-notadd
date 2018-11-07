@@ -6,6 +6,11 @@ import { takeUntil } from 'rxjs/operators';
 import { notaddAnimations } from '@notadd/animations';
 import { NotaddConfigService } from '@notadd/services/config.service';
 import { NotaddSidebarService } from '@notadd/components/sidebar/sidebar.service';
+import { NotaddTranslationService } from '@notadd/services/translation.service';
+
+import { locale as themePanelEnglish } from './i18n/en';
+import { locale as themePanelZh_Hans } from './i18n/zh-Hans';
+import { locale as themePanelZh_Hant } from './i18n/zh-Hant';
 
 @Component({
     selector: 'notadd-theme-panel',
@@ -27,7 +32,8 @@ export class NotaddThemePanelComponent implements OnInit, OnDestroy {
         private formBuilder: FormBuilder,
         private renderer: Renderer2,
         private configService: NotaddConfigService,
-        private sidebarService: NotaddSidebarService
+        private sidebarService: NotaddSidebarService,
+        private translationService: NotaddTranslationService
     ) {
         this.barClosed = true;
 
@@ -79,6 +85,7 @@ export class NotaddThemePanelComponent implements OnInit, OnDestroy {
                 this.configService.config = config;
             });
 
+        this.translationService.setTranslation([themePanelZh_Hans, themePanelZh_Hant, themePanelEnglish]);
     }
 
     ngOnDestroy(): void {

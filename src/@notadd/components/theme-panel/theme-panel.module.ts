@@ -12,6 +12,7 @@ import {
     MatSelectModule,
     MatSlideToggleModule
 } from '@angular/material';
+import { TranslateModule } from '@ngx-translate/core';
 
 import { NotaddDirectivesModule } from '@notadd/directives/directives.module';
 import { NotaddSidebarModule } from '@notadd/components/sidebar/sidebar.module';
@@ -35,6 +36,8 @@ import { NotaddThemePanelComponent } from './theme-panel.component';
         MatRadioModule,
         MatSelectModule,
         MatSlideToggleModule,
+
+        TranslateModule.forChild(),
 
         NotaddDirectivesModule,
         NotaddSidebarModule,

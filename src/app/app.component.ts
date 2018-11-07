@@ -3,12 +3,17 @@ import { DOCUMENT } from '@angular/common';
 import { Platform } from '@angular/cdk/platform';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
+import { TranslateService } from '@ngx-translate/core';
 
 import { NotaddConfigService } from '@notadd/services/config.service';
 import { NotaddLoadingService } from '@notadd/services/notadd-loading.service';
+import { NotaddTranslationService } from '@notadd/services/translation.service';
 import { NotaddNavigationService } from '@notadd/components/navigation/navigation.service';
 
 import { navigation } from './navigation/navigation';
+import { locale as navigationZh_Hant } from './navigation/i18n/zh-Hant';
+import { locale as navigationZh_Hans } from './navigation/i18n/zh-Hans';
+import { locale as navigationEnglish } from './navigation/i18n/en';
 
 @Component({
     selector: 'notadd-root',
@@ -26,6 +31,8 @@ export class AppComponent implements OnInit, OnDestroy {
         private loadingService: NotaddLoadingService,
         private configService: NotaddConfigService,
         private navigationService: NotaddNavigationService,
+        private translateService: TranslateService,
+        private notaddTranslationService: NotaddTranslationService,
         private platform: Platform
     ) {
         this.navigation = navigation;
@@ -35,6 +42,19 @@ export class AppComponent implements OnInit, OnDestroy {
 
         // 设置key为 `main` 的导航为当前导航
         this.navigationService.setCurrentNavigation('main');
+
+        // Add new langs to the list
+        this.translateService.addLangs(['zh-Hans', 'zh-Hant', 'en']);
+
+        // Sets the default language to use as a fallback
+        this.translateService.setDefaultLang('zh-Hans');
+
+        // Manually sets an object of translations for a given language
+        this.notaddTranslationService.setTranslation([navigationZh_Hans, navigationZh_Hant, navigationEnglish]);
+
+        // Use the browser's default lang, if the lang isn't available, it will use the 'zh-Hans'
+        const browserLang = this.translateService.getBrowserLang();
+        this.translateService.use(browserLang.match(/en|zh/) ? browserLang : 'zh-Hans');
 
         // 在移动端平台上添加 `is-mobile` 类
         if (this.platform.ANDROID || this.platform.IOS) {

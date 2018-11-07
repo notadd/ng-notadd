@@ -1,7 +1,7 @@
 <div class="theme-options-panel" notaddPerfectScrollbar>
     <div class="header mat-elevation-z2">
 
-        <span class="title">主题选项</span>
+        <span class="title" [translate]="'ThemePanel.Title'">主题选项</span>
 
         <button mat-icon-button class="close-button" (click)="toggleSidebarOpen('themeOptionsPanel')">
             <mat-icon>close</mat-icon>
@@ -16,7 +16,7 @@
             <!-- layout width -->
             <div class="group">
 
-                <h2 class="mb-12">布局宽度</h2>
+                <h2 class="mb-12" [translate]="'ThemePanel.LayoutWidth'">布局宽度</h2>
                 <mat-radio-group fxLayout="column" fxLayoutAlign="start start" formControlName="width">
                     <mat-radio-button class="ml-12 mb-12" value="fullwidth">Fullwidth</mat-radio-button>
                     <mat-radio-button class="ml-12 mb-12" value="boxed">Boxed</mat-radio-button>
@@ -29,20 +29,20 @@
             <!-- toolbar -->
             <div class="group mt-24" formGroupName="toolbar">
 
-                <h2 class="mb-12">工具栏</h2>
+                <h2 class="mb-12" [translate]="'ThemePanel.Toolbar.Title'">工具栏</h2>
 
-                <mat-slide-toggle class="ml-12" formControlName="hidden">
-                    Hide
+                <mat-slide-toggle class="ml-12" formControlName="hidden" [translate]="'ThemePanel.Toolbar.Hidden'">
+                    隐藏
                 </mat-slide-toggle>
 
-                <h3 class="ml-12 mt-24">位置:</h3>
+                <h3 class="ml-12 mt-24" [translate]="'ThemePanel.Toolbar.Position'">位置:</h3>
                 <mat-radio-group fxLayout="column" fxLayoutAlign="start start" formControlName="position">
                     <mat-radio-button class="ml-12 mb-12" value="above">Above</mat-radio-button>
                     <mat-radio-button class="ml-12 mb-12" value="below-static">Below Static</mat-radio-button>
                     <mat-radio-button class="ml-12 mb-12" value="below-fixed">Below Fixed</mat-radio-button>
                 </mat-radio-group>
 
-                <h3 class="ml-12 mt-24 mb-8">颜色:</h3>
+                <h3 class="ml-12 mt-24 mb-8" [translate]="'ThemePanel.Toolbar.Background'">背景颜色:</h3>
                 <notadd-material-color-picker class="ml-12 mb-16" formControlName="background">
                 </notadd-material-color-picker>
 
@@ -53,20 +53,20 @@
             <!-- footer -->
             <div class="group mt-24" formGroupName="footer">
 
-                <h2 class="mb-12">页脚</h2>
+                <h2 class="mb-12" [translate]="'ThemePanel.Footer.Title'">页脚</h2>
 
-                <mat-slide-toggle class="ml-12 mb-12" formControlName="hidden">
+                <mat-slide-toggle class="ml-12 mb-12" formControlName="hidden" [translate]="'ThemePanel.Footer.Hidden'">
                     隐藏
                 </mat-slide-toggle>
 
-                <h3 class="ml-12 mt-24">位置:</h3>
+                <h3 class="ml-12 mt-24" [translate]="'ThemePanel.Footer.Position'">位置:</h3>
                 <mat-radio-group fxLayout="column" fxLayoutAlign="start start" formControlName="position">
                     <mat-radio-button class="ml-12 mb-12" value="above">Above</mat-radio-button>
                     <mat-radio-button class="ml-12 mb-12" value="below-static">Below Static</mat-radio-button>
                     <mat-radio-button class="ml-12 mb-12" value="below-fixed">Below Fixed</mat-radio-button>
                 </mat-radio-group>
 
-                <h3 class="ml-12 mt-24 mb-8">颜色:</h3>
+                <h3 class="ml-12 mt-24 mb-8" [translate]="'ThemePanel.Footer.Background'">背景颜色:</h3>
                 <notadd-material-color-picker class="ml-12 mb-16" formControlName="background">
                 </notadd-material-color-picker>
 
@@ -77,23 +77,23 @@
             <!-- navbar -->
             <div class="group mt-24" formGroupName="navbar">
 
-                <h2 class="mb-12">导航栏</h2>
+                <h2 class="mb-12" [translate]="'ThemePanel.Navbar.Title'">导航栏</h2>
 
-                <mat-slide-toggle class="ml-12" formControlName="hidden">
+                <mat-slide-toggle class="ml-12" formControlName="hidden" [translate]="'ThemePanel.Navbar.Hidden'">
                     隐藏
                 </mat-slide-toggle>
 
-                <mat-slide-toggle class="ml-12 mt-24" formControlName="collapsed">
+                <mat-slide-toggle class="ml-12 mt-24" formControlName="collapsed" [translate]="'ThemePanel.Navbar.Collapsed'">
                     折叠
                 </mat-slide-toggle>
 
-                <h3 class="ml-12 mt-24">位置:</h3>
+                <h3 class="ml-12 mt-24" [translate]="'ThemePanel.Navbar.Position'">位置:</h3>
                 <mat-radio-group class="ml-12" fxLayout="column" fxLayoutAlign="start start" formControlName="position">
                     <mat-radio-button class="mb-16" value="start">Left</mat-radio-button>
                     <mat-radio-button class="mb-16" value="end">Right</mat-radio-button>
                 </mat-radio-group>
 
-                <h3 class="ml-12 mt-24 mb-8">颜色:</h3>
+                <h3 class="ml-12 mt-24 mb-8" [translate]="'ThemePanel.Navbar.Color'">颜色:</h3>
                 <div fxFlex="row" fxLayoutAlign="star center">
                     <notadd-material-color-picker class="ml-12 mb-16" formControlName="secondaryBackground">
                     </notadd-material-color-picker>

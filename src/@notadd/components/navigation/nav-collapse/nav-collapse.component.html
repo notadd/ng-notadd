@@ -30,22 +30,29 @@
 
         <mat-menu class="nav-menu" #navMenu="matMenu" xPosition="before">
             <ng-container *ngFor="let item of item.children">
-                <button *ngIf="item.children" mat-menu-item [matMenuTriggerFor]="subMenu" (mouseenter)="setSubMenu(item)">{{item.title}}</button>
+                <button *ngIf="item.children"
+                        mat-menu-item
+                        [matMenuTriggerFor]="subMenu"
+                        (mouseenter)="setSubMenu(item)"
+                        [translate]="item.i18n">{{item.title}}</button>
+
                 <button *ngIf="!item.children"
                         mat-menu-item
                         [routerLink]="item.url"
-                        routerLinkActive="core-background-blue"
+                        [routerLinkActive]="['active', 'mat-accent-bg']"
                         (mouseleave)="changeCollapse(true)"
-                        matRipple>{{item.title}}</button>
+                        matRipple
+                        [translate]="item.i18n">{{item.title}}</button>
             </ng-container>
         </mat-menu>
         <mat-menu #subMenu="matMenu">
             <button mat-menu-item
                     *ngFor="let subItem of subMenus"
                     [routerLink]="subItem.url"
-                    routerLinkActive="core-background-blue"
+                    [routerLinkActive]="['active', 'mat-accent-bg']"
                     (mouseleave)="changeCollapse(true)"
-                    matRipple>
+                    matRipple
+                    [translate]="subItem.i18n">
                 {{subItem.title}}
             </button>
         </mat-menu>
@@ -53,7 +60,7 @@
 
     <ng-template #itemContent>
         <mat-icon class="nav-link-icon" *ngIf="item.icon">{{item.icon}}</mat-icon>
-        <span class="nav-link-title">{{item.title}}</span>
+        <span class="nav-link-title" [translate]="item.i18n">{{item.title}}</span>
         <span class="nav-link-badge" *ngIf="item.badge"
               [ngStyle]="{'background-color': item.badge.bg,'color': item.badge.fg}">
             {{item.badge.title}}

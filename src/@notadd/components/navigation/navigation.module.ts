@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { MatIconModule, MatRippleModule, MatMenuModule } from '@angular/material';
+import { TranslateModule } from '@ngx-translate/core';
 
 import { NotaddNavigationComponent } from './navigation.component';
 import { NotaddNavGroupComponent } from './nav-group/nav-group.component';
@@ -15,7 +16,9 @@ import { NotaddNavItemComponent } from './nav-item/nav-item.component';
 
         MatIconModule,
         MatRippleModule,
-        MatMenuModule
+        MatMenuModule,
+
+        TranslateModule.forChild()
     ],
     declarations: [
         NotaddNavigationComponent,

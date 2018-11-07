@@ -1,6 +1,7 @@
 export interface NotaddNavigationItem {
     id: string;
     title: string;
+    i18n?: string;
     type: 'item' | 'group' | 'collapse';
     icon?: string;
     hidden?: boolean;
