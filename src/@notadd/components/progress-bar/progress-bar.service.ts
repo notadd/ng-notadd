@@ -24,6 +24,7 @@ export class NotaddProgressBarService {
         this.subscribeRouterEvents();
     }
 
+    // buffer value
     get bufferValue(): Observable<any> {
         return this.bufferValueSubject.asObservable();
     }
@@ -32,6 +33,7 @@ export class NotaddProgressBarService {
         this.bufferValueSubject.next(value);
     }
 
+    // mode
     get mode(): Observable<any> {
         return this.modeSubject.asObservable();
     }
@@ -40,6 +42,7 @@ export class NotaddProgressBarService {
         this.modeSubject.next(value);
     }
 
+    // value
     get value(): Observable<any> {
         return this.valueSubject.asObservable();
     }
@@ -67,6 +70,7 @@ export class NotaddProgressBarService {
             });
     }
 
+    // 设置进度条可见性
     setVisible(visible: boolean): void {
         this.visibleSubject.next(visible);
     }
