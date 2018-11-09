@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Observable } from 'rxjs';
+import { NgForage } from 'ngforage';
 
 import { AnalysisService } from './analysis.service';
 
@@ -14,7 +15,8 @@ export class AnalysisComponent implements OnInit {
     widgets: Array<any>;
 
     constructor(
-        private service: AnalysisService
+        private service: AnalysisService,
+        private ngForage: NgForage
     ) {
     }
 
@@ -23,6 +25,8 @@ export class AnalysisComponent implements OnInit {
             .subscribe(widgets => {
                 this.widgets = widgets;
             });
+
+        this.ngForage.setItem('TOKEN_DATA', 'token-demo');
     }
 
 }

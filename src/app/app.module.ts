@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { TranslateModule } from '@ngx-translate/core';
+import { NgForageModule, NgForageConfig, Driver } from 'ngforage';
 
 import 'hammerjs';
 
@@ -28,6 +29,15 @@ import { AppComponent } from './app.component';
         BrowserAnimationsModule,
 
         TranslateModule.forRoot(),
+
+        // Optional configuration as an alternative to what's below in Angular 6+
+        NgForageModule.forRoot({
+            name: 'Notadd',
+            driver: [ // defaults to indexedDB -> webSQL -> localStorage
+                Driver.INDEXED_DB,
+                Driver.LOCAL_STORAGE
+            ]
+        }),
 
         /* @notadd modules */
         NotaddModule.forRoot(notaddConfig),
