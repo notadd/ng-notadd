@@ -47,6 +47,15 @@ export function createApollo(httpLink: HttpLink, ngForage: NgForage) {
         return forward(operation);
     });
 
+    // Afterware
+    const afterwareLink = new ApolloLink((operation, forward) => {
+        return forward(operation).map(response => {
+            const { response: { headers } } = operation.getContext();
+
+            return response;
+        });
+    });
+
     // Error link
     const errorLink = onError(({ graphQLErrors, networkError }) => {
         if (graphQLErrors) {
@@ -62,7 +71,7 @@ export function createApollo(httpLink: HttpLink, ngForage: NgForage) {
     });
 
     return {
-        link: ApolloLink.from([authFlowLink, authMiddleware, errorLink, http]),
+        link: ApolloLink.from([authFlowLink, authMiddleware, afterwareLink, errorLink, http]),
         cache: new InMemoryCache(),
     };
 }
