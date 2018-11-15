@@ -1,0 +1,88 @@
+<div class="pages-profile">
+    <div fxLayout.gt-sm="row nowrap" fxLayout.lt-md="column nowrap" fxLayoutGap="20px">
+        <mat-card fxFlex="30" class="profile-card">
+            <mat-card-content>
+                <img mat-card-avatar src="../../../../../assets/images/avatars/tianhun.jpg">
+                <mat-card-title class="profile-user">Nick Name</mat-card-title>
+                <mat-card-subtitle class="profile-job">More like this.</mat-card-subtitle>
+                <p class="profile-introduction">
+                    Hi! I'm Adrian the Senior UI Designer at AmazingSurge. We hope you
+                    enjoy the design and quality of
+                    Social.
+                </p>
+                <div class="profile-social">
+                    <mat-icon size="1" svgIcon="mdi:qqchat" class="secondary-text s-24"></mat-icon>
+                    <mat-icon size="1" svgIcon="mdi:github-circle" class="secondary-text s-24"></mat-icon>
+                    <mat-icon size="1" svgIcon="mdi:twitter" class="secondary-text s-24"></mat-icon>
+                    <mat-icon size="1" svgIcon="mdi:facebook" class="secondary-text s-24"></mat-icon>
+                </div>
+                <button mat-flat-button color="accent">Follow</button>
+            </mat-card-content>
+            <mat-card-actions class="profile-card-footer" fxLayout="row nowrap">
+                <div fxFlex="32">
+                    <strong class="profile-stat-count">260</strong>
+                    <span>Follower</span>
+                </div>
+                <div fxFlex="32">
+                    <strong class="profile-stat-count">180</strong>
+                    <span>Following</span>
+                </div>
+                <div fxFlex="32">
+                    <strong class="profile-stat-count">2000</strong>
+                    <span>Tweets</span>
+                </div>
+            </mat-card-actions>
+        </mat-card>
+
+        <mat-card fxFlex="70" class="tabs-card">
+            <mat-tab-group>
+                <mat-tab label="Activities">
+                    <mat-list>
+                        <mat-list-item>
+                            <div matLine fxLayoutAlign="start center" fxLayoutGap="16px">
+                                <img matListAvatar src="https://i.pinimg.com/564x/4e/f8/e4/4ef8e4003d01d2bcb4e6bc8db7a0b2ef.jpg">
+                                <div>
+                                    <div>Herman Beck
+                                        <span class="secondary-text font-size-12">posted a new note</span>
+                                    </div>
+                                    <span class="secondary-text font-size-12">active 14 minutes ago</span>
+                                </div>
+                            </div>
+                            <div matLine class="list-item-content">
+                                “Check if it can be corrected with overflow : hidden”
+                            </div>
+                        </mat-list-item>
+                        <mat-list-item>
+                            <div matLine fxLayoutAlign="start center" fxLayoutGap="16px">
+                                <img matListAvatar src="https://i.pinimg.com/564x/2a/0e/97/2a0e9792a8f1f9d7b3f7568882790c3a.jpg">
+                                <div matLine>
+                                    <div>Mary Adams
+                                        <span class="secondary-text font-size-12">posted an updated</span>
+                                    </div>
+                                    <span class="secondary-text font-size-12">active 14 minutes ago</span>
+                                </div>
+                            </div>
+                            <div matLine class="list-item-content">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent
+                                libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum
+                                imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper
+                                porta. Mauris massa.
+                            </div>
+                        </mat-list-item>
+                    </mat-list>
+                </mat-tab>
+                <mat-tab label="Profile">
+                    <div class="secondary-text">
+                        This complete guide to the top 10 tourist attractions in Paris gives you the in-depth info
+                        you'll need to enjoy the city's most popular sights and places.
+                    </div>
+                </mat-tab>
+                <mat-tab label="Messages">
+                    <div class="secondary-text">
+                        Stef Muir saved to My Style Inspo
+                    </div>
+                </mat-tab>
+            </mat-tab-group>
+        </mat-card>
+    </div>
+</div>

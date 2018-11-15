@@ -18,7 +18,9 @@ export const locale = {
             ExpansionPanel: '可展开面板',
             Tab: '选项卡',
             Stepper: '步进器',
-            GridList: '网格列表'
+            GridList: '网格列表',
+            Pages: '页面',
+            Profile: '个人信息'
         }
     }
 };

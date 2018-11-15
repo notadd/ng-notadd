@@ -27,6 +27,22 @@ export const navigation: Array<NotaddNavigationItem> = [
                         }
                     }
                 ]
+            },
+            {
+                id: 'pages',
+                title: '页面',
+                i18n: 'Navigation.Pages',
+                type: 'collapse',
+                icon: 'pages',
+                children: [
+                    {
+                        id: 'profile',
+                        title: '个人信息',
+                        i18n: 'Navigation.Profile',
+                        type: 'item',
+                        url: '/general/pages/profile'
+                    }
+                ]
             }
         ]
     },
