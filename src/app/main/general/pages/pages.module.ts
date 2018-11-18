@@ -15,7 +15,7 @@ const routs: Routes = [
         path: 'profile',
         component: ProfileComponent,
         data: {
-            title: '个人信息',
+            title: '个人主页',
             hasContentHeader: false
         }
     }

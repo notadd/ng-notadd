@@ -4,6 +4,7 @@
     padding: 20px;
 
     .profile-card {
+        height: 522px;
         padding: 9px;
         text-align: center;
         font-family: Roboto, sans-serif;
@@ -81,7 +82,26 @@
                 padding: 20px 0 0 56px;
                 line-height: 1.571429;
                 color: #757575;
+                white-space: normal;
+
+                img {
+                    float: left;
+                    width: 100%;
+                    max-width: 220px;
+                    max-height: 150px;
+                    padding: 0 20px 20px 0;
+                }
             }
+        }
+    }
+
+    .show-more {
+        padding: 40px 0 !important;
+
+        .show-more-btn {
+            width: 100%;
+            background-color: #eee;
+            color: #3949ab;
         }
     }
 }

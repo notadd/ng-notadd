@@ -20,7 +20,7 @@ export const locale = {
             Stepper: '步进器',
             GridList: '网格列表',
             Pages: '页面',
-            Profile: '个人信息'
+            Profile: '个人主页'
         }
     }
 };

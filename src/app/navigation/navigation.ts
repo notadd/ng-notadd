@@ -37,7 +37,7 @@ export const navigation: Array<NotaddNavigationItem> = [
                 children: [
                     {
                         id: 'profile',
-                        title: '个人信息',
+                        title: '个人主页',
                         i18n: 'Navigation.Profile',
                         type: 'item',
                         url: '/general/pages/profile'
