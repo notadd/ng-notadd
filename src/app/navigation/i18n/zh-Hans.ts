@@ -20,7 +20,13 @@ export const locale = {
             Stepper: '步进器',
             GridList: '网格列表',
             Pages: '页面',
-            Profile: '个人主页'
+            Profile: '个人主页',
+            Errors: '错误页',
+            Errors_400: '400',
+            Errors_403: '403',
+            Errors_404: '404',
+            Errors_500: '500',
+            Errors_503: '503'
         }
     }
 };

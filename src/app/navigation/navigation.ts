@@ -41,6 +41,49 @@ export const navigation: Array<NotaddNavigationItem> = [
                         i18n: 'Navigation.Profile',
                         type: 'item',
                         url: '/general/pages/profile'
+                    },
+                    {
+                        id: 'errors',
+                        title: '错误页',
+                        i18n: 'Navigation.Errors',
+                        type: 'collapse',
+                        children: [
+                            {
+                                id: 'errors_400',
+                                title: '400',
+                                i18n: 'Navigation.Errors_400',
+                                type: 'item',
+                                url: '/general/pages/errors/400'
+                            },
+                            {
+                                id: 'errors_403',
+                                title: '403',
+                                i18n: 'Navigation.Errors_403',
+                                type: 'item',
+                                url: '/general/pages/errors/403'
+                            },
+                            {
+                                id: 'errors_404',
+                                title: '404',
+                                i18n: 'Navigation.Errors_404',
+                                type: 'item',
+                                url: '/general/pages/errors/404'
+                            },
+                            {
+                                id: 'errors_500',
+                                title: '500',
+                                i18n: 'Navigation.Errors_500',
+                                type: 'item',
+                                url: '/general/pages/errors/500'
+                            },
+                            {
+                                id: 'errors_503',
+                                title: '503',
+                                i18n: 'Navigation.Errors_503',
+                                type: 'item',
+                                url: '/general/pages/errors/503'
+                            }
+                        ]
                     }
                 ]
             }

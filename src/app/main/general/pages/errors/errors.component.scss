@@ -1,0 +1,45 @@
+.pages-errors {
+    .box {
+        font-family: Roboto, sans-serif;
+
+        h1 {
+            margin: 22px 0 11px;
+            font-size: 10em;
+            font-weight: bold;
+            color: #424242;
+        }
+
+        .error-info {
+            margin: 0 0 30px;
+            font-size: 30px;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: #757575;
+        }
+
+        .error-advise {
+            margin: 0 0 25px;
+            font-size: 1rem;
+            font-weight: bold;
+            color: #a9afb5;
+        }
+
+        .copyright {
+            margin-top: 60px;
+            font-size: .858rem;
+            font-weight: 500;
+            color: #424242;
+            letter-spacing: 1px;
+
+            p {
+                margin: 0 0 1rem;
+            }
+        }
+
+        .social {
+            mat-icon {
+                color: #949494;
+            }
+        }
+    }
+}
