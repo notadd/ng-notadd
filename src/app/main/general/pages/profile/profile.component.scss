@@ -1,0 +1,101 @@
+.pages-profile {
+    padding: 20px;
+
+    .profile-card {
+        padding: 9px;
+        text-align: center;
+        font-family: Roboto, sans-serif;
+
+        mat-card-content {
+            padding: 40px 15px;
+            margin: 0;
+        }
+
+        .mat-card-avatar {
+            width: 130px;
+            height: 130px;
+            margin-bottom: 10px;
+        }
+
+        .profile-user {
+            margin: 10px 0;
+            font-weight: normal;
+        }
+
+        .profile-job {
+            margin-bottom: 20px;
+            color: #9e9e9e;
+            font-weight: 500;
+        }
+
+        .profile-introduction {
+            margin: 0 0 1rem;
+            color: #757575;
+        }
+
+        .profile-social {
+            margin: 25px 0;
+
+            mat-icon {
+                margin: 0 10px;
+                color: rgba(66, 66, 66, .4);
+            }
+        }
+
+        mat-card-actions {
+            padding: 10px;
+            background: #f6f9fd;
+        }
+
+        .profile-card-footer {
+            .profile-stat-count {
+                display: block;
+                margin-bottom: 3px;
+                font-size: 20px;
+                font-weight: bold;
+                color: #616161;
+
+                +span {
+                    color: #9e9e9e;
+                }
+            }
+        }
+
+    }
+
+    .profile-board {
+        padding: 30px;
+
+        mat-list {
+            padding-bottom: 20px;
+        }
+
+        mat-list-item {
+            height: auto;
+            padding: 25px 0;
+            border-bottom: 1px solid #dfe0df;
+
+            .profile-item-content {
+                padding: 20px 0 0 56px;
+                line-height: 1.571429;
+                color: #757575;
+                white-space: normal;
+                display: flex;
+                flex-wrap: wrap;
+
+                img {
+                    width: 100%;
+                    max-width: 220px;
+                    max-height: 150px;
+                    padding: 0 20px 20px 0;
+                }
+            }
+        }
+    }
+
+    .show-more-btn {
+        width: 100%;
+        background-color: #eee;
+        color: #3949ab;
+    }
+}

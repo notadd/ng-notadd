@@ -10,7 +10,7 @@ const routes: Routes = [
     {
         path: 'elements',
         loadChildren: './main/elements/elements.module#ElementsModule',
-        data: { title: 'UI 元素'}
+        data: { title: 'UI 元素' }
     },
     {
         path: '**',

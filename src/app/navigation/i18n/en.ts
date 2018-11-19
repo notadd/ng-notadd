@@ -18,7 +18,9 @@ export const locale = {
             ExpansionPanel: 'ExpansionPanel',
             Tab: 'tabs',
             Stepper: 'stepper',
-            GridList: 'GridList'
+            GridList: 'GridList',
+            Pages: 'Pages',
+            Profile: 'Profile'
         }
     }
 };

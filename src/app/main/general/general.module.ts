@@ -13,6 +13,11 @@ const routs: Routes = [
         path: 'dashboards',
         loadChildren: './dashboards/dashboards.module#DashboardsModule',
         data: { title: '仪表盘' }
+    },
+    {
+        path: 'pages',
+        loadChildren: './pages/pages.module#PagesModule',
+        data: { title: '页面' }
     }
 ];
 
