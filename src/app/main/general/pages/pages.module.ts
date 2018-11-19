@@ -1,9 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+import {
+    MatCardModule,
+    MatButtonModule,
+    MatIconModule,
+    MatTabsModule,
+    MatListModule
+} from '@angular/material';
+
 import { NotaddSharedModule } from '@notadd/shared.module';
+
 import { ProfileComponent } from './profile/profile.component';
-import { MatCardModule, MatButtonModule, MatIconModule, MatTabsModule, MatListModule } from '@angular/material';
 
 const routs: Routes = [
     {
@@ -23,14 +31,15 @@ const routs: Routes = [
 
 @NgModule({
     imports: [
-        NotaddSharedModule,
-        RouterModule.forChild(routs),
-
         MatCardModule,
         MatButtonModule,
         MatIconModule,
         MatTabsModule,
-        MatListModule
+        MatListModule,
+
+        NotaddSharedModule,
+
+        RouterModule.forChild(routs)
     ],
     declarations: [
         ProfileComponent

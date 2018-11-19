@@ -80,9 +80,10 @@
                 line-height: 1.571429;
                 color: #757575;
                 white-space: normal;
+                display: flex;
+                flex-wrap: wrap;
 
                 img {
-                    float: left;
                     width: 100%;
                     max-width: 220px;
                     max-height: 150px;
