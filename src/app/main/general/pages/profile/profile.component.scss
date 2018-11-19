@@ -1,10 +1,7 @@
-@import "src/@notadd/scss/notadd";
-
 .pages-profile {
     padding: 20px;
 
     .profile-card {
-        height: 522px;
         padding: 9px;
         text-align: center;
         font-family: Roboto, sans-serif;
@@ -57,28 +54,28 @@
                 font-size: 20px;
                 font-weight: bold;
                 color: #616161;
-            }
 
-            .profile-stat-count+span {
-                color: #9e9e9e;
+                +span {
+                    color: #9e9e9e;
+                }
             }
         }
 
     }
 
-    .tabs-card {
+    .profile-board {
         padding: 30px;
+
+        mat-list {
+            padding-bottom: 20px;
+        }
 
         mat-list-item {
             height: auto;
             padding: 25px 0;
             border-bottom: 1px solid #dfe0df;
 
-            .mat-list-item-content .mat-list-text {
-                padding: 0;
-            }
-
-            .list-item-content {
+            .profile-item-content {
                 padding: 20px 0 0 56px;
                 line-height: 1.571429;
                 color: #757575;
@@ -95,13 +92,9 @@
         }
     }
 
-    .show-more {
-        padding: 40px 0 !important;
-
-        .show-more-btn {
-            width: 100%;
-            background-color: #eee;
-            color: #3949ab;
-        }
+    .show-more-btn {
+        width: 100%;
+        background-color: #eee;
+        color: #3949ab;
     }
 }
