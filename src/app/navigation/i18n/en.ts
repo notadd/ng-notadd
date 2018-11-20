@@ -20,7 +20,13 @@ export const locale = {
             Stepper: 'stepper',
             GridList: 'GridList',
             Pages: 'Pages',
-            Profile: 'Profile'
+            Profile: 'Profile',
+            Errors: 'Errors',
+            Errors_400: '400',
+            Errors_403: '403',
+            Errors_404: '404',
+            Errors_500: '500',
+            Errors_503: '503'
         }
     }
 };

@@ -12,7 +12,7 @@
         <div class="children" [@slideInOut]="isCollapsed">
             <ng-container *ngFor="let item of item.children">
                 <notadd-nav-item *ngIf="item.type=='item'" [item]="item"></notadd-nav-item>
-                <notadd-nav-collapse *ngIf="item.type=='collapsable'" [item]="item"></notadd-nav-collapse>
+                <notadd-nav-collapse *ngIf="item.type=='collapse'" [item]="item"></notadd-nav-collapse>
                 <notadd-nav-group *ngIf="item.type=='group'" [item]="item"></notadd-nav-group>
             </ng-container>
         </div>

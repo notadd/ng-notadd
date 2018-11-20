@@ -12,6 +12,7 @@ import {
 import { NotaddSharedModule } from '@notadd/shared.module';
 
 import { ProfileComponent } from './profile/profile.component';
+import { ErrorsComponent } from './errors/errors.component';
 
 const routs: Routes = [
     {
@@ -24,6 +25,14 @@ const routs: Routes = [
         component: ProfileComponent,
         data: {
             title: '个人主页',
+            hasContentHeader: false
+        }
+    },
+    {
+        path: 'errors/:code',
+        component: ErrorsComponent,
+        data: {
+            title: '错误页',
             hasContentHeader: false
         }
     }
@@ -42,7 +51,8 @@ const routs: Routes = [
         RouterModule.forChild(routs)
     ],
     declarations: [
-        ProfileComponent
+        ProfileComponent,
+        ErrorsComponent
     ]
 })
 export class PagesModule {
