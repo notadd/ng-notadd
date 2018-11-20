@@ -1,0 +1,29 @@
+@import "../login/login.component.scss";
+
+.pages-login-v2 {
+    .page-content-v2 {
+        // padding: 30px 500px 30px 30px;
+    }
+
+    .page-brand-info {
+        margin: 0 100px 0 90px;
+
+        p {
+            max-width: 650px;
+            opacity: .6;
+            font-size: 20px;
+        }
+
+    }
+
+    .page-login-main {
+        @extend .login-box;
+
+        width: 500px;
+        height: 100%;
+        padding: 150px 60px 180px;
+        background: #fff;
+        color: #424242;
+
+    }
+}
