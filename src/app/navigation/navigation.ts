@@ -84,6 +84,20 @@ export const navigation: Array<NotaddNavigationItem> = [
                                 url: '/general/pages/errors/503'
                             }
                         ]
+                    },
+                    {
+                        id: 'login',
+                        title: '登录',
+                        i18n: 'Navigation.Login',
+                        type: 'item',
+                        url: '/general/pages/login'
+                    },
+                    {
+                        id: 'login_v2',
+                        title: '登录 V2',
+                        i18n: 'Navigation.Login_v2',
+                        type: 'item',
+                        url: '/general/pages/login_v2'
                     }
                 ]
             }
