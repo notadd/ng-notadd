@@ -40,40 +40,9 @@
 
 }
 
-.vertical-align-middle {
-    vertical-align: middle;
-}
-
-.pages-login {
-
-    &::before {
-        background-image: url(../../../../../assets/images/bg_login.jpg);
-    }
-
-    .page-content {
-        display: inline-block;
-        width: 400px;
-        padding: 30px;
-    }
-}
-
 .login-box {
-    mat-form-field {
-        color: #fff;
-        --color: #fff;
-
-        .mat-form-field-label {
-            color: #fff !important;
-        }
-
-        /deep/ .mat-input-placeholder {
-            color: #fff;
-            font-size: 2em;
-        }
-    }
-
-    .mat-form-field-appearance-legacy .mat-form-field-label {
-        color: #fff !important;
+    /deep/ .mat-placeholder-required {
+        color: #f00;
     }
 
     .copyright {
@@ -91,5 +60,46 @@
         mat-icon {
             color: #fff;
         }
+    }
+}
+
+.pages-login {
+
+    &::before {
+        background-image: url(../../../../../assets/images/bg_login.jpg);
+    }
+
+    .page-content {
+        display: inline-block;
+        width: 400px;
+        padding: 30px;
+    }
+
+    mat-form-field {
+        color: #fff;
+        background: transparent;
+    }
+
+    .mat-input-element {
+        caret-color: #fff;
+    }
+
+    /deep/ .mat-form-field-appearance-legacy .mat-form-field-label {
+        color: #fff;
+    }
+
+    /deep/ .mat-form-field-infix {
+        border-bottom: 1px solid #fff;
+        opacity: 1;
+        background: transparent;
+
+        .mat-form-field-label-wrapper {
+            border-bottom: 2px solid #fff;
+        }
+    }
+
+    /deep/ .mat-checkbox-frame {
+        border-color: #fff;
+        background: #fff;
     }
 }
