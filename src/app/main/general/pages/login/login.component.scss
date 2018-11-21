@@ -88,14 +88,8 @@
         color: #fff;
     }
 
-    /deep/ .mat-form-field-infix {
-        border-bottom: 1px solid #fff;
-        opacity: 1;
-        background: transparent;
-
-        .mat-form-field-label-wrapper {
-            border-bottom: 2px solid #fff;
-        }
+    /deep/ .mat-form-field-underline {
+        background-color: #fff;
     }
 
     /deep/ .mat-checkbox-frame {
