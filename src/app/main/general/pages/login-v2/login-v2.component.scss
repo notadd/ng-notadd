@@ -1,0 +1,26 @@
+@import "../login/login.component.scss";
+
+.pages-login-v2 {
+    &::before {
+        background-image: url(../../../../../assets/images/bg_login.jpg);
+    }
+
+    .page-brand-info {
+        margin: 0 100px 0 90px;
+
+        p {
+            max-width: 650px;
+            opacity: .6;
+            font-size: 20px;
+        }
+
+    }
+
+    .page-login-main {
+        width: 500px;
+        height: 100%;
+        padding: 150px 60px 180px;
+        background: #fff;
+        color: #424242;
+    }
+}
