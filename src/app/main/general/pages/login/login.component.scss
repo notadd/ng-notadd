@@ -41,9 +41,6 @@
 }
 
 .login-box {
-    /deep/ .mat-placeholder-required {
-        color: #f00;
-    }
 
     .copyright {
         margin-top: 60px;
@@ -75,25 +72,4 @@
         padding: 30px;
     }
 
-    mat-form-field {
-        color: #fff;
-        background: transparent;
-    }
-
-    .mat-input-element {
-        caret-color: #fff;
-    }
-
-    /deep/ .mat-form-field-appearance-legacy .mat-form-field-label {
-        color: #fff;
-    }
-
-    /deep/ .mat-form-field-underline {
-        background-color: #fff;
-    }
-
-    /deep/ .mat-checkbox-frame {
-        border-color: #fff;
-        background: #fff;
-    }
 }
