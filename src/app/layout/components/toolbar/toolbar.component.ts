@@ -91,16 +91,15 @@ export class ToolbarComponent implements OnInit, OnDestroy {
      * 切换侧边栏折叠
      */
     toggleSidebarCollapsed(): void {
-        const config = Object.assign({}, this.notaddConfig, {
+        const config = {
             layout: {
                 navbar: {
                     collapsed: !this.notaddConfig.layout.navbar.collapsed
                 }
             }
-        });
+        };
 
         if (this.notaddConfig.layout.navbar.hidden) {
-            config.layout.navbar.hidden = false;
             config.layout.navbar.collapsed = false;
         }
 

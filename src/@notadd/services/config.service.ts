@@ -28,7 +28,7 @@ export class NotaddConfigService {
         this.init();
     }
 
-    set config(value) {
+    set config(value: any) {
         let config = this.configSubject.getValue();
 
         // 合并config
@@ -37,7 +37,7 @@ export class NotaddConfigService {
         this.configSubject.next(config);
     }
 
-    get config(): Observable<any> {
+    get config(): any | Observable<any> {
         return this.configSubject.asObservable();
     }
 

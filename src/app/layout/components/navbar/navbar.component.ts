@@ -94,12 +94,12 @@ export class NavbarComponent implements OnInit, OnDestroy {
      * 切换sidebar折叠
      */
     toggleSidebarCollapsed(): void {
-        this.configService.config = Object.assign({}, this.notaddConfig, {
+        this.configService.config =  {
             layout: {
                 navbar: {
                     collapsed: !this.notaddConfig.layout.navbar.collapsed
                 }
             }
-        });
+        };
     }
 }
