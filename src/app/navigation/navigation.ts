@@ -93,11 +93,11 @@ export const navigation: Array<NotaddNavigationItem> = [
                         url: '/general/pages/login'
                     },
                     {
-                        id: 'login_v2',
+                        id: 'login-v2',
                         title: '登录 V2',
                         i18n: 'Navigation.Login_v2',
                         type: 'item',
-                        url: '/general/pages/login_v2'
+                        url: '/general/pages/login-v2'
                     }
                 ]
             }

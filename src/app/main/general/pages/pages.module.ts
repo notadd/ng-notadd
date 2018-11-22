@@ -50,7 +50,7 @@ const routs: Routes = [
         }
     },
     {
-        path: 'login_v2',
+        path: 'login-v2',
         component: LoginV2Component,
         data: {
             title: '登录 V2',
