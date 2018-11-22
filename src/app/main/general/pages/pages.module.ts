@@ -6,13 +6,18 @@ import {
     MatButtonModule,
     MatIconModule,
     MatTabsModule,
-    MatListModule
+    MatListModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatCheckboxModule
 } from '@angular/material';
 
 import { NotaddSharedModule } from '@notadd/shared.module';
 
 import { ProfileComponent } from './profile/profile.component';
 import { ErrorsComponent } from './errors/errors.component';
+import { LoginComponent } from './login/login.component';
+import { LoginV2Component } from './login-v2/login-v2.component';
 
 const routs: Routes = [
     {
@@ -35,6 +40,22 @@ const routs: Routes = [
             title: '错误页',
             hasContentHeader: false
         }
+    },
+    {
+        path: 'login',
+        component: LoginComponent,
+        data: {
+            title: '登录',
+            hasContentHeader: false
+        }
+    },
+    {
+        path: 'login-v2',
+        component: LoginV2Component,
+        data: {
+            title: '登录 V2',
+            hasContentHeader: false
+        }
     }
 ];
 
@@ -45,6 +66,9 @@ const routs: Routes = [
         MatIconModule,
         MatTabsModule,
         MatListModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatCheckboxModule,
 
         NotaddSharedModule,
 
@@ -52,7 +76,9 @@ const routs: Routes = [
     ],
     declarations: [
         ProfileComponent,
-        ErrorsComponent
+        ErrorsComponent,
+        LoginComponent,
+        LoginV2Component
     ]
 })
 export class PagesModule {

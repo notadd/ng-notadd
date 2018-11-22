@@ -13,3 +13,30 @@ textarea {
     -webkit-appearance: none;
     outline: none;
 }
+
+[color-white] {
+    color: #fff;
+
+    .mat-input-element {
+        caret-color: #ddd;
+    }
+
+    .mat-form-field-label {
+        color: #ddd;
+    }
+
+    .mat-form-field-underline {
+        background-color: #ddd;
+    }
+
+    .mat-checkbox-frame {
+        border-color: #fff;
+        background: #fff;
+    }
+}
+
+[required-color-red] {
+    .mat-placeholder-required {
+        color: #f00;
+    }
+}
