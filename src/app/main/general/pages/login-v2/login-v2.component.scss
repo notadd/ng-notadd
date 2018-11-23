@@ -2,10 +2,10 @@
 
 .pages-login-v2 {
     &::before {
-        background-image: url(../../../../../assets/images/bg_login.jpg);
+        background-image: url("../../../../../assets/images/bg_login.jpg");
     }
 
-    .page-brand-info {
+    .brand-info {
         margin: 0 100px 0 90px;
 
         p {
@@ -16,7 +16,7 @@
 
     }
 
-    .page-login-main {
+    .auth-main {
         width: 500px;
         height: 100%;
         padding: 150px 60px 180px;

@@ -1,14 +1,14 @@
 <div class="layout-full pages-login-v2">
     <div class="page overlay-bg text-center">
         <div fxLayout="row" fxLayoutAlign="space-between start" fxLayoutAlign.lt-md="center start" class="h-100-p">
-            <div class="page-brand-info mt-200 pt-100" fxHide.lt-md>
+            <div class="brand-info mt-200 pt-100" fxHide.lt-md>
                 <div class="brand text-left pl-60">
                     <mat-icon fontSet="NotaddIcon" fontIcon="icon-logo" class="s-48"></mat-icon>
                 </div>
                 <p class="s-20">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                     tempor incididunt ut labore et dolore magna aliqua.</p>
             </div>
-            <div class="login-box page-login-main">
+            <div class="auth-box auth-main">
                 <div class="brand mb-20 text-left">
                     <mat-icon fontSet="NotaddIcon" fontIcon="icon-logo" class="s-36"></mat-icon>
                 </div>
@@ -22,11 +22,11 @@
                     </mat-form-field>
                     <div class="mb-40" fxLayoutAlign="space-between end">
                         <mat-checkbox>Remember me</mat-checkbox>
-                        <a class="float-right">Forgot password?</a>
+                        <a class="float-right" routerLink="/general/pages/forgot-password">Forgot password?</a>
                     </div>
                     <button mat-flat-button class="w-100-p" color="accent">Sign in</button>
                 </div>
-                <p class="mt-0 text-left">No account? <a>Sign Up</a></p>
+                <p class="mt-0 text-left">No account? <a routerLink="/general/pages/register-v2">Sign Up</a></p>
 
                 <div class="copyright">
                     <p>WEBSITE BY Notadd</p>
