@@ -18,6 +18,10 @@ import { ProfileComponent } from './profile/profile.component';
 import { ErrorsComponent } from './errors/errors.component';
 import { LoginComponent } from './login/login.component';
 import { LoginV2Component } from './login-v2/login-v2.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { LockscreenComponent } from './lockscreen/lockscreen.component';
+import { RegisterComponent } from './register/register.component';
+import { RegisterV2Component } from './register-v2/register-v2.component';
 
 const routs: Routes = [
     {
@@ -56,6 +60,38 @@ const routs: Routes = [
             title: '登录 V2',
             hasContentHeader: false
         }
+    },
+    {
+        path: 'register',
+        component: RegisterComponent,
+        data: {
+            title: '注册',
+            hasContentHeader: false
+        }
+    },
+    {
+        path: 'register-v2',
+        component: RegisterV2Component,
+        data: {
+            title: '注册 V2',
+            hasContentHeader: false
+        }
+    },
+    {
+        path: 'forgot-password',
+        component: ForgotPasswordComponent,
+        data: {
+            title: '忘记密码',
+            hasContentHeader: false
+        }
+    },
+    {
+        path: 'lockscreen',
+        component: LockscreenComponent,
+        data: {
+            title: '锁定屏幕',
+            hasContentHeader: false
+        }
     }
 ];
 
@@ -78,7 +114,11 @@ const routs: Routes = [
         ProfileComponent,
         ErrorsComponent,
         LoginComponent,
-        LoginV2Component
+        LoginV2Component,
+        ForgotPasswordComponent,
+        LockscreenComponent,
+        RegisterComponent,
+        RegisterV2Component
     ]
 })
 export class PagesModule {
