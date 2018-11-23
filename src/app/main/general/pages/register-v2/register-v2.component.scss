@@ -1,0 +1,6 @@
+@import "../login-v2/login-v2.component.scss";
+
+
+.pages-register-v2 {
+    @extend .pages-login-v2;
+}
