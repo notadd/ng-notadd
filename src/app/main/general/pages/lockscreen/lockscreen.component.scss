@@ -1,0 +1,19 @@
+@import "../login/login.component.scss";
+
+
+.pages-lockscreen {
+    &::before {
+        background-image: url("../../../../../assets/images/bg_lockscreen.jpg");
+    }
+
+    .avatar {
+        width: 50px;
+        height: 50px;
+        margin: 0 auto;
+
+        img {
+            border-radius: 50%;
+        }
+
+    }
+}
