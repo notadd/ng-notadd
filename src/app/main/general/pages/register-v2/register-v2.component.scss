@@ -3,4 +3,8 @@
 
 .pages-register-v2 {
     @extend .pages-login-v2;
+
+    .auth-main {
+        padding: 0 60px;
+    }
 }
