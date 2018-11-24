@@ -1,10 +1,10 @@
-<div class="pages-login layout-full">
+<div class="pages-register layout-full">
     <div class="page overlay-bg text-center pt-100">
         <div class="page-content auth-box">
             <div class="brand mb-20 text-left pl-80">
                 <mat-icon fontSet="NotaddIcon" fontIcon="icon-logo" class="s-36"></mat-icon>
             </div>
-            <p class="mt-0 mb-20">Sign into your pages account</p>
+            <p class="mt-0 mb-20">Sign up to find interesting thing</p>
             <div class="mt-20 mb-20">
                 <mat-form-field color-white required-color-red color="accent" class="w-100-p">
                     <input matInput type="text" autocomplete placeholder="Name" required>
@@ -15,23 +15,22 @@
                 <mat-form-field color-white required-color-red color="accent" class="w-100-p">
                     <input matInput type="password" autocomplete placeholder="Password" required>
                 </mat-form-field>
-                <div class="mb-20" fxLayoutAlign="space-between end">
-                    <mat-checkbox color-white>Remember me</mat-checkbox>
-                    <a class="float-right" routerLink="/general/pages/forgot-password">Forgot password?</a>
-                </div>
-                <button mat-flat-button class="w-100-p" color="accent">Sign in</button>
+                <mat-form-field color-white required-color-red color="accent" class="w-100-p">
+                    <input matInput type="password" autocomplete placeholder="Retype Password" required>
+                </mat-form-field>
+                <button mat-flat-button class="w-100-p" color="accent">Register</button>
             </div>
-            <p class="mt-0">Still no account? Please go to <a routerLink="/general/pages/register">Register</a></p>
+            <p class="mt-0">Have account already? Please go to <a routerLink="/general/pages/login">Sign In</a></p>
 
             <div class="copyright">
                 <p>WEBSITE BY Notadd</p>
                 <p>© 2018. All RIGHT RESERVED.</p>
                 <div class="social pt-10">
                     <button mat-icon-button>
-                        <mat-icon size="1" svgIcon="mdi:github-circle" class="secondary-text s-24"></mat-icon>
+                        <mat-icon size="1" svgIcon="mdi:twitter" class="secondary-text s-24"></mat-icon>
                     </button>
                     <button mat-icon-button>
-                        <mat-icon size="1" svgIcon="mdi:twitter" class="secondary-text s-24"></mat-icon>
+                        <mat-icon size="1" svgIcon="mdi:facebook" class="secondary-text s-24"></mat-icon>
                     </button>
                     <button mat-icon-button>
                         <mat-icon size="1" svgIcon="mdi:google" class="secondary-text s-24"></mat-icon>

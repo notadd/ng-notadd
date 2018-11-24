@@ -1,5 +1,32 @@
+.layout-full {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.copyright {
+    margin-top: 60px;
+    font-size: .858rem;
+    font-weight: 500;
+    color: #424242;
+    letter-spacing: 1px;
+
+    p {
+        margin: 0 0 1rem;
+    }
+}
+
+.social {
+    mat-icon {
+        color: #949494;
+    }
+}
+
 .pages-errors {
-    .box {
+    .error-box {
         font-family: Roboto, sans-serif;
 
         h1 {
@@ -22,24 +49,6 @@
             font-size: 1rem;
             font-weight: bold;
             color: #a9afb5;
-        }
-
-        .copyright {
-            margin-top: 60px;
-            font-size: .858rem;
-            font-weight: 500;
-            color: #424242;
-            letter-spacing: 1px;
-
-            p {
-                margin: 0 0 1rem;
-            }
-        }
-
-        .social {
-            mat-icon {
-                color: #949494;
-            }
         }
     }
 }

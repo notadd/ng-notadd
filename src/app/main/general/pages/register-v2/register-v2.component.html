@@ -1,4 +1,4 @@
-<div class="layout-full pages-login-v2">
+<div class="layout-full pages-register-v2">
     <div class="page overlay-bg text-center">
         <div fxLayout="row" fxLayoutAlign="space-between start" fxLayoutAlign.lt-md="center start" class="h-100-p">
             <div class="brand-info mt-200 pt-100" fxHide.lt-md>
@@ -15,19 +15,27 @@
                 <p class="mt-0 mb-20 text-left">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                 <div class="mt-20 mb-20">
                     <mat-form-field required-color-red color="accent" class="w-100-p">
+                        <input matInput type="text" autocomplete placeholder="Name" required>
+                    </mat-form-field>
+                    <mat-form-field required-color-red color="accent" class="w-100-p">
                         <input matInput type="email" autocomplete placeholder="Email" required>
                     </mat-form-field>
                     <mat-form-field required-color-red color="accent" class="w-100-p">
                         <input matInput type="password" autocomplete placeholder="Password" required>
                     </mat-form-field>
-                    <div class="mb-40" fxLayoutAlign="space-between end">
-                        <mat-checkbox>Remember me</mat-checkbox>
-                        <a class="float-right" routerLink="/general/pages/forgot-password">Forgot password?</a>
+                    <mat-form-field required-color-red color="accent" class="w-100-p">
+                        <input matInput type="password" autocomplete placeholder="Retype Password" required>
+                    </mat-form-field>
+                    <div class="mb-40" fxLayoutAlign="start end" fxLayoutGap="15px">
+                        <mat-checkbox></mat-checkbox>
+                        <b class="secondary-text">By clicking Sign Up, you agree to our <a>Terms</a>.</b>
                     </div>
-                    <button mat-flat-button class="w-100-p" color="accent">Sign in</button>
+                    <button mat-flat-button class="w-100-p" color="accent">Sign Up</button>
                 </div>
-                <p class="mt-0 text-left">No account? <a routerLink="/general/pages/register-v2">Sign Up</a></p>
-
+                <p class="mt-0 text-left">
+                    Have account already? Please go to
+                    <a routerLink="/general/pages/login-v2">Sign In</a>
+                </p>
                 <div class="copyright">
                     <p>WEBSITE BY Notadd</p>
                     <p>© 2018. All RIGHT RESERVED.</p>

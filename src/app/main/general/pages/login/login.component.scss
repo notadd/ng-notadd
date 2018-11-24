@@ -35,12 +35,12 @@
     }
 
     .overlay-bg {
-        background-color: rgba(0, 0, 0, .3);
+        background-color: rgba(33, 33, 33, .6);
     }
 
 }
 
-.login-box {
+.auth-box {
 
     .copyright {
         margin-top: 60px;
@@ -63,7 +63,7 @@
 .pages-login {
 
     &::before {
-        background-image: url(../../../../../assets/images/bg_login.jpg);
+        background-image: url("../../../../../assets/images/bg_login.jpg");
     }
 
     .page-content {

@@ -28,7 +28,11 @@ export const locale = {
             Errors_500: '500',
             Errors_503: '503',
             Login: '登錄',
-            Login_v2: '登錄 V2'
+            Login_v2: '登錄 V2',
+            Register: '註冊',
+            Register_v2: '註冊 V2',
+            ForgotPassword: '忘記密碼',
+            Lockscreen: '鎖定屏幕'
         }
     }
 };

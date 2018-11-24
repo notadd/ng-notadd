@@ -28,7 +28,11 @@ export const locale = {
             Errors_500: '500',
             Errors_503: '503',
             Login: '登录',
-            Login_v2: '登录 V2'
+            Login_v2: '登录 V2',
+            Register: '注册',
+            Register_v2: '注册 V2',
+            ForgotPassword: '忘记密码',
+            Lockscreen: '锁定屏幕'
         }
     }
 };

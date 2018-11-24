@@ -1,25 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 
 import { NotaddConfigService } from '@notadd/services/config.service';
 
 @Component({
-    selector: 'errors',
-    templateUrl: './errors.component.html',
-    styleUrls: ['./errors.component.scss']
+    selector: 'lockscreen',
+    templateUrl: './lockscreen.component.html',
+    styleUrls: ['./lockscreen.component.scss']
 })
-export class ErrorsComponent implements OnInit {
-
-    code: string;
+export class LockscreenComponent implements OnInit {
 
     constructor(
-        private activatedRoute: ActivatedRoute,
         private notaddConfig: NotaddConfigService
     ) {
-        this.activatedRoute.params.subscribe(params => {
-            this.code = params.code;
-        });
-
         this.notaddConfig.config = {
             layout: {
                 navbar: {

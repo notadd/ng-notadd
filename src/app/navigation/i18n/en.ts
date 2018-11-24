@@ -28,7 +28,11 @@ export const locale = {
             Errors_500: '500',
             Errors_503: '503',
             Login: 'Login',
-            Login_v2: 'Login V2'
+            Login_v2: 'Login V2',
+            Register: 'Register',
+            Register_v2: 'Register V2',
+            ForgotPassword: 'Forgot Password',
+            Lockscreen: 'Lockscreen'
         }
     }
 };
