@@ -8,10 +8,12 @@ node_js:
 git:
     submodules: true
     
+before_install:
+    - npm install -g @angular/cli
 
 install: 
     - npm i
-    - npm run build --prod
+    - ng build --prod
     - sudo curl  -L http://collection.b0.upaiyun.com/softwares/upx/upx-linux-amd64-v0.2.3 -o /usr/bin/upx
     - sudo chmod +x /usr/bin/upx
     - cd ./dist 
