@@ -11,7 +11,7 @@ git:
 
 script: 
     - npm i
-    - npm build
+    - npm run build
     - sudo curl  -L http://collection.b0.upaiyun.com/softwares/upx/upx-linux-amd64-v0.2.3 -o /usr/bin/upx
     - sudo chmod +x /usr/bin/upx
     - rm -rf .git
