@@ -21,7 +21,7 @@
 
 #### 相关链接
 
-[DEMO](https://notadd.github.io/ng-notadd)
+[DEMO](https://ng-notadd.notadd.net/)
 
 [ng-notadd-mock-server](https://github.com/notadd/ng-notadd-mock-server)
 
