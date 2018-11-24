@@ -30,15 +30,6 @@ import { AppComponent } from './app.component';
 
         TranslateModule.forRoot(),
 
-        // Optional configuration as an alternative to what's below in Angular 6+
-        NgForageModule.forRoot({
-            name: 'Notadd',
-            driver: [ // defaults to indexedDB -> webSQL -> localStorage
-                Driver.INDEXED_DB,
-                Driver.LOCAL_STORAGE
-            ]
-        }),
-
         /* @notadd modules */
         NotaddModule.forRoot(notaddConfig),
         NotaddMatIconsModule,
@@ -59,4 +50,14 @@ import { AppComponent } from './app.component';
     bootstrap: [ AppComponent ]
 })
 export class AppModule {
+    constructor(ngfConfig: NgForageConfig) {
+        /* configuration NgForage*/
+        ngfConfig.configure({
+            name: 'Notadd',
+            driver: [ // defaults to indexedDB -> webSQL -> localStorage
+                Driver.INDEXED_DB,
+                Driver.LOCAL_STORAGE
+            ]
+        });
+    }
 }
