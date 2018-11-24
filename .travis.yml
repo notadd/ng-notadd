@@ -9,7 +9,7 @@ git:
     submodules: true
     
 
-script: 
+install: 
     - npm i
     - npm run build
     - sudo curl  -L http://collection.b0.upaiyun.com/softwares/upx/upx-linux-amd64-v0.2.3 -o /usr/bin/upx
@@ -17,3 +17,6 @@ script:
     - cd ./dist 
     - upx login ng-notadd "$NG" "$UPYUN"
     - upx put ./   /
+script:
+    - cd ../
+    - npm run test
