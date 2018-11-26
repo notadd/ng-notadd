@@ -4,7 +4,9 @@
         <ng-container *ngTemplateOutlet="toolbar"></ng-container>
     </ng-container>
 
-    <mat-sidenav-container autosize>
+    <mat-sidenav-container autosize
+        [ngClass]="{'full-height': notaddConfig.layout.toolbar.hidden}">
+        
         <!-- navbar -->
         <mat-sidenav
             [ngClass]="{'collapsed': notaddConfig.layout.navbar.collapsed}"
