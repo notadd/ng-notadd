@@ -1,7 +1,5 @@
 .layout-full {
-    position: fixed;
-    top: 0;
-    left: 0;
+    position: absolute;
     z-index: 0;
     width: 100%;
     height: 100%;
@@ -17,28 +15,30 @@
         height: 100%;
         content: "";
         background-position: center top;
-        -webkit-background-size: cover;
         background-size: cover;
     }
 
-    .page {
+    &::after {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        width: 100%;
         height: 100%;
-        padding: 0;
-        margin: 0;
-        background-color: rgba(0, 0, 0, .5);
-
-        &::before {
-            display: table;
-            content: "";
-            clear: both;
-        }
-    }
-
-    .overlay-bg {
+        content: "";
         background-color: rgba(33, 33, 33, .6);
     }
 
+    .page {
+        position: relative;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+        background: transparent;
+    }
+
 }
+
 
 .auth-box {
 
