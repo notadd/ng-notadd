@@ -11,6 +11,9 @@
 Medium-Background solution based on Angular7 Material2
 
 
+**[中文说明](README_zh.md)**
+
+
 ### Technology stack
 
 - Typescript

@@ -10,6 +10,7 @@
 
 基于 Angular7  Material2  的中后台解决方案
 
+**[English](README.md)**
 
 ### 技术栈
 
