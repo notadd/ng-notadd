@@ -18,6 +18,10 @@ layout {
 
         mat-sidenav-container {
             height: calc(100% - #{$height__main-toolbar});
+
+            &.full-height {
+                height: 100%;
+            }
         }
 
         mat-sidenav-content {

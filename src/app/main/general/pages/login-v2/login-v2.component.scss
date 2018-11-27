@@ -18,9 +18,17 @@
 
     .auth-main {
         width: 500px;
-        height: 100%;
-        padding: 150px 60px 180px;
         background: #fff;
         color: #424242;
+
+        .auth-main-inner {
+            padding: 20px 60px;
+            background: #fff;
+
+            @media only screen and (max-width: 400px) {
+                padding: 20px 30px;
+            }
+        }
+
     }
 }
