@@ -18,16 +18,15 @@
 
     .auth-main {
         width: 500px;
-        height: 100%;
         background: #fff;
         color: #424242;
 
         .auth-main-inner {
-            padding: 0 60px;
+            padding: 20px 60px;
+            background: #fff;
 
             @media only screen and (max-width: 400px) {
                 padding: 20px 30px;
-                overflow-y: auto;
             }
         }
 
