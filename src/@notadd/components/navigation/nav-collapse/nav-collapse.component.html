@@ -24,11 +24,11 @@
              [ngClass]="{'hover': isCollapsed}"
              [matMenuTriggerFor]="navMenu"
              #menuTrigger="matMenuTrigger"
-             (mouseenter)="toggleCollapse($event);(item.children.length && menuTrigger.openMenu())">
+             (mouseover)="toggleCollapse($event);(item.children.length && menuTrigger.openMenu());">
             <ng-container *ngTemplateOutlet="itemContent"></ng-container>
         </div>
 
-        <mat-menu class="nav-menu" #navMenu="matMenu" xPosition="before">
+        <mat-menu class="nav-menu" #navMenu="matMenu" yPosition="above">
             <ng-container *ngFor="let item of item.children">
                 <button *ngIf="item.children"
                         mat-menu-item
@@ -65,7 +65,7 @@
               [ngStyle]="{'background-color': item.badge.bg,'color': item.badge.fg}">
             {{item.badge.title}}
         </span>
-        <mat-icon class="collapsable-arrow">keyboard_arrow_right</mat-icon>
+        <mat-icon class="collapsed-arrow">keyboard_arrow_right</mat-icon>
     </ng-template>
 
 </ng-container>

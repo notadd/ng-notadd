@@ -89,17 +89,4 @@ export class NavbarComponent implements OnInit, OnDestroy {
         this.ngUnsubscribe.next();
         this.ngUnsubscribe.complete();
     }
-
-    /**
-     * 切换sidebar折叠
-     */
-    toggleSidebarCollapsed(): void {
-        this.configService.config =  {
-            layout: {
-                navbar: {
-                    collapsed: !this.notaddConfig.layout.navbar.collapsed
-                }
-            }
-        };
-    }
 }

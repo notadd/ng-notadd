@@ -1,4 +1,4 @@
-@mixin md-icon-size($size: 24px) {
+@mixin mat-icon-size($size: 24px) {
     font-size: $size;
     height: $size;
     width: $size;
@@ -16,13 +16,13 @@
             justify-content: center;
 
             > span,
-            .collapsable-arrow {
+            .collapsed-arrow {
                 display: none;
             }
 
             .nav-link-icon {
                 margin-right: 0;
-                @include md-icon-size(22px);
+                @include mat-icon-size(22px);
             }
         }
 
@@ -51,7 +51,7 @@
 
     .nav-link {
 
-        .collapsable-arrow {
+        .collapsed-arrow {
             transition: transform .3s ease-in-out, opacity .25s ease-in-out .1s;
             transform: rotate(0);
         }
@@ -65,7 +65,7 @@
 
         > .nav-link {
 
-            .collapsable-arrow {
+            .collapsed-arrow {
                 transform: rotate(90deg);
             }
         }
