@@ -11,43 +11,21 @@ mat-sidenav {
                 width: 90px;
             }
 
-            .navbar-top {
-                padding: 12px 0;
-                justify-content: center;
-
-                .buttons {
-                    display: none;
-                }
-
-                .logo {
-
-                    mat-icon {
-                        font-size: 16px;
-                        transition: font-size 300ms;
-                    }
-                }
-            }
-
             .navbar-scroll-container {
 
-                .user {
+                .logo-wrap {
                     padding: 12px 0;
 
-                    .avatar-container {
+                    .logo {
+                        width: 64px;
+                        height: 64px;
                         position: relative;
                         top: auto;
                         padding: 0;
-                        transform: translateX(0);
-                        left: auto;
-
-                        .avatar {
-                            width: 40px;
-                            height: 40px;
-                        }
+                        left: 32px;
                     }
 
-                    .username,
-                    .email {
+                    .logo-title{
                         display: none;
                     }
                 }
@@ -70,41 +48,6 @@ navbar {
         height: 100%;
     }
 
-    .navbar-top {
-        display: flex;
-        flex-direction: row;
-        flex: 1 0 auto;
-        align-items: center;
-        justify-content: space-between;
-        min-height: 64px;
-        max-height: 64px;
-        height: 64px;
-        padding: 12px 12px 12px 20px;
-
-        @include media-breakpoint('xs') {
-            min-height: 56px;
-            max-height: 56px;
-            height: 56px;
-        }
-
-        .logo {
-            width: 100%;
-            display: flex;
-            align-items: center;
-
-            mat-icon {
-                font-size: 26px;
-                width: 100%;
-                text-align: center;
-            }
-        }
-
-        .buttons {
-            display: flex;
-            align-items: center;
-        }
-    }
-
     .navbar-scroll-container {
         overflow-y: auto;
         -webkit-overflow-scrolling: touch;
@@ -116,7 +59,7 @@ navbar {
         background-size: 100% 40px, 100% 10px;
         background-attachment: local, scroll;
 
-        .user {
+        .logo-wrap {
             position: relative;
             display: flex;
             align-items: center;
@@ -124,18 +67,37 @@ navbar {
             width: 100%;
             padding: 24px 0 64px 0;
 
-            .avatar-container {
+            .logo-title {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                .title {
+                    font-size: 22px;
+                    margin: 0;
+                    margin-top: 14px;
+                }
+
+                .mat-icon {
+                    @include mat-icon-size(44px);
+                    width: 100%;
+                    text-align: center;
+                }
+            }
+
+            .logo {
                 position: absolute;
                 top: 92px;
                 border-radius: 50%;
                 padding: 8px;
                 transform: translateX(-50%);
                 left: 50%;
-
-                .avatar {
-                    width: 72px;
-                    height: 72px;
-                    margin: 0;
+                width: 80px;
+                height: 80px;
+                margin: 0;
+                .mat-icon {
+                    @include mat-icon-size(64px);
                 }
             }
         }

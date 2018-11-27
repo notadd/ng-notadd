@@ -16,17 +16,18 @@
         color: inherit;
     }
 
-    .navbar-logo{
+    .navbar-logo {
         width: 260px;
-        mat-icon{
-            font-size: 26px;
+        .mat-icon.logo {
+            @include mat-icon-size(40px);
         }
     }
 
     .user-button,
     notadd-search-bar,
     .fullscreen-toggle-button,
-    .settings-toggle-button {
+    .settings-toggle-button,
+    .navbar-toggle-button {
         min-width: 64px;
         height: 64px;
 
