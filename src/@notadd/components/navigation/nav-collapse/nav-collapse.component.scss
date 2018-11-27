@@ -1,4 +1,4 @@
-@mixin md-icon-size($size: 24px) {
+@mixin mat-icon-size($size: 24px) {
     font-size: $size;
     height: $size;
     width: $size;
@@ -22,7 +22,7 @@
 
             .nav-link-icon {
                 margin-right: 0;
-                @include md-icon-size(22px);
+                @include mat-icon-size(22px);
             }
         }
 
