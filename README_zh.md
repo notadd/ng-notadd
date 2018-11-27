@@ -8,13 +8,11 @@
 
 # ng-notadd
 
-Medium-Background solution based on Angular7 Material2
+基于 Angular7  Material2  的中后台解决方案
 
+**[English](README.md)**
 
-**[中文说明](README_zh.md)**
-
-
-### Technology stack
+### 技术栈
 
 - Typescript
 - Angular
@@ -22,7 +20,7 @@ Medium-Background solution based on Angular7 Material2
 - rxjs
 - Graphql
 
-#### RELATED LINKS
+#### 相关链接
 
 [DEMO](https://ng-notadd.notadd.net/)
 
@@ -33,7 +31,7 @@ Medium-Background solution based on Angular7 Material2
 #### clone & run mock-server
 ```bash
     git clone https://github.com/notadd/ng-notadd-mock-server.git
-    
+使用 gitee(国内)：   git clone https://giteecom/notadd/ng-notadd-mock-server.git
     cd ng-notadd-mock-server
     
     npm install
@@ -43,6 +41,7 @@ Medium-Background solution based on Angular7 Material2
 #### clone & run ng-notadd
 ```bash
     git clone https://github.com/notadd/ng-notadd.git
+使用 gitee(国内)：    git clone https://gitee.com/notadd/ng-notadd.git
      
     cd ng-notadd
      
@@ -55,62 +54,63 @@ Medium-Background solution based on Angular7 Material2
 ## Roadmap
 
 **0.10.0**
-- [x] Support APOLLO-GRAQPHQL -[x] Base page (personal information page, login page ...)
+- [x] 支持 Apollo-Graqphql
+- [x] 基础页面（个人信息页，登录页...）
 
 **0.11.0**
-- [ ] New left menu bar (support for mouse suspension)
+- [ ] 新的左侧菜单栏 （支持鼠标悬浮）
 
 **0.12.0**
-- [ ] Use NG-MATERIAL2 components
-- [ ] Mobile phone terminal is initially compatible 
+- [ ] 使用 ng-material2 组件
+- [ ] 手机端初步兼容 
 
 **0.13.0**
-- [ ] More complete dashboard page
+- [ ] 更加完整的 仪表盘页面
 
 **0.14.0**
-- [ ] Mobile phone-side compatibility
-- [ ] progressive application (PWA)
+- [ ] 手机端兼容
+- [ ] 渐进式应用(PWA)
 
 **0.15.0**
-- [ ] JSON generate form
+- [ ] json 生成表单
 
 **0.16.0**
-- [ ] recaptcha support (default off)
+- [ ] recaptcha 支持 （默认关闭）
 
-**0.17.0**
-- [ ] virtual list (list of support for level 100,000)
+**0.17.0** 
+- [ ] 虚拟列表（支持十万级别的列表）
 
 **0.18.0**
-- [ ] Excel Import and Export
-- [ ] Select rows to export Excel
+- [ ] excel 导入与导出
+- [ ] 选定行列导出 excel
 
 **0.19.0**
-- [ ] screenshot generation
-- [ ] firebase (not available domestically) or other alternative support
+- [ ] 截图生成
+- [ ] firebase（国内无法使用） or 其他替代方案 支持
 
 **0.20.0**
-- [ ] DIY Dashboard
-- [ ] JSON generates a simple dashboard
+- [ ] 可 DIY 仪表盘
+- [ ] json 生成简单仪表盘
 
 **0.21.0**
-- [ ] Preliminary e2e unit test
+- [ ] 初步的 e2e 单元测试
 
 **1.0**
-- [ ] Perfect unit testing
-- [ ] Overall fine tuning
+- [ ] 完善单元测试
+- [ ] 整体微调
 
 **1.1**
-- [ ] websocket support
+- [ ] websocket 支持
 
 **1.2**
-- [ ] Support electron to build desktop apps
+- [ ] 支持 electron 构建桌面应用
 
 **2.0**
-- [ ] Enterprise-Class custom forms
-- [ ] Enterprise-Class form system
-- [ ] Enterprise window/Pop window
+- [ ] 企业级自定义表单
+- [ ] 企业级表单系统
+- [ ] 企业级窗口/弹窗
 
-**Follow-up**
+**后续**
 
-- [ ] Excel online editing 
-- [ ] Word online editing
+- [ ] excel 在线编辑
+- [ ] word 在线编辑
