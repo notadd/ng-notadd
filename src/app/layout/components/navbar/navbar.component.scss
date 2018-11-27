@@ -17,12 +17,16 @@ mat-sidenav {
                     padding: 12px 0;
 
                     .logo {
-                        width: 64px;
-                        height: 64px;
+                        width: 44px;
+                        height: 40px;
                         position: relative;
                         top: auto;
                         padding: 0;
-                        left: 32px;
+                        left: 22px;
+
+                        .mat-icon {
+                            @include mat-icon-size(44px);
+                        }
                     }
 
                     .logo-title{
@@ -96,8 +100,10 @@ navbar {
                 width: 80px;
                 height: 80px;
                 margin: 0;
+
                 .mat-icon {
                     @include mat-icon-size(64px);
+                    transition: all 300ms;
                 }
             }
         }

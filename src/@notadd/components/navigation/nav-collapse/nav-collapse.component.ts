@@ -91,6 +91,7 @@ export class NotaddNavCollapseComponent implements OnInit, OnDestroy {
      */
     toggleCollapse(e): void {
         e.preventDefault();
+        console.log(e)
 
         this.isCollapsed = !this.isCollapsed;
 
