@@ -60,6 +60,21 @@
     }
 }
 
+.vertical-align {
+    &::before {
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+        content: "";
+    }
+
+    .vertical-align-middle {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+}
+
 .pages-login {
 
     &::before {
@@ -69,6 +84,7 @@
     .page-content {
         display: inline-block;
         width: 400px;
+        max-width: 100%;
         padding: 30px;
     }
 
