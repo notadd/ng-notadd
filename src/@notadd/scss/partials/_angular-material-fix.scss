@@ -95,3 +95,9 @@ mat-chip {
 .mat-card-image {
     max-width: none !important;
 }
+
+// Fix: Mat-drawer-side right border
+.mat-drawer,
+.mat-drawer-end{
+    border: none !important;
+}
