@@ -1,6 +1,6 @@
 <div class="dashboard-analysis">
-    <section fxLayout="row nowrap" fxLayoutAlign="space-between center">
-        <mat-card fxFlex="23" *ngFor="let widget of widgets">
+    <section fxLayout="row nowrap" fxLayoutAlign="space-between center" fxLayoutGap="30px">
+        <mat-card fxFlex="1 0 0%" *ngFor="let widget of widgets">
             <mat-card-header>
                 <mat-card-title fxLayout="row nowrap" fxLayoutAlign="space-between center">
                     <span class="grey-800">
@@ -19,5 +19,10 @@
             </mat-card-content>
         </mat-card>
     </section>
-    <section></section>
+    <section fxLayout="row nowrap" fxLayoutAlign="space-between center" fxLayoutGap="30px">
+        <div fxFlex="1 0 0%">
+            <ngx-amap class="map"></ngx-amap>
+        </div>
+        <div fxFlex="1 0 0%"></div>
+    </section>
 </div>
