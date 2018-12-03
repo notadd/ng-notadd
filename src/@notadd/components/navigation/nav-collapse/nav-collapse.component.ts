@@ -1,5 +1,6 @@
-import { Component, HostBinding, Input, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, HostBinding, Input, OnDestroy, OnInit, ViewEncapsulation, ViewChild, HostListener } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
+import { MatMenuTrigger } from '@angular/material';
 import { Subject } from 'rxjs';
 import { filter, takeUntil } from 'rxjs/operators';
 
@@ -25,9 +26,13 @@ export class NotaddNavCollapseComponent implements OnInit, OnDestroy {
     @HostBinding('class.open')
     isCollapsed = false;
 
+    @ViewChild(MatMenuTrigger) menuTrigger: MatMenuTrigger;
+
     notaddConfig: any;
 
     subMenus: Array<any>;
+
+    isEnterNavMenu: boolean;
 
     private ngUnsubscribe: Subject<any>;
 
@@ -87,15 +92,26 @@ export class NotaddNavCollapseComponent implements OnInit, OnDestroy {
     /**
      * 切换导航折叠、展开
      *
-     * @param e
+     * @param event
      */
-    toggleCollapse(e): void {
-        e.preventDefault();
-
+    toggleCollapse(event): void {
+        event.preventDefault();
         this.isCollapsed = !this.isCollapsed;
 
         this.navigationService.onItemCollapsed.next(this.item);
         this.navigationService.onItemCollapseToggled.next();
+    }
+
+    openNavMenu(event) {
+        event.preventDefault();
+        this.menuTrigger.openMenu();
+    }
+
+    closeNavMenu(event) {
+        event.preventDefault();
+        setTimeout(() => {
+            !this.isEnterNavMenu && this.menuTrigger.closeMenu();
+        }, 100);
     }
 
     /***
@@ -166,5 +182,4 @@ export class NotaddNavCollapseComponent implements OnInit, OnDestroy {
     setSubMenu(menu) {
         this.subMenus = menu.children;
     }
-
 }

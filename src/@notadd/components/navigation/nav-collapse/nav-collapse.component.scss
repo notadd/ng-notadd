@@ -26,18 +26,20 @@
             }
         }
 
-        .nav-collapsed.hover{
-            .nav-link-icon{
-                display: none;
-            }
+        .nav-collapsed {
+            &:hover {
+                .nav-link-icon {
+                    display: none;
+                }
 
-            .nav-link-title{
-                display: block;
-                width: 90px;
-                text-align: center;
-                overflow: hidden;
-                text-overflow: ellipsis;
-                white-space: nowrap;
+                .nav-link-title {
+                    display: block;
+                    width: 90px;
+                    text-align: center;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                }
             }
         }
 
