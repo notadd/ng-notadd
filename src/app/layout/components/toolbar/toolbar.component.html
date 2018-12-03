@@ -28,8 +28,8 @@
         <button mat-button [matMenuTriggerFor]="userMenu"
                 class="user-button">
             <div fxLayout="row" fxLayoutAlign="center center">
-                <img class="avatar mr-0 mr-sm-16" src="assets/images/avatars/tianhun.jpg">
-                <span class="username mr-12" fxHide fxShow.gt-sm>天魂</span>
+                <img class="avatar" src="assets/images/avatars/tianhun.jpg">
+                <span class="username" fxHide fxShow.gt-sm>天魂</span>
                 <mat-icon class="s-16" fxHide.xs>keyboard_arrow_down</mat-icon>
             </div>
         </button>
@@ -66,7 +66,7 @@
                 [fxHide.gt-sm]="false"
                 class="fullscreen-toggle-button"
                 (click)="toggleFullscreen()">
-            <mat-icon class="secondary-text">{{isFullscreen ? 'fullscreen_exit' : 'fullscreen'}}</mat-icon>
+            <mat-icon class="s-24 secondary-text">{{isFullscreen ? 'fullscreen_exit' : 'fullscreen'}}</mat-icon>
         </button>
 
         <div class="toolbar-separator" fxHide fxShow.gt-xs></div>
@@ -75,8 +75,8 @@
                 class="language-button"
                 [matMenuTriggerFor]="languageMenu">
             <div fxLayout="row" fxLayoutAlign="center center">
-                <mat-icon class="secondary-text">language</mat-icon>
-                <span class="secondary-text mr-12">{{currentLanguage.title}}</span>
+                <mat-icon class="s-20 mr-4 secondary-text">language</mat-icon>
+                <span class="secondary-text">{{currentLanguage.title}}</span>
                 <mat-icon class="s-16" fxHide.xs>keyboard_arrow_down</mat-icon>
             </div>
         </button>
@@ -92,7 +92,7 @@
         <button mat-icon-button
                 class="settings-toggle-button"
                 (click)="toggleSidebarOpen('themeOptionsPanel')">
-            <mat-icon class="secondary-text">settings</mat-icon>
+            <mat-icon class="s-20 secondary-text">settings</mat-icon>
         </button>
 
         <div *ngIf="rightNavbar" class="toolbar-separator" fxHide fxShow.gt-xs></div>
