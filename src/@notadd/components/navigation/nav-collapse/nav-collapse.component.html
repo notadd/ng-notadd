@@ -21,40 +21,47 @@
     <!-- 导航折叠 -->
     <ng-container *ngIf="notaddConfig.layout.navbar.collapsed">
         <div class="nav-link nav-collapsed"
-             [ngClass]="{'hover': isCollapsed}"
              [matMenuTriggerFor]="navMenu"
+             [matMenuTriggerData]="{items: item.children}"
              #menuTrigger="matMenuTrigger"
-             (mouseover)="toggleCollapse($event);(item.children.length && menuTrigger.openMenu());">
+             (mouseenter)="item.children.length && openNavMenu($event);"
+             (mouseleave)="item.children.length && closeNavMenu($event);">
             <ng-container *ngTemplateOutlet="itemContent"></ng-container>
         </div>
 
-        <mat-menu class="nav-menu" #navMenu="matMenu" yPosition="above">
-            <ng-container *ngFor="let item of item.children">
-                <button *ngIf="item.children"
-                        mat-menu-item
-                        [matMenuTriggerFor]="subMenu"
-                        (mouseenter)="setSubMenu(item)"
-                        [translate]="item.i18n">{{item.title}}</button>
+        <mat-menu class="nav-menu" #navMenu="matMenu" yPosition="above" hasBackdrop="false">
+            <div (mouseenter)="isEnterNavMenu = true" (mouseleave)="isEnterNavMenu = false; closeNavMenu($event);">
+                <ng-template matMenuContent let-items="items">
+                    <ng-container *ngFor="let item of items">
+                        <button *ngIf="item.children"
+                                mat-menu-item
+                                [matMenuTriggerFor]="subMenu"
+                                (mouseenter)="setSubMenu(item);"
+                                [translate]="item.i18n">{{item.title}}</button>
 
-                <button *ngIf="!item.children"
-                        mat-menu-item
-                        [routerLink]="item.url"
-                        [routerLinkActive]="['active', 'mat-accent-bg']"
-                        (mouseleave)="changeCollapse(true)"
-                        matRipple
-                        [translate]="item.i18n">{{item.title}}</button>
-            </ng-container>
+                        <button *ngIf="!item.children"
+                                mat-menu-item
+                                [routerLink]="item.url"
+                                [routerLinkActive]="['active', 'mat-accent-bg']"
+                                matRipple
+                                [translate]="item.i18n">{{item.title}}</button>
+                    </ng-container>
+                </ng-template>
+            </div>
         </mat-menu>
-        <mat-menu #subMenu="matMenu">
-            <button mat-menu-item
-                    *ngFor="let subItem of subMenus"
-                    [routerLink]="subItem.url"
-                    [routerLinkActive]="['active', 'mat-accent-bg']"
-                    (mouseleave)="changeCollapse(true)"
-                    matRipple
-                    [translate]="subItem.i18n">
-                {{subItem.title}}
-            </button>
+        <mat-menu #subMenu="matMenu" hasBackdrop="false">
+            <div (mouseenter)="isEnterNavMenu = true" (mouseleave)="isEnterNavMenu = false; closeNavMenu($event);">
+                <ng-template matMenuContent>
+                    <button mat-menu-item
+                            *ngFor="let subItem of subMenus"
+                            [routerLink]="subItem.url"
+                            [routerLinkActive]="['active', 'mat-accent-bg']"
+                            matRipple
+                            [translate]="subItem.i18n">
+                        {{subItem.title}}
+                    </button>
+                </ng-template>
+            </div>
         </mat-menu>
     </ng-container>
 

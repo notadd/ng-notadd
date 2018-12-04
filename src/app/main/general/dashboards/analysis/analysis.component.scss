@@ -3,6 +3,10 @@
 .dashboard-analysis {
     padding: 20px;
 
+    section {
+        margin-bottom: 30px;
+    }
+
     mat-card {
         .mat-card-header-text {
             width: 100%;
@@ -32,5 +36,10 @@
             height: 50px;
             width: 100%;
         }
+    }
+
+    .map {
+        height: 400px;
+        width: 100%;
     }
 }

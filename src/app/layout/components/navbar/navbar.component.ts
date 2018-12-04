@@ -63,7 +63,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
                     if (activeNavItem) {
                         const activeItemOffsetTop = activeNavItem.offsetTop,
                             activeItemOffsetParentTop = activeNavItem.offsetParent.offsetTop,
-                            scrollDistance = activeItemOffsetTop - activeItemOffsetParentTop - (48 * 3) - 168;
+                            scrollDistance = activeItemOffsetTop - activeItemOffsetParentTop - (48 * 3) - 1010;
 
                         this.notaddPerfectScrollbar.scrollToTop(scrollDistance);
                     }

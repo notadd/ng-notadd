@@ -31,7 +31,8 @@
 #### clone & run mock-server
 ```bash
     git clone https://github.com/notadd/ng-notadd-mock-server.git
-使用 gitee(国内)：   git clone https://giteecom/notadd/ng-notadd-mock-server.git
+    # 或使用 gitee(国内推荐)：   
+    git clone https://giteecom/notadd/ng-notadd-mock-server.git
     cd ng-notadd-mock-server
     
     npm install
@@ -41,7 +42,8 @@
 #### clone & run ng-notadd
 ```bash
     git clone https://github.com/notadd/ng-notadd.git
-使用 gitee(国内)：    git clone https://gitee.com/notadd/ng-notadd.git
+    # 或使用 gitee(国内推荐)：     
+    git clone https://gitee.com/notadd/ng-notadd.git
      
     cd ng-notadd
      

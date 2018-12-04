@@ -11,6 +11,7 @@ import {
 } from '@angular/material';
 
 import { NgxEchartsModule } from 'ngx-echarts';
+import { NgxAmapModule } from 'ngx-amap';
 import { NotaddSharedModule } from '@notadd/shared.module';
 import { NotaddPipesModule } from '@notadd/pipes/pipes.module';
 
@@ -41,9 +42,12 @@ const routes: Routes = [
         MatMenuModule,
         MatSelectModule,
         MatTabsModule,
-        NgxEchartsModule,
         MatCardModule,
 
+        NgxEchartsModule,
+        NgxAmapModule.forRoot({
+            apiKey: ''
+        }),
         NotaddSharedModule,
         NotaddPipesModule,
 

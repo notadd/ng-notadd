@@ -1,4 +1,6 @@
-import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, Input, OnInit, ViewEncapsulation, Inject, Renderer2, ComponentFactoryResolver, ApplicationRef, ViewContainerRef, Injector } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+import { CdkPortal, DomPortalOutlet } from '@angular/cdk/portal';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
@@ -15,12 +17,25 @@ export class NotaddNavigationComponent implements OnInit {
     @Input()
     navigation: any;
 
+    domPortalOutlet: DomPortalOutlet;
+
+    private bodyElement: HTMLBodyElement;
+
+    private menuElement: HTMLDivElement;
+
     private ngUnsubscribe: Subject<any>;
 
     constructor(
-        private navigationService: NotaddNavigationService
+        private navigationService: NotaddNavigationService,
+        private render2: Renderer2,
+        @Inject(DOCUMENT) private document: any,
+        private componentFactoryResolver: ComponentFactoryResolver,
+        private appRef: ApplicationRef,
+        private viewContainerRef: ViewContainerRef,
+        private injector: Injector
     ) {
         this.ngUnsubscribe = new Subject<any>();
+        this.bodyElement = this.document.querySelector('body');
     }
 
     ngOnInit() {
@@ -34,4 +49,15 @@ export class NotaddNavigationComponent implements OnInit {
             });
     }
 
+    createOverlayMenu() {
+        this.menuElement = this.render2.createElement('div');
+        this.menuElement.classList.add('overlay-menu');
+        this.menuElement.innerHTML = '<span>Angular Material</span>';
+        this.bodyElement.appendChild(this.menuElement);
+        this.domPortalOutlet = new DomPortalOutlet(this.menuElement, this.componentFactoryResolver, this.appRef, this.injector);
+    }
+
+    addTemplatePortal() {
+        // this.domPortalOutlet.attachTemplatePortal();
+    }
 }
