@@ -58,11 +58,11 @@ Medium-Background solution based on Angular7 Material2
 - [x] Support APOLLO-GRAQPHQL -[x] Base page (personal information page, login page ...)
 
 **0.11.0**
-- [ ] New left menu bar (support for mouse suspension)
+- [x] New left menu bar (support for mouse suspension)
 
 **0.12.0**
 - [ ] Use NG-MATERIAL2 components
-- [ ] Mobile phone terminal is initially compatible 
+- [x] Mobile phone terminal is initially compatible 
 
 **0.13.0**
 - [ ] More complete dashboard page
