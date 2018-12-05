@@ -71,6 +71,10 @@ navbar {
             width: 100%;
             padding: 24px 0 64px 0;
 
+            @include media-breakpoint-down('xs') {
+                padding: 15px 0;
+            }
+
             .logo-title {
                 width: 100%;
                 display: flex;
@@ -85,8 +89,13 @@ navbar {
 
                 .mat-icon {
                     @include mat-icon-size(44px);
-                    width: 100%;
                     text-align: center;
+
+                    @include media-breakpoint-down('xs') {
+                        @include mat-icon-size(30px);
+                    }
+
+                    width: 100% !important;
                 }
             }
 
@@ -111,6 +120,10 @@ navbar {
         .navbar-content {
             flex: 1 1 auto;
             margin-top: 32px;
+
+            @include media-breakpoint-down('xs') {
+                margin-top: 0;
+            }
         }
     }
 }

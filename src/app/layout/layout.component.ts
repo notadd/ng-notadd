@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy, ViewEncapsulation } from '@angular/core';
 import { Router, ActivatedRoute, NavigationEnd, Params } from '@angular/router';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Subject } from 'rxjs';
 import { takeUntil, filter, map, mergeMap } from 'rxjs/operators';
 
@@ -18,11 +19,13 @@ export class LayoutComponent implements OnInit, OnDestroy {
 
     notaddConfig: any;
     hasContentHeader: boolean;
+    isMobile: boolean;
 
     constructor(
         private configService: NotaddConfigService,
         private router: Router,
-        private activatedRoute: ActivatedRoute
+        private activatedRoute: ActivatedRoute,
+        private breakpointObserver: BreakpointObserver
     ) {
         this.ngUnsubscribe = new Subject<any>();
         this.hasContentHeader = true;
@@ -50,6 +53,35 @@ export class LayoutComponent implements OnInit, OnDestroy {
             .subscribe((event) => {
                 this.hasContentHeader = event['hasContentHeader'] === void (0) || event['hasContentHeader'];
             });
+
+        this.breakpointObserver.observe([ Breakpoints.Handset ])
+            .pipe(
+                takeUntil(this.ngUnsubscribe),
+                map(match => match.matches)
+            )
+            .subscribe(matches => {
+                this.isMobile = matches;
+                this.configService.config = {
+                    layout: {
+                        navbar: {
+                            hidden: matches
+                        }
+                    }
+                };
+            });
+    }
+
+    /**
+     * 单击 sidenav 背景事件
+     */
+    onBackdropClick(): void {
+        this.configService.config = {
+            layout: {
+                navbar: {
+                    hidden: true
+                }
+            }
+        };
     }
 
     ngOnDestroy() {

@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, Input } from '@angular/core';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { TranslateService } from '@ngx-translate/core';
@@ -15,6 +15,9 @@ import { NotaddSidebarService } from '@notadd/components/sidebar/sidebar.service
 })
 export class ToolbarComponent implements OnInit, OnDestroy {
 
+    @Input()
+    isMobile: boolean;
+
     rightNavbar: boolean;
     hiddenNavbar: boolean;
     collapseNavbar: boolean;
@@ -22,6 +25,7 @@ export class ToolbarComponent implements OnInit, OnDestroy {
     isFullscreen = false;
     languages: Array<any>;
     currentLanguage: any;
+    isMoreToolbarVisible: boolean;
 
     /* 取消订阅主题 */
     private ngUnsubscribe: Subject<any>;
@@ -46,6 +50,7 @@ export class ToolbarComponent implements OnInit, OnDestroy {
                 title: 'English'
             }
         ];
+        this.isMoreToolbarVisible = false;
     }
 
     ngOnInit() {
@@ -90,7 +95,7 @@ export class ToolbarComponent implements OnInit, OnDestroy {
     /**
      * 切换侧边栏折叠
      */
-    toggleSidebarCollapsed(): void {
+    toggleSidenavCollapsed(): void {
         const config = {
             layout: {
                 navbar: {
@@ -106,6 +111,20 @@ export class ToolbarComponent implements OnInit, OnDestroy {
         this.configService.config = config;
     }
 
+    /**
+     * 切换侧边栏可见性
+     */
+    toggleSidenavVisibility(): void {
+        this.configService.config = {
+            layout: {
+                navbar: {
+                    hidden: !this.notaddConfig.layout.navbar.hidden
+                }
+            }
+        };
+    }
+
+    /* 全局搜索 */
     search(event): void {
         console.log(event.value);
     }
@@ -118,5 +137,19 @@ export class ToolbarComponent implements OnInit, OnDestroy {
     setLanguage(lang): void {
         this.currentLanguage = lang;
         this.translateService.use(lang.code);
+    }
+
+    /**
+     * 切换移动端更多工具栏可见
+     */
+    toggleMoreToolbarVisible(): void {
+        this.isMoreToolbarVisible = !this.isMoreToolbarVisible;
+    }
+
+    /**
+     * 菜单按钮点击
+     */
+    onMenuButtonClick(): void {
+        this.isMobile ? this.toggleSidenavVisibility() : this.toggleSidenavCollapsed();
     }
 }

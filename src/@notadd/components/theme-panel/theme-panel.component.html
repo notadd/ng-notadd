@@ -14,7 +14,7 @@
         <div class="group" formGroupName="layout">
 
             <!-- layout width -->
-            <div class="group">
+            <div class="group" fxHide fxShow.gt-xs>
 
                 <h2 class="mb-12" [translate]="'ThemePanel.LayoutWidth'">布局宽度</h2>
                 <mat-radio-group fxLayout="column" fxLayoutAlign="start start" formControlName="width">
@@ -24,19 +24,19 @@
 
             </div>
 
-            <mat-divider></mat-divider>
+            <mat-divider fxHide fxShow.gt-xs></mat-divider>
 
             <!-- toolbar -->
             <div class="group mt-24" formGroupName="toolbar">
 
                 <h2 class="mb-12" [translate]="'ThemePanel.Toolbar.Title'">工具栏</h2>
 
-                <mat-slide-toggle class="ml-12" formControlName="hidden" [translate]="'ThemePanel.Toolbar.Hidden'">
+                <mat-slide-toggle class="ml-12" formControlName="hidden" [translate]="'ThemePanel.Toolbar.Hidden'" fxHide fxShow.gt-xs>
                     隐藏
                 </mat-slide-toggle>
 
-                <h3 class="ml-12 mt-24" [translate]="'ThemePanel.Toolbar.Position'">位置:</h3>
-                <mat-radio-group fxLayout="column" fxLayoutAlign="start start" formControlName="position">
+                <h3 class="ml-12 mt-24" [translate]="'ThemePanel.Toolbar.Position'" fxHide fxShow.gt-xs>位置:</h3>
+                <mat-radio-group fxLayout="column" fxLayoutAlign="start start" formControlName="position" fxHide fxShow.gt-xs>
                     <mat-radio-button class="ml-12 mb-12" value="above">Above</mat-radio-button>
                     <mat-radio-button class="ml-12 mb-12" value="below-static">Below Static</mat-radio-button>
                     <mat-radio-button class="ml-12 mb-12" value="below-fixed">Below Fixed</mat-radio-button>
@@ -55,12 +55,12 @@
 
                 <h2 class="mb-12" [translate]="'ThemePanel.Footer.Title'">页脚</h2>
 
-                <mat-slide-toggle class="ml-12 mb-12" formControlName="hidden" [translate]="'ThemePanel.Footer.Hidden'">
+                <mat-slide-toggle class="ml-12" formControlName="hidden" [translate]="'ThemePanel.Footer.Hidden'">
                     隐藏
                 </mat-slide-toggle>
 
-                <h3 class="ml-12 mt-24" [translate]="'ThemePanel.Footer.Position'">位置:</h3>
-                <mat-radio-group fxLayout="column" fxLayoutAlign="start start" formControlName="position">
+                <h3 class="ml-12 mt-24" [translate]="'ThemePanel.Footer.Position'" fxHide fxShow.gt-xs>位置:</h3>
+                <mat-radio-group fxLayout="column" fxLayoutAlign="start start" formControlName="position" fxHide fxShow.gt-xs>
                     <mat-radio-button class="ml-12 mb-12" value="above">Above</mat-radio-button>
                     <mat-radio-button class="ml-12 mb-12" value="below-static">Below Static</mat-radio-button>
                     <mat-radio-button class="ml-12 mb-12" value="below-fixed">Below Fixed</mat-radio-button>
@@ -83,12 +83,12 @@
                     隐藏
                 </mat-slide-toggle>
 
-                <mat-slide-toggle class="ml-12 mt-24" formControlName="collapsed" [translate]="'ThemePanel.Navbar.Collapsed'">
+                <mat-slide-toggle class="ml-12 mt-24" formControlName="collapsed" [translate]="'ThemePanel.Navbar.Collapsed'" fxHide fxShow.gt-xs>
                     折叠
                 </mat-slide-toggle>
 
-                <h3 class="ml-12 mt-24" [translate]="'ThemePanel.Navbar.Position'">位置:</h3>
-                <mat-radio-group class="ml-12" fxLayout="column" fxLayoutAlign="start start" formControlName="position">
+                <h3 class="ml-12 mt-24" [translate]="'ThemePanel.Navbar.Position'" fxHide fxShow.gt-xs>位置:</h3>
+                <mat-radio-group class="ml-12" fxLayout="column" fxLayoutAlign="start start" formControlName="position" fxHide fxShow.gt-xs>
                     <mat-radio-button class="mb-16" value="start">Left</mat-radio-button>
                     <mat-radio-button class="mb-16" value="end">Right</mat-radio-button>
                 </mat-radio-group>
