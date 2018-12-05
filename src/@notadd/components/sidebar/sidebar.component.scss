@@ -18,9 +18,10 @@ notadd-sidebar {
     background: white;
 
     @include media-breakpoint-down('xs') {
+        top: 112px;
         min-width: 0 !important;
-        max-width: 80vw !important;
-        width: 80vw !important;
+        max-width: 50vw !important;
+        width: 50vw !important;
     }
 
     &.left-positioned {

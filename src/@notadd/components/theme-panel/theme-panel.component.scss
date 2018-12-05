@@ -36,10 +36,20 @@
         background: #FFF;
         z-index: 2;
 
+        @include media-breakpoint-down('xs') {
+            min-height: 56px;
+            padding: 0;
+        }
+
         .title {
             font-size: 20px;
             font-weight: 500;
             padding-left: 4px;
+
+            @include media-breakpoint-down('xs') {
+                font-size: 16px;
+                padding-left: 12px;
+            }
         }
     }
 

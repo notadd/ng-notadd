@@ -1,17 +1,18 @@
 <main id="main">
-    <!-- toolbar: Above -->
-    <ng-container *ngIf="notaddConfig.layout.toolbar.position === 'above'">
+    <!-- toolbar: Above || is mobile -->
+    <ng-container *ngIf="notaddConfig.layout.toolbar.position === 'above' || isMobile">
         <ng-container *ngTemplateOutlet="toolbar"></ng-container>
     </ng-container>
 
     <mat-sidenav-container autosize
-        [ngClass]="{'full-height': notaddConfig.layout.toolbar.hidden}">
-        
+                           [ngClass]="{'full-height': notaddConfig.layout.toolbar.hidden}"
+                           (backdropClick)="onBackdropClick()">
+
         <!-- navbar -->
         <mat-sidenav
             [ngClass]="{'collapsed': notaddConfig.layout.navbar.collapsed}"
             [opened]="!notaddConfig.layout.navbar.hidden"
-            mode="side"
+            [mode]="isMobile ? 'over' : 'side'"
             [position]="notaddConfig.layout.navbar.position">
             <ng-container *ngTemplateOutlet="navbar"></ng-container>
         </mat-sidenav>
@@ -26,8 +27,8 @@
 
             <div class="container">
 
-                <!-- toolbar: Below static -->
-                <ng-container *ngIf="notaddConfig.layout.toolbar.position === 'below-static'">
+                <!-- toolbar: Below static && is not mobile -->
+                <ng-container *ngIf="notaddConfig.layout.toolbar.position === 'below-static' && !isMobile">
                     <ng-container *ngTemplateOutlet="toolbar"></ng-container>
                 </ng-container>
 
@@ -59,6 +60,7 @@
 <!-- toolbar -->
 <ng-template #toolbar>
     <toolbar *ngIf="!notaddConfig.layout.toolbar.hidden"
+             [isMobile]="isMobile"
              [ngClass]="[notaddConfig.layout.toolbar.position, notaddConfig.layout.toolbar.background]">
     </toolbar>
 </ng-template>

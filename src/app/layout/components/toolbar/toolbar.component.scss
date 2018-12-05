@@ -18,20 +18,22 @@
 
     .navbar-logo {
         width: 260px;
+
+        @include media-breakpoint-down('xs') {
+            width: 56px;
+        }
+
         .mat-icon.logo {
             @include mat-icon-size(40px);
         }
     }
 
-    .user-button,
-    notadd-search-bar,
-    .fullscreen-toggle-button,
-    .settings-toggle-button,
-    .navbar-toggle-button {
+    .toolbar-button {
         min-width: 64px;
         height: 64px;
 
         @include media-breakpoint-down('xs') {
+            min-width: 56px;
             height: 56px;
         }
     }
@@ -48,6 +50,24 @@
 
         @include media-breakpoint-down('xs') {
             height: 56px;
+        }
+    }
+
+    .mat-toolbar-row {
+        padding: 0;
+
+        .more-divider {
+            width: 100%;
+        }
+
+        .avatar {
+            $mobileAviatarSize: 30px;
+            @include media-breakpoint-down('xs') {
+                width: $mobileAviatarSize;
+                min-width: $mobileAviatarSize;
+                height: $mobileAviatarSize;
+                line-height: $mobileAviatarSize;
+            }
         }
     }
 }
