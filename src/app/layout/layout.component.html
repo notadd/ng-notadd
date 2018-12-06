@@ -4,9 +4,7 @@
         <ng-container *ngTemplateOutlet="toolbar"></ng-container>
     </ng-container>
 
-    <mat-sidenav-container autosize
-                           [ngClass]="{'full-height': notaddConfig.layout.toolbar.hidden}"
-                           (backdropClick)="onBackdropClick()">
+    <mat-sidenav-container autosize (backdropClick)="onBackdropClick()">
 
         <!-- navbar -->
         <mat-sidenav
@@ -18,14 +16,15 @@
         </mat-sidenav>
 
         <!-- container -->
-        <mat-sidenav-content notaddPerfectScrollbar
-                             [notaddPerfectScrollbarOptions]="{suppressScrollX: true, updateOnRouteChange : true}">
+        <mat-sidenav-content>
+
             <!-- toolbar: Below fixed -->
             <ng-container *ngIf="notaddConfig.layout.toolbar.position === 'below-fixed'">
                 <ng-container *ngTemplateOutlet="toolbar"></ng-container>
             </ng-container>
 
-            <div class="container">
+            <div class="container" notaddPerfectScrollbar
+                 [notaddPerfectScrollbarOptions]="{suppressScrollX: true, updateOnRouteChange : true}">
 
                 <!-- toolbar: Below static && is not mobile -->
                 <ng-container *ngIf="notaddConfig.layout.toolbar.position === 'below-static' && !isMobile">
