@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
+import { MatIconModule, MatButtonModule } from '@angular/material';
 import { TranslateModule } from '@ngx-translate/core';
 import { NgForageModule, NgForageConfig, Driver } from 'ngforage';
 
@@ -27,6 +28,8 @@ import { AppComponent } from './app.component';
     imports: [
         BrowserModule,
         BrowserAnimationsModule,
+        MatIconModule,
+        MatButtonModule,
 
         TranslateModule.forRoot(),
 

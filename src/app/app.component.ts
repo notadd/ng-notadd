@@ -9,6 +9,7 @@ import { NotaddConfigService } from '@notadd/services/config.service';
 import { NotaddLoadingService } from '@notadd/services/notadd-loading.service';
 import { NotaddTranslationService } from '@notadd/services/translation.service';
 import { NotaddNavigationService } from '@notadd/components/navigation/navigation.service';
+import { NotaddSidebarService } from '@notadd/components/sidebar/sidebar.service';
 
 import { navigation } from './navigation/navigation';
 import { locale as navigationZh_Hant } from './navigation/i18n/zh-Hant';
@@ -33,7 +34,8 @@ export class AppComponent implements OnInit, OnDestroy {
         private navigationService: NotaddNavigationService,
         private translateService: TranslateService,
         private notaddTranslationService: NotaddTranslationService,
-        private platform: Platform
+        private platform: Platform,
+        private sidebarService: NotaddSidebarService
     ) {
         this.navigation = navigation;
 
@@ -74,6 +76,15 @@ export class AppComponent implements OnInit, OnDestroy {
                 this.document.body.classList.add('boxed') :
                 this.document.body.classList.remove('boxed');
             });
+    }
+
+    /**
+     * 切换侧边栏打开
+     *
+     * @param key
+     */
+    toggleSidebarOpen(key): void {
+        this.sidebarService.getSidebar(key).toggleOpen();
     }
 
     ngOnDestroy() {
