@@ -2,7 +2,13 @@
     .content {
         background-color: #FFF;
     }
+
     .content-row {
-        padding: 20px 0;
+        padding-top: 20px;
+
+        >button,
+        >a {
+            margin-bottom: 20px;
+        }
     }
 }
