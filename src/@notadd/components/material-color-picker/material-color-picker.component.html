@@ -28,7 +28,8 @@
             Select Color
         </span>
 
-        <button mat-icon-button
+        <button [style.visibility]="view==='hues'?'visible':'hidden'"
+                mat-icon-button
                 class="remove-color-button secondary-text"
                 (click)="removeColor($event)"
                 aria-label="Remove Color">
@@ -39,7 +40,6 @@
     <div [ngSwitch]="view" class="views">
 
         <div class="view" *ngSwitchCase="'palettes'">
-
             <div fxLayout="row wrap" fxLayoutAlign="start start" class="colors" notaddPerfectScrollbar>
                 <div class="color"
                      *ngFor="let color of (colors | keys)"
@@ -54,7 +54,7 @@
         <div class="view" *ngSwitchCase="'hues'" >
             <div fxLayout="row wrap" fxLayoutAlign="start start" class="colors" notaddPerfectScrollbar>
                 <div class="color" *ngFor="let hue of hues"
-                     [fxHide]="selectedPalette === 'notadd-white' && hue !== '500'|| selectedPalette === 'notadd-black' && hue !== '500'"
+                     [fxHide]="selectedPalette === 'white' && hue !== '500'|| selectedPalette === 'black' && hue !== '500'"
                      [ngClass]="selectedPalette + '-' + hue + '-bg'"
                      [class.selected]="selectedHue === hue"
                      (click)="selectHue($event, hue)" fxLayout="row" fxLayoutAlign="center center" mat-ink-ripple>
