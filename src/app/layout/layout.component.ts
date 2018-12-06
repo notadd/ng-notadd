@@ -61,18 +61,17 @@ export class LayoutComponent implements OnInit, OnDestroy {
             )
             .subscribe(matches => {
                 this.isMobile = matches;
-                /**
-                 * 如何是移动端则隐藏 navbar
-                 */
-                if (this.isMobile) {
-                    this.configService.config = {
-                        layout: {
-                            navbar: {
-                                hidden: true
-                            }
+
+                this.configService.config = {
+                    layout: {
+                        navbar: {
+                            hidden: this.isMobile
+                        },
+                        toolbar: {
+                            position: this.isMobile ? 'below-static' : this.notaddConfig.layout.toolbar.position
                         }
-                    };
-                }
+                    }
+                };
             });
     }
 
