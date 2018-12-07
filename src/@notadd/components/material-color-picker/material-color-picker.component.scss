@@ -1,5 +1,5 @@
 .notadd-material-color-picker-menu {
-    width: 208px;
+    width: 228px;
 
     .mat-menu-content {
         padding: 0 !important;
@@ -7,14 +7,12 @@
         .views {
             display: flex;
             flex-direction: column;
-            min-height: 165px;
-            background-color: #F7F7F7;
+            background-color: #3C4252;
 
             .view {
                 overflow: hidden;
 
                 .colors {
-                    margin-left: -1px;
                     padding: 4px;
 
                     .color {
