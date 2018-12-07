@@ -1,6 +1,7 @@
 <div class="element-list page-layout card">
-    <div class="content center mt-32" fxLayout="row nowrap" fxLayoutAlign="space-between start" fxLayoutGap="30px">
-        <div class="p-24" fxLayout="column nowrap" fxFlex="1 0 auto">
+    <div class="content center mt-32" 
+        fxLayout="row wrap" fxLayout.gt-sm="row nowrap" fxLayoutAlign="space-between start" fxLayoutGap.gt-sm="30px">
+        <div class="bg-white p-24 mb-down-sm-30" fxFlex="1 0 auto" fxFlex.lt-md="100">
             <h3>Simple lists</h3>
             <mat-list>
                 <mat-list-item>
@@ -45,7 +46,7 @@
                 </mat-list-item>
             </mat-list>
         </div>
-        <div class="p-24" fxLayout="column nowrap" fxFlex="1 0 auto">
+        <div class="bg-white p-24 mb-32" fxFlex="1 0 auto" fxFlex.lt-md="48">
             <h3>Navigation lists</h3>
             <mat-nav-list>
                 <mat-list-item>
@@ -80,7 +81,7 @@
                 </mat-list-item>
             </mat-nav-list>
         </div>
-        <div class="p-24" fxLayout="column nowrap" fxFlex="1 0 auto">
+        <div class="bg-white p-24" fxFlex="1 0 auto" fxFlex.lt-md="48">
             <h3>Selection lists</h3>
             <mat-selection-list>
                 <mat-list-option>Boots</mat-list-option>
@@ -92,8 +93,8 @@
         </div>
     </div>
 
-    <div class="content mb-30" fxLayout="row nowrap" fxLayoutAlign="space-between start" fxLayoutGap="30px">
-        <div class="p-24" fxLayout="column nowrap" fxFlex="1 0 0%">
+    <div class="content center" fxLayout="row wrap" fxLayout.gt-sm="row nowrap" fxLayoutAlign="space-between start" fxLayoutGap.gt-sm="30px">
+        <div class="bg-white p-24 mb-down-sm-30" fxFlex="1 1 auto" fxFlex.xs="100" fxFlex.sm="48">
             <h3>Multi-line & Icons lists</h3>
             <mat-list>
                 <mat-list-item>
@@ -112,7 +113,7 @@
                 </mat-list-item>
             </mat-list>
         </div>
-        <div class="p-24" fxLayout="column nowrap" fxFlex="1 0 0%">
+        <div class="bg-white p-24 mb-down-sm-30" fxFlex="1 1 auto" fxFlex.xs="100" fxFlex.sm="48">
             <h3>Lists with avatars</h3>
             <mat-list>
                 <mat-list-item>
@@ -152,7 +153,7 @@
                 </mat-list-item>
             </mat-list>
         </div>
-        <div class="p-24" fxLayout="column nowrap" fxFlex="1 0 0%">
+        <div class="bg-white p-24" fxFlex="1 1 auto" fxFlex.lt-md="100">
             <h3>Lists with multiple sections</h3>
             <mat-list>
                 <h3 matSubheader>Folders</h3>
