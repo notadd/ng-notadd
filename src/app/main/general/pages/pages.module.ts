@@ -42,7 +42,7 @@ const routs: Routes = [
         component: ErrorsComponent,
         data: {
             title: '错误页',
-            hasContentHeader: false
+            isFullScreen: true
         }
     },
     {

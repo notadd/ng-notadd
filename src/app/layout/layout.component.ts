@@ -50,8 +50,8 @@ export class LayoutComponent implements OnInit, OnDestroy {
                 }),
                 mergeMap(route => route.data)
             )
-            .subscribe((event) => {
-                this.hasContentHeader = event['hasContentHeader'] === void (0) || event['hasContentHeader'];
+            .subscribe((data) => {
+                this.hasContentHeader = data['hasContentHeader'] === void (0) || data['hasContentHeader'];
             });
 
         this.breakpointObserver.observe([ Breakpoints.Handset ])

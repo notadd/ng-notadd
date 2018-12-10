@@ -1,8 +1,9 @@
 import { Component, Inject, OnDestroy, OnInit } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { Platform } from '@angular/cdk/platform';
+import { Router, ActivatedRoute, NavigationEnd, Params } from '@angular/router';
 import { Subject } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
+import { takeUntil, filter, map, mergeMap } from 'rxjs/operators';
 import { TranslateService } from '@ngx-translate/core';
 
 import { NotaddConfigService } from '@notadd/services/config.service';
@@ -25,9 +26,14 @@ export class AppComponent implements OnInit, OnDestroy {
     notaddConfig: any;
     navigation: any;
 
+    /* 是否全屏页面 */
+    isFullScreen: boolean;
+
     private ngUnsubscribe: Subject<any>;
 
     constructor(
+        private router: Router,
+        private activatedRoute: ActivatedRoute,
         @Inject(DOCUMENT) private document: any,
         private loadingService: NotaddLoadingService,
         private configService: NotaddConfigService,
@@ -38,6 +44,8 @@ export class AppComponent implements OnInit, OnDestroy {
         private sidebarService: NotaddSidebarService
     ) {
         this.navigation = navigation;
+
+        this.isFullScreen = false;
 
         // 注册导航
         this.navigationService.register('main', this.navigation);
@@ -75,6 +83,22 @@ export class AppComponent implements OnInit, OnDestroy {
                 this.notaddConfig.layout.width === 'boxed' ?
                 this.document.body.classList.add('boxed') :
                 this.document.body.classList.remove('boxed');
+            });
+
+        this.router.events
+            .pipe(
+                filter(event => event instanceof NavigationEnd),  // 筛选原始的Observable：this.router.events
+                map(() => this.activatedRoute),
+                map(route => {
+                    while (route.firstChild) {
+                        route = route.firstChild;
+                    }
+                    return route;
+                }),
+                mergeMap(route => route.data)
+            )
+            .subscribe((data) => {
+                this.isFullScreen = !data['isFullScreen'] === void (0) || data['isFullScreen'];
             });
     }
 

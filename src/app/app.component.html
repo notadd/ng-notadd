@@ -1,12 +1,20 @@
 <notadd-progress-bar></notadd-progress-bar>
 
-<layout></layout>
+<!-- 全屏布局 -->
+<ng-container *ngIf="isFullScreen; else isNotFullScreen">
+    <router-outlet></router-outlet>
+</ng-container>
 
-<button *ngIf="notaddConfig.layout.toolbar.hidden" mat-icon-button class="primary mat-elevation-z2 theme-options-button"
-        (click)="toggleSidebarOpen('themeOptionsPanel')">
-    <mat-icon>settings</mat-icon>
-</button>
+<!-- layout 布局 -->
+<ng-template #isNotFullScreen>
+    <layout></layout>
 
-<notadd-sidebar name="themeOptionsPanel" class="theme-options-sidebar" position="right" [invisibleOverlay]="true">
-    <notadd-theme-panel></notadd-theme-panel>
-</notadd-sidebar>
+    <button *ngIf="notaddConfig.layout.toolbar.hidden" mat-icon-button class="primary mat-elevation-z2 theme-options-button"
+            (click)="toggleSidebarOpen('themeOptionsPanel')">
+        <mat-icon>settings</mat-icon>
+    </button>
+
+    <notadd-sidebar name="themeOptionsPanel" class="theme-options-sidebar" position="right" [invisibleOverlay]="true">
+        <notadd-theme-panel></notadd-theme-panel>
+    </notadd-sidebar>
+</ng-template>
