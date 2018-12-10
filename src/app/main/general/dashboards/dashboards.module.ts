@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
 import {
     MatButtonModule,
     MatFormFieldModule,
@@ -15,24 +14,10 @@ import { NgxAmapModule } from 'ngx-amap';
 import { NotaddSharedModule } from '@notadd/shared.module';
 import { NotaddPipesModule } from '@notadd/pipes/pipes.module';
 
-import { AnalysisService } from './analysis/analysis.service';
-import { AnalysisComponent } from './analysis/analysis.component';
+import { DashboardsRoutingModule } from './dashboards-routing.module';
 
-const routes: Routes = [
-    {
-        path: '',
-        redirectTo: 'analytics',
-        pathMatch: 'full',
-    },
-    {
-        path: 'analytics',
-        component: AnalysisComponent,
-        data: {
-            title: '分析页',
-            hasContentHeader: false
-        }
-    }
-];
+import { AnalysisComponent } from './analysis/analysis.component';
+import { AnalysisService } from './analysis/analysis.service';
 
 @NgModule({
     imports: [
@@ -51,7 +36,7 @@ const routes: Routes = [
         NotaddSharedModule,
         NotaddPipesModule,
 
-        RouterModule.forChild(routes)
+        DashboardsRoutingModule
     ],
     declarations: [
         AnalysisComponent
