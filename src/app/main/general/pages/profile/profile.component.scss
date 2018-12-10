@@ -1,5 +1,7 @@
+@import "src/@notadd/scss/notadd";
+
 .pages-profile {
-    padding: 20px;
+    padding: 30px;
 
     .profile-card {
         padding: 9px;
@@ -73,6 +75,7 @@
         mat-list-item {
             height: auto;
             padding: 25px 0;
+            margin-left: -16px;
             border-bottom: 1px solid #dfe0df;
 
             .profile-item-content {
@@ -97,5 +100,16 @@
         width: 100%;
         background-color: #eee;
         color: #3949ab;
+    }
+}
+
+@include media-breakpoint('xs') {
+
+    .pages-profile {
+        padding: 15px;
+
+        .profile-board {
+            padding: 30px 20px;
+        }
     }
 }

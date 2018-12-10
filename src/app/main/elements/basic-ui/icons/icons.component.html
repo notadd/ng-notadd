@@ -4,7 +4,7 @@
     </div>
     <div class="content-card center mb-24" fxLayout="column nowrap">
         <h2>Notadd Logo</h2>
-        <div class="content mb-24" fxLayout="row nowrap" fxLayoutAlign="start center" fxLayoutGap="100px">
+        <div class="content mb-24" fxLayout="row wrap" fxLayoutAlign="start center" fxLayoutGap="100px">
             <mat-icon fontSet="NotaddIcon" fontIcon="icon-logo"></mat-icon>
             <mat-icon fontSet="NotaddIcon" fontIcon="icon-logo" color="primary"></mat-icon>
             <mat-icon fontSet="NotaddIcon" fontIcon="icon-logo" color="accent"></mat-icon>
@@ -14,7 +14,7 @@
 
     <div class="content-card center mb-24" fxLayout="column nowrap">
         <h2>Base Icons</h2>
-        <div class="secondary-text">use Material Icons. view on <a href="https://material.io/tools/icons" target="_blank">https://material.io/tools/icons</a> .</div>
+        <div class="secondary-text">use Material Icons. view on <a href="https://material.io/tools/icons" target="_blank">https://material.io/tools/icons</a>.</div>
         <mat-form-field class="w-100-p">
             <input matInput placeholder="Search an icon..." (input)="filterBaseIcons($event)">
         </mat-form-field>
@@ -22,7 +22,7 @@
             <div class="h3 mt-16">{{category.name}}</div>
             <div fxLayout="row wrap">
                 <div class="icon-holder m-16" fxLayout="column" fxLayoutAlign="center center"
-                     *ngFor="let icon of category.icons">
+                    *ngFor="let icon of category.icons">
                     <mat-icon class="secondary-text s-48">{{icon.id}}</mat-icon>
                     <div class="icon-name secondary-text mt-8">{{icon.id}}</div>
                 </div>
@@ -39,8 +39,8 @@
             <input matInput placeholder="Search an icon..." (input)="filterSvgIcons($event)">
         </mat-form-field>
         <div fxLayout="row wrap">
-            <div class="icon-holder m-16" fxLayout="column" fxLayoutAlign="center center"
-                 *ngFor="let icon of filteredMdiIcons">
+            <div class="icon-holder m-16" fxLayout="column" fxLayoutAlign="center center" 
+                *ngFor="let icon of filteredMdiIcons">
                 <mat-icon size="2" svgIcon="mdi:{{icon.name}}" class="secondary-text s-48"></mat-icon>
                 <div class="icon-name secondary-text mt-8">{{icon.name}}</div>
             </div>

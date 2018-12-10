@@ -1,6 +1,6 @@
 <div class="element-badges page-layout card">
     <h2 class="header">Badge Sizing</h2>
-    <div class="content" fxLayout="row nowrap" fxLayoutAlign="space-between start" fxLayoutGap="30px">
+    <div class="content" fxLayout="row wrap" fxLayoutAlign="space-between start" fxLayoutGap="30px">
         <div class="p-24" fxLayout="column nowrap" fxFlex="1 0 0%">
             <h3>Small Badges</h3>
             <div class="mt-24 mb-24" fxLayout="row nowrap" fxLayoutGap="50px">
@@ -51,7 +51,7 @@
         </div>
     </div>
     <h2 class="header">Badge Position</h2>
-    <div class="content" fxLayout="row nowrap" fxLayoutAlign="space-between start" fxLayoutGap="30px">
+    <div class="content" fxLayout="row wrap" fxLayoutAlign="space-between start" fxLayoutGap="30px">
         <div class="p-24" fxLayout="column nowrap" fxFlex="1 0 0%">
             <h3>Above / Before</h3>
             <div class="mt-24" fxLayout="row nowrap" fxLayoutGap="50px">
@@ -99,17 +99,17 @@
         </div>
     </div>
     <div class="content" fxLayout="row nowrap" fxLayoutAlign="space-between start" fxLayoutGap="30px">
-        <div class="p-24" fxLayout="column nowrap" fxFlex="1 0 0%">
+        <div class="p-24 pb-0" fxLayout="column nowrap" fxFlex="1 0 0%">
             <h3>Badge Overlap</h3>
-            <div class="mt-24" fxLayout="row nowrap" fxLayoutGap="100px">
-                <span matBadge="bo" matBadgeSize="medium" matBadgeColor="primary" matBadgeOverlap="false">Primary</span>
-                <span matBadge="bo" matBadgeSize="medium" matBadgeColor="accent" matBadgeOverlap="false">Accent</span>
-                <span matBadge="bo" matBadgeSize="medium" matBadgeColor="warn" matBadgeOverlap="false">Warn</span>
-                <span matBadge="bo" matBadgeSize="medium" matBadgeOverlap="false">Basic</span>
-                <mat-icon matBadge="bo" matBadgeSize="medium" matBadgeColor="primary" matBadgeOverlap="false">home</mat-icon>
-                <mat-icon matBadge="bo" matBadgeSize="medium" matBadgeColor="accent" matBadgeOverlap="false">home</mat-icon>
-                <mat-icon matBadge="bo" matBadgeSize="medium" matBadgeColor="warn" matBadgeOverlap="false">home</mat-icon>
-                <mat-icon matBadge="bo" matBadgeSize="medium" matBadgeOverlap="false">home</mat-icon>
+            <div class="mt-24" fxLayout="row wrap" fxLayoutGap="70px" fxLayoutGap.lg="100px">
+                <span class="mb-24" matBadge="bo" matBadgeSize="medium" matBadgeColor="primary" matBadgeOverlap="false">Primary</span>
+                <span class="mb-24" matBadge="bo" matBadgeSize="medium" matBadgeColor="accent" matBadgeOverlap="false">Accent</span>
+                <span class="mb-24" matBadge="bo" matBadgeSize="medium" matBadgeColor="warn" matBadgeOverlap="false">Warn</span>
+                <span class="mb-24" matBadge="bo" matBadgeSize="medium" matBadgeOverlap="false">Basic</span>
+                <mat-icon class="mb-24" matBadge="bo" matBadgeSize="medium" matBadgeColor="primary" matBadgeOverlap="false">home</mat-icon>
+                <mat-icon class="mb-24" matBadge="bo" matBadgeSize="medium" matBadgeColor="accent" matBadgeOverlap="false">home</mat-icon>
+                <mat-icon class="mb-24" matBadge="bo" matBadgeSize="medium" matBadgeColor="warn" matBadgeOverlap="false">home</mat-icon>
+                <mat-icon class="mb-24" matBadge="bo" matBadgeSize="medium" matBadgeOverlap="false">home</mat-icon>
             </div>
         </div>
     </div>
