@@ -38,7 +38,7 @@
 
     <div class="content center">
         <h3>Vertical Stepper</h3>
-        <mat-vertical-stepper #stepper>
+        <mat-vertical-stepper #stepper2>
             <mat-step [stepControl]="firstFormGroup">
                 <form [formGroup]="firstFormGroup">
                     <ng-template matStepLabel>Fill out your name</ng-template>
@@ -67,7 +67,7 @@
                 You are now done.
                 <div>
                     <button mat-button matStepperPrevious>Back</button>
-                    <button mat-button (click)="stepper.reset()">Reset</button>
+                    <button mat-button (click)="stepper2.reset()">Reset</button>
                 </div>
             </mat-step>
         </mat-vertical-stepper>
