@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
 
 import {
     MatCardModule,
@@ -14,6 +13,8 @@ import {
 
 import { NotaddSharedModule } from '@notadd/shared.module';
 
+import { PagesRoutingModule } from './pages-routing.module';
+
 import { ProfileComponent } from './profile/profile.component';
 import { ErrorsComponent } from './errors/errors.component';
 import { LoginComponent } from './login/login.component';
@@ -22,78 +23,6 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
 import { LockscreenComponent } from './lockscreen/lockscreen.component';
 import { RegisterComponent } from './register/register.component';
 import { RegisterV2Component } from './register-v2/register-v2.component';
-
-const routs: Routes = [
-    {
-        path: '',
-        redirectTo: 'profile',
-        pathMatch: 'full',
-    },
-    {
-        path: 'profile',
-        component: ProfileComponent,
-        data: {
-            title: '个人主页',
-            hasContentHeader: false
-        }
-    },
-    {
-        path: 'errors/:code',
-        component: ErrorsComponent,
-        data: {
-            title: '错误页',
-            isFullScreen: true
-        }
-    },
-    {
-        path: 'login',
-        component: LoginComponent,
-        data: {
-            title: '登录',
-            hasContentHeader: false
-        }
-    },
-    {
-        path: 'login-v2',
-        component: LoginV2Component,
-        data: {
-            title: '登录 V2',
-            hasContentHeader: false
-        }
-    },
-    {
-        path: 'register',
-        component: RegisterComponent,
-        data: {
-            title: '注册',
-            hasContentHeader: false
-        }
-    },
-    {
-        path: 'register-v2',
-        component: RegisterV2Component,
-        data: {
-            title: '注册 V2',
-            hasContentHeader: false
-        }
-    },
-    {
-        path: 'forgot-password',
-        component: ForgotPasswordComponent,
-        data: {
-            title: '忘记密码',
-            hasContentHeader: false
-        }
-    },
-    {
-        path: 'lockscreen',
-        component: LockscreenComponent,
-        data: {
-            title: '锁定屏幕',
-            hasContentHeader: false
-        }
-    }
-];
 
 @NgModule({
     imports: [
@@ -108,7 +37,7 @@ const routs: Routes = [
 
         NotaddSharedModule,
 
-        RouterModule.forChild(routs)
+        PagesRoutingModule
     ],
     declarations: [
         ProfileComponent,
