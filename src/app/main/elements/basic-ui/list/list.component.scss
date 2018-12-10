@@ -1,6 +1,11 @@
+@import "src/@notadd/scss/notadd";
+
 .element-list {
     .content {
-        background-color: #FFF;
+        
+        > .bg-white {
+           background-color: #FFF; 
+        }
 
         mat-list-item {
             img.item-preview {
@@ -13,5 +18,12 @@
                 }
             }
         }
+    }
+}
+
+
+@include media-breakpoint-down('sm') {
+    .mb-down-sm-30 {
+        margin-bottom: 30px;
     }
 }

@@ -225,6 +225,14 @@ $card-header-height-without-toolbar: $card-header-height - $card-toolbar-height;
                     padding: 0 15px;
                 }
             }
+
+            &:not(.fullwidth) {
+
+                > .content {
+                    margin: 15px;
+                }
+            }
+
         }
     }
 }

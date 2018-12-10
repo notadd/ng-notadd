@@ -1,3 +1,5 @@
+@import "src/@notadd/scss/notadd";
+
 .element-cards {
     .content-area {
         width: 100%;
@@ -15,6 +17,14 @@
 
         .card-deck img[mat-card-image] {
             height: 360px;
+        }
+    }
+}
+
+@include media-breakpoint('xs') {
+    .element-cards {
+        .content-area {
+            margin-bottom: 30px;
         }
     }
 }

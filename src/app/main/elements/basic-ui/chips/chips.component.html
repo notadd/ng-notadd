@@ -1,7 +1,7 @@
 <div class="element-chips page-layout card">
     <h2 class="header">Basic Chips</h2>
-    <div class="content" fxLayout="row nowrap" fxLayoutAlign="space-between start" fxLayoutGap="30px">
-        <div class="p-24" fxLayout="column nowrap" fxFlex="1 0 0%">
+    <div class="content" fxLayout="row nowrap" fxLayout.lt-md="row wrap" fxLayoutAlign="space-between start" fxLayoutGap.gt-xs="30px">
+        <div class="p-24" fxLayout="column nowrap" fxFlex="1 0 0%" fxFlex.xs="100">
             <h3>Chips Default</h3>
             <div class="mt-24 mb-24" fxLayout="row nowrap" fxLayoutGap="50px">
                 <mat-chip-list>
@@ -14,7 +14,7 @@
             </div>
         </div>
 
-        <div class="p-24" fxLayout="column nowrap" fxFlex="1 0 0%">
+        <div class="p-24" fxLayout="column nowrap" fxFlex="1 0 0%" fxFlex.xs="100">
             <h3>Icons Chips</h3>
             <div class="mt-24 mb-24" fxLayout="row nowrap" fxLayoutGap="50px">
                 <mat-chip-list>
@@ -42,7 +42,7 @@
             </div>
         </div>
 
-        <div class="p-24" fxLayout="column nowrap" fxFlex="1 0 0%">
+        <div class="p-24" fxLayout="column nowrap" fxFlex="1 0 0%" fxFlex.xs="100">
             <h3>Vertical Chips</h3>
             <div class="mt-24 mb-24" fxLayout="row nowrap" fxLayoutGap="50px">
                 <mat-chip-list class="mat-chip-list-stacked" aria-orientation="vertical">
