@@ -1,5 +1,5 @@
 <div class="page-layout blank dashboard-analysis">
-    <section fxLayout="row wrap" fxLayout.gt-sm="row nowrap" fxLayoutAlign="space-between stretch" fxLayoutGap.md="15px" fxLayoutGap.lg="30px">
+    <section fxLayout="row wrap" fxLayout.gt-sm="row nowrap" fxLayoutAlign="space-between stretch" fxLayoutGap.md="15px" fxLayoutGap.gt-md="30px">
         <mat-card fxFlex="1 0 0%" fxFlex.xs="100" fxFlex.sm="48"
             *ngFor="let widget of widgets; let index = index;" 
             [ngClass.sm]="{'mb-20': index<2}" [ngClass.xs]="{'mb-20': index!==3}">
@@ -23,7 +23,7 @@
     </section>
     <section fxLayout="row nowrap" fxLayoutAlign="space-between center" fxLayoutGap.gt-sm="30px">
         <div fxFlex="1 0 0%" fxFlex.lt-md="100">
-            <ngx-amap class="map"></ngx-amap>
+            <!-- <ngx-amap class="map"></ngx-amap> -->
         </div>
         <div fxFlex="1 0 0%"></div>
     </section>
