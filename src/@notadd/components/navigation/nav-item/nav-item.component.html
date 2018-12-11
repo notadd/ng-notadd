@@ -4,7 +4,7 @@
        *ngIf="item.url"
        [ngClass]="item.classes"
        [routerLink]="[item.url]"
-       [routerLinkActive]="['active', 'mat-accent-bg']"
+       [routerLinkActive]="['active', 'secondary-background']"
        [routerLinkActiveOptions]="{exact: item.exactMatch || false}"
        matRipple>
         <mat-icon class="nav-link-icon" *ngIf="item.icon">{{item.icon}}</mat-icon>
