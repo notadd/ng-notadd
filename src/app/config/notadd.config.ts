@@ -5,19 +5,19 @@ export const notaddConfig: NotaddConfig = {
         style: 'vertical-layout',
         width: 'fullwidth',
         navbar: {
-            background: 'mat-notadd-dark-700-bg',
-            secondaryBackground: 'mat-notadd-dark-900-bg',
+            background: 'mat-notadd-dark-500-bg',
+            secondaryBackground: 'mat-blue-600-bg',
             collapsed: false,
             hidden: false,
             position: 'start'
         },
         toolbar: {
-            background: 'mat-notadd-dark-500-bg',
+            background: 'mat-blue-600-bg',
             hidden: false,
             position: 'below-static'
         },
         footer: {
-            background: 'mat-notadd-dark-900-bg',
+            background: 'mat-notadd-dark-A700-bg',
             hidden: false,
             position: 'above'
         },
