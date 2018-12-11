@@ -32,7 +32,7 @@
 ```bash
     git clone https://github.com/notadd/ng-notadd-mock-server.git
     # 或使用 gitee(国内推荐)：   
-    git clone https://giteecom/notadd/ng-notadd-mock-server.git
+    git clone https://gitee.com/notadd/ng-notadd-mock-server.git
     cd ng-notadd-mock-server
     
     npm install
