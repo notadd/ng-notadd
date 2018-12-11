@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { MatButtonModule, MatIconModule, MatMenuModule, MatToolbarModule, MatDividerModule } from '@angular/material';
 
@@ -10,6 +11,7 @@ import { ToolbarComponent } from './toolbar.component';
 @NgModule({
     imports: [
         CommonModule,
+        RouterModule,
 
         MatButtonModule,
         MatIconModule,

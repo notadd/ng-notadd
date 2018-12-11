@@ -24,16 +24,14 @@ const routes: Routes = [
         path: 'buttons',
         component: ButtonsComponent,
         data: {
-            title: '按钮',
-            hasContentHeader: true
+            title: '按钮'
         }
     },
     {
         path: 'cards',
         component: CardsComponent,
         data: {
-            title: '卡片',
-            hasContentHeader: true
+            title: '卡片'
         }
     },
     {
@@ -48,72 +46,63 @@ const routes: Routes = [
         path: 'list',
         component: ListComponent,
         data: {
-            title: '列表',
-            hasContentHeader: true
+            title: '列表'
         }
     },
     {
         path: 'badges',
         component: BadgesComponent,
         data: {
-            title: '徽章',
-            hasContentHeader: true
+            title: '徽章'
         }
     },
     {
         path: 'progress-bar',
         component: ProgressBarComponent,
         data: {
-            title: '进度条',
-            hasContentHeader: true
+            title: '进度条'
         }
     },
     {
         path: 'button-toggle',
         component: ButtonToggleComponent,
         data: {
-            title: '开关按钮',
-            hasContentHeader: true
+            title: '开关按钮'
         }
     },
     {
         path: 'chips',
         component: ChipsComponent,
         data: {
-            title: '标签',
-            hasContentHeader: true
+            title: '标签'
         }
     },
     {
         path: 'expansion-panel',
         component: ExpansionPanelComponent,
         data: {
-            title: '可展开面板',
-            hasContentHeader: true
+            title: '可展开面板'
         }
     },
     {
         path: 'tabs',
         component: TabsComponent,
         data: {
-            title: '选项卡',
-            hasContentHeader: true
+            title: '选项卡'
         }
     },
     {
         path: 'stepper',
         component: StepperComponent,
         data: {
-            title: '步进器',
-            hasContentHeader: true
+            title: '步进器'
         }
     },
     {
         path: 'grid-list',
         component: GridListComponent,
         data: {
-            title: '网格列表',
-            hasContentHeader: true
+            title: '网格列表'
         }
     }
 ];
@@ -122,7 +111,10 @@ const routes: Routes = [
     imports: [
         RouterModule.forChild(routes)
     ],
-    declarations: []
+    declarations: [],
+    exports: [
+        RouterModule
+    ]
 })
 export class BasicUiRoutingModule {
 }

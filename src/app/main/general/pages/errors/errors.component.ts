@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { NotaddConfigService } from '@notadd/services/config.service';
-
 @Component({
     selector: 'errors',
     templateUrl: './errors.component.html',
@@ -13,29 +11,11 @@ export class ErrorsComponent implements OnInit {
     code: string;
 
     constructor(
-        private activatedRoute: ActivatedRoute,
-        private notaddConfig: NotaddConfigService
+        private activatedRoute: ActivatedRoute
     ) {
         this.activatedRoute.params.subscribe(params => {
             this.code = params.code;
         });
-
-        this.notaddConfig.config = {
-            layout: {
-                navbar: {
-                    hidden: true
-                },
-                toolbar: {
-                    hidden: true
-                },
-                footer: {
-                    hidden: true
-                },
-                sidepanel: {
-                    hidden: true
-                }
-            }
-        };
     }
 
     ngOnInit() {

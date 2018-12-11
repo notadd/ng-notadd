@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-import { NotaddConfigService } from '@notadd/services/config.service';
-
 @Component({
     selector: 'lockscreen',
     templateUrl: './lockscreen.component.html',
@@ -9,26 +7,7 @@ import { NotaddConfigService } from '@notadd/services/config.service';
 })
 export class LockscreenComponent implements OnInit {
 
-    constructor(
-        private notaddConfig: NotaddConfigService
-    ) {
-        this.notaddConfig.config = {
-            layout: {
-                navbar: {
-                    hidden: true
-                },
-                toolbar: {
-                    hidden: true
-                },
-                footer: {
-                    hidden: true
-                },
-                sidepanel: {
-                    hidden: true
-                }
-            }
-        };
-    }
+    constructor() {}
 
     ngOnInit() {
     }
