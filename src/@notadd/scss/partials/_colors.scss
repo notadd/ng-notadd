@@ -64,6 +64,11 @@ $matHues: 50, 100, 200, 300, 400, 500, 600, 700, 800, 900, A100, A200, A400, A70
                 color: rgba(0, 0, 0, 0.54) !important;
             }
 
+            &.secondary-background,
+            .secondary-background {
+                background-color: rgba(0, 0, 0, .12) !important;
+            }
+
             &.hint-text,
             .hint-text,
             &.disabled-text,
@@ -100,6 +105,11 @@ $matHues: 50, 100, 200, 300, 400, 500, 600, 700, 800, 900, A100, A200, A400, A70
             &.secondary-text,
             .secondary-text {
                 color: rgba(255, 255, 255, 0.70) !important;
+            }
+
+            &.secondary-background,
+            .secondary-background {
+                background-color: rgba(225, 225, 225, .50) !important;
             }
 
             &.hint-text,
