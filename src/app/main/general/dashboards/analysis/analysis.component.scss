@@ -37,9 +37,47 @@
             width: 100%;
         }
     }
+    
+    .card {
+        border: none;
 
+        &.card-shadow {
+            box-shadow: 0 1px 1px rgba(0,0,0,.05);
+        }
+    }
+    
     .map {
         height: 400px;
         width: 100%;
     }
+
+    .scatter-map {
+        height: 400px;
+        width: 100%;
+    }
+
+    .trend-bar {
+        height: 300px;
+        width: 100%;
+    }
+
+    .counter {
+        background: #fff;
+        width: 100%;
+        height: 100px;
+        padding: 20px 30px;
+        font-size: 14px;
+        color: #757575;
+
+        .counter-label {
+            display: block;
+        }
+
+        .counter-number-group, .counter-number {
+            font-size: 32px;
+            color: #424242;
+        }
+        
+    }
+    
 }
