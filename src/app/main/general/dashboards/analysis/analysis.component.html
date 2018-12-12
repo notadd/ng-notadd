@@ -1,6 +1,6 @@
 <div class="page-layout blank dashboard-analysis">
     <section fxLayout="row wrap" fxLayout.gt-sm="row nowrap" fxLayoutAlign="space-between stretch" fxLayoutGap.md="15px" fxLayoutGap.gt-md="30px">
-        <mat-card fxFlex="1 0 0%" fxFlex.xs="100" fxFlex.sm="48"
+        <mat-card class="card card-shadow" fxFlex="1 0 0%" fxFlex.xs="100" fxFlex.sm="48"
             *ngFor="let widget of widgets; let index = index;" 
             [ngClass.sm]="{'mb-20': index<2}" [ngClass.xs]="{'mb-20': index!==3}">
             <mat-card-header>
@@ -21,10 +21,19 @@
             </mat-card-content>
         </mat-card>
     </section>
-    <section fxLayout="row nowrap" fxLayoutAlign="space-between center" fxLayoutGap.gt-sm="30px">
-        <div fxFlex="1 0 0%" fxFlex.lt-md="100">
-            <!-- <ngx-amap class="map"></ngx-amap> -->
+    <section fxLayout="row nowrap" fxLayout.lt-md="row wrap" fxLayoutAlign="space-between start" fxLayoutGap.gt-sm="30px">
+        <div class="card card-shadow" fxFlex="59" fxFlex.lt-md="100" [ngClass.lt-md]="{'mb-32': true}">
+            <div class="scatter-map" echarts [options]="scatterMapOption"></div>
         </div>
-        <div fxFlex="1 0 0%"></div>
+        <div class="card card-shadow" fxFlex="39" fxFlex.lt-md="100">
+            <div class="trend-bar" echarts [options]="trendBarOption"></div>
+            <div class="counter text-left">
+                <div class="counter-label">Trends in visits in the past week</div>
+                <div class="counter-number-group">
+                    <span class="counter-number">12,673 </span>
+                    <span class="counter-number-related text-uppercase font-size-14"> visits</span>
+                </div>
+            </div>
+        </div>
     </section>
 </div>
