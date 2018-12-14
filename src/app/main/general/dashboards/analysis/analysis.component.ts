@@ -6,6 +6,7 @@ import { NgForage } from 'ngforage';
 import { AnalysisService } from './analysis.service';
 import { EChartOption } from 'echarts';
 import * as echarts from 'echarts';
+import { Coords } from './weather.interface';
 
 @Component({
     selector: 'analysis',
@@ -18,6 +19,12 @@ export class AnalysisComponent implements OnInit {
     widgets: Array<any>;
     scatterMapOption: EChartOption;
     trendBarOption: EChartOption;
+
+    weatherReport = {
+        today: {},
+        future: {},
+        xingqi: ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'][new Date().getDay()]
+    };
 
     constructor(
         private service: AnalysisService,
@@ -140,7 +147,7 @@ export class AnalysisComponent implements OnInit {
                 }
             },
             color: ['#fff'],
-            backgroundColor: '#4caf50',
+            backgroundColor: '#1d88e5',
             tooltip : {},
             grid: {
                 top: '30%',
@@ -181,7 +188,7 @@ export class AnalysisComponent implements OnInit {
                     silent: true,
                     itemStyle: {
                         normal: {
-                            color: '#8ec798'
+                            color: '#57a8ef'
                         }
                     },
                     barGap: '-100%',
@@ -205,6 +212,28 @@ export class AnalysisComponent implements OnInit {
             ]
         };
 
+        if (!navigator.geolocation) {
+            console.log('当前浏览器不支持 geolocation.');
+        } else {
+            navigator.geolocation.getCurrentPosition(({ coords }) => {
+                this.updateWeather(coords);
+            }, err => {
+                // 获取不到位置信息时 默认为北京
+                const coords: Coords = { latitude: 39.90923, longitude: 116.397428 };
+                this.updateWeather(coords);
+            });
+        }
+
+    }
+
+    updateWeather(coords: Coords) {
+        this.service.getRealtimeWeather(coords)
+        .subscribe(data => {
+            console.log(data);
+            if (data.result.status === 'ok') {
+                this.weatherReport.today = data.result;
+            }
+        });
     }
 
 }

@@ -40,6 +40,7 @@
     
     .card {
         border: none;
+        background: #fff;
 
         &.card-shadow {
             box-shadow: 0 1px 1px rgba(0,0,0,.05);
@@ -78,6 +79,18 @@
             color: #424242;
         }
         
+    }
+
+    .light-blue-text {
+        color: #03a9f4; /*#1e88e5*/
+    }
+
+    .weather-card {
+        .realtime {
+            mat-icon {
+                font-size: 45px !important;
+            }
+        }
     }
     
 }
