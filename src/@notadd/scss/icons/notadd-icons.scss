@@ -1,0 +1,24 @@
+@font-face {
+    font-family: "NotaddIcon";
+    src: url('/assets/icon-fonts/notadd/iconfont.eot?t=1543225086823'); /* IE9*/
+    src: url('/assets/icon-fonts/notadd/iconfont.eot?t=1543225086823#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('data:application/x-font-woff;charset=utf-8;base64,d09GRgABAAAAAAU0AAsAAAAAB8wAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABHU1VCAAABCAAAADMAAABCsP6z7U9TLzIAAAE8AAAARAAAAFY8dkqiY21hcAAAAYAAAABSAAABhmRR0M5nbHlmAAAB1AAAAVYAAAGkyPw+nGhlYWQAAAMsAAAAMQAAADYbCQQJaGhlYQAAA2AAAAAgAAAAJA+FC1JobXR4AAADgAAAAAwAAAAME9r/6WxvY2EAAAOMAAAACAAAAAgAngDSbWF4cAAAA5QAAAAdAAAAIAEXAHduYW1lAAADtAAAAUUAAAJtPlT+fXBvc3QAAAT8AAAANQAAAEYwsfSjeJxjYGRgYOBikGPQYWB0cfMJYeBgYGGAAJAMY05meiJQDMoDyrGAaQ4gZoOIAgCKIwNPAHicY2Bkm8c4gYGVgYOpk+kMAwNDP4RmfM1gxMjBwMDEwMrMgBUEpLmmMDg8Y3jGxNzwv4EhhnkCQwNQmBEkBwAR7AyVeJztkMENgDAMAy9p6QMxCA8G4sX4XaN1UtgCSxcrTl4GNqCIS1SwByN0K7XMC3vmNX+a3PBO9zHgc8l0a+mu0fh15DzfzaOtRTTbfYFPfj4NTgAAeJxj4GJg+P+Rey/TbAZOBjEGeQYdBlMGRwYvhgiGRIYsBgZhQWNBRmNBZUFORiMzUyCtpqzEJiImbCQmwqakZmKGXZTdRA3ENzYyFzVmhgkqigJFRJXUTAWNRY1FgRohiuCa9D0Y811d/03iCkidYO5Zmtrfn+qfnz8vP/+feWq/mVdJ6oQJqX4FBXMLCq72nwKyS7zMvkD4/8ry/YFK9v19AdQEkgLpKyhgmvw3jknx70OmxX/vAOm4/lTGbf8ex/Sf7mfcDNI2t+CfL6bYPqAZp/ujo+F8/wKz/jTGrQfNgKpP9yOpZGD6//J/AwsP8wQGbgYJBgZWPUZ1RmFxRjE+Jm4gS03I3ExFXI5RnImh4a4no9aiRMZwXdmJdznW+/1bYelZWc1oMdEsSrmBsSSL8f4/WRsmyfIfV0oYzRnfm/19OZPRMC9H1VsmwIiBAQD/oIc5AAB4nGNgZGBgAOJTJUz/4vltvjJwszCAwA3F+/9g9P+X/xu49zJPAHI5GJhAogB6mg5nAAAAeJxjYGRgYG7438AQw33r/8v/X7j3MgBFUAAzAMJhB+wEAAAAC9oAAAQA/+kAAAAAAJ4A0nicY2BkYGBgZshm4GIAASYg5gKz/4P5DAAT9AGPAAAAeJxlj01OwzAQhV/6B6QSqqhgh+QFYgEo/RGrblhUavdddN+mTpsqiSPHrdQDcB6OwAk4AtyAO/BIJ5s2lsffvHljTwDc4Acejt8t95E9XDI7cg0XuBeuU38QbpBfhJto41W4Rf1N2MczpsJtdGF5g9e4YvaEd2EPHXwI13CNT+E69S/hBvlbuIk7/Aq30PHqwj7mXle4jUcv9sdWL5xeqeVBxaHJIpM5v4KZXu+Sha3S6pxrW8QmU4OgX0lTnWlb3VPs10PnIhVZk6oJqzpJjMqt2erQBRvn8lGvF4kehCblWGP+tsYCjnEFhSUOjDFCGGSIyujoO1Vm9K+xQ8Jee1Y9zed0WxTU/3OFAQL0z1xTurLSeTpPgT1fG1J1dCtuy56UNJFezUkSskJe1rZUQuoBNmVXjhF6XNGJPyhnSP8ACVpuyAAAAHicY2BigAAuBuyAmZGJkZmRhYGrPDUzKTMxvyTTkD8vvyQxJSU+p6w4tbI0MY+BAQCjjgpzAAAA') format('woff'),
+    url('/assets/icon-fonts/notadd/iconfont.ttf?t=1543225086823') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+    url('/assets/icon-fonts/notadd/iconfont.svg?t=1543225086823#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.notadd-icon {
+    font-family: "NotaddIcon" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-logo:before {
+    content: "\e600";
+}
+
+.icon-logo-circle:before {
+    content: "\e602";
+}
