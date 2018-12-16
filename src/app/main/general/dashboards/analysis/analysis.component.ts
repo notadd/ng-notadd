@@ -29,7 +29,7 @@ export class AnalysisComponent implements OnInit {
         today: {},
         future: [],
         day: {
-            date: Date.now(), // new Date(),
+            date: Date.now(),
             xingqi: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'][new Date().getDay()],
         }
     };
@@ -269,6 +269,9 @@ export class AnalysisComponent implements OnInit {
                 endAngle: 0,
                 min: 0,
                 max: 100,
+                grid: {
+                    bottom: '-45%'
+                },
                 axisLine: { // 坐标轴线
                     lineStyle: {
                         color: [[ 0.5, '#049efb'], [ 1, '#9098ac']],
@@ -286,12 +289,7 @@ export class AnalysisComponent implements OnInit {
                 },
                 title: { show: false },
                 detail : {
-                    offsetCenter: [0, '50%'],       // x, y，单位px
-                    textStyle: {
-                        fontWeight: 'bold',
-                        fontSize: '32px',
-                        color: '#9098ac'
-                    }
+                    show: false
                 },
                 data: [{value: 50, name: 'Sales Prediction', color: '#049efb'}]
             }]
@@ -323,12 +321,7 @@ export class AnalysisComponent implements OnInit {
                 },
                 title: { show: false },
                 detail : {
-                    offsetCenter: [0, '50%'],       // x, y，单位px
-                    textStyle: {
-                        fontWeight: 'bold',
-                        fontSize: '32px',
-                        color: '#9098ac'
-                    }
+                    show: false
                 },
                 data: [{value: 30, name: 'Sales Difference', color: '#049efb'}]
             }]
