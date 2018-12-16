@@ -5,13 +5,14 @@ import { map } from 'rxjs/operators';
 import { EChartOption } from 'echarts';
 
 import { Widget, WidgetsGQL } from 'app/graphql/graphql.service';
-import { RealtimeWeather, Coords } from './weather.interface';
+import { RealtimeWeather, Coords, WeatherForcast } from './weather.interface';
 
 @Injectable()
 export class AnalysisService {
 
     private widgetsExtend: any;
     private caiyunApiUrl = 'http://caiyun-api.ibenchu.net/';
+    private caiyunApiKey = 'TAkhjf8d1nlSlspN';
 
     constructor(
         private widgets: WidgetsGQL,
@@ -134,10 +135,10 @@ export class AnalysisService {
     }
 
     getRealtimeWeather(coords: Coords): Observable<RealtimeWeather> {
-        return this.http.get<RealtimeWeather>(this.caiyunApiUrl + `v2/TAkhjf8d1nlSlspN/${coords.longitude},${coords.latitude}/realtime.json`);
+        return this.http.get<RealtimeWeather>(this.caiyunApiUrl + `v2/${this.caiyunApiKey}/${coords.longitude},${coords.latitude}/realtime.json`);
     }
 
-    getWeatherForecast() {
-
+    getWeatherForecast(coords: Coords): Observable<WeatherForcast> {
+        return this.http.get<WeatherForcast>(this.caiyunApiUrl + `v2/${this.caiyunApiKey}/${coords.longitude},${coords.latitude}/forecast.json`);
     }
 }

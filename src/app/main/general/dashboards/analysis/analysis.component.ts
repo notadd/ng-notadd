@@ -19,11 +19,19 @@ export class AnalysisComponent implements OnInit {
     widgets: Array<any>;
     scatterMapOption: EChartOption;
     trendBarOption: EChartOption;
+    salesOption = {
+        prediction: {},
+        difference: {}
+    };
 
     weatherReport = {
+        weathericon: 'wi-day-cloudy',
         today: {},
-        future: {},
-        xingqi: ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'][new Date().getDay()]
+        future: [],
+        day: {
+            date: Date.now(), // new Date(),
+            xingqi: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'][new Date().getDay()],
+        }
     };
 
     constructor(
@@ -91,13 +99,38 @@ export class AnalysisComponent implements OnInit {
                     toolbox: {
                         show: true,
                         orient: 'vertical',
-                        left: '10px',
+                        left: '0',
                         top: 'center',
                         feature: {
                             mark: { show: true },
-                            dataView: { show: true, readOnly: false },
-                            restore: { show: true },
-                            saveAsImage: { show: true }
+                            dataView: {
+                                show: true,
+                                readOnly: false,
+                                emphasis: {
+                                    iconStyle: {
+                                        textPosition: 'right',
+                                        textAlign: 'left'
+                                    }
+                                }
+                            },
+                            restore: {
+                                show: true,
+                                emphasis: {
+                                    iconStyle: {
+                                        textPosition: 'right',
+                                        textAlign: 'left'
+                                    }
+                                }
+                            },
+                            saveAsImage: {
+                                show: true,
+                                emphasis: {
+                                    iconStyle: {
+                                        textPosition: 'right',
+                                        textAlign: 'left'
+                                    }
+                                }
+                            }
                         }
                     },
                     series: [
@@ -217,12 +250,89 @@ export class AnalysisComponent implements OnInit {
         } else {
             navigator.geolocation.getCurrentPosition(({ coords }) => {
                 this.updateWeather(coords);
+                this.updateWeatherFuture(coords);
             }, err => {
                 // 获取不到位置信息时 默认为北京
                 const coords: Coords = { latitude: 39.90923, longitude: 116.397428 };
                 this.updateWeather(coords);
+                this.updateWeatherFuture(coords);
             });
         }
+
+        // sales
+        this.salesOption.prediction = {
+            series: [{
+                name: 'Sales Prediction',
+                type: 'gauge',
+                radius: '100%',
+                startAngle: 180,
+                endAngle: 0,
+                min: 0,
+                max: 100,
+                axisLine: { // 坐标轴线
+                    lineStyle: {
+                        color: [[ 0.5, '#049efb'], [ 1, '#9098ac']],
+                        width: 15
+                    }
+                },
+                axisLabel: { // 坐标轴小标记
+                    show: false
+                },
+                axisTick: {
+                    show: false
+                },
+                splitLine: {
+                    show: false
+                },
+                title: { show: false },
+                detail : {
+                    offsetCenter: [0, '50%'],       // x, y，单位px
+                    textStyle: {
+                        fontWeight: 'bold',
+                        fontSize: '32px',
+                        color: '#9098ac'
+                    }
+                },
+                data: [{value: 50, name: 'Sales Prediction', color: '#049efb'}]
+            }]
+        };
+
+        this.salesOption.difference = {
+            series: [{
+                name: 'Sales Difference',
+                type: 'gauge',
+                radius: '100%',
+                startAngle: 180,
+                endAngle: 0,
+                min: 0,
+                max: 100,
+                axisLine: { // 坐标轴线
+                    lineStyle: {
+                        color: [[ 0.3, '#f44337'], [ 1, '#9098ac']],
+                        width: 15
+                    }
+                },
+                axisLabel: { // 坐标轴小标记
+                    show: false
+                },
+                axisTick: {
+                    show: false
+                },
+                splitLine: {
+                    show: false
+                },
+                title: { show: false },
+                detail : {
+                    offsetCenter: [0, '50%'],       // x, y，单位px
+                    textStyle: {
+                        fontWeight: 'bold',
+                        fontSize: '32px',
+                        color: '#9098ac'
+                    }
+                },
+                data: [{value: 30, name: 'Sales Difference', color: '#049efb'}]
+            }]
+        };
 
     }
 
@@ -232,8 +342,34 @@ export class AnalysisComponent implements OnInit {
             console.log(data);
             if (data.result.status === 'ok') {
                 this.weatherReport.today = data.result;
+                this.weatherReport.weathericon = this.weatherIcon(data.result.skycon);
             }
         });
+    }
+
+    updateWeatherFuture(coords: Coords) {
+        this.service.getWeatherForecast(coords)
+        .subscribe(data => {
+            if (data.status === 'ok') {
+                this.weatherReport.future = data.result.daily.temperature;
+                console.log(data.result.daily);
+                data.result.daily.skycon.forEach((obj: any, index: number) => {
+                    this.weatherReport.future[index].weathericon = this.weatherIcon(obj.value);
+                });
+            }
+        });
+    }
+
+    weatherIcon(skycon) {
+        return {
+            CLEAR_DAY: 'wi-day-sunny',
+            CLOUD: 'wi-day-cloudy',
+            RAIN: 'wi-day-rain',
+            WINDAY: 'wi-day-windy',
+            SNOW: 'wi-day-snow',
+            PARTLY_CLOUDY_DAY: 'wi-day-cloudy',
+            CLEAR_NIGHT: 'wi-night-clear'
+        }[skycon];
     }
 
 }

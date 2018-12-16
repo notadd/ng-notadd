@@ -17,7 +17,7 @@
                 </mat-card-subtitle>
             </mat-card-header>
             <mat-card-content>
-                <div echarts [options]="widget.chartOption"></div>
+                <div class="area-chart" echarts [options]="widget.chartOption"></div>
             </mat-card-content>
         </mat-card>
     </section>
@@ -29,34 +29,79 @@
             <mat-card-content>
                 <div fxLayout="row nowrap" fxLayoutAlign="space-between center">
                     <div class="realtime mt-20 mb-16 light-blue-text">
-                        <mat-icon class="wi s-64" fontSet="weathericon" fontIcon="wi-day-showers"></mat-icon>
+                        <mat-icon class="wi s-64" fontSet="weathericon" fontIcon="{{weatherReport.weathericon}}"></mat-icon>
                         <span class="realtime-temp font-size-50"> {{weatherReport.today?.temperature || 0}}<sup>°</sup></span>
                     </div>
-                    <div>
-                        <h4 class="day font-size-30 m-0">{{weatherReport.xingqi}}</h4>
-                        <small class="city secondary-text">陕西, 西安</small>
+                    <div class="text-right">
+                        <h4 class="day font-size-30 m-0">{{weatherReport.day.xingqi}}</h4>
+                        <small class="city secondary-text">{{weatherReport.day.date | date:'yyyy-MM-dd'}}</small>
                     </div>
                 </div>
-                <mat-list dense>
-                    <mat-list-item>
-                        <span matLine>PM2.5</span>
-                        <span>{{weatherReport.today?.pm25}}</span>
-                    </mat-list-item>
-                    <mat-list-item>
-                        <span matLine>Wind</span>
-                        <span>{{weatherReport.today?.wind?.direction}}° {{weatherReport.today?.wind?.speed}} km/h</span>
-                    </mat-list-item>
-                    <mat-list-item>
-                        <span matLine>Humidity</span>
-                        <span>{{weatherReport.today?.humidity}}</span>
-                    </mat-list-item>
-                    
-                </mat-list>
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <td>Wind</td>
+                            <td class="font-medium">
+                                {{weatherReport.today?.wind?.direction}}° {{weatherReport.today?.wind?.speed}} km/h
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Humidity</td>
+                            <td class="font-medium">{{weatherReport.today?.humidity}}%</td>
+                        </tr>
+                        <tr>
+                            <td>PM2.5</td>
+                            <td class="font-medium">{{weatherReport.today?.pm25}}</td>
+                        </tr>
+                        <tr>
+                            <td>Cloud Cover</td>
+                            <td class="font-medium">{{weatherReport.today?.cloudrate}}</td>
+                        </tr>
+                        <tr>
+                            <td>Precipitation</td>
+                            <td class="font-medium">{{weatherReport.today?.precipitation?.local?.intensity}}</td>
+                        </tr>
+                    </tbody>
+                </table>
             </mat-card-content>
+            <mat-divider></mat-divider>
+            <mat-card-actions class="text-center" fxLayout="row nowrap">
+                <div *ngFor="let day of weatherReport.future;" fxFlex="20">
+                    <mat-icon class="wi" fontSet="weathericon" fontIcon="{{day.weathericon}}" color="accent"></mat-icon>
+                    <span class="secondary-text"> {{day.date | date: 'MM-dd'}}</span><br>
+                    <span class="font-size-18 secondary-text font-medium">{{day.avg}}°</span>
+                </div>
+            </mat-card-actions>
         </mat-card>
         <div fxFlex="1 0 0%" fxFlex.lt-md="100" fxLayout="column nowrap">
-            <div class="card card-shadow mb-20" [ngClass.lt-md]="{'mb-32': true}">2222</div>
-            <div class="card card-shadow">3333</div>
+            <mat-card class="card card-shadow sales-card p-24 mb-20" [ngClass.lt-md]="{'mb-32': true}">
+                <mat-card-header>
+                    <mat-card-title class="m-0">Sales Prediction</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <div class="mt-24" fxLayout="row nowrap" fxLayoutAlign="space-between start">
+                        <div fxFlex="50">
+                            <span class="font-size-30">$3528</span><br>
+                            <span class="font-size-20 m-0">(150-165 Sales)</span>
+                        </div>
+                        <div class="sales-prediction" echarts fxFlex="50" [options]="salesOption.prediction"></div>
+                    </div>
+                </mat-card-content>
+            </mat-card>
+            <mat-card class="card card-shadow sales-card p-24">
+                <mat-card-header>
+                    <mat-card-title class="m-0">Sales Difference</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <div class="mt-24" fxLayout="row nowrap" fxLayoutAlign="space-between start">
+                        <div fxFlex="50">
+                            <span class="font-size-30">$4316</span><br>
+                            <span class="font-size-20 m-0">(150-165 Sales)</span>
+                        </div>
+                        <div class="sales-difference" echarts fxFlex="50" [options]="salesOption.difference"></div>
+                    </div>
+                </mat-card-content>
+            </mat-card>
         </div>
     </section>
     <section fxLayout="row nowrap" fxLayout.lt-md="row wrap" fxLayoutAlign="space-between start" fxLayoutGap.gt-sm="30px">

@@ -38,3 +38,16 @@ export interface RealtimeWeather {
         }
     };
 }
+
+export interface WeatherForcast {
+    status: string;
+    result: {
+        status: string;
+        hourly: object; // 小时级预报
+        minutely: object; // 分钟级预报
+        daily: {
+            temperature: [];
+            skycon: [];
+        }; // 天级别预报 最近5天的预报
+    };
+}
