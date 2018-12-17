@@ -1,5 +1,15 @@
+// Perfect scrollbar
+@import url(~perfect-scrollbar/css/perfect-scrollbar);
+
 .ps {
     position: relative;
+
+    &.invisible {
+        > .ps__rail-x,
+        > .ps__rail-y {
+            opacity: 0 !important;
+        }
+    }
 
     > .ps__rail-x {
         z-index: 99999;
