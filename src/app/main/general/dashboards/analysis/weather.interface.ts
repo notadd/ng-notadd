@@ -1,3 +1,5 @@
+import { EChartOption } from 'echarts';
+
 export interface Coords {
     longitude: number;
     latitude: number;
@@ -50,4 +52,46 @@ export interface WeatherForcast {
             skycon: [];
         }; // 天级别预报 最近5天的预报
     };
+}
+
+export interface WeatherReport {
+    weathericon: string;
+    today: {
+        temperature: number;
+        wind: {
+            direction: number;
+            speed: number;
+        },
+        humidity: number;
+        pm25: number;
+        cloudrate: number;
+        precipitation: {
+            nearest: {
+                distance: number;
+            };
+            local: {
+                intensity: number;
+            }
+        }
+    };
+    future: [];
+    day: {
+        date: number;
+        xingqi: string;
+    };
+}
+
+export interface SalesData {
+    title: string;
+    profit: number;
+    amount: {
+        min: number;
+        max: number;
+    };
+    chartOption: EChartOption;
+}
+
+export interface Sales {
+    prediction: SalesData;
+    difference: SalesData;
 }
