@@ -21,10 +21,16 @@
             </mat-card-content>
         </mat-card>
     </section>
+
     <section fxLayout="row wrap" fxLayout.gt-sm="row nowrap" fxLayoutAlign="space-between stretch" fxLayoutGap.md="15px" fxLayoutGap.gt-md="30px">
         <mat-card class="card card-shadow weather-card p-24" fxFlex="49" fxFlex.lt-md="100" [ngClass.lt-md]="{'mb-32': true}">
             <mat-card-header>
-                <mat-card-title class="m-0">Weather Report</mat-card-title>
+                <mat-card-title class="m-0" fxLayoutAlign="space-between end">
+                    Weather Report
+                    <span class="font-size-12 secondary-text float-right">
+                        数据来自-<a href="https://www.caiyunapp.com/" target="_blank">彩云天气</a>
+                    </span>
+                </mat-card-title>
             </mat-card-header>
             <mat-card-content>
                 <div fxLayout="row nowrap" fxLayoutAlign="space-between center">
@@ -104,6 +110,7 @@
             </mat-card>
         </div>
     </section>
+    
     <section fxLayout="row nowrap" fxLayout.lt-md="row wrap" fxLayoutAlign="space-between start" fxLayoutGap.gt-sm="30px">
         <div class="card card-shadow" fxFlex="59" fxFlex.lt-md="100" [ngClass.lt-md]="{'mb-32': true}">
             <div class="scatter-map" echarts [options]="scatterMapOption"></div>

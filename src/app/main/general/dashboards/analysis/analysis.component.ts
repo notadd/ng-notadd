@@ -246,16 +246,16 @@ export class AnalysisComponent implements OnInit {
         };
 
         if (!navigator.geolocation) {
-            console.log('当前浏览器不支持 geolocation.');
+            // 当前浏览器不支持 geolocation时 默认为北京
+            const coords: Coords = { latitude: 39.90923, longitude: 116.397428 };
+            this.updateWeather(coords);
         } else {
             navigator.geolocation.getCurrentPosition(({ coords }) => {
                 this.updateWeather(coords);
-                this.updateWeatherFuture(coords);
             }, err => {
                 // 获取不到位置信息时 默认为北京
                 const coords: Coords = { latitude: 39.90923, longitude: 116.397428 };
                 this.updateWeather(coords);
-                this.updateWeatherFuture(coords);
             });
         }
 
@@ -330,22 +330,20 @@ export class AnalysisComponent implements OnInit {
     }
 
     updateWeather(coords: Coords) {
+        // 实时天气
         this.service.getRealtimeWeather(coords)
         .subscribe(data => {
-            console.log(data);
             if (data.result.status === 'ok') {
                 this.weatherReport.today = data.result;
                 this.weatherReport.weathericon = this.weatherIcon(data.result.skycon);
             }
         });
-    }
 
-    updateWeatherFuture(coords: Coords) {
+        // 天气预报，5日内天气
         this.service.getWeatherForecast(coords)
         .subscribe(data => {
             if (data.status === 'ok') {
                 this.weatherReport.future = data.result.daily.temperature;
-                console.log(data.result.daily);
                 data.result.daily.skycon.forEach((obj: any, index: number) => {
                     this.weatherReport.future[index].weathericon = this.weatherIcon(obj.value);
                 });
@@ -356,12 +354,14 @@ export class AnalysisComponent implements OnInit {
     weatherIcon(skycon) {
         return {
             CLEAR_DAY: 'wi-day-sunny',
-            CLOUD: 'wi-day-cloudy',
-            RAIN: 'wi-day-rain',
-            WINDAY: 'wi-day-windy',
-            SNOW: 'wi-day-snow',
+            CLEAR_NIGHT: 'wi-night-clear',
             PARTLY_CLOUDY_DAY: 'wi-day-cloudy',
-            CLEAR_NIGHT: 'wi-night-clear'
+            PARTLY_CLOUDY_NIGHT: 'wi-night-alt-cloudy',
+            CLOUDY: 'wi-day-cloudy-high',
+            RAIN: 'wi-day-rain',
+            SNOW: 'wi-day-snow',
+            WIND: 'wi-day-windy',
+            HAZE: 'wi-day-haze'
         }[skycon];
     }
 
