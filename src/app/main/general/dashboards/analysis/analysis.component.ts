@@ -26,7 +26,21 @@ export class AnalysisComponent implements OnInit {
 
     weatherReport = {
         weathericon: 'wi-day-cloudy',
-        today: {},
+        today: {
+            temperature: 0,
+            wind: {
+                direction: 0,
+                speed: 0
+            },
+            humidity: 0,
+            pm25: 0,
+            cloudrate: 0,
+            precipitation: {
+                local: {
+                    intensity: 0
+                }
+            }
+        },
         future: [],
         day: {
             date: Date.now(),
