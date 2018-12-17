@@ -11,14 +11,18 @@ mat-sidenav {
                 width: 90px;
             }
 
+            .logo-title{
+                display: none;
+            }
+
             .navbar-scroll-container {
 
                 .logo-wrap {
-                    padding: 12px 0;
+                    padding: 10px 0;
 
                     .logo {
                         width: 44px;
-                        height: 40px;
+                        height: 44px;
                         position: relative;
                         top: auto;
                         padding: 0;
@@ -27,10 +31,6 @@ mat-sidenav {
                         .mat-icon {
                             @include mat-icon-size(44px);
                         }
-                    }
-
-                    .logo-title{
-                        display: none;
                     }
                 }
 
@@ -52,6 +52,41 @@ navbar {
         height: 100%;
     }
 
+    .logo-title {
+        display: flex;
+        flex-direction: row;
+        flex: 1 0 auto;
+        align-items: center;
+        justify-content: center;
+        min-height: 64px;
+        max-height: 64px;
+        height: 64px;
+        padding: 12px 12px 12px 20px;
+
+        @include media-breakpoint('xs') {
+            min-height: 56px;
+            max-height: 56px;
+            height: 56px;
+        }
+
+        .title {
+            font-size: 22px;
+            margin: 0;
+            margin-top: 14px;
+        }
+
+        .mat-icon {
+            @include mat-icon-size(44px);
+            text-align: center;
+
+            @include media-breakpoint-down('xs') {
+                @include mat-icon-size(30px);
+            }
+
+            width: 100% !important;
+        }
+    }
+
     .navbar-scroll-container {
         overflow-y: auto;
         -webkit-overflow-scrolling: touch;
@@ -69,39 +104,15 @@ navbar {
             align-items: center;
             justify-content: flex-start;
             width: 100%;
-            padding: 24px 0 64px 0;
+            padding: 0 0 64px 0;
 
             @include media-breakpoint-down('xs') {
                 padding: 15px 0;
             }
 
-            .logo-title {
-                width: 100%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-
-                .title {
-                    font-size: 22px;
-                    margin: 0;
-                    margin-top: 14px;
-                }
-
-                .mat-icon {
-                    @include mat-icon-size(44px);
-                    text-align: center;
-
-                    @include media-breakpoint-down('xs') {
-                        @include mat-icon-size(30px);
-                    }
-
-                    width: 100% !important;
-                }
-            }
-
             .logo {
                 position: absolute;
-                top: 92px;
+                top: 26px;
                 border-radius: 50%;
                 padding: 8px;
                 transform: translateX(-50%);
