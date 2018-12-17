@@ -6,7 +6,8 @@ import {
     MatMenuModule,
     MatSelectModule,
     MatTabsModule,
-    MatCardModule
+    MatCardModule,
+    MatListModule
 } from '@angular/material';
 
 import { NgxEchartsModule } from 'ngx-echarts';
@@ -28,6 +29,7 @@ import { AnalysisService } from './analysis/analysis.service';
         MatSelectModule,
         MatTabsModule,
         MatCardModule,
+        MatListModule,
 
         NgxEchartsModule,
         NgxAmapModule.forRoot({

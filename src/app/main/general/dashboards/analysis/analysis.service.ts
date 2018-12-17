@@ -1,17 +1,22 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { EChartOption } from 'echarts';
 
 import { Widget, WidgetsGQL } from 'app/graphql/graphql.service';
+import { RealtimeWeather, Coords, WeatherForcast } from './weather.interface';
 
 @Injectable()
 export class AnalysisService {
 
     private widgetsExtend: any;
+    private caiyunApiUrl = 'https://caiyun-api.ibenchu.net/';
+    private caiyunApiKey = 'TAkhjf8d1nlSlspN';
 
     constructor(
-        private widgets: WidgetsGQL
+        private widgets: WidgetsGQL,
+        private http: HttpClient
     ) {
         this.widgetsExtend = {
             user: {
@@ -127,5 +132,13 @@ export class AnalysisService {
                     return results;
                 })
             );
+    }
+
+    getRealtimeWeather(coords: Coords): Observable<RealtimeWeather> {
+        return this.http.get<RealtimeWeather>(this.caiyunApiUrl + `v2/${this.caiyunApiKey}/${coords.longitude},${coords.latitude}/realtime.json`);
+    }
+
+    getWeatherForecast(coords: Coords): Observable<WeatherForcast> {
+        return this.http.get<WeatherForcast>(this.caiyunApiUrl + `v2/${this.caiyunApiKey}/${coords.longitude},${coords.latitude}/forecast.json`);
     }
 }

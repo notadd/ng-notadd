@@ -32,7 +32,7 @@
     }
 
     mat-card-content {
-        div[echarts] {
+        div.area-chart[echarts] {
             height: 50px;
             width: 100%;
         }
@@ -40,6 +40,7 @@
     
     .card {
         border: none;
+        background: #fff;
 
         &.card-shadow {
             box-shadow: 0 1px 1px rgba(0,0,0,.05);
@@ -78,6 +79,63 @@
             color: #424242;
         }
         
+    }
+
+    .light-blue-text {
+        color: #03a9f4; /*#1e88e5*/
+    }
+
+    .font-medium {
+        font-weight: 500;
+    }
+
+    .weather-card {
+        color: #5b616e;
+        
+        .mat-card-header-text {
+            margin: 0;
+            color: #5b616e;
+        }
+
+        .realtime {
+            mat-icon {
+                font-size: 45px !important;
+            }
+        }
+
+        .table {
+            width: 100%;
+            color: #9098ac;
+            font-size: 15px;
+
+            tr {
+                line-height: 40px;
+
+                td {
+                    width: 50%;
+                }
+            }
+        }
+
+        mat-card-actions {
+            padding-top: 20px;
+            min-height: 50px;
+        }
+    }
+
+    .sales-card {
+        color: #9098ac;
+
+        .sales-prediction, .sales-difference {
+            width: 100%;
+            height: 130px;
+        }
+
+        .mat-card-header-text {
+            margin: 0;
+            color: #5b616e;
+        }
+
     }
     
 }

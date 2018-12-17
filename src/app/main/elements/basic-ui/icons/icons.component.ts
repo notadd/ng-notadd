@@ -2,8 +2,6 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { cloneDeep } from 'lodash';
-import { DomSanitizer } from '@angular/platform-browser';
-import { MatIconRegistry } from '@angular/material';
 import { BaseIconGQL, MdiIconsGQL } from 'app/graphql/graphql.service';
 
 @Component({
@@ -22,13 +20,8 @@ export class IconsComponent implements OnInit {
 
     constructor(
         private baseIcon: BaseIconGQL,
-        private mdiIcon: MdiIconsGQL,
-        iconRegistry: MatIconRegistry, sanitizer: DomSanitizer
-    ) {
-        iconRegistry.addSvgIcon(
-            'github',
-            sanitizer.bypassSecurityTrustResourceUrl('assets/icons/github-circle-white-transparent.svg'));
-    }
+        private mdiIcon: MdiIconsGQL
+    ) {}
 
     ngOnInit() {
         this.baseIcon.watch()

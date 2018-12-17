@@ -23,5 +23,11 @@ export class NotaddMatIconsModule {
 
         /* Notadd icon font */
         matIconRegistry.registerFontClassAlias('NotaddIcon', 'notadd-icon');
+
+        /*
+         * Weather Icons.
+         * view on https://erikflowers.github.io/weather-icons/
+         */
+        matIconRegistry.registerFontClassAlias('weathericons', 'wi');
     }
 }

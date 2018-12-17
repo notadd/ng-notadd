@@ -6,6 +6,7 @@ import { NgForage } from 'ngforage';
 import { AnalysisService } from './analysis.service';
 import { EChartOption } from 'echarts';
 import * as echarts from 'echarts';
+import { Coords } from './weather.interface';
 
 @Component({
     selector: 'analysis',
@@ -18,6 +19,34 @@ export class AnalysisComponent implements OnInit {
     widgets: Array<any>;
     scatterMapOption: EChartOption;
     trendBarOption: EChartOption;
+    salesOption = {
+        prediction: {},
+        difference: {}
+    };
+
+    weatherReport = {
+        weathericon: 'wi-day-cloudy',
+        today: {
+            temperature: 0,
+            wind: {
+                direction: 0,
+                speed: 0
+            },
+            humidity: 0,
+            pm25: 0,
+            cloudrate: 0,
+            precipitation: {
+                local: {
+                    intensity: 0
+                }
+            }
+        },
+        future: [],
+        day: {
+            date: Date.now(),
+            xingqi: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'][new Date().getDay()],
+        }
+    };
 
     constructor(
         private service: AnalysisService,
@@ -84,13 +113,38 @@ export class AnalysisComponent implements OnInit {
                     toolbox: {
                         show: true,
                         orient: 'vertical',
-                        left: '10px',
+                        left: '0',
                         top: 'center',
                         feature: {
                             mark: { show: true },
-                            dataView: { show: true, readOnly: false },
-                            restore: { show: true },
-                            saveAsImage: { show: true }
+                            dataView: {
+                                show: true,
+                                readOnly: false,
+                                emphasis: {
+                                    iconStyle: {
+                                        textPosition: 'right',
+                                        textAlign: 'left'
+                                    }
+                                }
+                            },
+                            restore: {
+                                show: true,
+                                emphasis: {
+                                    iconStyle: {
+                                        textPosition: 'right',
+                                        textAlign: 'left'
+                                    }
+                                }
+                            },
+                            saveAsImage: {
+                                show: true,
+                                emphasis: {
+                                    iconStyle: {
+                                        textPosition: 'right',
+                                        textAlign: 'left'
+                                    }
+                                }
+                            }
                         }
                     },
                     series: [
@@ -140,7 +194,7 @@ export class AnalysisComponent implements OnInit {
                 }
             },
             color: ['#fff'],
-            backgroundColor: '#4caf50',
+            backgroundColor: '#1d88e5',
             tooltip : {},
             grid: {
                 top: '30%',
@@ -181,7 +235,7 @@ export class AnalysisComponent implements OnInit {
                     silent: true,
                     itemStyle: {
                         normal: {
-                            color: '#8ec798'
+                            color: '#57a8ef'
                         }
                     },
                     barGap: '-100%',
@@ -205,6 +259,124 @@ export class AnalysisComponent implements OnInit {
             ]
         };
 
+        if (!navigator.geolocation) {
+            // 当前浏览器不支持 geolocation时 默认为北京
+            const coords: Coords = { latitude: 39.90923, longitude: 116.397428 };
+            this.updateWeather(coords);
+        } else {
+            navigator.geolocation.getCurrentPosition(({ coords }) => {
+                this.updateWeather(coords);
+            }, err => {
+                // 获取不到位置信息时 默认为北京
+                const coords: Coords = { latitude: 39.90923, longitude: 116.397428 };
+                this.updateWeather(coords);
+            });
+        }
+
+        // sales
+        this.salesOption.prediction = {
+            series: [{
+                name: 'Sales Prediction',
+                type: 'gauge',
+                radius: '100%',
+                startAngle: 180,
+                endAngle: 0,
+                min: 0,
+                max: 100,
+                grid: {
+                    bottom: '-45%'
+                },
+                axisLine: { // 坐标轴线
+                    lineStyle: {
+                        color: [[ 0.5, '#049efb'], [ 1, '#9098ac']],
+                        width: 15
+                    }
+                },
+                axisLabel: { // 坐标轴小标记
+                    show: false
+                },
+                axisTick: {
+                    show: false
+                },
+                splitLine: {
+                    show: false
+                },
+                title: { show: false },
+                detail : {
+                    show: false
+                },
+                data: [{value: 50, name: 'Sales Prediction', color: '#049efb'}]
+            }]
+        };
+
+        this.salesOption.difference = {
+            series: [{
+                name: 'Sales Difference',
+                type: 'gauge',
+                radius: '100%',
+                startAngle: 180,
+                endAngle: 0,
+                min: 0,
+                max: 100,
+                axisLine: { // 坐标轴线
+                    lineStyle: {
+                        color: [[ 0.3, '#f44337'], [ 1, '#9098ac']],
+                        width: 15
+                    }
+                },
+                axisLabel: { // 坐标轴小标记
+                    show: false
+                },
+                axisTick: {
+                    show: false
+                },
+                splitLine: {
+                    show: false
+                },
+                title: { show: false },
+                detail : {
+                    show: false
+                },
+                data: [{value: 30, name: 'Sales Difference', color: '#049efb'}]
+            }]
+        };
+
+    }
+
+    updateWeather(coords: Coords) {
+        // 实时天气
+        this.service.getRealtimeWeather(coords)
+        .subscribe(data => {
+            if (data.result.status === 'ok') {
+                this.weatherReport.today = data.result;
+                this.weatherReport.weathericon = this.weatherIcon(data.result.skycon);
+            }
+        });
+
+        // 天气预报，5日内天气
+        this.service.getWeatherForecast(coords)
+        .subscribe(data => {
+            if (data.status === 'ok') {
+                this.weatherReport.future = data.result.daily.temperature;
+                data.result.daily.skycon.forEach((obj: any, index: number) => {
+                    this.weatherReport.future[index].weathericon = this.weatherIcon(obj.value);
+                });
+            }
+        });
+    }
+
+    weatherIcon(skycon) {
+        return {
+            CLEAR_DAY: 'wi-day-sunny',
+            CLEAR_NIGHT: 'wi-night-clear',
+            PARTLY_CLOUDY_DAY: 'wi-day-cloudy',
+            PARTLY_CLOUDY_NIGHT: 'wi-night-alt-cloudy',
+            CLOUDY: 'wi-day-cloudy-high',
+            RAIN: 'wi-day-rain',
+            SNOW: 'wi-day-snow',
+            WIND: 'wi-day-windy',
+            HAZE: 'wi-day-haze'
+        }[skycon];
     }
 
 }
