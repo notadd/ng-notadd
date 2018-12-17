@@ -11,7 +11,7 @@ import { RealtimeWeather, Coords, WeatherForcast } from './weather.interface';
 export class AnalysisService {
 
     private widgetsExtend: any;
-    private caiyunApiUrl = 'http://caiyun-api.ibenchu.net/';
+    private caiyunApiUrl = 'https://caiyun-api.ibenchu.net/';
     private caiyunApiKey = 'TAkhjf8d1nlSlspN';
 
     constructor(
