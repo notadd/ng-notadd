@@ -61,7 +61,6 @@ navbar {
         min-height: 64px;
         max-height: 64px;
         height: 64px;
-        padding: 12px 12px 12px 20px;
 
         @include media-breakpoint('xs') {
             min-height: 56px;
