@@ -14,7 +14,7 @@ export const notaddConfig: NotaddConfig = {
         toolbar: {
             background: 'mat-blue-600-bg',
             hidden: false,
-            position: 'below-static'
+            position: 'below-fixed'
         },
         footer: {
             background: 'mat-notadd-dark-A700-bg',
