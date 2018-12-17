@@ -1,12 +1,12 @@
-<div class="navbar-scroll-container" notaddPerfectScrollbar [notaddPerfectScrollbarOptions]="{suppressScrollX: true}">
+<div class="logo-title" [ngClass]="notaddConfig.layout.navbar.secondaryBackground">
+    <!--<h1 class="title">Notadd 后台管理</h1>-->
+    <mat-icon fontSet="NotaddIcon" fontIcon="icon-logo" aria-hidden="true"></mat-icon>
+</div>
+<div class="navbar-scroll-container" notaddPerfectScrollbar [notaddPerfectScrollbarOptions]="{suppressScrollX: true, isInvisible: true}">
 
-    <div class="logo-wrap" [ngClass]="notaddConfig.layout.navbar.secondaryBackground" fxLayout="column">
+    <div class="logo-wrap" [ngClass]="notaddConfig.layout.navbar.secondaryBackground" fxLayout="column" fxHide.xs>
 
-        <div class="logo-title">
-            <!--<h1 class="title">Notadd 后台管理</h1>-->
-            <mat-icon fontSet="NotaddIcon" fontIcon="icon-logo" aria-hidden="true"></mat-icon>
-        </div>
-        <div class="logo" [ngClass]="notaddConfig.layout.navbar.background" fxHide.xs>
+        <div class="logo" [ngClass]="notaddConfig.layout.navbar.background">
             <mat-icon fontSet="NotaddIcon" fontIcon="icon-logo-circle" aria-hidden="true"></mat-icon>
         </div>
 

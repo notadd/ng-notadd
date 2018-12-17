@@ -1,4 +1,4 @@
-import { AfterViewInit, Directive, ElementRef, HostListener, Input, OnDestroy } from '@angular/core';
+import { AfterViewInit, Directive, ElementRef, HostListener, HostBinding, Input, OnDestroy } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { Platform } from '@angular/cdk/platform';
 import { Subject } from 'rxjs';
@@ -12,6 +12,9 @@ import { NotaddConfigService } from '@notadd/services/config.service';
     selector: '[notaddPerfectScrollbar]'
 })
 export class NotaddPerfectScrollbarDirective implements AfterViewInit, OnDestroy {
+
+    @HostBinding('class.invisible') isInvisible: boolean;
+
     isInitialized: boolean;
     isMobile: boolean;
     ps: PerfectScrollbar;
@@ -40,6 +43,8 @@ export class NotaddPerfectScrollbarDirective implements AfterViewInit, OnDestroy
 
     @Input()
     set notaddPerfectScrollbarOptions(value) {
+        this.isInvisible = value.isInvisible || false;
+        value.isInvisible && delete value.isInvisible;
         this.options = _.merge({}, this.options, value);
     }
 
@@ -73,11 +78,9 @@ export class NotaddPerfectScrollbarDirective implements AfterViewInit, OnDestroy
     ngAfterViewInit(): void {
         this.configService.config
             .pipe(takeUntil(this.ngUnsubscribe))
-            .subscribe(
-                (settings) => {
-                    this.enabled = settings.customScrollbars;
-                }
-            );
+            .subscribe((settings) => {
+                this.enabled = settings.customScrollbars;
+            });
 
         if (this.notaddPerfectScrollbarOptions.updateOnRouteChange) {
             this.router.events
