@@ -2,9 +2,10 @@ import { Component, Inject, OnDestroy, OnInit } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { Platform } from '@angular/cdk/platform';
 import { Router, ActivatedRoute, NavigationEnd, Params } from '@angular/router';
-import { Subject } from 'rxjs';
+import { Subject, from } from 'rxjs';
 import { takeUntil, filter, map, mergeMap } from 'rxjs/operators';
 import { TranslateService } from '@ngx-translate/core';
+import { NgForage } from 'ngforage';
 
 import { NotaddConfigService } from '@notadd/services/config.service';
 import { NotaddLoadingService } from '@notadd/services/notadd-loading.service';
@@ -41,7 +42,8 @@ export class AppComponent implements OnInit, OnDestroy {
         private translateService: TranslateService,
         private notaddTranslationService: NotaddTranslationService,
         private platform: Platform,
-        private sidebarService: NotaddSidebarService
+        private sidebarService: NotaddSidebarService,
+        private ngForage: NgForage
     ) {
         this.navigation = navigation;
 
@@ -99,6 +101,11 @@ export class AppComponent implements OnInit, OnDestroy {
             )
             .subscribe((data) => {
                 this.isFullScreen = !data['isFullScreen'] === void (0) || data['isFullScreen'];
+            });
+
+        from(this.ngForage.getItem('NOTADD_CONFIG'))
+            .subscribe(localConfig => {
+                this.configService.config = localConfig;
             });
     }
 

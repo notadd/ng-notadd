@@ -2,6 +2,7 @@ import { NgModule, Optional, SkipSelf, ModuleWithProviders } from '@angular/core
 
 import { throwIfAlreadyLoaded } from './module-import-guard';
 import { NOTADD_CONFIG } from '@notadd/services/config.service';
+import { NotaddConfig } from '@notadd/types';
 
 @NgModule()
 export class NotaddModule {
@@ -13,7 +14,7 @@ export class NotaddModule {
         throwIfAlreadyLoaded(parentModule, 'NotaddModule');
     }
 
-    static forRoot(config): ModuleWithProviders {
+    static forRoot(config: NotaddConfig): ModuleWithProviders {
         return {
             ngModule : NotaddModule,
             providers: [
