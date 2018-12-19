@@ -3,7 +3,7 @@ import { DOCUMENT } from '@angular/common';
 import { Platform } from '@angular/cdk/platform';
 import { Router, ActivatedRoute, NavigationEnd, Params } from '@angular/router';
 import { Subject, from } from 'rxjs';
-import { takeUntil, filter, map, mergeMap } from 'rxjs/operators';
+import { takeUntil, filter, map, mergeMap, pairwise } from 'rxjs/operators';
 import { TranslateService } from '@ngx-translate/core';
 import { NgForage } from 'ngforage';
 
@@ -97,7 +97,10 @@ export class AppComponent implements OnInit, OnDestroy {
                     }
                     return route;
                 }),
-                mergeMap(route => route.data)
+                mergeMap(route => route.data),
+                pairwise(),
+                filter(dataArr => dataArr[0].isFullScreen !== dataArr[1].isFullScreen),
+                map(dataArr => dataArr[1])
             )
             .subscribe((data) => {
                 this.isFullScreen = !data['isFullScreen'] === void (0) || data['isFullScreen'];
