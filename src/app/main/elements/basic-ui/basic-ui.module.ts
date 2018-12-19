@@ -23,13 +23,12 @@ import {
 } from '@angular/material';
 
 import { NotaddSharedModule } from '@notadd/shared.module';
+import { NotaddDirectivesModule } from '@notadd/directives/directives.module';
 
 import { ButtonsComponent } from './buttons/buttons.component';
 import { CardsComponent } from './cards/cards.component';
 import { IconsComponent } from './icons/icons.component';
 import { ListComponent } from './list/list.component';
-
-import { BasicUiRoutingModule } from './basic-ui-routing.module';
 import { BadgesComponent } from './badges/badges.component';
 import { ProgressBarComponent } from './progress-bar/progress-bar.component';
 import { ButtonToggleComponent } from './button-toggle/button-toggle.component';
@@ -38,6 +37,7 @@ import { ExpansionPanelComponent } from './expansion-panel/expansion-panel.compo
 import { TabsComponent } from './tabs/tabs.component';
 import { StepperComponent } from './stepper/stepper.component';
 import { GridListComponent } from './grid-list/grid-list.component';
+import { BasicUiRoutingModule } from './basic-ui-routing.module';
 
 @NgModule({
     imports: [
@@ -64,6 +64,7 @@ import { GridListComponent } from './grid-list/grid-list.component';
         ReactiveFormsModule,
 
         NotaddSharedModule,
+        NotaddDirectivesModule,
 
         BasicUiRoutingModule
     ],
