@@ -23,7 +23,7 @@
     </section>
 
     <section fxLayout="row wrap" fxLayout.gt-sm="row nowrap" fxLayoutAlign="space-between stretch" fxLayoutGap.md="15px" fxLayoutGap.gt-md="30px">
-        <mat-card class="card card-shadow weather-card p-24" fxFlex="49" fxFlex.lt-md="100" [ngClass.lt-md]="{'mb-32': true}">
+        <mat-card class="card card-shadow weather-card p-24" fxFlex="49" fxFlex.lt-md="100" ngClass.lt-md="mb-32">
             <mat-card-header>
                 <mat-card-title class="m-0" fxLayoutAlign="space-between end">
                     Weather Report
@@ -80,31 +80,35 @@
             </mat-card-actions>
         </mat-card>
         <div fxFlex="1 0 0%" fxFlex.lt-md="100" fxLayout="column nowrap">
-            <mat-card class="card card-shadow sales-card p-24 mb-20" [ngClass.lt-md]="{'mb-32': true}">
+            <mat-card class="card card-shadow sales-card p-24 mb-20" ngClass.lt-md="mb-32">
                 <mat-card-header>
-                    <mat-card-title class="m-0">Sales Prediction</mat-card-title>
+                    <mat-card-title class="m-0">{{salesOption.prediction?.title}}</mat-card-title>
                 </mat-card-header>
                 <mat-card-content>
                     <div class="mt-24" fxLayout="row nowrap" fxLayoutAlign="space-between start">
                         <div fxFlex="50">
-                            <span class="font-size-30">$3528</span><br>
-                            <span class="font-size-20 m-0">(150-165 Sales)</span>
+                            <span class="font-size-30">${{salesOption.prediction?.profit}}</span><br>
+                            <span class="font-size-20 m-0">
+                                ({{salesOption.prediction?.amount?.min}}-{{salesOption.prediction?.amount?.max}} Sales)
+                            </span>
                         </div>
-                        <div class="sales-prediction" echarts fxFlex="50" [options]="salesOption.prediction"></div>
+                        <div class="sales-prediction" echarts fxFlex="50" [options]="salesOption.prediction?.chartOption"></div>
                     </div>
                 </mat-card-content>
             </mat-card>
             <mat-card class="card card-shadow sales-card p-24">
                 <mat-card-header>
-                    <mat-card-title class="m-0">Sales Difference</mat-card-title>
+                    <mat-card-title class="m-0">{{salesOption.difference?.title}}</mat-card-title>
                 </mat-card-header>
                 <mat-card-content>
                     <div class="mt-24" fxLayout="row nowrap" fxLayoutAlign="space-between start">
                         <div fxFlex="50">
-                            <span class="font-size-30">$4316</span><br>
-                            <span class="font-size-20 m-0">(150-165 Sales)</span>
+                            <span class="font-size-30">${{salesOption.difference?.profit}}</span><br>
+                            <span class="font-size-20 m-0">
+                                ({{salesOption.difference?.amount?.min}}-{{salesOption.difference?.amount?.max}} Sales)
+                            </span>
                         </div>
-                        <div class="sales-difference" echarts fxFlex="50" [options]="salesOption.difference"></div>
+                        <div class="sales-difference" echarts fxFlex="50" [options]="salesOption.difference?.chartOption"></div>
                     </div>
                 </mat-card-content>
             </mat-card>
@@ -112,7 +116,7 @@
     </section>
     
     <section fxLayout="row nowrap" fxLayout.lt-md="row wrap" fxLayoutAlign="space-between start" fxLayoutGap.gt-sm="30px">
-        <div class="card card-shadow" fxFlex="59" fxFlex.lt-md="100" [ngClass.lt-md]="{'mb-32': true}">
+        <div class="card card-shadow" fxFlex="59" fxFlex.lt-md="100" ngClass.lt-md="mb-32">
             <div class="scatter-map" echarts [options]="scatterMapOption"></div>
         </div>
         <div class="card card-shadow" fxFlex="39" fxFlex.lt-md="100">
