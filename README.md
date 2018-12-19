@@ -54,13 +54,6 @@ Medium-Background solution based on Angular7 Material2
 
 ## Roadmap
 
-**0.10.0**
-- [x] Support APOLLO-GRAQPHQL -[x] Base page (personal information page, login page ...)
-
-**0.12.0**
-- [x] Initial compatibility with mobile phones
-- [x] More complete dashboard page
-
 **0.13.0**
 - [x] Support operation status saving
 - [ ] recaptcha support (default off)
