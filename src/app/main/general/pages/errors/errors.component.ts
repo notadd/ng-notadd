@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
     selector: 'errors',
@@ -11,10 +11,15 @@ export class ErrorsComponent implements OnInit {
     code: string;
 
     constructor(
-        private activatedRoute: ActivatedRoute
+        private activatedRoute: ActivatedRoute,
+        private router: Router
     ) {
         this.activatedRoute.params.subscribe(params => {
-            this.code = params.code;
+            if (['400', '403', '404', '500', '503'].includes(params.code)) {
+                this.code = params.code;
+            }  else {
+                this.router.navigate(['/general/pages/errors/404']);
+            }
         });
     }
 

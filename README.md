@@ -54,31 +54,24 @@ Medium-Background solution based on Angular7 Material2
 
 ## Roadmap
 
-**0.10.0**
-- [x] Support APOLLO-GRAQPHQL -[x] Base page (personal information page, login page ...)
-
-**0.11.0**
-- [x] New left menu bar (support for mouse suspension)
-
-**0.12.0**
-- [ ] Use NG-MATERIAL2 components
-- [x] Mobile phone terminal is initially compatible 
-
 **0.13.0**
-- [ ] More complete dashboard page
-
-**0.14.0**
-- [ ] Mobile phone-side compatibility
-- [ ] progressive application (PWA)
-
-**0.15.0**
-- [ ] JSON generate form
-
-**0.16.0**
+- [x] Support operation status saving
 - [ ] recaptcha support (default off)
 
+**0.14.0**
+- [ ] Use ng-material2 component
+
+**0.15.0**
+- [ ] Virtual list (supports 100,000 level list)
+- [ ] built-in permission component
+
+
+**0.16.0**
+- [ ] component phone end compatible
+- [ ] Progressive Application (PWA)
+
 **0.17.0**
-- [ ] virtual list (list of support for level 100,000)
+- [ ] json generate form
 
 **0.18.0**
 - [ ] Excel Import and Export

@@ -13,7 +13,7 @@ export class AnalysisService {
 
     private widgetsExtend: any;
     private caiyunApiUrl = 'https://caiyun-api.ibenchu.net/';
-    private caiyunApiKey = 'TAkhjf8d1nlSlspN';
+    private caiyunApiKey = 'notadd';
     private weatherReport = {
         weathericon: 'wi-day-cloudy',
         today: {
