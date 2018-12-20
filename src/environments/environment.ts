@@ -4,7 +4,10 @@
 
 export const environment = {
     production: false,
-    apiUrl: 'http://localhost:3000/graphql'
+    apiUrl: 'http://localhost:3000/graphql',
+    reCaptcha: {
+        siteKey: '6Lf4g4EUAAAAAEU7CoO7hdeF7VWj4BvHRThloq_K'
+    }
 };
 
 /*
