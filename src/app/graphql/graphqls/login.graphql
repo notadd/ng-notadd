@@ -1,0 +1,16 @@
+query login (
+    $userName: String!
+    $password: String!
+    $email: String!
+    $token: String!
+) {
+    login (
+        userName: $userName
+        password: $password
+        email: $email
+        token: $token
+    ) {
+        validatedUser
+        errorCodes
+    }
+}

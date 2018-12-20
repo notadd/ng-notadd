@@ -7,6 +7,7 @@ export interface Query {
   widgets?: (Widget | null)[] | null;
   baseIcon?: BaseIcon | null;
   mdiIcons?: (MdiIcon | null)[] | null;
+  login?: Login | null;
 }
 
 export interface Widget {
@@ -38,6 +39,17 @@ export interface MdiIcon {
   name?: string | null;
 }
 
+export interface Login {
+  validatedUser?: boolean | null;
+  errorCodes?: (string | null)[] | null;
+}
+export interface LoginQueryArgs {
+  userName: string;
+  password: string;
+  email: string;
+  token: string;
+}
+
 export enum CacheControlScope {
   PUBLIC = "PUBLIC",
   PRIVATE = "PRIVATE"
@@ -65,6 +77,26 @@ export namespace BaseIcon {
   export type Icons = {
     __typename?: "Icon";
     id?: string | null;
+  };
+}
+
+export namespace Login {
+  export type Variables = {
+    userName: string;
+    password: string;
+    email: string;
+    token: string;
+  };
+
+  export type Query = {
+    __typename?: "Query";
+    login?: Login | null;
+  };
+
+  export type Login = {
+    __typename?: "Login";
+    validatedUser?: boolean | null;
+    errorCodes?: (string | null)[] | null;
   };
 }
 
@@ -127,6 +159,29 @@ export class BaseIconGQL extends Apollo.Query<
           }
           name
         }
+      }
+    }
+  `;
+}
+@Injectable({
+  providedIn: "root"
+})
+export class LoginGQL extends Apollo.Query<Login.Query, Login.Variables> {
+  document: any = gql`
+    query login(
+      $userName: String!
+      $password: String!
+      $email: String!
+      $token: String!
+    ) {
+      login(
+        userName: $userName
+        password: $password
+        email: $email
+        token: $token
+      ) {
+        validatedUser
+        errorCodes
       }
     }
   `;

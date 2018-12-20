@@ -97,10 +97,7 @@ export class AppComponent implements OnInit, OnDestroy {
                     }
                     return route;
                 }),
-                mergeMap(route => route.data),
-                pairwise(),
-                filter(dataArr => dataArr[0].isFullScreen !== dataArr[1].isFullScreen),
-                map(dataArr => dataArr[1])
+                mergeMap(route => route.data)
             )
             .subscribe((data) => {
                 this.isFullScreen = !data['isFullScreen'] === void (0) || data['isFullScreen'];

@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-
 import {
     MatCardModule,
     MatButtonModule,
@@ -8,8 +7,13 @@ import {
     MatListModule,
     MatFormFieldModule,
     MatInputModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatSnackBarModule,
+    MatProgressBarModule
 } from '@angular/material';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+import { NgxCaptchaModule } from 'ngx-captcha';
 
 import { NotaddSharedModule } from '@notadd/shared.module';
 
@@ -34,6 +38,12 @@ import { RegisterV2Component } from './register-v2/register-v2.component';
         MatFormFieldModule,
         MatInputModule,
         MatCheckboxModule,
+        MatSnackBarModule,
+        MatProgressBarModule,
+        FormsModule,
+        ReactiveFormsModule,
+
+        NgxCaptchaModule,
 
         NotaddSharedModule,
 

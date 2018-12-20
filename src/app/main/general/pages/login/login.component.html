@@ -6,20 +6,33 @@
             </div>
             <p class="mt-0 mb-20">Sign into your pages account</p>
             <div class="mt-20 mb-20">
-                <mat-form-field color-white required-color-red color="accent" class="w-100-p">
-                    <input matInput type="text" autocomplete placeholder="Name" required>
-                </mat-form-field>
-                <mat-form-field color-white required-color-red color="accent" class="w-100-p">
-                    <input matInput type="email" autocomplete placeholder="Email" required>
-                </mat-form-field>
-                <mat-form-field color-white required-color-red color="accent" class="w-100-p">
-                    <input matInput type="password" autocomplete placeholder="Password" required>
-                </mat-form-field>
-                <div class="mb-20" fxLayoutAlign="space-between end">
-                    <mat-checkbox color-white>Remember me</mat-checkbox>
-                    <a class="float-right" routerLink="/general/pages/forgot-password">Forgot password?</a>
-                </div>
-                <button mat-flat-button class="w-100-p" color="accent">Sign in</button>
+
+                <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm)">
+                    <mat-form-field color-white required-color-red color="accent" class="w-100-p">
+                        <input matInput type="text" formControlName="userName" placeholder="Name">
+                        <mat-error *ngIf="userName.invalid">请输入用户名</mat-error>
+                    </mat-form-field>
+                    <mat-form-field color-white required-color-red color="accent" class="w-100-p">
+                        <input matInput type="email" formControlName="email" placeholder="Email">
+                        <mat-error *ngIf="email.invalid">
+                            <ng-container *ngIf="email.errors.required">请输入邮箱</ng-container>
+                            <ng-container *ngIf="email.errors.email">邮箱格式不正确</ng-container>
+                        </mat-error>
+                    </mat-form-field>
+                    <mat-form-field color-white required-color-red color="accent" class="w-100-p">
+                        <input matInput type="password" formControlName="password" placeholder="Password">
+                        <mat-error *ngIf="password.invalid">请输入密码</mat-error>
+                    </mat-form-field>
+                    <div class="mb-20" fxLayoutAlign="space-between end">
+                        <mat-checkbox color-white>Remember me</mat-checkbox>
+                        <a class="float-right" routerLink="/general/pages/forgot-password">Forgot password?</a>
+                    </div>
+                    <mat-progress-bar *ngIf="isLoading; else elseTmpl" color="accent" mode="indeterminate"></mat-progress-bar>
+                    <ng-template #elseTmpl>
+                        <button type="submit" [disabled]="loginForm.invalid" mat-flat-button class="w-100-p" color="accent">Sign in</button>
+                    </ng-template>
+                </form>
+
             </div>
             <p class="mt-0">Still no account? Please go to <a routerLink="/general/pages/register">Register</a></p>
 
