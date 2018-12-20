@@ -45,6 +45,7 @@
         "lodash": "^4.17.11",
         "ngforage": "^4.0.1",
         "ngx-amap": "^2.1.1",
+        "ngx-captcha": "^6.2.0",
         "ngx-echarts": "^4.0.0",
         "perfect-scrollbar": "^1.4.0",
         "rxjs": "^6.3.3",
