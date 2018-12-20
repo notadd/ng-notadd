@@ -14,7 +14,7 @@ const routes: Routes = [
     },
     {
         path: '**',
-        redirectTo: 'general/dashboards/analytics'
+        redirectTo: 'general/pages/errors/404'
     }
 ];
 
