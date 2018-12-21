@@ -7,6 +7,10 @@ export const environment = {
     apiUrl: 'http://localhost:3000/graphql',
     reCaptcha: {
         siteKey: '6Lf4g4EUAAAAAEU7CoO7hdeF7VWj4BvHRThloq_K'
+    },
+    caiyunApi: {
+        url: 'https://caiyun-api.ibenchu.net/',
+        key: 'notadd'
     }
 };
 
