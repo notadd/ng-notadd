@@ -5,7 +5,7 @@ import { map } from 'rxjs/operators';
 import { EChartOption } from 'echarts';
 import * as echarts from 'echarts';
 
-import { Widget, WidgetsGQL } from 'app/graphql/graphql.service';
+import { WidgetsGQL } from 'app/graphql/graphql.service';
 import { RealtimeWeather, Coords, WeatherForcast, Sales } from './weather.interface';
 import { environment } from 'environments/environment';
 
