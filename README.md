@@ -56,7 +56,7 @@ Medium-Background solution based on Angular7 Material2
 
 **0.13.0**
 - [x] Support operation status saving
-- [ ] recaptcha support (default off)
+- [x] recaptcha support (default on)
 
 **0.14.0**
 - [ ] Use ng-material2 component
