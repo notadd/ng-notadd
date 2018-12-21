@@ -7,7 +7,7 @@
             <p class="mt-0 mb-20">Sign into your pages account</p>
             <div class="mt-20 mb-20">
 
-                <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm)">
+                <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
                     <mat-form-field color-white required-color-red color="accent" class="w-100-p">
                         <input matInput type="text" formControlName="userName" placeholder="Name">
                         <mat-error *ngIf="userName.invalid">请输入用户名</mat-error>
