@@ -3,6 +3,11 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
     {
+        path: '',
+        redirectTo: 'general/dashboards/analytics',
+        pathMatch: 'full'
+    },
+    {
         path: 'general',
         loadChildren: './main/general/general.module#GeneralModule',
         data: { title: '常规' }
