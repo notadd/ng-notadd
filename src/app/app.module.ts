@@ -5,7 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatIconModule, MatButtonModule } from '@angular/material';
 import { TranslateModule } from '@ngx-translate/core';
 import { NgForageModule, NgForageConfig, Driver } from 'ngforage';
-
+import { NgxPermissionsModule } from 'ngx-permissions';
 import 'hammerjs';
 
 import { NotaddModule } from '@notadd/notadd.module';
@@ -32,6 +32,7 @@ import { AppComponent } from './app.component';
         MatButtonModule,
 
         TranslateModule.forRoot(),
+        NgxPermissionsModule.forRoot(),
 
         /* @notadd modules */
         NotaddModule.forRoot(notaddConfig),

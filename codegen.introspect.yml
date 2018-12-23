@@ -1,0 +1,8 @@
+# graphql:introspect
+overwrite: true
+schema:
+    - "http://localhost:3000/graphql"
+generates:
+    graphql.schema.json:
+        plugins:
+            - "introspection"
