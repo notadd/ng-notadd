@@ -1,0 +1,17 @@
+@import "src/@notadd/scss/notadd";
+
+.element-nm-alert {
+    .content {
+
+        >.bg-white {
+            background-color: #FFF;
+        }
+    }
+}
+
+
+@include media-breakpoint-down('sm') {
+    .mb-down-sm-30 {
+        margin-bottom: 30px;
+    }
+}
