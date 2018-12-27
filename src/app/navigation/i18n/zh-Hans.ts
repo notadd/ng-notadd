@@ -32,7 +32,11 @@ export const locale = {
             Register: '注册',
             Register_v2: '注册 V2',
             ForgotPassword: '忘记密码',
-            Lockscreen: '锁定屏幕'
+            Lockscreen: '锁定屏幕',
+            NgMaterial2: '拓展组件',
+            Alert: '提示框',
+            Carousel: '轮播图',
+            CascadeDropdownlist: '多级联动'
         }
     }
 };

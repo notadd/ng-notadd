@@ -1,0 +1,75 @@
+<div class="element-nm-carousel page-layout card">
+
+    <div class="content center mt-32" fxLayout="row nowrap" fxLayoutAlign="space-between start">
+        <div class="p-24" fxFlex="1 0 auto" fxFlex.lt-md="100">
+            <div class="mb-20">
+                <div class="h3">DEFAULT ( autoplay & loop )</div>
+                <div class="secondary-text font-size-14">Automatically play pictures, use the `interval` attribute to
+                    modify the interval and the default interval is 5000ms.</div>
+            </div>
+            <div class="carousel" ngClass.gt-sm="w-80-p h-400" ngClass.gt-md="w-70-p h-500">
+                <nm-carousel>
+                    <nm-slide>
+                        <img src="https://pinimg.ibenchu.net/564x/e7/35/4c/e7354cea13a75a31c32d62b8e9ecc642.jpg">
+                    </nm-slide>
+                    <nm-slide>
+                        <img src="https://pinimg.ibenchu.net/564x/84/04/33/84043324489d7ec8f28222da17309dc9.jpg">
+                    </nm-slide>
+                    <nm-slide>
+                        <img src="https://pinimg.ibenchu.net/564x/0f/c1/e9/0fc1e93b74d5d2423ee6f009f6457f92.jpg">
+                    </nm-slide>
+                </nm-carousel>
+            </div>
+        </div>
+    </div>
+
+    <div class="content center" fxLayout="row nowrap" fxLayoutAlign="space-between start">
+        <div class="p-24" fxFlex="1 0 auto" fxFlex.lt-md="100">
+            <div class="mb-20">
+                <div class="h3">Do not Loop</div>
+                <div class="secondary-text font-size-14">Do not loop through pictures, pictures play only once.</div>
+            </div>
+            <div class="carousel" ngClass.gt-sm="w-80-p h-400" ngClass.gt-md="w-70-p h-500">
+                <nm-carousel [isLoop]="false">
+                    <nm-slide>
+                        <img src="https://pinimg.ibenchu.net/564x/a8/32/b2/a832b2a81c49dac64ce18ec15391237e.jpg">
+                    </nm-slide>
+                    <nm-slide>
+                        <img src="https://pinimg.ibenchu.net/564x/29/b6/46/29b6467e3dece955ff4657d165d1a110.jpg">
+                    </nm-slide>
+                    <nm-slide>
+                        <img src="https://pinimg.ibenchu.net/564x/59/51/e5/5951e583ad90780dc921b44b9a9f85aa.jpg">
+                    </nm-slide>
+                </nm-carousel>
+            </div>
+        </div>
+    </div>
+
+    <div class="content center" fxLayout="row nowrap" fxLayoutAlign="space-between start">
+        <div class="p-24" fxFlex="1 0 auto" fxFlex.lt-md="100">
+            <div class="mb-20">
+                <div class="h3">Without Control Buttons</div>
+                <div class="secondary-text font-size-14">Hide control buttons.</div>
+            </div>
+            <div class="carousel" ngClass.gt-sm="w-80-p h-400" ngClass.gt-md="w-70-p h-500">
+                <nm-carousel [isControls]="false" [interval]="3000">
+                    <nm-slide>
+                        <img src="https://pinimg.ibenchu.net/564x/29/da/12/29da12d800c0fa53ec5899e29a3fb50e.jpg">
+                    </nm-slide>
+                    <nm-slide>
+                        <img src="https://pinimg.ibenchu.net/564x/11/24/5e/11245e128eb31ecb38471a1a3b54474e.jpg">
+                    </nm-slide>
+                    <nm-slide>
+                        <img src="https://pinimg.ibenchu.net/564x/d1/7e/da/d17edaf30276ac0c1cc24cc8bf1d7c41.jpg">
+                    </nm-slide>
+                    <nm-slide>
+                        <img src="https://pinimg.ibenchu.net/564x/b4/8f/f5/b48ff5c6f0932cf3d34beaccd7ca7ea5.jpg">
+                    </nm-slide>
+                    <nm-slide>
+                        <img src="https://pinimg.ibenchu.net/564x/83/61/d3/8361d3cea8c217262d0ba0d9a43e4370.jpg">
+                    </nm-slide>
+                </nm-carousel>
+            </div>
+        </div>
+    </div>
+</div>
