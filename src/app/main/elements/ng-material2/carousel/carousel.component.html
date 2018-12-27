@@ -3,7 +3,7 @@
     <div class="content center mt-32" fxLayout="row nowrap" fxLayoutAlign="space-between start">
         <div class="p-24" fxFlex="1 0 auto" fxFlex.lt-md="100">
             <div class="mb-20">
-                <div class="h3">AutoPlay</div>
+                <div class="h3">DEFAULT ( autoplay & loop )</div>
                 <div class="secondary-text font-size-14">Automatically play pictures, use the `interval` attribute to
                     modify the interval and the default interval is 5000ms.</div>
             </div>
@@ -26,8 +26,8 @@
     <div class="content center" fxLayout="row nowrap" fxLayoutAlign="space-between start">
         <div class="p-24" fxFlex="1 0 auto" fxFlex.lt-md="100">
             <div class="mb-20">
-                <div class="h3">Not AutoPlay</div>
-                <div class="secondary-text font-size-14">Do not automatically play pictures.</div>
+                <div class="h3">Do not Loop</div>
+                <div class="secondary-text font-size-14">Do not loop through pictures, pictures play only once.</div>
             </div>
             <div class="carousel" ngClass.gt-sm="w-80-p h-400" ngClass.gt-md="w-70-p h-500">
                 <nm-carousel [isLoop]="false">
