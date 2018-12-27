@@ -1,41 +1,52 @@
 <div class="element-nm-alert page-layout card fullwidth">
     <div class="content center mt-32" fxLayout="row wrap" fxLayout.gt-sm="row nowrap" fxLayoutAlign="space-between start"
         fxLayoutGap.gt-sm="30px">
-        <div class="bg-white p-24 mb-down-sm-30" fxFlex="1 0 auto" fxFlex.lt-md="100">
+        <div class="bg-white p-24" ngClass.lt-md="mb-32" fxFlex="1 0 auto" fxFlex.lt-md="100">
             <h3>SIMPLE</h3>
-            <nm-alert #infoAlert status="info" isVisible="true">this is info alert.</nm-alert>
-            <nm-alert #successAlert status="success" isVisible="true">this is success alert.</nm-alert>
-            <nm-alert #errorAlert status="error" isVisible="true">this is error alert.</nm-alert>
-            <nm-alert #warningAlert status="warning" isVisible="true">this is warning alert.</nm-alert>
+            <nm-alert #infoAlert status="info" isVisible="true">
+                this is info alert.</nm-alert>
+            <nm-alert #successAlert status="success" isVisible="true">
+                this is success alert.</nm-alert>
+            <nm-alert #errorAlert status="error" isVisible="true">
+                this is error alert.</nm-alert>
+            <nm-alert #warningAlert status="warning" isVisible="true">
+                this is warning alert.</nm-alert>
         </div>
         <div class="bg-white p-24" fxFlex="1 0 auto" fxFlex.lt-md="100">
             <h3>WITHOUT ICON</h3>
-            <nm-alert #infoAlert status="info" [isVisible]="true" [hasIcon]="false">this is info
-                alert.</nm-alert>
-            <nm-alert #successAlert status="success" [isVisible]="true" [hasIcon]="false">this is
-                success alert.</nm-alert>
-            <nm-alert #errorAlert status="error" [isVisible]="true" [hasIcon]="false">this is
-                error alert.</nm-alert>
-            <nm-alert #warningAlert status="warning" [isVisible]="true" [hasIcon]="false">this is
-                warning alert.</nm-alert>
+            <nm-alert #infoAlert status="info" [isVisible]="true" [hasIcon]="false">
+                this is info alert.</nm-alert>
+            <nm-alert #successAlert status="success" [isVisible]="true" [hasIcon]="false">
+                this is success alert.</nm-alert>
+            <nm-alert #errorAlert status="error" [isVisible]="true" [hasIcon]="false">
+                this is error alert.</nm-alert>
+            <nm-alert #warningAlert status="warning" [isVisible]="true" [hasIcon]="false">
+                this is warning alert.</nm-alert>
         </div>
     </div>
     <div class="content center mt-32" fxLayout="row wrap" fxLayout.gt-sm="row nowrap" fxLayoutAlign="space-between start"
         fxLayoutGap.gt-sm="30px">
-        <div class="bg-white p-24 mb-down-sm-30" fxFlex="1 0 auto" fxFlex.lt-md="100">
+        <div class="bg-white p-24" ngClass.lt-md="mb-32" fxFlex="1 0 auto" fxFlex.lt-md="100">
             <h3>CUSTOM ICON</h3>
-            <nm-alert #infoAlert status="info" isVisible="true" icon="extension">this is info alert.</nm-alert>
-            <nm-alert #successAlert status="success" isVisible="true" icon="notification_important">this is success
-                alert.</nm-alert>
-            <nm-alert #errorAlert status="error" isVisible="true" icon="highlight_off">this is error alert.</nm-alert>
-            <nm-alert #warningAlert status="warning" isVisible="true" icon="access_alarm">this is warning alert.</nm-alert>
+            <nm-alert #infoAlert status="info" isVisible="true" icon="extension">
+                this is info alert.</nm-alert>
+            <nm-alert #successAlert status="success" isVisible="true" icon="tag_faces">
+                this is success alert.</nm-alert>
+            <nm-alert #errorAlert status="error" isVisible="true" icon="highlight_off">
+                this is error alert.</nm-alert>
+            <nm-alert #warningAlert status="warning" isVisible="true" icon="access_alarm">
+                this is warning alert.</nm-alert>
         </div>
         <div class="bg-white p-24 mb-32" fxFlex="1 0 auto" fxFlex.lt-md="100">
             <h3>CANNOT DISMISS</h3>
-            <nm-alert #infoAlert status="info" [isVisible]="true" [dismissible]="false">this is info alert.</nm-alert>
-            <nm-alert #successAlert status="success" [isVisible]="true" [dismissible]="false">this is success alert.</nm-alert>
-            <nm-alert #errorAlert status="error" [isVisible]="true" [dismissible]="false">this is error alert.</nm-alert>
-            <nm-alert #warningAlert status="warning" [isVisible]="true" [dismissible]="false">this is warning alert.</nm-alert>
+            <nm-alert #infoAlert status="info" [isVisible]="true" [dismissible]="false">
+                this is info alert.</nm-alert>
+            <nm-alert #successAlert status="success" [isVisible]="true" [dismissible]="false">
+                this is success alert.</nm-alert>
+            <nm-alert #errorAlert status="error" [isVisible]="true" [dismissible]="false">
+                this is error alert.</nm-alert>
+            <nm-alert #warningAlert status="warning" [isVisible]="true" [dismissible]="false">
+                this is warning alert.</nm-alert>
         </div>
     </div>
 </div>
