@@ -1,3 +1,43 @@
-<p>
-    nm-cascade-dropdownlist works!
-</p>
+<div class="element-nm-cascade-dropdownlist page-layout card">
+    <div class="content center mt-32">
+        <div fxLayout="row wrap" fxLayout.gt-sm="row nowrap" fxLayoutAlign="space-between start"
+        fxLayoutGap.gt-sm="30px">
+            <div class="bg-white p-24" fxFlex="32" fxFlex.lt-md="100">
+                <h3>SIMPLE</h3>
+                <nm-cascade-dropdownlist [options]="options"></nm-cascade-dropdownlist>
+            </div>
+            <div class="bg-white p-24" fxFlex="32" fxFlex.lt-md="100">
+                <h3>Define Placeholder</h3>
+                <nm-cascade-dropdownlist [options]="options" placeholder="请选择项目"></nm-cascade-dropdownlist>
+            </div>
+            <div class="bg-white p-24" fxFlex="32" fxFlex.lt-md="100">
+                <h3>Disabled</h3>
+                <nm-cascade-dropdownlist [options]="options" [disabled]="true"></nm-cascade-dropdownlist>
+            </div>
+        </div>
+
+        <div fxLayout="row wrap" fxLayout.gt-sm="row nowrap" fxLayoutAlign="space-between start"
+            fxLayoutGap.gt-sm="30px">
+            <div class="bg-white p-24" fxFlex="32" fxFlex.lt-md="100">
+                <h3>Clearable</h3>
+                <nm-cascade-dropdownlist [options]="options" 
+                    [model]="['guide', 'design-principles', 'consistent']" 
+                    [clearable]="true">
+                </nm-cascade-dropdownlist>
+            </div>
+            <div class="bg-white p-24" fxFlex="32" fxFlex.lt-md="100">
+                <h3>not fullLevels</h3>
+                <nm-cascade-dropdownlist [options]="options" 
+                    [model]="['guide', 'design-principles', 'consistent']"
+                    [fullLevels]="false">
+                </nm-cascade-dropdownlist>
+            </div>
+            <div class="bg-white p-24" fxFlex="32" fxFlex.lt-md="100">
+                <h3>changeOnSelect</h3>
+                <nm-cascade-dropdownlist [options]="options" 
+                    [changeOnSelect]="true" (modelChange)="changeHandle($event)">
+                </nm-cascade-dropdownlist>
+            </div>
+        </div>
+    </div>
+</div>
