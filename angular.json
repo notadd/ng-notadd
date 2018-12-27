@@ -29,7 +29,8 @@
                                 "glob": "mdi.svg",
                                 "input": "node_modules/@mdi/angular-material",
                                 "output": "./assets"
-                            }
+                            },
+                            "src/manifest.json"
                         ],
                         "styles": [
                             {
@@ -55,7 +56,8 @@
                             "aot": true,
                             "extractLicenses": true,
                             "vendorChunk": false,
-                            "buildOptimizer": true
+                            "buildOptimizer": true,
+                            "serviceWorker": true
                         }
                     }
                 },
@@ -89,7 +91,8 @@
                         "scripts": [],
                         "assets": [
                             "src/favicon.ico",
-                            "src/assets"
+                            "src/assets",
+                            "src/manifest.json"
                         ]
                     }
                 },
