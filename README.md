@@ -74,6 +74,11 @@ Medium-Background solution based on Angular7 Material2
 - [ ] json generate form
 
 **0.18.0**
+- [ ] Ordinary form
+- [ ] Data table
+- [ ] Dynamic table
+
+**0.18.2**
 - [ ] Excel Import and Export
 - [ ] Select rows to export Excel
 
