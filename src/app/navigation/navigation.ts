@@ -259,6 +259,22 @@ export const navigation: Array<NotaddNavigationItem> = [
                         url: '/elements/ng-material2/cascade-dropdownlist'
                     }
                 ]
+            },
+            {
+                id: 'angular-cdk',
+                title: 'Angular CDK',
+                i18n: 'Navigation.AngularCdk',
+                type: 'collapse',
+                icon: 'font_download',
+                children: [
+                    {
+                        id: 'virtual-list',
+                        title: '虚拟列表',
+                        i18n: 'Navigation.VirtualList',
+                        type: 'item',
+                        url: '/elements/angular-cdk/virtual-list'
+                    }
+                ]
             }
         ]
     }

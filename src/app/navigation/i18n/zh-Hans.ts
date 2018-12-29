@@ -36,7 +36,9 @@ export const locale = {
             NgMaterial2: '拓展组件',
             Alert: '提示框',
             Carousel: '轮播图',
-            CascadeDropdownlist: '多级联动'
+            CascadeDropdownlist: '多级联动',
+            AngularCdk: 'Angular CDK',
+            VirtualList: '虚拟列表'
         }
     }
 };
