@@ -11,15 +11,21 @@ import { Observable } from 'rxjs';
 })
 export class VirtualListComponent implements OnInit {
 
-    items = Array.from({length: 100000}).map((_, i) => `Item #${i}`);
+    items: Array<any>;
 
-    content = [1];
+    content: Array<number>;
 
-    fixedSizeData = this.virtualListService.FIXED_SIZE;
+    fixedSizeData: Array<number>;
 
     states: Observable<Array<any>>;
 
     constructor(private virtualListService: VirtualListService) {
+        this.items = Array.from({length: 100000}).map((_, i) => `Item #${i}`);
+
+        this.content = [1];
+
+        this.fixedSizeData = this.virtualListService.FIXED_SIZE;
+
         this.states = Observable.create(observer => {
             observer.next(this.virtualListService.STATES);
             observer.complete();
