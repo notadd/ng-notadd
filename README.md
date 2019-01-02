@@ -58,7 +58,7 @@ Medium-Background solution based on Angular7 Material2
 - [x] Use ng-material2 component
 
 **0.15.0**
-- [ ] Virtual list (supports 100,000 level list)
+- [x] Virtual list (supports 100,000 level list)
 - [ ] built-in permission component
 
 
