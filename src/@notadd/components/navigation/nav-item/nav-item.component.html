@@ -8,7 +8,7 @@
        [routerLinkActiveOptions]="{exact: item.exactMatch || false}"
        matRipple>
         <mat-icon class="nav-link-icon" *ngIf="item.icon">{{item.icon}}</mat-icon>
-        <span class="nav-link-title" [translate]="item.i18n">{{item.title}}</span>
+        <span class="nav-link-title" [translate]="item.i18n"></span>
         <span
             class="nav-link-badge"
             *ngIf="item.badge"
