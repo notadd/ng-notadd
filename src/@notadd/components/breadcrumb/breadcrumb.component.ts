@@ -23,11 +23,12 @@ export class NotaddBreadcrumbComponent implements OnInit {
     ngOnInit() {
         this.breadcrumbs = this.getBreadcrumbs(this.activatedRoute.root);
 
-        this.router.events.pipe(
-            filter(event => event instanceof NavigationEnd)
-        ).subscribe(event => {
-            this.breadcrumbs = this.getBreadcrumbs(this.activatedRoute.root);
-        });
+        this.router.events
+            .pipe(
+                filter(event => event instanceof NavigationEnd)
+            ).subscribe(event => {
+                this.breadcrumbs = this.getBreadcrumbs(this.activatedRoute.root);
+            });
     }
 
     private getBreadcrumbs(route: ActivatedRoute, url= '', breadcrumbs: Array<NotaddBreadcrumb>= []): Array<NotaddBreadcrumb> {
