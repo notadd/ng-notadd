@@ -1,0 +1,99 @@
+.element-cdk-virtual-list {
+    .content {
+        background-color: #FFF;
+    }
+
+    .example-wrap {
+        margin-bottom: 30px;
+        padding: 24px;
+
+        h3.example-title {
+            margin: 0;
+            font-size: 18px;
+        }
+
+        .example {
+            margin: 20px 0;
+            padding: 10px;
+            border: 1px solid #eee;
+            font-size: 16px;
+            font-weight: 350;
+            color: #757575;
+            line-height: 30px;
+
+            .example-viewport {
+                width: 100%;
+                height: 300px;
+            }
+
+            .example-item {
+                height: 90px;
+                overflow: hidden;
+            }
+
+            &.dark {
+                .example-viewport {
+                    background: #353a40;
+                    color: #fff;
+                }
+            }
+
+            &.horizontal-example {
+                .example-viewport {
+                    width: 100%;
+                    height: 300px;
+        
+                    .cdk-virtual-scroll-content-wrapper {
+                        display: flex;
+                        flex-direction: row;
+                    }
+                }
+        
+                .example-item {
+                    width: 90px;
+                    height: 100%;
+                    writing-mode: vertical-rl;
+                }
+            }
+        }
+    }
+
+    .buttons {
+        button {
+            margin: 0 20px 20px 0;
+        }
+    }
+
+    .list-container {
+        height: 360px;
+        width: 100%;
+      
+        .cdk-virtual-scroll-content-wrapper {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .list-group-item {
+            margin: 0;
+            padding: 0 10px;
+            border-bottom: 1px dashed #eee;
+        }
+
+        .state-item {
+            height: 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+          
+        .state {
+            font-size: 20px;
+            font-weight: 500;
+        }
+          
+        .capital {
+            font-size: 14px;
+        }
+    }
+      
+}

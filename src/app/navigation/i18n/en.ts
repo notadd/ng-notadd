@@ -36,7 +36,9 @@ export const locale = {
             NgMaterial2: 'Components',
             Alert: 'Alerts',
             Carousel: 'Carousels',
-            CascadeDropdownlist: 'CascadeDropdownlists'
+            CascadeDropdownlist: 'CascadeDropdownlists',
+            AngularCdk: 'Angular CDK',
+            VirtualList: 'Virtual List'
         }
     }
 };
