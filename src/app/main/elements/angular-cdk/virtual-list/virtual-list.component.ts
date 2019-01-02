@@ -17,12 +17,14 @@ export class VirtualListComponent implements OnInit {
 
     fixedSizeData = this.virtualListService.FIXED_SIZE;
 
-    states$ = Observable.create(observer => {
-        observer.next(this.virtualListService.STATES);
-        observer.complete();
-    });
+    states: Observable<Array<any>>;
 
-    constructor(private virtualListService: VirtualListService) { }
+    constructor(private virtualListService: VirtualListService) {
+        this.states = Observable.create(observer => {
+            observer.next(this.virtualListService.STATES);
+            observer.complete();
+        });
+    }
 
     ngOnInit() {
     }
@@ -42,7 +44,7 @@ export class VirtualListComponent implements OnInit {
             return 0;
         });
 
-        this.states$ = Observable.create(observer => {
+        this.states = Observable.create(observer => {
             observer.next(sortedVals);
             observer.complete();
         });
