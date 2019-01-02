@@ -32,7 +32,11 @@ export const locale = {
             Register: 'Register',
             Register_v2: 'Register V2',
             ForgotPassword: 'Forgot Password',
-            Lockscreen: 'Lockscreen'
+            Lockscreen: 'Lockscreen',
+            NgMaterial2: 'Components',
+            Alert: 'Alerts',
+            Carousel: 'Carousels',
+            CascadeDropdownlist: 'CascadeDropdownlists'
         }
     }
 };

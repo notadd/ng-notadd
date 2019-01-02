@@ -54,12 +54,8 @@ Medium-Background solution based on Angular7 Material2
 
 ## Roadmap
 
-**0.13.0**
-- [x] Support operation status saving
-- [x] recaptcha support (default on)
-
 **0.14.0**
-- [ ] Use ng-material2 component
+- [x] Use ng-material2 component
 
 **0.15.0**
 - [ ] Virtual list (supports 100,000 level list)
@@ -74,6 +70,11 @@ Medium-Background solution based on Angular7 Material2
 - [ ] json generate form
 
 **0.18.0**
+- [ ] Ordinary form
+- [ ] Data table
+- [ ] Dynamic table
+
+**0.18.2**
 - [ ] Excel Import and Export
 - [ ] Select rows to export Excel
 

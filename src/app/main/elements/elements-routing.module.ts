@@ -13,6 +13,13 @@ const routes: Routes = [
         data: {
             title: '基础 UI'
         }
+    },
+    {
+        path: 'ng-material2',
+        loadChildren: './ng-material2/ng-material2.module#NgMaterial2Module',
+        data: {
+            title: '拓展组件'
+        }
     }
 ];
 

@@ -139,7 +139,7 @@ export const navigation: Array<NotaddNavigationItem> = [
         children: [
             {
                 id: 'basic-ui',
-                title: '基础UI',
+                title: '基础 UI',
                 i18n: 'Navigation.BasicUi',
                 type: 'collapse',
                 icon: 'palette',
@@ -227,6 +227,36 @@ export const navigation: Array<NotaddNavigationItem> = [
                         i18n: 'Navigation.GridList',
                         type: 'item',
                         url: '/elements/basic-ui/grid-list'
+                    }
+                ]
+            },
+            {
+                id: 'ng-material',
+                title: '拓展组件',
+                i18n: 'Navigation.NgMaterial2',
+                type: 'collapse',
+                icon: 'extension',
+                children: [
+                    {
+                        id: 'alert',
+                        title: '提示框',
+                        i18n: 'Navigation.Alert',
+                        type: 'item',
+                        url: '/elements/ng-material2/alert'
+                    },
+                    {
+                        id: 'carousel',
+                        title: '轮播图',
+                        i18n: 'Navigation.Carousel',
+                        type: 'item',
+                        url: '/elements/ng-material2/carousel'
+                    },
+                    {
+                        id: 'cascade-dropdownlist',
+                        title: '多级联动',
+                        i18n: 'Navigation.CascadeDropdownlist',
+                        type: 'item',
+                        url: '/elements/ng-material2/cascade-dropdownlist'
                     }
                 ]
             }
