@@ -20,6 +20,13 @@ const routes: Routes = [
         data: {
             title: '拓展组件'
         }
+    },
+    {
+        path: 'angular-cdk',
+        loadChildren: './angular-cdk/angular-cdk.module#AngularCdkModule',
+        data: {
+            title: 'Angular CDK'
+        }
     }
 ];
 
