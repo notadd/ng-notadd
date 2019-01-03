@@ -2,7 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
-import { MatIconModule, MatButtonModule } from '@angular/material';
+import { MatPaginatorIntl, MatIconModule, MatButtonModule } from '@angular/material';
+
 import { TranslateModule } from '@ngx-translate/core';
 import { NgForageModule, NgForageConfig, Driver } from 'ngforage';
 import { NgxPermissionsModule } from 'ngx-permissions';
@@ -11,6 +12,7 @@ import 'hammerjs';
 import { NotaddModule } from '@notadd/notadd.module';
 import { NotaddMatIconsModule } from '@notadd/mat-icons/mat-icons.module';
 import { NotaddProgressBarModule, NotaddSidebarModule, NotaddThemePanelModule } from '@notadd/components';
+import { NotaddMatPaginatorIntlService } from '@notadd/services/notadd-mat-paginator-intl.service';
 
 import { LayoutModule } from './layout/layout.module';
 
@@ -50,7 +52,9 @@ import { AppComponent } from './app.component';
         AppRoutingModule,
 
     ],
-    providers: [],
+    providers: [{
+        provide: MatPaginatorIntl, useClass: NotaddMatPaginatorIntlService
+    }],
     bootstrap: [ AppComponent ]
 })
 export class AppModule {
