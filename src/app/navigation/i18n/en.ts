@@ -36,7 +36,14 @@ export const locale = {
             NgMaterial2: 'Components',
             Alert: 'Alerts',
             Carousel: 'Carousels',
-            CascadeDropdownlist: 'CascadeDropdownlists'
+            CascadeDropdownlist: 'CascadeDropdownlists',
+            Applications: 'Applications',
+            RolesPermissions: 'Roles & Permissions',
+            Role: 'Role',
+            Permission: 'Permission',
+            Users: 'Users',
+            UserGroup: 'UserGroup',
+            User: 'User'
         }
     }
 };

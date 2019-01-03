@@ -1,0 +1,47 @@
+.applications-applications {
+    .permission-panel {
+        .mat-list-item {
+            &.active {
+                .mat-icon {
+                    display: block;
+                }
+            }
+
+            &:not(.active) {
+                padding-left: 32px;
+
+                .mat-icon {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .role-panel {
+        %heightlight {
+            background-color: rgba(0, 0, 0, .1);
+        }
+
+        .mat-list-item {
+            &:hover {
+                @extend %heightlight;
+            }
+
+            &.active {
+                @extend %heightlight;
+            }
+        }
+    }
+
+    .permission-panel {
+        .expansion-section {
+            margin-bottom: -16px;
+        }
+    }
+
+    &>div {
+        &:hover {
+            background-color: #FFF;
+        }
+    }
+}

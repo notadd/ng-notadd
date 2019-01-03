@@ -1,0 +1,59 @@
+<div class="applications-role page-layout card header-bg fullwidth inner-scroll">
+    <div class="center">
+        <div class="header white" fxLayout="row" fxLayoutAlign="space-between center">
+            <div fxLayout="row" fxLayoutAlign="start center">
+
+                <button mat-icon-button class="mr-0 mr-sm-16" [routerLink]="'/applications/roles-permissions/roles'">
+                    <mat-icon>arrow_back</mat-icon>
+                </button>
+
+                <div class="white-100" fxLayout="column" fxLayoutAlign="start start">
+                    <div class="h2">
+                        {{role.name || '新建角色'}}
+                    </div>
+                    <div class="subtitle">
+                        <span>角色详情</span>
+                    </div>
+                </div>
+            </div>
+
+            <button mat-raised-button
+                    class="save-button">
+                <span>{{role.id ? '保存' : '新增'}}</span>
+            </button>
+
+        </div>
+
+        <div class="content-card">
+
+            <div class="content">
+                <form class="w-100-p" fxLayout="column" fxFlex>
+                    <mat-tab-group>
+                        <mat-tab label="基本信息">
+                            <div class="tab-content p-24" notaddPerfectScrollbar>
+                                <mat-form-field appearance="outline" class="w-100-p">
+                                    <mat-label>角色名称</mat-label>
+                                    <input matInput placeholder="Product Name"
+                                           name="name"
+                                           formControlName="name"
+                                           required>
+                                </mat-form-field>
+                                <mat-slide-toggle class="mb-16">
+                                    禁用
+                                </mat-slide-toggle>
+                                <mat-form-field appearance="outline" class="w-100-p">
+                                    <mat-label>描述</mat-label>
+                                    <input matInput placeholder="Product Name"
+                                           name="name"
+                                           formControlName="name"
+                                           required>
+                                </mat-form-field>
+                            </div>
+                        </mat-tab>
+                    </mat-tab-group>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>

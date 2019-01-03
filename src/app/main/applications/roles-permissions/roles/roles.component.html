@@ -1,0 +1,124 @@
+<div class="applications-roles page-layout card header-bg fullwidth">
+
+    <div class="center">
+        <div class="header" fxLayout="column" fxLayoutAlign="center center"
+             fxLayout.gt-sm="row" fxLayoutAlign.gt-sm="space-between center">
+            <span class="h2">
+                全部角色
+            </span>
+            <div>
+                <mat-form-field color-white>
+                    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="搜索">
+                    <mat-icon matSuffix>search</mat-icon>
+                </mat-form-field>
+
+                <button mat-raised-button
+                        class="ml-24 mt-24 mt-md-0">
+                    <span>批量删除</span>
+                </button>
+
+                <button mat-raised-button
+                        [routerLink]="'/applications/roles-permissions/roles/new'"
+                        class="ml-24 mt-24 mt-md-0">
+                    <span>新增角色</span>
+                </button>
+            </div>
+
+        </div>
+
+        <div class="content-card mat-elevation-z1">
+
+            <mat-table #table [dataSource]="dataSource" matSort notaddPerfectScrollbar>
+
+                <!-- checkbox -->
+                <ng-container matColumnDef="select">
+                    <mat-header-cell *matHeaderCellDef>
+                        <mat-checkbox (change)="$event ? masterToggle() : null"
+                                      [checked]="selection.hasValue() && isAllSelected()"
+                                      [indeterminate]="selection.hasValue() && !isAllSelected()">
+                        </mat-checkbox>
+                    </mat-header-cell>
+                    <mat-cell *matCellDef="let row">
+                        <mat-checkbox (click)="$event.stopPropagation()"
+                                      (change)="$event ? selection.toggle(row) : null"
+                                      [checked]="selection.isSelected(row)">
+                        </mat-checkbox>
+                    </mat-cell>
+                </ng-container>
+
+                <!-- id -->
+                <ng-container matColumnDef="id">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header>ID</mat-header-cell>
+                    <mat-cell *matCellDef="let element">
+                        {{element.id}}
+                    </mat-cell>
+                </ng-container>
+
+                <!-- role -->
+                <ng-container matColumnDef="name">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header>角色</mat-header-cell>
+                    <mat-cell *matCellDef="let element">
+                        {{element.name}}
+                    </mat-cell>
+                </ng-container>
+
+                <!-- status -->
+                <ng-container matColumnDef="status">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header fxHide fxShow.gt-xs>状态</mat-header-cell>
+                    <mat-cell *matCellDef="let element" fxHide fxShow.gt-xs>
+                        <mat-icon *ngIf="element.status" class="active-icon green-600 s-16">check_circle</mat-icon>
+                        <mat-icon *ngIf="!element.status" class="active-icon red-500 s-16">cancel</mat-icon>
+                    </mat-cell>
+                </ng-container>
+
+                <!-- description -->
+                <ng-container matColumnDef="description">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header>描述</mat-header-cell>
+                    <mat-cell *matCellDef="let element">
+                        {{element.description}}
+                    </mat-cell>
+                </ng-container>
+
+                <!-- actions -->
+                <ng-container matColumnDef="actions">
+                    <mat-header-cell *matHeaderCellDef>操作</mat-header-cell>
+
+                    <mat-cell *matCellDef="let row; let i=index;">
+                        <button mat-icon-button color="accent" matTooltip="授权" matTooltipPosition="above" (click)="startEdit(i, row.id, row.title, row.state, row.url, row.created_at, row.updated_at)">
+                            <mat-icon aria-label="Setting">settings</mat-icon>
+                        </button>
+
+                        <button mat-icon-button color="accent" matTooltip="编辑" matTooltipPosition="above" (click)="startEdit(i, row.id, row.title, row.state, row.url, row.created_at, row.updated_at)">
+                            <mat-icon aria-label="Edit">edit</mat-icon>
+                        </button>
+
+                        <button mat-icon-button color="accent" matTooltip="复制" matTooltipPosition="above" (click)="startEdit(i, row.id, row.title, row.state, row.url, row.created_at, row.updated_at)">
+                            <mat-icon aria-label="Edit">file_copy</mat-icon>
+                        </button>
+
+                        <button mat-icon-button color="accent" matTooltip="删除" matTooltipPosition="above" (click)="deleteItem(i, row.id, row.title, row.state, row.url)">
+                            <mat-icon aria-label="Delete">delete</mat-icon>
+                        </button>
+                    </mat-cell>
+                </ng-container>
+
+                <mat-header-row *matHeaderRowDef="displayedColumns; sticky:true"></mat-header-row>
+
+                <mat-row *matRowDef="let element; columns: displayedColumns;"
+                         class="role"
+                         matRipple>
+                </mat-row>
+
+            </mat-table>
+
+            <mat-paginator #paginator
+                           [length]="dataSource.length"
+                           [pageIndex]="0"
+                           [pageSize]="10"
+                           [pageSizeOptions]="[5, 10, 25, 100]">
+            </mat-paginator>
+        </div>
+
+    </div>
+
+</div>

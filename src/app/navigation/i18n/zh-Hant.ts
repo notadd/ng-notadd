@@ -36,7 +36,14 @@ export const locale = {
             NgMaterial2: '拓展組件',
             Alert: '提示框',
             Carousel: '輪播圖',
-            CascadeDropdownlist: '多級聯動'
+            CascadeDropdownlist: '多級聯動',
+            Applications: '應用',
+            RolesPermissions: '角色 & 權限',
+            Role: '角色',
+            Permission: '權限',
+            Users: '用戶',
+            UserGroup: '用戶組',
+            User: '用戶'
         }
     }
 };

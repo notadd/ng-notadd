@@ -1,0 +1,23 @@
+.applications-role {
+    .content-card {
+        background: #FFF;
+        border-bottom: 1px solid rgba(0, 0, 0, .12);
+    }
+
+    .content {
+        .mat-tab-group,
+        .mat-tab-body-wrapper,
+        .tab-content{
+            flex: 1 1 auto;
+            max-width: 100%;
+        }
+
+        .mat-tab-body-content {
+            display: flex;
+        }
+
+        .mat-tab-label {
+            height: 64px;
+        }
+    }
+}

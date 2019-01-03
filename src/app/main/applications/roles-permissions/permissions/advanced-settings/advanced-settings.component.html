@@ -1,0 +1,25 @@
+<h1 mat-dialog-title>{{data.page}}高级设置</h1>
+<mat-dialog-content>
+    <mat-list>
+        <ng-container *ngFor="let advanced of data.advancedData">
+            <h3 mat-subheader>{{advanced.title}}</h3>
+            <mat-divider></mat-divider>
+            <mat-list-item *ngFor="let field of advanced.fields">
+                <div class="w-100-p" fxLayout="row nowrap" fxLayoutAlign="space-between center">
+                    <h4>{{field.label}}</h4>
+                    <mat-radio-group [(ngModel)]="field.value">
+                        <mat-radio-button value="hide">隐藏</mat-radio-button>
+                        <mat-radio-button value="readonly" class="ml-20">只读</mat-radio-button>
+                        <mat-radio-button value="default" class="ml-20">默认</mat-radio-button>
+                    </mat-radio-group>
+                </div>
+            </mat-list-item>
+        </ng-container>
+    </mat-list>
+    <div class="mt-20 text-right text-boxed-light accent">* 默认表示字段可见、可编辑</div>
+</mat-dialog-content>
+<mat-divider></mat-divider>
+<mat-dialog-actions align="end">
+    <button mat-button (click)="onNoClick()">取消</button>
+    <button mat-button [mat-dialog-close]="data.advancedData" cdkFocusInitial>完成</button>
+</mat-dialog-actions>

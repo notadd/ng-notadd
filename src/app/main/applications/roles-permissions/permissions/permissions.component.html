@@ -1,0 +1,128 @@
+<div class="applications-applications page-layout card inner-scroll h-100-p"
+     fxLayout="row nowrap"
+     fxLayoutAlign="start stretch">
+    <div class="p-24 permission-panel border-right" fxFlex="15%">
+        <div class="header p-24 accent">
+            <h2 class="m-0">权限类型</h2>
+        </div>
+        <div class="h-90-p"  notaddPerfectScrollbar [notaddPerfectScrollbarOptions]="{suppressScrollX: true}">
+            <mat-list role="list">
+                <mat-list-item
+                    *ngFor="let item of permissionType"
+                    [ngClass]="{'accent active': item.value === currentPermissionType}"
+                    role="listitem"
+                    class="cursor-pointer"
+                    (click)="onPermissionTypeItemClick(item.value)">
+                    <mat-icon mat-list-icon color="accent">chevron_right</mat-icon>
+                    <span [ngClass]="{'secondary-text': item.value !== currentPermissionType}">{{item.label}}</span>
+                </mat-list-item>
+            </mat-list>
+        </div>
+    </div>
+    <div class="p-24 role-panel border-right" fxFlex="20%">
+        <div class="header p-24 accent">
+            <h2 class="m-0">角色</h2>
+        </div>
+        <div class="h-90-p"  notaddPerfectScrollbar [notaddPerfectScrollbarOptions]="{suppressScrollX: true}">
+            <mat-list role="list">
+
+                <ng-container *ngFor="let role of roles; let last = last;">
+                    <mat-list-item
+                        [ngClass]="{'active': role.id === currentRole}"
+                        class="cursor-pointer mt-12 mb-12"
+                        (click)="onRoleItemClick(role.id)"
+                        role="listitem">
+                        <div class="secondary-text" mat-line fxLayout="row nowrap" fxLayoutAlign="space-between center">
+                            <span class="h2">{{role.name}}</span>
+                            <div>
+                                <mat-icon matTooltip="编辑" matTooltipPosition="above">edit</mat-icon>
+                                <mat-icon matTooltip="删除" matTooltipPosition="above" class="ml-12">delete_forever</mat-icon>
+                            </div>
+                        </div>
+                        <p class="hint-text mt-12 text-truncate" mat-line>{{role.description}}</p>
+                    </mat-list-item>
+                    <mat-divider *ngIf="!last"></mat-divider>
+                </ng-container>
+
+            </mat-list>
+        </div>
+    </div>
+    <div class="p-24 permission-panel" fxFlex="75%">
+
+        <div class="header p-24 accent mb-16">
+            <h2 class="m-0">权限</h2>
+        </div>
+
+        <div class="h-90-p" notaddPerfectScrollbar [notaddPerfectScrollbarOptions]="{suppressScrollX: true}">
+            <!-- 页面权限 -->
+            <section>
+                <div class="mb-20 h3">当前角色将对以下页面拥有查看的权限</div>
+
+                <mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
+                    <mat-tree-node *matTreeNodeDef="let node" matTreeNodeToggle matTreeNodePadding>
+                        <button mat-icon-button disabled></button>
+                        <mat-checkbox class="checklist-leaf-node"
+                                      [checked]="checklistSelection.isSelected(node)"
+                                      (change)="todoLeafItemSelectionToggle(node)">{{node.label}}</mat-checkbox>
+                    </mat-tree-node>
+
+                    <mat-tree-node *matTreeNodeDef="let node; when: hasChild" matTreeNodePadding>
+                        <button mat-icon-button matTreeNodeToggle
+                                [attr.aria-label]="'toggle ' + node.filename">
+                            <mat-icon class="mat-icon-rtl-mirror">
+                                {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
+                            </mat-icon>
+                        </button>
+                        <mat-checkbox [checked]="descendantsAllSelected(node)"
+                                      [indeterminate]="descendantsPartiallySelected(node)"
+                                      (change)="todoItemSelectionToggle(node)">{{node.label}}</mat-checkbox>
+                    </mat-tree-node>
+                </mat-tree>
+
+            </section>
+
+            <!-- 数据权限 -->
+            <section>
+                <div class="mb-20 h3">当前角色将对以下数据拥有查看、编辑、新增、删除的权限</div>
+                <mat-radio-group class="pl-16" fxLayout="column nowrap" fxLayoutAlign="start start" fxLayoutGap="50px" [(ngModel)]="dataPermission">
+                    <mat-radio-button *ngFor="let permission of dataPermissions" [value]="permission.value">
+                        {{permission.label}}
+                    </mat-radio-button>
+                </mat-radio-group>
+            </section>
+
+            <!-- 功能权限 -->
+            <section>
+                <mat-accordion>
+                    <mat-expansion-panel *ngFor="let item of featurePermissions">
+                        <mat-expansion-panel-header class="accent">
+                            {{item.page}}
+                        </mat-expansion-panel-header>
+                        <section class="expansion-section"
+                                 fxLayout="row wrap"
+                                 fxLayoutAlign="start center">
+                            <mat-checkbox *ngFor="let permission of item.permissions"
+                                          [(ngModel)]="permission.value"
+                                          (change)="onFeaturePermissionChange(item)"
+                                          fxFlex="25%"
+                                          class="mb-16">
+                                {{permission.label}}
+                            </mat-checkbox>
+                        </section>
+                        <mat-action-row fxLayoutAlign="space-between center">
+                            <mat-checkbox
+                                [indeterminate]="item.permissions | featurePermissionIndeterminate"
+                                [checked]="item.permissions | featurePermissionCheckedAll"
+                                [(ngModel)]="item.checkedAll"
+                                (change)="onFeaturePermissionCheckAllChange(item)">
+                                {{item.checkedAll ? '反选' : '全选'}}
+                            </mat-checkbox>
+                            <button mat-button (click)="openDialog(item)">高级设置</button>
+                        </mat-action-row>
+                    </mat-expansion-panel>
+                </mat-accordion>
+            </section>
+        </div>
+
+    </div>
+</div>

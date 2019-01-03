@@ -261,5 +261,59 @@ export const navigation: Array<NotaddNavigationItem> = [
                 ]
             }
         ]
-    }
+    }/*,
+    {
+        id: 'applications',
+        title: '应用',
+        i18n: 'Navigation.Applications',
+        type: 'group',
+        children: [
+            {
+                id: 'roles-permissions',
+                title: '角色 & 权限',
+                i18n: 'Navigation.RolesPermissions',
+                type: 'collapse',
+                icon: 'lock',
+                children: [
+                    {
+                        id: 'role',
+                        title: '角色',
+                        i18n: 'Navigation.Role',
+                        type: 'item',
+                        url: '/applications/roles-permissions/roles'
+                    },
+                    {
+                        id: 'permission',
+                        title: '权限',
+                        i18n: 'Navigation.Permission',
+                        type: 'item',
+                        url: '/applications/roles-permissions/permissions'
+                    }
+                ]
+            },
+            {
+                id: 'users',
+                title: '用户',
+                i18n: 'Navigation.Users',
+                type: 'collapse',
+                icon: 'people',
+                children: [
+                    {
+                        id: 'user-group',
+                        title: '用户',
+                        i18n: 'Navigation.UserGroup',
+                        type: 'item',
+                        url: '/applications/users/user-group'
+                    },
+                    {
+                        id: 'user',
+                        title: '用户组',
+                        i18n: 'Navigation.User',
+                        type: 'item',
+                        url: '/applications/users/user'
+                    }
+                ]
+            }
+        ]
+    }*/
 ];

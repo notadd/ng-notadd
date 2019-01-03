@@ -18,6 +18,11 @@ const routes: Routes = [
         data: { title: 'UI 元素' }
     },
     {
+        path: 'applications',
+        loadChildren: './main/applications/applications.module#ApplicationsModule',
+        data: { title: '应用' }
+    },
+    {
         path: '**',
         redirectTo: 'general/pages/errors/404'
     }

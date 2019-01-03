@@ -1,0 +1,50 @@
+.applications-roles {
+    &.header-bg::before {
+
+    }
+
+    .header {
+        .h2 {
+            color: #FFF;
+        }
+    }
+
+    .content-card {
+        background: #FFF;
+        border-bottom: 1px solid rgba(0, 0, 0, .12);
+    }
+
+    .mat-table {
+        flex: 1 1 auto;
+        overflow: auto;
+        -webkit-overflow-scrolling: touch;
+
+        .mat-header-row {
+            min-height: 64px;
+        }
+
+        .mat-row {
+            position: relative;
+            cursor: pointer;
+            height: 74px;
+        }
+
+        .mat-cell {
+            min-width: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .mat-column-id {
+            flex: 0 1 84px;
+        }
+
+        .mat-column-select {
+            flex: 0 1 104px;
+        }
+
+        .mat-column-actions {
+            flex: 0 1 185px;
+        }
+    }
+}
