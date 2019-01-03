@@ -50,7 +50,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
                 }, 310);
             });
 
-        // 滚动条滚动到当前激活的导航项
+        // 将滚动条滚动到当前激活的导航项
         this.router.events
             .pipe(
                 filter((event) => event instanceof NavigationEnd),
@@ -63,11 +63,10 @@ export class NavbarComponent implements OnInit, OnDestroy {
                     if (activeNavItem) {
                         const activeItemOffsetTop = activeNavItem.offsetTop,
                             activeItemOffsetParentTop = activeNavItem.offsetParent.offsetTop,
-                            scrollDistance = activeItemOffsetTop - activeItemOffsetParentTop - (48 * 3) - 1010;
-
+                            scrollDistance = activeItemOffsetTop - activeItemOffsetParentTop - (48 * 3) - 168;
                         this.notaddPerfectScrollbar.scrollToTop(scrollDistance);
                     }
-                });
+                }, 1000);
             });
     }
 
