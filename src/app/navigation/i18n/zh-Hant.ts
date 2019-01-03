@@ -38,7 +38,7 @@ export const locale = {
             Carousel: '輪播圖',
             CascadeDropdownlist: '多級聯動',
             AngularCdk: 'Angular CDK',
-            VirtualList: '虛擬列表'
+            VirtualList: '虛擬列表',
             Applications: '應用',
             RolesPermissions: '角色 & 權限',
             Role: '角色',

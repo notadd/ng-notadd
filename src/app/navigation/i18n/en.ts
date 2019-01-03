@@ -38,7 +38,7 @@ export const locale = {
             Carousel: 'Carousels',
             CascadeDropdownlist: 'CascadeDropdownlists',
             AngularCdk: 'Angular CDK',
-            VirtualList: 'Virtual List'
+            VirtualList: 'Virtual List',
             Applications: 'Applications',
             RolesPermissions: 'Roles & Permissions',
             Role: 'Role',
