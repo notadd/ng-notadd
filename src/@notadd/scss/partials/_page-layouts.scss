@@ -16,6 +16,19 @@ $card-header-height-without-toolbar: $card-header-height - $card-toolbar-height;
         width: 100%;
         min-width: 100%;
 
+
+        &.header-bg::before {
+            content: '';
+            display: block;
+            position: absolute;
+            z-index: 1;
+            top: 0;
+            right: 0;
+            left: 0;
+            height: $card-header-height;
+            background-color: mat-color($accent);
+        }
+
         &.fullwidth {
 
             > .center {
