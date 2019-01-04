@@ -275,6 +275,14 @@ export const navigation: Array<NotaddNavigationItem> = [
                         url: '/elements/angular-cdk/virtual-list'
                     }
                 ]
+            },
+            {
+                id: 'data-table',
+                title: '数据表',
+                i18n: 'Navigation.DataTable',
+                type: 'item',
+                icon: 'list',
+                url: '/elements/data-table'
             }
         ]
     }/*,

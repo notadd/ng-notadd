@@ -45,7 +45,8 @@ export const locale = {
             Permission: '權限',
             Users: '用戶',
             UserGroup: '用戶組',
-            User: '用戶'
+            User: '用戶',
+            DataTable: '數據表'
         }
     }
 };

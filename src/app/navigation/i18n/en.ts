@@ -45,7 +45,8 @@ export const locale = {
             Permission: 'Permission',
             Users: 'Users',
             UserGroup: 'UserGroup',
-            User: 'User'
+            User: 'User',
+            DataTable: 'Data Table'
         }
     }
 };
