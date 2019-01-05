@@ -23,6 +23,11 @@ const routes: Routes = [
         data: { title: '应用' }
     },
     {
+        path: 'services',
+        loadChildren: './main/services/services.module#ServicesModule',
+        data: { title: 'Service' }
+    },
+    {
         path: '**',
         redirectTo: 'general/pages/errors/404'
     }

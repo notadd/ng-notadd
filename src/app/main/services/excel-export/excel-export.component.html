@@ -1,0 +1,33 @@
+<div class="p-20">
+    <button color="accent" mat-raised-button (click)="exportNormal()"> Export with normal </button>
+    <button class="ml-20" color="accent" mat-raised-button (click)="exportSpecified()"> Export by specified rows and columns  </button>
+</div>
+
+<mat-table [dataSource]="dataSource" class="w-100-p">
+    <!-- Position Column -->
+    <ng-container matColumnDef="position">
+        <mat-header-cell *matHeaderCellDef> {{tableHeaders.position}} </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.position}} </mat-cell>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef> {{tableHeaders.name}} </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="weight">
+        <mat-header-cell *matHeaderCellDef> {{tableHeaders.weight}} </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.weight}} </mat-cell>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="symbol">
+        <mat-header-cell *matHeaderCellDef> {{tableHeaders.symbol}} </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.symbol}} </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>

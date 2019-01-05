@@ -1,0 +1,34 @@
+<h1 mat-dialog-title>选择导出数据</h1>
+<mat-dialog-content class="mb-12">
+    <form [formGroup]="pickerForm">
+        <div class="mb-12 h3">表头</div>
+        <mat-button-toggle-group multiple formControlName="headers">
+            <mat-button-toggle *ngFor="let header of optionHeaders" class="accent" [value]="header.value">
+                <mat-icon color="accent" *ngIf="headers.value.includes(header.value)">check</mat-icon>
+                {{header.label}}
+            </mat-button-toggle>
+        </mat-button-toggle-group>
+        <mat-error class="mt-12" *ngIf="headers.errors?.empty">至少选择一项</mat-error>
+
+        <div class="mt-28 mb-12 h3">行数</div>
+        <div formGroupName="row">
+            <mat-radio-group (change)="resetLength()" fxLayout="column nowrap" fxLayoutAlign="start start" fxLayoutGap="15px" formControlName="type">
+                <mat-radio-button value="all">
+                    全部
+                </mat-radio-button>
+                <mat-radio-button value="specified">
+                    <mat-form-field>
+                        <input matInput formControlName="length" (focus)="type = 'specified'" placeholder="例如：1-5、8、11-13,16" autocomplete="off">
+                    </mat-form-field>
+                </mat-radio-button>
+            </mat-radio-group>
+            <mat-error *ngIf="row.errors?.outOfRange">行数超出范围，应为 1 - {{data.rowLength}} 之间</mat-error>
+            <mat-error *ngIf="row.errors?.lengthInvalid">行数范围无效，例如：1-5、8、11-13,16</mat-error>
+        </div>
+    </form>
+</mat-dialog-content>
+<mat-divider></mat-divider>
+<mat-dialog-actions align="end">
+    <button mat-button (click)="cancel()">取消</button>
+    <button color="accent" [disabled]="pickerForm.invalid" mat-button [mat-dialog-close]="result" cdkFocusInitial>导出</button>
+</mat-dialog-actions>

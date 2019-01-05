@@ -339,5 +339,21 @@ export const navigation: Array<NotaddNavigationItem> = [
                 ]
             }
         ]
-    }*/
+    }*/,
+    {
+        id: 'services',
+        title: 'SERVICES',
+        i18n: 'Navigation.Services',
+        type: 'group',
+        children: [
+            {
+                id: 'excel-export',
+                title: 'Excel 导出',
+                i18n: 'Navigation.ExcelExport',
+                type: 'item',
+                icon: 'unarchive',
+                url: '/services/excel-export'
+            }
+        ]
+    }
 ];
