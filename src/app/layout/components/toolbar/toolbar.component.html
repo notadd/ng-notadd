@@ -3,28 +3,26 @@
     <mat-toolbar-row>
         <div fxFlex fxFlexFill fxLayout="row" fxLayoutAlign="start center">
 
-            <div class="navbar-logo" fxLayout="row" fxLayoutAlign="space-between center">
-
-                <div class="ml-16" fxFlex="80" fxHide.xs *ngIf="rightNavbar || hiddenNavbar">
+            <div class="navbar-logo" fxHide.xs *ngIf="rightNavbar || hiddenNavbar">
+                <div class="ml-16">
                     <mat-icon class="logo secondary-text" fontSet="NotaddIcon" fontIcon="icon-logo" aria-hidden="true"></mat-icon>
                 </div>
-
-                <ng-container>
-                    <button mat-icon-button
-                            *ngIf="!rightNavbar"
-                            class="navbar-toggle-button"
-                            (click)="onMenuButtonClick()">
-                        <mat-icon class="secondary-text" *ngIf="isMobile; else notMobild">{{hiddenNavbar ? 'menu' : 'close'}}</mat-icon>
-                        <ng-template #notMobild>
-                            <mat-icon class="secondary-text">menu</mat-icon>
-                        </ng-template>
-                    </button>
-
-                    <div *ngIf="hiddenNavbar" class="toolbar-separator" fxHide.xs></div>
-                </ng-container>
-
             </div>
 
+            <button mat-icon-button
+                    *ngIf="!rightNavbar"
+                    class="navbar-toggle-button"
+                    (click)="onMenuButtonClick()">
+                <mat-icon class="secondary-text" *ngIf="isMobile; else notMobile">{{hiddenNavbar ? 'menu' : 'close'}}</mat-icon>
+                <ng-template #notMobile>
+                    <mat-icon *ngIf="!hiddenNavbar" class="secondary-text">menu</mat-icon>
+                </ng-template>
+            </button>
+            <button mat-icon-button
+                    class="navbar-toggle-button"
+                    (click)="onLockButtonClick()">
+                <mat-icon class="secondary-text">lock</mat-icon>
+            </button>
         </div>
 
         <div fxFlex="0 1 auto" fxLayout="row" fxLayoutAlign="start center">

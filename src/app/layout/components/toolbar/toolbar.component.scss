@@ -17,7 +17,7 @@
     }
 
     .navbar-logo {
-        width: 260px;
+        min-width: 260px;
 
         @include media-breakpoint-down('xs') {
             width: 56px;

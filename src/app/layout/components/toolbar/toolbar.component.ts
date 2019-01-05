@@ -1,4 +1,5 @@
 import { Component, OnInit, OnDestroy, Input } from '@angular/core';
+import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { TranslateService } from '@ngx-translate/core';
@@ -33,7 +34,8 @@ export class ToolbarComponent implements OnInit, OnDestroy {
     constructor(
         private configService: NotaddConfigService,
         private sidebarService: NotaddSidebarService,
-        private translateService: TranslateService
+        private translateService: TranslateService,
+        private router: Router
     ) {
         this.ngUnsubscribe = new Subject<any>();
         this.languages = [
@@ -151,5 +153,12 @@ export class ToolbarComponent implements OnInit, OnDestroy {
      */
     onMenuButtonClick(): void {
         this.isMobile ? this.toggleSidenavVisibility() : this.toggleSidenavCollapsed();
+    }
+
+    /**
+     * 锁屏按钮点击
+     */
+    onLockButtonClick(): void {
+        this.router.navigate(['/general/pages/lockscreen']);
     }
 }
