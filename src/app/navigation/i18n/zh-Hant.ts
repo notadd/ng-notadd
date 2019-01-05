@@ -46,6 +46,7 @@ export const locale = {
             Users: '用戶',
             UserGroup: '用戶組',
             User: '用戶',
+            DataTable: '數據表',
             Services: 'Services',
             ExcelExport: '導出 Excel'
         }

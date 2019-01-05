@@ -1,0 +1,416 @@
+<div class="element-table page-layout card">
+
+    <div class="content center mt-32" fxLayout="row nowrap" fxLayoutAlign="space-between start">
+        <div class="p-24" fxFlex="1 0 auto" fxFlex.lt-md="100">
+            <div class="mb-20">
+                <div class="h3">Base Table</div>
+            </div>
+            <div class="content-card mat-elevation-z1">
+                <table mat-table [dataSource]="dataSource" notaddPerfectScrollbar>
+                    <!-- appName Column -->
+                    <ng-container matColumnDef="appName">
+                        <th mat-header-cell *matHeaderCellDef> APP </th>
+                        <td mat-cell *matCellDef="let element"> {{element.appName}} </td>
+                    </ng-container>
+                    
+                    <!-- cateNames Column -->
+                    <ng-container matColumnDef="cateNames">
+                        <th mat-header-cell *matHeaderCellDef> 领域 </th>
+                        <td mat-cell *matCellDef="let element"> {{element.cateNames}} </td>
+                    </ng-container>
+                    
+                    <!-- developCompanyFullName Column -->
+                    <ng-container matColumnDef="developCompanyFullName">
+                        <th mat-header-cell *matHeaderCellDef> 	开发商 </th>
+                        <td mat-cell *matCellDef="let element"> {{element.developCompanyFullName}} </td>
+                    </ng-container>
+                    
+                    <!-- activeNums Column -->
+                    <ng-container matColumnDef="activeNums">
+                        <th mat-header-cell *matHeaderCellDef> 活跃人数(万) </th>
+                        <td mat-cell *matCellDef="let element"> {{element.activeNums}} </td>
+                    </ng-container>
+
+                    <!-- activeNumsRatio Column -->
+                    <ng-container matColumnDef="activeNumsRatio">
+                        <th mat-header-cell *matHeaderCellDef> 	环比增幅(%) </th>
+                        <td mat-cell *matCellDef="let element"> {{element.activeNumsRatio}} </td>
+                    </ng-container>
+                    
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="content center" fxLayout="row nowrap" fxLayoutAlign="space-between start">
+        <div class="p-24" fxFlex="1 0 auto" fxFlex.lt-md="100">
+            <div class="mb-20">
+                <div class="h3">Table with sticky header</div>
+            </div>
+            <div class="content-card mat-elevation-z1 h-400">
+                <table mat-table [dataSource]="dataSource" notaddPerfectScrollbar>
+                    <!-- appName Column -->
+                    <ng-container matColumnDef="appName">
+                        <th mat-header-cell *matHeaderCellDef> APP </th>
+                        <td mat-cell *matCellDef="let element"> {{element.appName}} </td>
+                    </ng-container>
+                    
+                    <!-- cateNames Column -->
+                    <ng-container matColumnDef="cateNames">
+                        <th mat-header-cell *matHeaderCellDef> 领域 </th>
+                        <td mat-cell *matCellDef="let element"> {{element.cateNames}} </td>
+                    </ng-container>
+                    
+                    <!-- developCompanyFullName Column -->
+                    <ng-container matColumnDef="developCompanyFullName">
+                        <th mat-header-cell *matHeaderCellDef> 	开发商 </th>
+                        <td mat-cell *matCellDef="let element"> {{element.developCompanyFullName}} </td>
+                    </ng-container>
+                    
+                    <!-- activeNums Column -->
+                    <ng-container matColumnDef="activeNums">
+                        <th mat-header-cell *matHeaderCellDef> 活跃人数(万) </th>
+                        <td mat-cell *matCellDef="let element"> {{element.activeNums}} </td>
+                    </ng-container>
+
+                    <!-- activeNumsRatio Column -->
+                    <ng-container matColumnDef="activeNumsRatio">
+                        <th mat-header-cell *matHeaderCellDef> 	环比增幅(%) </th>
+                        <td mat-cell *matCellDef="let element"> {{element.activeNumsRatio}} </td>
+                    </ng-container>
+                    
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="content center" fxLayout="row nowrap" fxLayoutAlign="space-between start">
+        <div class="p-24" fxFlex="1 0 auto" fxFlex.lt-md="100">
+            <div class="mb-20">
+                <div class="h3">Table with sticky header</div>
+            </div>
+            <div class="content-card mat-elevation-z1 h-400">
+                <table mat-table [dataSource]="dataSource" notaddPerfectScrollbar>
+                    <!-- appName Column -->
+                    <ng-container matColumnDef="appName">
+                        <th mat-header-cell *matHeaderCellDef> APP </th>
+                        <td mat-cell *matCellDef="let element"> {{element.appName}} </td>
+                        <td mat-footer-cell *matFooterCellDef> APP </td>
+                    </ng-container>
+                    
+                    <!-- cateNames Column -->
+                    <ng-container matColumnDef="cateNames">
+                        <th mat-header-cell *matHeaderCellDef> 领域 </th>
+                        <td mat-cell *matCellDef="let element"> {{element.cateNames}} </td>
+                        <td mat-footer-cell *matFooterCellDef> 领域 </td>
+                    </ng-container>
+                    
+                    <!-- developCompanyFullName Column -->
+                    <ng-container matColumnDef="developCompanyFullName">
+                        <th mat-header-cell *matHeaderCellDef> 	开发商 </th>
+                        <td mat-cell *matCellDef="let element"> {{element.developCompanyFullName}} </td>
+                        <td mat-footer-cell *matFooterCellDef> 开发商 </td>
+                    </ng-container>
+                    
+                    <!-- activeNums Column -->
+                    <ng-container matColumnDef="activeNums">
+                        <th mat-header-cell *matHeaderCellDef> 活跃人数(万) </th>
+                        <td mat-cell *matCellDef="let element"> {{element.activeNums}} </td>
+                        <td mat-footer-cell *matFooterCellDef> 活跃人数(万) </td>
+                    </ng-container>
+
+                    <!-- activeNumsRatio Column -->
+                    <ng-container matColumnDef="activeNumsRatio">
+                        <th mat-header-cell *matHeaderCellDef> 	环比增幅(%) </th>
+                        <td mat-cell *matCellDef="let element"> {{element.activeNumsRatio}} </td>
+                        <td mat-footer-cell *matFooterCellDef> 环比增幅(%) </td>
+                    </ng-container>
+                    
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                    <tr mat-footer-row *matFooterRowDef="displayedColumns; sticky: true"></tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="content center" fxLayout="row nowrap" fxLayoutAlign="space-between start">
+        <div class="p-24" fxFlex="1 0 auto" fxFlex.lt-md="100">
+            <div class="mb-20">
+                <div class="h3">Table with a sticky columns</div>
+            </div>
+            <div class="content-card mat-elevation-z1 h-400" ngClass.gt-sm="w-500" ngClass.lt-md="w-100-p">
+                <table mat-table [dataSource]="dataSource" class="sticky-columns-table" ngClass.lt-md="w-100-p" notaddPerfectScrollbar>
+                    <!-- appName Column -->
+                    <ng-container matColumnDef="appName" sticky>
+                        <th mat-header-cell *matHeaderCellDef> APP </th>
+                        <td mat-cell *matCellDef="let element"> {{element.appName}} </td>
+                    </ng-container>
+                    
+                    <!-- cateNames Column -->
+                    <ng-container matColumnDef="cateNames">
+                        <th mat-header-cell *matHeaderCellDef> 领域 </th>
+                        <td mat-cell *matCellDef="let element"> {{element.cateNames}} </td>
+                    </ng-container>
+                    
+                    <!-- developCompanyFullName Column -->
+                    <ng-container matColumnDef="developCompanyFullName">
+                        <th mat-header-cell *matHeaderCellDef> 	开发商 </th>
+                        <td mat-cell *matCellDef="let element"> {{element.developCompanyFullName}} </td>
+                    </ng-container>
+                    
+                    <!-- activeNums Column -->
+                    <ng-container matColumnDef="activeNums">
+                        <th mat-header-cell *matHeaderCellDef> 活跃人数(万) </th>
+                        <td mat-cell *matCellDef="let element"> {{element.activeNums}} </td>
+                    </ng-container>
+
+                    <!-- activeNumsRatio Column -->
+                    <ng-container matColumnDef="activeNumsRatio">
+                        <th mat-header-cell *matHeaderCellDef> 	环比增幅(%) </th>
+                        <td mat-cell *matCellDef="let element"> {{element.activeNumsRatio}} </td>
+                    </ng-container>
+
+                    <!-- Star Column -->
+                    <ng-container matColumnDef="star" stickyEnd>
+                        <th mat-header-cell *matHeaderCellDef></th>
+                        <td mat-cell *matCellDef="let element">
+                            <mat-icon>more_vert</mat-icon>
+                        </td>
+                    </ng-container>
+                    
+                    <tr mat-header-row *matHeaderRowDef="columns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: columns;"></tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="content center" fxLayout="row nowrap" fxLayoutAlign="space-between start">
+        <div class="p-24" fxFlex="100">
+            <div class="mb-20">
+                <div class="h3">Table dynamically changing the columns displayed</div>
+                <button mat-raised-button (click)="addColumn()">Add column</button>
+                <button mat-raised-button (click)="removeColumn()">Remove column</button>
+                <button mat-raised-button (click)="shuffle()">Shuffle</button>
+            </div>
+            <div class="content-card mat-elevation-z1 h-400">
+                <table mat-table [dataSource]="dataSource" notaddPerfectScrollbar>
+                    <!-- Column -->
+                    <ng-container matColumnDef="{{column}}"
+                        *ngFor="let column of columnsToDisplay">
+                        <th mat-header-cell *matHeaderCellDef> {{column}} </th>
+                        <td mat-cell *matCellDef="let element"> {{element[column]}} </td>
+                    </ng-container>
+
+                    <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+                    <tr mat-row *matRowDef="let row; columns: columnsToDisplay;"></tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="content center" fxLayout="row nowrap" fxLayoutAlign="space-between start">
+        <div class="p-24" fxFlex="1 0 auto" fxFlex.lt-md="100">
+            <div class="mb-20">
+                <div class="h3">Table with pagination</div>
+            </div>
+            <div class="content-card mat-elevation-z1">
+                <table mat-table [dataSource]="paginatorTableDataSource" notaddPerfectScrollbar>
+                    <!-- appName Column -->
+                    <ng-container matColumnDef="appName">
+                        <th mat-header-cell *matHeaderCellDef> APP </th>
+                        <td mat-cell *matCellDef="let element"> {{element.appName}} </td>
+                    </ng-container>
+                    
+                    <!-- cateNames Column -->
+                    <ng-container matColumnDef="cateNames">
+                        <th mat-header-cell *matHeaderCellDef> 领域 </th>
+                        <td mat-cell *matCellDef="let element"> {{element.cateNames}} </td>
+                    </ng-container>
+                    
+                    <!-- developCompanyFullName Column -->
+                    <ng-container matColumnDef="developCompanyFullName">
+                        <th mat-header-cell *matHeaderCellDef> 	开发商 </th>
+                        <td mat-cell *matCellDef="let element"> {{element.developCompanyFullName}} </td>
+                    </ng-container>
+                    
+                    <!-- activeNums Column -->
+                    <ng-container matColumnDef="activeNums">
+                        <th mat-header-cell *matHeaderCellDef> 活跃人数(万) </th>
+                        <td mat-cell *matCellDef="let element"> {{element.activeNums}} </td>
+                    </ng-container>
+
+                    <!-- activeNumsRatio Column -->
+                    <ng-container matColumnDef="activeNumsRatio">
+                        <th mat-header-cell *matHeaderCellDef> 	环比增幅(%) </th>
+                        <td mat-cell *matCellDef="let element"> {{element.activeNumsRatio}} </td>
+                    </ng-container>
+                    
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                </table>
+
+                <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+            </div>
+        </div>
+    </div>
+
+    <div class="content center" fxLayout="row nowrap" fxLayoutAlign="space-between start">
+        <div class="p-24" fxFlex="1 0 auto" fxFlex.lt-md="100">
+            <div class="mb-20">
+                <div class="h3">Table with sorting</div>
+            </div>
+            <div class="content-card mat-elevation-z1 h-400">
+                <table mat-table [dataSource]="sortingTableDataSource" matSort notaddPerfectScrollbar>
+                    <!-- appName Column -->
+                    <ng-container matColumnDef="appName">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> APP </th>
+                        <td mat-cell *matCellDef="let element"> {{element.appName}} </td>
+                    </ng-container>
+                    
+                    <!-- cateNames Column -->
+                    <ng-container matColumnDef="cateNames">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> 领域 </th>
+                        <td mat-cell *matCellDef="let element"> {{element.cateNames}} </td>
+                    </ng-container>
+                    
+                    <!-- developCompanyFullName Column -->
+                    <ng-container matColumnDef="developCompanyFullName">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> 	开发商 </th>
+                        <td mat-cell *matCellDef="let element"> {{element.developCompanyFullName}} </td>
+                    </ng-container>
+                    
+                    <!-- activeNums Column -->
+                    <ng-container matColumnDef="activeNums">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> 活跃人数(万) </th>
+                        <td mat-cell *matCellDef="let element"> {{element.activeNums}} </td>
+                    </ng-container>
+
+                    <!-- activeNumsRatio Column -->
+                    <ng-container matColumnDef="activeNumsRatio">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> 	环比增幅(%) </th>
+                        <td mat-cell *matCellDef="let element"> {{element.activeNumsRatio}} </td>
+                    </ng-container>
+                    
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="content center" fxLayout="row nowrap" fxLayoutAlign="space-between start">
+        <div class="p-24" fxFlex="1 0 auto" fxFlex.lt-md="100">
+            <div class="mb-20">
+                <div class="h3">Table with filtering</div>
+            </div>
+            <p>
+                <mat-form-field class="w-50-p" ngClass.lt-md="w-100-p">
+                    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+                </mat-form-field>
+            </p>
+            <div class="content-card mat-elevation-z1 h-400">
+                <table mat-table [dataSource]="filteringTableDataSource" notaddPerfectScrollbar>
+                    <!-- appName Column -->
+                    <ng-container matColumnDef="appName">
+                        <th mat-header-cell *matHeaderCellDef> APP </th>
+                        <td mat-cell *matCellDef="let element"> {{element.appName}} </td>
+                    </ng-container>
+                    
+                    <!-- cateNames Column -->
+                    <ng-container matColumnDef="cateNames">
+                        <th mat-header-cell *matHeaderCellDef> 领域 </th>
+                        <td mat-cell *matCellDef="let element"> {{element.cateNames}} </td>
+                    </ng-container>
+                    
+                    <!-- developCompanyFullName Column -->
+                    <ng-container matColumnDef="developCompanyFullName">
+                        <th mat-header-cell *matHeaderCellDef> 	开发商 </th>
+                        <td mat-cell *matCellDef="let element"> {{element.developCompanyFullName}} </td>
+                    </ng-container>
+                    
+                    <!-- activeNums Column -->
+                    <ng-container matColumnDef="activeNums">
+                        <th mat-header-cell *matHeaderCellDef> 活跃人数(万) </th>
+                        <td mat-cell *matCellDef="let element"> {{element.activeNums}} </td>
+                    </ng-container>
+
+                    <!-- activeNumsRatio Column -->
+                    <ng-container matColumnDef="activeNumsRatio">
+                        <th mat-header-cell *matHeaderCellDef> 	环比增幅(%) </th>
+                        <td mat-cell *matCellDef="let element"> {{element.activeNumsRatio}} </td>
+                    </ng-container>
+                    
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="content center" fxLayout="row nowrap" fxLayoutAlign="space-between start">
+        <div class="p-24" fxFlex="1 0 auto" fxFlex.lt-md="100">
+            <div class="mb-20">
+                <div class="h3">Table with selection</div>
+            </div>
+            <div class="content-card mat-elevation-z1 h-400">
+                <table mat-table [dataSource]="filteringTableDataSource" notaddPerfectScrollbar>
+                    <!-- Checkbox Column -->
+                    <ng-container matColumnDef="select">
+                        <th mat-header-cell *matHeaderCellDef>
+                        <mat-checkbox (change)="$event ? masterToggle() : null"
+                                        [checked]="selection.hasValue() && isAllSelected()"
+                                        [indeterminate]="selection.hasValue() && !isAllSelected()">
+                        </mat-checkbox>
+                        </th>
+                        <td mat-cell *matCellDef="let row">
+                        <mat-checkbox (click)="$event.stopPropagation()"
+                                        (change)="$event ? selection.toggle(row) : null"
+                                        [checked]="selection.isSelected(row)">
+                        </mat-checkbox>
+                        </td>
+                    </ng-container>
+
+                    <!-- appName Column -->
+                    <ng-container matColumnDef="appName">
+                        <th mat-header-cell *matHeaderCellDef> APP </th>
+                        <td mat-cell *matCellDef="let element"> {{element.appName}} </td>
+                    </ng-container>
+                    
+                    <!-- cateNames Column -->
+                    <ng-container matColumnDef="cateNames">
+                        <th mat-header-cell *matHeaderCellDef> 领域 </th>
+                        <td mat-cell *matCellDef="let element"> {{element.cateNames}} </td>
+                    </ng-container>
+                    
+                    <!-- developCompanyFullName Column -->
+                    <ng-container matColumnDef="developCompanyFullName">
+                        <th mat-header-cell *matHeaderCellDef> 	开发商 </th>
+                        <td mat-cell *matCellDef="let element"> {{element.developCompanyFullName}} </td>
+                    </ng-container>
+                    
+                    <!-- activeNums Column -->
+                    <ng-container matColumnDef="activeNums">
+                        <th mat-header-cell *matHeaderCellDef> 活跃人数(万) </th>
+                        <td mat-cell *matCellDef="let element"> {{element.activeNums}} </td>
+                    </ng-container>
+
+                    <!-- activeNumsRatio Column -->
+                    <ng-container matColumnDef="activeNumsRatio">
+                        <th mat-header-cell *matHeaderCellDef> 	环比增幅(%) </th>
+                        <td mat-cell *matCellDef="let element"> {{element.activeNumsRatio}} </td>
+                    </ng-container>
+                    
+                    <tr mat-header-row *matHeaderRowDef="selectionTableColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: selectionTableColumns;" (click)="selection.toggle(row)"></tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+</div>

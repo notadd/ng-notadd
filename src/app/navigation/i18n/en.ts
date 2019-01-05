@@ -46,6 +46,7 @@ export const locale = {
             Users: 'Users',
             UserGroup: 'UserGroup',
             User: 'User',
+            DataTable: 'Data Table',
             Services: 'Services',
             ExcelExport: 'Excel Export'
         }

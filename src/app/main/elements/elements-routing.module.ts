@@ -27,6 +27,13 @@ const routes: Routes = [
         data: {
             title: 'Angular CDK'
         }
+    },
+    {
+        path: 'data-table',
+        loadChildren: './data-table/data-table.module#DataTableModule',
+        data: {
+            title: '数据表'
+        }
     }
 ];
 
