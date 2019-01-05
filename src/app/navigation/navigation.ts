@@ -281,7 +281,7 @@ export const navigation: Array<NotaddNavigationItem> = [
                 title: '数据表',
                 i18n: 'Navigation.DataTable',
                 type: 'item',
-                icon: 'list',
+                icon: 'grid_on',
                 url: '/elements/data-table'
             }
         ]
