@@ -47,9 +47,6 @@ export class NotaddTableExportPickerComponent implements OnInit {
     get row() { return this.pickerForm.get('row'); }
     get length() { return this.row.get('length'); }
     get type() { return this.row.get('type'); }
-    set type(value) {
-        this.row.get('type').setValue(value);
-    }
     get result(): DialogData {
         return {
             headers: this.headers.value,
@@ -59,6 +56,10 @@ export class NotaddTableExportPickerComponent implements OnInit {
 
     cancel(): void {
         this.dialogRef.close();
+    }
+
+    onLengthFocus() {
+        this.row.get('type').setValue('specified');
     }
 
     resetLength() {

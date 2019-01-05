@@ -18,7 +18,7 @@
                 </mat-radio-button>
                 <mat-radio-button value="specified">
                     <mat-form-field>
-                        <input matInput formControlName="length" (focus)="type = 'specified'" placeholder="例如：1-5、8、11-13,16" autocomplete="off">
+                        <input matInput formControlName="length" (focus)="onLengthFocus()" placeholder="例如：1-5、8、11-13,16" autocomplete="off">
                     </mat-form-field>
                 </mat-radio-button>
             </mat-radio-group>
