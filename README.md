@@ -54,29 +54,24 @@ Medium-Background solution based on Angular7 Material2
 
 ## Roadmap
 
-**0.14.0**
-- [x] Use ng-material2 component
-
 **0.15.0**
-- [x] Virtual list (supports 100,000 level list)
-- [ ] built-in permission component
+- [x] Ordinary form
+- [x] data form
+- [x] Dynamic form
+- [x] excel import and export
+- [x] selected row and column export excel
 
 
 **0.16.0**
-- [ ] component phone end compatible
 - [ ] Progressive Application (PWA)
-
-**0.17.0**
 - [ ] json generate form
 
-**0.18.0**
-- [ ] Ordinary form
-- [ ] Data table
-- [ ] Dynamic table
+**0.17.0**
+- [ ] built-in permission component
 
-**0.18.2**
-- [ ] Excel Import and Export
-- [ ] Select rows to export Excel
+**0.18.0**
+- [ ] component phone end compatible
+
 
 **0.19.0**
 - [ ] screenshot generation
