@@ -45,7 +45,9 @@ export const locale = {
             Permission: '權限',
             Users: '用戶',
             UserGroup: '用戶組',
-            User: '用戶'
+            User: '用戶',
+            Services: 'Services',
+            ExcelExport: '導出 Excel'
         }
     }
 };
