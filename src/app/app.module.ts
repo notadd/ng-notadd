@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
-import { MatPaginatorIntl, MatIconModule, MatButtonModule } from '@angular/material';
+import { MatPaginatorIntl, MatIconModule, MatButtonModule, MatDialogModule } from '@angular/material';
 
 import { TranslateModule } from '@ngx-translate/core';
 import { NgForageModule, NgForageConfig, Driver } from 'ngforage';
@@ -22,6 +22,8 @@ import { GraphQLModule } from './graphql/graphql.module';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
     declarations: [
@@ -32,6 +34,7 @@ import { AppComponent } from './app.component';
         BrowserAnimationsModule,
         MatIconModule,
         MatButtonModule,
+        MatDialogModule,
 
         TranslateModule.forRoot(),
         NgxPermissionsModule.forRoot(),
@@ -50,6 +53,8 @@ import { AppComponent } from './app.component';
         HttpClientModule,
 
         AppRoutingModule,
+
+        ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
 
     ],
     providers: [{

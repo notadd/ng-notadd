@@ -1,7 +1,10 @@
-import { Component, Inject, OnDestroy, OnInit } from '@angular/core';
+import { Component, Inject, OnDestroy, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { Platform } from '@angular/cdk/platform';
 import { Router, ActivatedRoute, NavigationEnd, Params } from '@angular/router';
+import { SwUpdate } from '@angular/service-worker';
+import { MatDialog } from '@angular/material';
+
 import { Subject, from } from 'rxjs';
 import { takeUntil, filter, map, mergeMap, pairwise } from 'rxjs/operators';
 import { TranslateService } from '@ngx-translate/core';
@@ -31,10 +34,12 @@ export class AppComponent implements OnInit, OnDestroy {
     isFullScreen: boolean;
 
     private ngUnsubscribe: Subject<any>;
+    @ViewChild('updateConfirmDialog') updateConfirmDialog: TemplateRef<any>;
 
     constructor(
         private router: Router,
         private activatedRoute: ActivatedRoute,
+        private swUpdate: SwUpdate,
         @Inject(DOCUMENT) private document: any,
         private loadingService: NotaddLoadingService,
         private configService: NotaddConfigService,
@@ -43,7 +48,8 @@ export class AppComponent implements OnInit, OnDestroy {
         private notaddTranslationService: NotaddTranslationService,
         private platform: Platform,
         private sidebarService: NotaddSidebarService,
-        private ngForage: NgForage
+        private ngForage: NgForage,
+        private dialog: MatDialog
     ) {
         this.navigation = navigation;
 
@@ -107,6 +113,14 @@ export class AppComponent implements OnInit, OnDestroy {
             .subscribe(localConfig => {
                 this.configService.config = localConfig;
             });
+
+        this.swUpdate.isEnabled && this.swUpdate.available.subscribe(_ => {
+            const dialogRef = this.dialog.open(this.updateConfirmDialog);
+
+            dialogRef.afterClosed().subscribe(result => {
+                result && window.location.reload();
+            });
+        });
     }
 
     /**

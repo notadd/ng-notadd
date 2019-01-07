@@ -18,3 +18,16 @@
         <notadd-theme-panel></notadd-theme-panel>
     </notadd-sidebar>
 </ng-template>
+
+
+<!-- Dialog template -->
+<ng-template #updateConfirmDialog>
+    <h2 matDialogTitle>系统提示</h2>
+    <mat-dialog-content>
+        <p>新版本可供使用，是否加载更新？</p>
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+        <button mat-button matDialogClose color="warn">取消</button>
+        <button mat-button [mat-dialog-close]="true" cdkFocusInitial color="accent">更新</button>
+    </mat-dialog-actions>
+</ng-template>

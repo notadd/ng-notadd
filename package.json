@@ -11,7 +11,7 @@
         "graphql": "npm run graphql:introspect && npm run graphql:generate",
         "graphql:generate": "gql-gen --config ./codegen.generate.yml",
         "graphql:introspect": "gql-gen --config ./codegen.introspect.yml",
-        "deploy": "ng build --prod --base-href /ng-notadd/ && angular-cli-ghpages --dir ./dist/ng-notadd/"
+        "deploy": "ng build --prod --base-href /ng-notadd/ && angular-cli-ghpages --dir ./dist/"
     },
     "private": true,
     "dependencies": {
@@ -26,7 +26,9 @@
         "@angular/material": "^7.0.1",
         "@angular/platform-browser": "^7.0.0",
         "@angular/platform-browser-dynamic": "^7.0.0",
+        "@angular/pwa": "^0.11.4",
         "@angular/router": "^7.0.0",
+        "@angular/service-worker": "^7.1.4",
         "@mdi/angular-material": "^3.0.39",
         "@ngx-translate/core": "^11.0.0",
         "@notadd/ng-material2": "0.0.6",
