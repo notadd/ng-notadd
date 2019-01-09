@@ -1,0 +1,54 @@
+<input type="file" #file [accept]="dialogData.accept" [multiple]="(dialogData.maxFiles > 1)" (change)="onFilesAdded()" />
+<div class="notadd-upload-container" fxLayout="column" fxLayoutAlign="space-evenly stretch">
+
+    <div fxLayout="row" fxLayoutAlign="space-between center">
+        <h1 mat-dialog-title>文件上传</h1>
+
+        <button [disabled]="uploading || uploadSuccessful"
+                mat-raised-button
+                color="accent"
+                class="add-files-button"
+                (click)="addFiles()">
+            <mat-icon>add</mat-icon>
+            <span>添加文件</span>
+        </button>
+    </div>
+
+    <mat-dialog-content fxFlex fxLayout="column nowrap" fxLayoutAlign="space-between start">
+        <div class="content-scroll w-100-p"
+             fxFlex
+             notaddPerfectScrollbar
+             [notaddPerfectScrollbarOptions]="{suppressScrollX: true, updateOnRouteChange : false}">
+            <mat-list>
+                <mat-list-item *ngFor="let file of files">
+
+                    <div matListIcon class="icon" [attr.content]="file.name | fileExtension">
+                        <svg width="100%" height="100%" viewBox="0 0 43 46">
+                            <path d="M 36 23.29 c 0 0 0 11.43 0 11.43 c 0 1.26 -1.01 2.28 -2.25 2.28 c 0 0 -31.5 0 -31.5 0 c -1.24 0 -2.25 -1.02 -2.25 -2.28 c 0 0 0 -11.43 0 -11.43 c 0 -1.26 1.01 -2.29 2.25 -2.29 c 0 0 31.5 0 31.5 0 c 1.24 0 2.25 1.03 2.25 2.29 c 0 0 0 0 0 0 m -6.12 -18.5 c 0 0 0 8.37 0 8.37 c 0 0.53 0.43 0.96 0.96 0.96 c 0 0 8.6 0 8.6 0 c 0 0 -9.56 -9.33 -9.56 -9.33 m 13.12 12.21 c 0 0 0 25 0 25 c 0 2.21 -1.79 4 -4 4 c 0 0 -31 0 -31 0 c -2.21 0 -4 -1.79 -4 -4 c 0 0 0 -2 0 -2 c 0 0 3 0 3 0 c 0 0 0 2 0 2 c 0 0.56 0.45 1 1 1 c 0 0 31 0 31 0 c 0.55 0 1 -0.44 1 -1 c 0 0 0 -25 0 -25 c 0 0 -9.16 0 -9.16 0 c -2.12 0 -3.84 -1.71 -3.84 -3.84 c 0 0 0 -10.14 0 -10.14 c -0.06 0 -0.12 -0.02 -0.19 -0.02 c 0 0 -18.81 0 -18.81 0 c -0.55 0 -1 0.45 -1 1 c 0 0 0 14 0 14 c 0 0 -3 0 -3 0 c 0 0 0 -14 0 -14 c 0 -2.21 1.79 -4 4 -4 c 0 0 18.81 0 18.81 0 c 2.63 0 4 1.5 4 1.5 c 0 0 11.07 10.81 11.07 10.81 c 0 0 0.57 0.5 0.89 1.81 c 0 0 0.23 0 0.23 0 c 0 0 0 2.88 0 2.88 c 0 0 0 0 0 0"/>
+                        </svg>
+                    </div>
+
+                    <h4 mat-line>{{file.name}}</h4>
+
+                    <mat-progress-bar color="accent" *ngIf="progress" mode="determinate" [value]="progress[file.name].progress | async"></mat-progress-bar>
+                    <mat-progress-bar color="accent" *ngIf="!progress && uploading" mode="indeterminate"></mat-progress-bar>
+
+                    <button *ngIf="!progress" mat-icon-button (click)="removeFile(file)">
+                        <mat-icon color="accent">delete_forever</mat-icon>
+                    </button>
+
+                </mat-list-item>
+            </mat-list>
+            <span *ngIf="!files.size" class="hint-text">暂未添加文件</span>
+        </div>
+
+        <ul class="notadd-upload-errors w-100-p">
+            <li *ngFor="let error of errors">{{error}}</li>
+        </ul>
+    </mat-dialog-content>
+
+    <mat-dialog-actions align="end">
+        <button *ngIf="showCancelButton" mat-button mat-dialog-close>取消</button>
+        <button mat-raised-button color="accent" [disabled]="primaryDisabled" (click)="closeDialog()">{{primaryButtonText}}</button>
+    </mat-dialog-actions>
+</div>

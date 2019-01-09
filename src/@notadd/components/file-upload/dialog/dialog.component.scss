@@ -1,0 +1,77 @@
+@import "src/@notadd/scss/notadd";
+
+:host {
+    height: 100%;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+
+    input[type='file'] {
+        display: none;
+    }
+
+    .add-files-button {
+        margin-bottom: 20px;
+    }
+
+    .notadd-upload-container {
+        height: 100%;
+
+        .mat-dialog-content {
+            .mat-list-item {
+                margin: 14px 0;
+
+                .icon {
+                    @include mat-icon-size(46px);
+                    position: relative;
+
+                    &::before {
+                        content: attr(content);
+                        display: inline-block;
+                        position: absolute;
+                        bottom: 0;
+                        left: -7px;
+                        top: 12px;
+                        right: 0;
+                        font-size: 12px;
+                        line-height: 18px;
+                        text-transform: uppercase;
+                        text-anchor: middle;
+                        color: #FFF;
+                        margin: auto;
+                        text-align: center;
+                        height: 32%;
+                        width: 70%;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                    }
+                }
+
+                .mat-icon-button {
+                    display: none;
+                }
+
+                &:hover {
+                    background-color: rgba(0, 0, 0, .1);
+
+                    .mat-icon-button {
+                        display: block;
+                    }
+                }
+            }
+
+            .notadd-upload-errors {
+                color: #FF1744;
+                padding: 0;
+                list-style: none;
+                font-size: 12px;
+                margin: 0 10px;
+
+                li {
+                    margin: 5px 0;
+                }
+            }
+        }
+    }
+}
