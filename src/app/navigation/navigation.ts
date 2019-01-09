@@ -283,6 +283,22 @@ export const navigation: Array<NotaddNavigationItem> = [
                 type: 'item',
                 icon: 'grid_on',
                 url: '/elements/data-table'
+            },
+            {
+                id: 'advanced-ui',
+                title: '高级组件',
+                i18n: 'Navigation.AdvancedUi',
+                type: 'collapse',
+                icon: 'tune',
+                children: [
+                    {
+                        id: 'file-upload',
+                        title: '文件上传',
+                        i18n: 'Navigation.FileUpload',
+                        type: 'item',
+                        url: '/elements/advanced-ui/file-upload'
+                    }
+                ]
             }
         ]
     }/*,

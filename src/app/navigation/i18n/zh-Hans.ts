@@ -48,7 +48,9 @@ export const locale = {
             User: '用户',
             DataTable: '数据表',
             Services: 'Services',
-            ExcelExport: '导出 Excel'
+            ExcelExport: '导出 Excel',
+            AdvancedUi: '高级组件',
+            FileUpload: '文件上传'
         }
     }
 };

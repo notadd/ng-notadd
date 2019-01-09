@@ -34,6 +34,13 @@ const routes: Routes = [
         data: {
             title: '数据表'
         }
+    },
+    {
+        path: 'advanced-ui',
+        loadChildren: './advanced-ui/advanced-ui.module#AdvancedUiModule',
+        data: {
+            title: '高级组件'
+        }
     }
 ];
 

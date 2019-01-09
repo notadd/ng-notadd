@@ -1,0 +1,23 @@
+<div class="element-file-upload page-layout card fullwidth">
+    <div class="header center">
+        <h1 class="mt-16">EXAMPLES</h1>
+    </div>
+    <div class="content center" fxLayout="column nowrap" fxLayoutAlign="start start">
+        <h3>File Upload With Component</h3>
+        <notadd-file-upload></notadd-file-upload>
+        <mat-divider class="mt-32 mb-32"></mat-divider>
+        <h3>File Upload By Service</h3>
+        <div class="pb-24">
+            <button color="accent" mat-raised-button (click)="onFileUpload()">文件上传</button>
+        </div>
+        <mat-list class="border mb-32">
+            <h3 mat-subheader>File List</h3>
+            <mat-list-item *ngFor="let file of fileList">
+                <mat-icon mat-list-icon>description</mat-icon>
+                <h4 mat-line>{{file['ext-param']}}</h4>
+                <p mat-line> {{file.mimetype}} </p>
+            </mat-list-item>
+            <span *ngIf="!fileList.length" class="ml-16 hint-text">暂未上传文件</span>
+        </mat-list>
+    </div>
+</div>

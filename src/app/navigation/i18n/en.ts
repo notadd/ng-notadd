@@ -44,11 +44,13 @@ export const locale = {
             Role: 'Role',
             Permission: 'Permission',
             Users: 'Users',
-            UserGroup: 'UserGroup',
+            UserGroup: 'User Group',
             User: 'User',
             DataTable: 'Data Table',
             Services: 'Services',
-            ExcelExport: 'Excel Export'
+            ExcelExport: 'Excel Export',
+            AdvancedUi: 'Advanced UI',
+            FileUpload: 'File Upload'
         }
     }
 };
