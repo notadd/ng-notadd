@@ -80,4 +80,52 @@ export class NotaddUtils {
         }
         return rowRanges;
     }
+
+    public static isValidFiles(files: Array<File>, maxFiles: number): Array<string> {
+        const errors: Array<string> = [];
+
+        // Check Number of files
+        if (files.length > maxFiles) {
+            errors.push(`文件份数超出限制，一次只能上传 ${maxFiles} 份文件`);
+        }
+        return errors;
+    }
+
+    public static  isValidFileExtension(files: Array<File>, fileExtensions: string): Array<string> {
+        const errors: Array<string> = [];
+
+        // Make array of file extensions
+        const extensions = fileExtensions
+            .split(',')
+            .map(extension => extension.toLocaleUpperCase().trim());
+
+        for (let i = 0; i < files.length; i++) {
+            if (!extensions.includes('*')) {
+                // Get file extension
+                const extension = files[i].name.toUpperCase().split('.').pop() || files[i].name;
+                // Check the extension exists
+                const exists = extensions.includes(extension);
+                if (!exists) {
+                    errors.push(`文件 [ ${files[i].name} ] 扩展名不符合，仅支持 ${fileExtensions}`);
+                }
+            }
+        }
+
+        return errors;
+    }
+
+    public static  isValidFileSize(files: Array<File>, maxFileSize: number): Array<string> {
+        const errors: Array<string> = [];
+
+        for (let i = 0; i < files.length; i++) {
+            const file = files[i];
+            const fileSizeInMB = file.size / (1024 * 1000);
+            const size = Math.round(fileSizeInMB * 100) / 100; // convert upto 2 decimal place
+            if (size > maxFileSize) {
+                errors.push(`文件 [ ${file.name} ] 大小超过了 ${maxFileSize} MB`);
+            }
+        }
+
+        return errors;
+    }
 }
