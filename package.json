@@ -40,6 +40,7 @@
         "apollo-link": "^1.2.0",
         "apollo-link-context": "^1.0.9",
         "apollo-link-error": "^1.1.1",
+        "browser-md5-file": "^1.1.1",
         "core-js": "^2.5.4",
         "echarts": "^4.2.0-rc.2",
         "file-saver": "^2.0.0",
