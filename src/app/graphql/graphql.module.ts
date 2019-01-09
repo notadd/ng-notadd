@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { HttpHeaders } from '@angular/common/http';
-import { ApolloModule, APOLLO_OPTIONS } from 'apollo-angular';
+import { ApolloModule, Apollo, APOLLO_OPTIONS } from 'apollo-angular';
 import { HttpLinkModule, HttpLink } from 'apollo-angular-link-http';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import { ApolloLink } from 'apollo-link';
@@ -89,4 +89,16 @@ export function createApollo(httpLink: HttpLink, ngForage: NgForage) {
         },
     ],
 })
-export class GraphQLModule {}
+export class GraphQLModule {
+    constructor(
+        private apollo: Apollo,
+        private httpLink: HttpLink
+    ) {
+        apollo.createNamed('upload', {
+            cache: new InMemoryCache(),
+            link: httpLink.create({
+                uri: 'https://upyun.api.ibenchu.pw/graphql'
+            })
+        });
+    }
+}
