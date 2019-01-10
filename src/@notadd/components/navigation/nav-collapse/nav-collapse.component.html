@@ -36,15 +36,13 @@
                         <button *ngIf="item.children"
                                 mat-menu-item
                                 [matMenuTriggerFor]="subMenu"
-                                (mouseenter)="setSubMenu(item);"
-                                [translate]="item.i18n"></button>
+                                (mouseenter)="setSubMenu(item);">{{item.i18n | translate}}</button>
 
                         <button *ngIf="!item.children"
                                 mat-menu-item
                                 [routerLink]="item.url"
                                 [routerLinkActive]="['active', 'mat-accent-bg']"
-                                matRipple
-                                [translate]="item.i18n"></button>
+                                matRipple>{{item.i18n | translate}}</button>
                     </ng-container>
                 </ng-template>
             </div>
@@ -56,9 +54,8 @@
                             *ngFor="let subItem of subMenus"
                             [routerLink]="subItem.url"
                             [routerLinkActive]="['active', 'mat-accent-bg']"
-                            matRipple
-                            [translate]="subItem.i18n">
-                        {{subItem.title}}
+                            matRipple>
+                        {{subItem.i18n | translate}}
                     </button>
                 </ng-template>
             </div>
