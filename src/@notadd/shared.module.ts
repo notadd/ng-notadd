@@ -9,12 +9,16 @@ import { NotaddPipesModule } from '@notadd/pipes/pipes.module';
 @NgModule({
     imports: [
         CommonModule,
+        FormsModule,
+        ReactiveFormsModule,
         FlexLayoutModule,
         NotaddDirectivesModule,
         NotaddPipesModule
     ],
     exports: [
         CommonModule,
+        FormsModule,
+        ReactiveFormsModule,
         FlexLayoutModule,
         NotaddDirectivesModule,
         NotaddPipesModule
