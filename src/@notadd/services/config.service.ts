@@ -7,6 +7,8 @@ import { filter } from 'rxjs/operators';
 import * as _ from 'lodash';
 import { NgForage } from 'ngforage';
 
+import { NotaddConfig } from '@notadd/types/notadd-config';
+
 export const NOTADD_CONFIG = new InjectionToken('notaddCustomConfig');
 
 @Injectable({
@@ -39,10 +41,7 @@ export class NotaddConfigService {
 
         this.configSubject.next(config);
 
-        /* 如果当前配置跟默认配置不同，则存储到本地缓存 */
-        if (!_.isEqual(config.layout, this.defaultConfig.layout)) {
-            this.ngForage.setItem('NOTADD_CONFIG', config);
-        }
+        this.setStorageConfig(config);
     }
 
     get config(): any | Observable<any> {
@@ -56,6 +55,15 @@ export class NotaddConfigService {
         }
 
         this.configSubject = new BehaviorSubject(_.cloneDeep(this.defaultConfig));
+    }
+
+    private async setStorageConfig (config: NotaddConfig) {
+        const storageConfig = await this.ngForage.getItem('NOTADD_CONFIG');
+
+        /* 如果当前配置跟已经缓存的配置不同，则存储到本地缓存 */
+        if (!_.isEqual(config.layout, storageConfig)) {
+            this.ngForage.setItem('NOTADD_CONFIG', config);
+        }
     }
 
     setConfig(value, opts = {emitEvent: true}): void {
