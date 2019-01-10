@@ -1,5 +1,13 @@
 .element-file-upload {
     .content {
         background-color: #FFF;
+
+        .mat-form-field {
+            min-width: 30%;
+        }
+
+        > * {
+            width: 100%;
+        }
     }
 }

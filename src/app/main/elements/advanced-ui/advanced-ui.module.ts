@@ -5,8 +5,11 @@ import {
     MatDividerModule,
     MatListModule,
     MatIconModule,
+    MatSelectModule,
+    MatFormFieldModule
 } from '@angular/material';
 
+import { NotaddSharedModule } from '@notadd/shared.module';
 import { NotaddFileUploadModule } from '@notadd/components';
 import { FileUploadComponent } from './file-upload/file-upload.component';
 import { AdvancedUiRoutingModule } from './advanced-ui-routing.module';
@@ -18,7 +21,10 @@ import { AdvancedUiRoutingModule } from './advanced-ui-routing.module';
         MatDividerModule,
         MatListModule,
         MatIconModule,
+        MatSelectModule,
+        MatFormFieldModule,
 
+        NotaddSharedModule,
         NotaddFileUploadModule,
         AdvancedUiRoutingModule
     ],

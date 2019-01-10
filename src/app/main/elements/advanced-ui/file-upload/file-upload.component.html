@@ -3,9 +3,70 @@
         <h1 class="mt-16">EXAMPLES</h1>
     </div>
     <div class="content center" fxLayout="column nowrap" fxLayoutAlign="start start">
-        <h3>File Upload With Component</h3>
-        <notadd-file-upload></notadd-file-upload>
+        <h3>Config</h3>
+        <div fxLayout="row wrap" fxLayoutAlign="start center" fxLayoutGap="80px">
+            <mat-form-field>
+                <mat-label>可接受的文件类型</mat-label>
+                <mat-select [(ngModel)]="config.accept">
+                    <mat-option *ngFor="let accept of acceptSelect" [value]="accept.value">
+                        {{accept.label}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>允许上传文件大小的最大值</mat-label>
+                <mat-select  [(ngModel)]="config.maxFileSize">
+                    <mat-option *ngFor="let maxFileSize of maxFileSizeSelect" [value]="maxFileSize.value">
+                        {{maxFileSize.label}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>允许一次选择文件数量的最大值</mat-label>
+                <mat-select [(ngModel)]="config.maxFiles">
+                    <mat-option *ngFor="let maxFiles of maxFilesSelect" [value]="maxFiles.value">
+                        {{maxFiles.label}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>允许上传文件的总数量</mat-label>
+                <mat-select [(ngModel)]="config.fileCount">
+                    <mat-option *ngFor="let fileCount of fileCountSelect" [value]="fileCount.value">
+                        {{fileCount.label}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>允许上传文件的扩展名</mat-label>
+                <mat-select [(ngModel)]="config.fileExtensions">
+                    <mat-option *ngFor="let fileExtensions of fileExtensionsSelect" [value]="fileExtensions.value">
+                        {{fileExtensions.label}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>指定初始文件</mat-label>
+                <mat-select [(ngModel)]="config.fileUrls">
+                    <mat-option *ngFor="let fileUrls of fileUrlsSelect" [value]="fileUrls.value">
+                        {{fileUrls.label}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
         <mat-divider class="mt-32 mb-32"></mat-divider>
+
+        <h3>File Upload With Component</h3>
+        <notadd-file-upload
+            [accept]="config.accept"
+            [maxFileSize]="config.maxFileSize"
+            [maxFiles]="config.maxFiles"
+            [fileCount]="config.fileCount"
+            [fileExtensions]="config.fileExtensions"
+            [fileUrls]="config.fileUrls">
+        </notadd-file-upload>
+        <mat-divider class="mt-32 mb-32"></mat-divider>
+
         <h3>File Upload By Service</h3>
         <div class="pb-24">
             <button color="accent" mat-raised-button (click)="onFileUpload()">文件上传</button>

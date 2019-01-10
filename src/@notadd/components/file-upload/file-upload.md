@@ -17,8 +17,8 @@ accept=".doc,.docx,.xml,application/msword,application/vnd.openxmlformats-office
 ##### maxFileSize: 允许上传文件大小的最大值，单位MB `默认值：5`
 ##### maxFiles：允许一次选择文件数量的最大值 `默认值：5`
 ##### fileCount：允许上传文件的总数量 `默认值：5`
-##### fileExt：允许上传文件的后缀名 `默认值：'JPG, GIF, PNG'`
-> fileExt 属性接受一个逗号分隔的字符串，不区分大小写，如：  
+##### fileExtensions：允许上传文件的后缀名 `默认值：'JPG, GIF, PNG'`
+> fileExtensions 属性接受一个逗号分隔的字符串，不区分大小写，如：  
 'JPG, GIF, PNG'; '*'为不限制
 ##### fileUrls：文件路径字符串数组，用来指定初始文件
 ### @output属性
