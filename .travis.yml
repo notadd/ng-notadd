@@ -18,7 +18,7 @@ install:
     - sudo chmod +x /usr/bin/upx
     - cd ./dist 
     - upx login ng-notadd "$NG" "$UPYUN"
-    - upx rm -a /*
+    - upx rm -a *
     - upx put ./   /
 script:
     - cd ../
