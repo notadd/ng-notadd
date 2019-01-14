@@ -54,6 +54,6 @@ export class ExcelExportComponent implements OnInit {
     }
 
     exportSpecified() {
-        this.excelExportService.exportSpecified(this.dataSource, 'Export-with-normal', this.tableHeaders);
+        this.excelExportService.exportSpecified(this.dataSource, 'Export by specified rows and columns', this.tableHeaders);
     }
 }

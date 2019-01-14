@@ -17,14 +17,13 @@ export class NotaddFileUploadService {
 
     constructor(
         private dialog: MatDialog
-    ) {
-    }
+    ) {}
 
-    upload(options?: UploadOptions): Observable<any> {
+    upload(options: UploadOptions = {}): Observable<any> {
         const dialogRef = this.dialog.open(NotaddFileUploadDialogComponent, {
             width: '40%',
             height: '50%',
-            data: options || {}
+            data: options
         });
 
         return dialogRef.afterClosed();
