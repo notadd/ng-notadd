@@ -14,7 +14,7 @@ import {
     ViewEncapsulation
 } from '@angular/core';
 import { animate, AnimationBuilder, AnimationPlayer, style } from '@angular/animations';
-import { ObservableMedia } from '@angular/flex-layout';
+import { MediaObserver } from '@angular/flex-layout';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
@@ -81,7 +81,7 @@ export class NotaddSidebarComponent implements OnInit, OnDestroy {
         private animationBuilder: AnimationBuilder,
         private changeDetectorRef: ChangeDetectorRef,
         private elementRef: ElementRef,
-        private observableMedia: ObservableMedia,
+        private mediaObserver: MediaObserver,
         private renderer: Renderer2,
         private sidebarService: NotaddSidebarService,
         private matchMediaService: NotaddMatchMediaService,
@@ -224,7 +224,7 @@ export class NotaddSidebarComponent implements OnInit, OnDestroy {
             .pipe(takeUntil(this.ngUnsubscribe))
             .subscribe(() => {
 
-                const isActive = this.observableMedia.isActive(this.lockedOpen);
+                const isActive = this.mediaObserver.isActive(this.lockedOpen);
 
                 if (this.wasActive === isActive) {
                     return;

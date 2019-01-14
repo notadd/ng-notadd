@@ -1,4 +1,4 @@
-import { MediaChange, ObservableMedia } from '@angular/flex-layout';
+import { MediaChange, MediaObserver } from '@angular/flex-layout';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
@@ -11,7 +11,7 @@ export class NotaddMatchMediaService {
     onMediaChange: BehaviorSubject<string>;
 
     constructor(
-        private observableMedia: ObservableMedia
+        private mediaObserver: MediaObserver
     ) {
         this.activeMediaQuery = '';
         this.onMediaChange = new BehaviorSubject<string>('');
@@ -26,7 +26,7 @@ export class NotaddMatchMediaService {
      * @private
      */
     private init(): void {
-        this.observableMedia.asObservable()
+        this.mediaObserver.media$
             .pipe(
                 debounceTime(500),
                 distinctUntilChanged()
