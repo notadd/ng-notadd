@@ -1,4 +1,4 @@
-export const routingPathConfig = Object.freeze({
+export const routingPathConfig = {
     /* application */
     app: {
         default: '',
@@ -71,4 +71,4 @@ export const routingPathConfig = Object.freeze({
         default: '',
         excelExport: 'excel-export'
     }
-});
+};

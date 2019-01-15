@@ -115,7 +115,10 @@ export class AppComponent implements OnInit, OnDestroy {
             });
 
         this.swUpdate.isEnabled && this.swUpdate.available.subscribe(_ => {
-            const dialogRef = this.dialog.open(this.updateConfirmDialog);
+            const dialogRef = this.dialog.open(this.updateConfirmDialog, {
+                hasBackdrop: true,
+                disableClose: true
+            });
 
             dialogRef.afterClosed().subscribe(result => {
                 result && window.location.reload();
