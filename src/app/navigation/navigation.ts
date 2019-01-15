@@ -1,3 +1,4 @@
+import { routingPathConfig } from '@config/routing-path.config';
 import { NotaddNavigationItem } from '@notadd/types';
 
 export const navigation: Array<NotaddNavigationItem> = [
@@ -19,7 +20,11 @@ export const navigation: Array<NotaddNavigationItem> = [
                         title: '分析页',
                         i18n: 'Navigation.Analytics',
                         type: 'item',
-                        url: '/general/dashboards/analytics',
+                        url: [
+                            routingPathConfig.app.general,
+                            routingPathConfig.general.dashboards,
+                            routingPathConfig.dashboards.analytics
+                        ],
                         badge: {
                             title: '25',
                             bg: '#1189fb',
@@ -40,7 +45,11 @@ export const navigation: Array<NotaddNavigationItem> = [
                         title: '个人主页',
                         i18n: 'Navigation.Profile',
                         type: 'item',
-                        url: '/general/pages/profile'
+                        url: [
+                            routingPathConfig.app.general,
+                            routingPathConfig.general.pages,
+                            routingPathConfig.pages.profile
+                        ]
                     },
                     {
                         id: 'errors',
@@ -53,35 +62,70 @@ export const navigation: Array<NotaddNavigationItem> = [
                                 title: '400',
                                 i18n: 'Navigation.Errors_400',
                                 type: 'item',
-                                url: '/general/pages/errors/400'
+                                url: [
+                                    routingPathConfig.app.general,
+                                    routingPathConfig.general.pages,
+                                    routingPathConfig.pages.errors,
+                                ],
+                                urlParam: {
+                                    code: 400
+                                }
                             },
                             {
                                 id: 'errors_403',
                                 title: '403',
                                 i18n: 'Navigation.Errors_403',
                                 type: 'item',
-                                url: '/general/pages/errors/403'
+                                url: [
+                                    routingPathConfig.app.general,
+                                    routingPathConfig.general.pages,
+                                    routingPathConfig.pages.errors,
+                                ],
+                                urlParam: {
+                                    code: 403
+                                }
                             },
                             {
                                 id: 'errors_404',
                                 title: '404',
                                 i18n: 'Navigation.Errors_404',
                                 type: 'item',
-                                url: '/general/pages/errors/404'
+                                url: [
+                                    routingPathConfig.app.general,
+                                    routingPathConfig.general.pages,
+                                    routingPathConfig.pages.errors,
+                                ],
+                                urlParam: {
+                                    code: 404
+                                }
                             },
                             {
                                 id: 'errors_500',
                                 title: '500',
                                 i18n: 'Navigation.Errors_500',
                                 type: 'item',
-                                url: '/general/pages/errors/500'
+                                url: [
+                                    routingPathConfig.app.general,
+                                    routingPathConfig.general.pages,
+                                    routingPathConfig.pages.errors,
+                                ],
+                                urlParam: {
+                                    code: 500
+                                }
                             },
                             {
                                 id: 'errors_503',
                                 title: '503',
                                 i18n: 'Navigation.Errors_503',
                                 type: 'item',
-                                url: '/general/pages/errors/503'
+                                url: [
+                                    routingPathConfig.app.general,
+                                    routingPathConfig.general.pages,
+                                    routingPathConfig.pages.errors
+                                ],
+                                urlParam: {
+                                    code: 503
+                                }
                             }
                         ]
                     },
@@ -90,42 +134,66 @@ export const navigation: Array<NotaddNavigationItem> = [
                         title: '登录',
                         i18n: 'Navigation.Login',
                         type: 'item',
-                        url: '/general/pages/login'
+                        url: [
+                            routingPathConfig.app.general,
+                            routingPathConfig.general.pages,
+                            routingPathConfig.pages.login
+                        ]
                     },
                     {
                         id: 'register',
                         title: '注册',
                         i18n: 'Navigation.Register',
                         type: 'item',
-                        url: '/general/pages/register'
+                        url: [
+                            routingPathConfig.app.general,
+                            routingPathConfig.general.pages,
+                            routingPathConfig.pages.register
+                        ]
                     },
                     {
                         id: 'login-v2',
                         title: '登录 V2',
                         i18n: 'Navigation.Login_v2',
                         type: 'item',
-                        url: '/general/pages/login-v2'
+                        url: [
+                            routingPathConfig.app.general,
+                            routingPathConfig.general.pages,
+                            routingPathConfig.pages.loginV2
+                        ]
                     },
                     {
                         id: 'register-v2',
                         title: '注册 V2',
                         i18n: 'Navigation.Register_v2',
                         type: 'item',
-                        url: '/general/pages/register-v2'
+                        url: [
+                            routingPathConfig.app.general,
+                            routingPathConfig.general.pages,
+                            routingPathConfig.pages.registerV2
+                        ]
                     },
                     {
                         id: 'forgot-password',
                         title: '忘记密码',
                         i18n: 'Navigation.ForgotPassword',
                         type: 'item',
-                        url: '/general/pages/forgot-password'
+                        url: [
+                            routingPathConfig.app.general,
+                            routingPathConfig.general.pages,
+                            routingPathConfig.pages.forgotPassword
+                        ]
                     },
                     {
                         id: 'lockscreen',
                         title: '锁定屏幕',
                         i18n: 'Navigation.Lockscreen',
                         type: 'item',
-                        url: '/general/pages/lockscreen'
+                        url: [
+                            routingPathConfig.app.general,
+                            routingPathConfig.general.pages,
+                            routingPathConfig.pages.lockscreen
+                        ]
                     }
                 ]
             }
@@ -149,84 +217,132 @@ export const navigation: Array<NotaddNavigationItem> = [
                         title: '按钮',
                         i18n: 'Navigation.Button',
                         type: 'item',
-                        url: '/elements/basic-ui/buttons'
+                        url: [
+                            routingPathConfig.app.elements,
+                            routingPathConfig.elements.basicUi,
+                            routingPathConfig.basicUi.buttons
+                        ]
                     },
                     {
                         id: 'cards',
                         title: '卡片',
                         i18n: 'Navigation.Card',
                         type: 'item',
-                        url: '/elements/basic-ui/cards'
+                        url: [
+                            routingPathConfig.app.elements,
+                            routingPathConfig.elements.basicUi,
+                            routingPathConfig.basicUi.cards
+                        ]
                     },
                     {
                         id: 'icons',
                         title: '图标',
                         i18n: 'Navigation.Icon',
                         type: 'item',
-                        url: '/elements/basic-ui/icons'
+                        url: [
+                            routingPathConfig.app.elements,
+                            routingPathConfig.elements.basicUi,
+                            routingPathConfig.basicUi.icons
+                        ]
                     },
                     {
                         id: 'list',
                         title: '列表',
                         i18n: 'Navigation.List',
                         type: 'item',
-                        url: '/elements/basic-ui/list'
+                        url: [
+                            routingPathConfig.app.elements,
+                            routingPathConfig.elements.basicUi,
+                            routingPathConfig.basicUi.list
+                        ]
                     },
                     {
                         id: 'badges',
                         title: '徽章',
                         i18n: 'Navigation.Badge',
                         type: 'item',
-                        url: '/elements/basic-ui/badges'
+                        url: [
+                            routingPathConfig.app.elements,
+                            routingPathConfig.elements.basicUi,
+                            routingPathConfig.basicUi.badges
+                        ]
                     },
                     {
                         id: 'progress-bar',
                         title: '进度条',
                         i18n: 'Navigation.ProgressBar',
                         type: 'item',
-                        url: '/elements/basic-ui/progress-bar'
+                        url: [
+                            routingPathConfig.app.elements,
+                            routingPathConfig.elements.basicUi,
+                            routingPathConfig.basicUi.progressBar
+                        ]
                     },
                     {
                         id: 'button-toggle',
                         title: '开关按钮',
                         i18n: 'Navigation.ButtonToggle',
                         type: 'item',
-                        url: '/elements/basic-ui/button-toggle'
+                        url: [
+                            routingPathConfig.app.elements,
+                            routingPathConfig.elements.basicUi,
+                            routingPathConfig.basicUi.buttonToggle
+                        ]
                     },
                     {
                         id: 'chips',
                         title: '标签',
                         i18n: 'Navigation.Chip',
                         type: 'item',
-                        url: '/elements/basic-ui/chips'
+                        url: [
+                            routingPathConfig.app.elements,
+                            routingPathConfig.elements.basicUi,
+                            routingPathConfig.basicUi.chips
+                        ]
                     },
                     {
                         id: 'expansion-panel',
                         title: '可展开面板',
                         i18n: 'Navigation.ExpansionPanel',
                         type: 'item',
-                        url: '/elements/basic-ui/expansion-panel'
+                        url: [
+                            routingPathConfig.app.elements,
+                            routingPathConfig.elements.basicUi,
+                            routingPathConfig.basicUi.expansionPanel
+                        ]
                     },
                     {
                         id: 'tabs',
                         title: '选项卡',
                         i18n: 'Navigation.Tab',
                         type: 'item',
-                        url: '/elements/basic-ui/tabs'
+                        url: [
+                            routingPathConfig.app.elements,
+                            routingPathConfig.elements.basicUi,
+                            routingPathConfig.basicUi.tabs
+                        ]
                     },
                     {
                         id: 'stepper',
                         title: '步进器',
                         i18n: 'Navigation.Stepper',
                         type: 'item',
-                        url: '/elements/basic-ui/stepper'
+                        url: [
+                            routingPathConfig.app.elements,
+                            routingPathConfig.elements.basicUi,
+                            routingPathConfig.basicUi.stepper
+                        ]
                     },
                     {
                         id: 'grid-list',
                         title: '网格列表',
                         i18n: 'Navigation.GridList',
                         type: 'item',
-                        url: '/elements/basic-ui/grid-list'
+                        url: [
+                            routingPathConfig.app.elements,
+                            routingPathConfig.elements.basicUi,
+                            routingPathConfig.basicUi.gridList
+                        ]
                     }
                 ]
             },
@@ -242,21 +358,33 @@ export const navigation: Array<NotaddNavigationItem> = [
                         title: '提示框',
                         i18n: 'Navigation.Alert',
                         type: 'item',
-                        url: '/elements/ng-material2/alert'
+                        url: [
+                            routingPathConfig.app.elements,
+                            routingPathConfig.elements.ngMaterial2,
+                            routingPathConfig.ngMaterial2.alert
+                        ]
                     },
                     {
                         id: 'carousel',
                         title: '轮播图',
                         i18n: 'Navigation.Carousel',
                         type: 'item',
-                        url: '/elements/ng-material2/carousel'
+                        url: [
+                            routingPathConfig.app.elements,
+                            routingPathConfig.elements.ngMaterial2,
+                            routingPathConfig.ngMaterial2.carousel
+                        ]
                     },
                     {
                         id: 'cascade-dropdownlist',
                         title: '多级联动',
                         i18n: 'Navigation.CascadeDropdownlist',
                         type: 'item',
-                        url: '/elements/ng-material2/cascade-dropdownlist'
+                        url: [
+                            routingPathConfig.app.elements,
+                            routingPathConfig.elements.ngMaterial2,
+                            routingPathConfig.ngMaterial2.cascadeDropdownlist
+                        ]
                     }
                 ]
             },
@@ -272,7 +400,11 @@ export const navigation: Array<NotaddNavigationItem> = [
                         title: '虚拟列表',
                         i18n: 'Navigation.VirtualList',
                         type: 'item',
-                        url: '/elements/angular-cdk/virtual-list'
+                        url: [
+                            routingPathConfig.app.elements,
+                            routingPathConfig.elements.angularCdk,
+                            routingPathConfig.angularCdk.virtualList
+                        ]
                     }
                 ]
             },
@@ -282,7 +414,10 @@ export const navigation: Array<NotaddNavigationItem> = [
                 i18n: 'Navigation.DataTable',
                 type: 'item',
                 icon: 'grid_on',
-                url: '/elements/data-table'
+                url: [
+                    routingPathConfig.app.elements,
+                    routingPathConfig.elements.dataTable
+                ]
             },
             {
                 id: 'advanced-ui',
@@ -296,7 +431,11 @@ export const navigation: Array<NotaddNavigationItem> = [
                         title: '文件上传',
                         i18n: 'Navigation.FileUpload',
                         type: 'item',
-                        url: '/elements/advanced-ui/file-upload'
+                        url: [
+                            routingPathConfig.app.elements,
+                            routingPathConfig.elements.advancedUi,
+                            routingPathConfig.advancedUi.fileUpload
+                        ]
                     }
                 ]
             }
@@ -368,7 +507,10 @@ export const navigation: Array<NotaddNavigationItem> = [
                 i18n: 'Navigation.ExcelExport',
                 type: 'item',
                 icon: 'unarchive',
-                url: '/services/excel-export'
+                url: [
+                    routingPathConfig.app.services,
+                    routingPathConfig.services.excelExport
+                ]
             }
         ]
     }

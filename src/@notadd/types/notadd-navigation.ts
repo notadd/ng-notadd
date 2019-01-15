@@ -5,7 +5,8 @@ export interface NotaddNavigationItem {
     type: 'item' | 'group' | 'collapse';
     icon?: string;
     hidden?: boolean;
-    url?: string;
+    url?: Array<string>;
+    urlParam?: {[propName: string]: string | number};
     classes?: string;
     badge?: {
         title?: string;
