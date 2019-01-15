@@ -8,7 +8,7 @@ import { setContext } from 'apollo-link-context';
 import { onError } from 'apollo-link-error';
 import { NgForage } from 'ngforage';
 
-import { environment } from 'environments/environment';
+import { environment } from '@env';
 
 const uri = environment.apiUrl; // <-- add the URL of the GraphQL server here
 

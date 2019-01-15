@@ -3,11 +3,12 @@ import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { MatPaginatorIntl, MatIconModule, MatButtonModule, MatDialogModule } from '@angular/material';
+import 'hammerjs';
 
 import { TranslateModule } from '@ngx-translate/core';
 import { NgForageModule, NgForageConfig, Driver } from 'ngforage';
 import { NgxPermissionsModule } from 'ngx-permissions';
-import 'hammerjs';
+import { MaterialDesignFrameworkModule } from 'angular6-json-schema-form';
 
 import { NotaddModule } from '@notadd/notadd.module';
 import { NotaddMatIconsModule } from '@notadd/mat-icons/mat-icons.module';
@@ -18,12 +19,12 @@ import { LayoutModule } from './layout/layout.module';
 
 import { notaddConfig } from './config/notadd.config';
 
-import { GraphQLModule } from './graphql/graphql.module';
+import { GraphQLModule } from '@graphql/graphql.module';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
-import { environment } from '../environments/environment';
+import { environment } from '@env';
 
 @NgModule({
     declarations: [
@@ -38,6 +39,7 @@ import { environment } from '../environments/environment';
 
         TranslateModule.forRoot(),
         NgxPermissionsModule.forRoot(),
+        MaterialDesignFrameworkModule,
 
         /* @notadd modules */
         NotaddModule.forRoot(notaddConfig),
