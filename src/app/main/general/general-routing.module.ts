@@ -1,21 +1,23 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+import { routingPathConfig } from '@config/routing-path.config';
+
 const routes: Routes = [
     {
-        path: '',
-        redirectTo: 'dashboards',
+        path: routingPathConfig.general.default,
+        redirectTo: routingPathConfig.general.dashboards,
         pathMatch: 'full',
     },
     {
-        path: 'dashboards',
+        path: routingPathConfig.general.dashboards,
         loadChildren: './dashboards/dashboards.module#DashboardsModule',
         data: {
             title: '仪表盘'
         }
     },
     {
-        path: 'pages',
+        path: routingPathConfig.general.pages,
         loadChildren: './pages/pages.module#PagesModule',
         data: {
             title: '页面'

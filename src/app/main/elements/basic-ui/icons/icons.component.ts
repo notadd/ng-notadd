@@ -2,7 +2,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { cloneDeep } from 'lodash';
-import { BaseIconGQL, MdiIconsGQL } from 'app/graphql/graphql.service';
+import { BaseIconGQL, MdiIconsGQL } from '@graphql/graphql.service';
 
 export interface IconElement {
     icons: Array<any>;

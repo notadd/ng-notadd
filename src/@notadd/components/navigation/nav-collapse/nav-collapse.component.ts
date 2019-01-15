@@ -8,12 +8,14 @@ import { NotaddNavigationItem } from '@notadd/types';
 import { notaddAnimations } from '@notadd/animations';
 import { NotaddNavigationService } from '@notadd/components/navigation/navigation.service';
 import { NotaddConfigService } from '@notadd/services/config.service';
+import { RoutingPathPipe } from '@notadd/pipes/routing-path.pipe';
 
 @Component({
     selector: 'notadd-nav-collapse',
     templateUrl: './nav-collapse.component.html',
     styleUrls: ['./nav-collapse.component.scss'],
-    animations: notaddAnimations
+    animations: notaddAnimations,
+    providers: [RoutingPathPipe]
 })
 export class NotaddNavCollapseComponent implements OnInit, OnDestroy {
 
@@ -39,7 +41,8 @@ export class NotaddNavCollapseComponent implements OnInit, OnDestroy {
     constructor(
         private navigationService: NotaddNavigationService,
         private configService: NotaddConfigService,
-        private router: Router
+        private router: Router,
+        private path: RoutingPathPipe
     ) {
         this.ngUnsubscribe = new Subject<any>();
         this.subMenus = [];
@@ -170,7 +173,9 @@ export class NotaddNavCollapseComponent implements OnInit, OnDestroy {
                 }
             }
 
-            if (parent.children[i].url === url || url.includes(parent.children[i].url)) {
+            const childrenUrl = this.path.transform(parent.children[i].url, parent.children[i].urlParam);
+
+            if (childrenUrl === url || url.includes(childrenUrl)) {
                 return true;
             }
         }

@@ -3,7 +3,7 @@
     <a class="nav-link"
        *ngIf="item.url"
        [ngClass]="item.classes"
-       [routerLink]="[item.url]"
+       [routerLink]="[item.url | path: item.urlParam]"
        [routerLinkActive]="['active', 'secondary-background']"
        [routerLinkActiveOptions]="{exact: item.exactMatch || false}"
        matRipple>

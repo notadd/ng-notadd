@@ -40,7 +40,7 @@
 
                         <button *ngIf="!item.children"
                                 mat-menu-item
-                                [routerLink]="item.url"
+                                [routerLink]="[item.url | path: item.urlParam]"
                                 [routerLinkActive]="['active', 'mat-accent-bg']"
                                 matRipple>{{item.i18n | translate}}</button>
                     </ng-container>
@@ -52,7 +52,7 @@
                 <ng-template matMenuContent>
                     <button mat-menu-item
                             *ngFor="let subItem of subMenus"
-                            [routerLink]="subItem.url"
+                            [routerLink]="[subItem.url | path: subItem.urlParam]"
                             [routerLinkActive]="['active', 'mat-accent-bg']"
                             matRipple>
                         {{subItem.i18n | translate}}

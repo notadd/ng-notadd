@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 import { MatIconModule, MatRippleModule, MatMenuModule } from '@angular/material';
 import { TranslateModule } from '@ngx-translate/core';
 
+import { NotaddPipesModule } from '@notadd/pipes/pipes.module';
 import { NotaddNavigationComponent } from './navigation.component';
 import { NotaddNavGroupComponent } from './nav-group/nav-group.component';
 import { NotaddNavCollapseComponent } from './nav-collapse/nav-collapse.component';
@@ -17,6 +18,8 @@ import { NotaddNavItemComponent } from './nav-item/nav-item.component';
         MatIconModule,
         MatRippleModule,
         MatMenuModule,
+
+        NotaddPipesModule,
 
         TranslateModule.forChild()
     ],

@@ -6,13 +6,16 @@ import { TranslateService } from '@ngx-translate/core';
 
 import * as screenfull from 'screenfull';
 
+import { RoutingPathPipe } from '@notadd/pipes/routing-path.pipe';
 import { NotaddConfigService } from '@notadd/services/config.service';
 import { NotaddSidebarService } from '@notadd/components/sidebar/sidebar.service';
+import { routingPathConfig } from '@config/routing-path.config';
 
 @Component({
     selector: 'toolbar',
     templateUrl: './toolbar.component.html',
-    styleUrls: ['./toolbar.component.scss']
+    styleUrls: ['./toolbar.component.scss'],
+    providers: [ RoutingPathPipe ]
 })
 export class ToolbarComponent implements OnInit, OnDestroy {
 
@@ -35,7 +38,8 @@ export class ToolbarComponent implements OnInit, OnDestroy {
         private configService: NotaddConfigService,
         private sidebarService: NotaddSidebarService,
         private translateService: TranslateService,
-        private router: Router
+        private router: Router,
+        private path: RoutingPathPipe
     ) {
         this.ngUnsubscribe = new Subject<any>();
         this.languages = [
@@ -159,6 +163,12 @@ export class ToolbarComponent implements OnInit, OnDestroy {
      * 锁屏按钮点击
      */
     onLockButtonClick(): void {
-        this.router.navigate(['/general/pages/lockscreen']);
+        this.router.navigate([
+            this.path.transform([
+                routingPathConfig.app.general,
+                routingPathConfig.general.pages,
+                routingPathConfig.pages.lockscreen
+            ])
+        ]);
     }
 }

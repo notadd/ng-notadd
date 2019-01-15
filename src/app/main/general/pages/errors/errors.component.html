@@ -4,7 +4,10 @@
             <h1>{{code}}</h1>
             <p class="error-info">Page Not Found !</p>
             <p class="error-advise">YOU SEEM TO BE TRYING TO FIND HIS WAY HOME</p>
-            <button mat-flat-button color="accent" routerLink="/general/dashboards/analytics">GO TO HOME PAGE</button>
+            <button mat-flat-button color="accent"
+                    routerLink="{{[routingPath.app.general, routingPath.general.dashboards, routingPath.dashboards.analytics] | path}}">
+                GO TO HOME PAGE
+            </button>
             <div class="copyright">
                 <p>WEBSITE BY Ibenchu</p>
                 <p>© 2018. All RIGHT RESERVED.</p>

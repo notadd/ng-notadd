@@ -1,16 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+import { routingPathConfig } from '@config/routing-path.config';
 import { AnalysisComponent } from './analysis/analysis.component';
 
 const routes: Routes = [
     {
-        path: '',
-        redirectTo: 'analytics',
+        path: routingPathConfig.dashboards.default,
+        redirectTo: routingPathConfig.dashboards.analytics,
         pathMatch: 'full',
     },
     {
-        path: 'analytics',
+        path: routingPathConfig.dashboards.analytics,
         component: AnalysisComponent,
         data: {
             title: '分析页',

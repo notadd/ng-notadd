@@ -1,34 +1,36 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+import { routingPathConfig } from '@config/routing-path.config';
+
 const routes: Routes = [
     {
-        path: '',
-        redirectTo: 'general/dashboards/analytics',
+        path: routingPathConfig.app.default,
+        redirectTo: routingPathConfig.app.general,
         pathMatch: 'full'
     },
     {
-        path: 'general',
+        path: routingPathConfig.app.general,
         loadChildren: './main/general/general.module#GeneralModule',
         data: { title: '常规' }
     },
     {
-        path: 'elements',
+        path: routingPathConfig.app.elements,
         loadChildren: './main/elements/elements.module#ElementsModule',
         data: { title: 'UI 元素' }
     },
     {
-        path: 'applications',
+        path: routingPathConfig.app.applications,
         loadChildren: './main/applications/applications.module#ApplicationsModule',
         data: { title: '应用' }
     },
     {
-        path: 'services',
+        path: routingPathConfig.app.services,
         loadChildren: './main/services/services.module#ServicesModule',
         data: { title: 'Service' }
     },
     {
-        path: '**',
+        path: routingPathConfig.app.wildcard,
         redirectTo: 'general/pages/errors/404'
     }
 ];

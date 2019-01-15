@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+import { routingPathConfig } from '@config/routing-path.config';
+
 import { ProfileComponent } from './profile/profile.component';
 import { ErrorsComponent } from './errors/errors.component';
 import { LoginComponent } from './login/login.component';
@@ -12,12 +14,12 @@ import { LockscreenComponent } from './lockscreen/lockscreen.component';
 
 const routes: Routes = [
     {
-        path: '',
-        redirectTo: 'profile',
+        path: routingPathConfig.pages.default,
+        redirectTo: routingPathConfig.pages.profile,
         pathMatch: 'full',
     },
     {
-        path: 'profile',
+        path: routingPathConfig.pages.profile,
         component: ProfileComponent,
         data: {
             title: '个人主页',
@@ -25,7 +27,7 @@ const routes: Routes = [
         }
     },
     {
-        path: 'errors/:code',
+        path: routingPathConfig.pages.errors,
         component: ErrorsComponent,
         data: {
             title: '错误页',
@@ -33,7 +35,7 @@ const routes: Routes = [
         }
     },
     {
-        path: 'login',
+        path: routingPathConfig.pages.login,
         component: LoginComponent,
         data: {
             title: '登录',
@@ -41,7 +43,7 @@ const routes: Routes = [
         }
     },
     {
-        path: 'login-v2',
+        path: routingPathConfig.pages.loginV2,
         component: LoginV2Component,
         data: {
             title: '登录 V2',
@@ -49,7 +51,7 @@ const routes: Routes = [
         }
     },
     {
-        path: 'register',
+        path: routingPathConfig.pages.register,
         component: RegisterComponent,
         data: {
             title: '注册',
@@ -57,7 +59,7 @@ const routes: Routes = [
         }
     },
     {
-        path: 'register-v2',
+        path: routingPathConfig.pages.registerV2,
         component: RegisterV2Component,
         data: {
             title: '注册 V2',
@@ -65,7 +67,7 @@ const routes: Routes = [
         }
     },
     {
-        path: 'forgot-password',
+        path: routingPathConfig.pages.forgotPassword,
         component: ForgotPasswordComponent,
         data: {
             title: '忘记密码',
@@ -73,7 +75,7 @@ const routes: Routes = [
         }
     },
     {
-        path: 'lockscreen',
+        path: routingPathConfig.pages.lockscreen,
         component: LockscreenComponent,
         data: {
             title: '锁定屏幕',

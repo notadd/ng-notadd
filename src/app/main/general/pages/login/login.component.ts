@@ -5,13 +5,16 @@ import { Router } from '@angular/router';
 import { map } from 'rxjs/operators';
 import { ReCaptchaV3Service } from 'ngx-captcha';
 
-import { environment } from 'environments/environment';
-import { LoginGQL } from 'app/graphql/graphql.service';
+import { environment } from '@env';
+import { LoginGQL } from '@graphql/graphql.service';
+import { RoutingPathPipe } from '@notadd/pipes/routing-path.pipe';
+import { routingPathConfig } from '@config/routing-path.config';
 
 @Component({
     selector: 'login',
     templateUrl: './login.component.html',
-    styleUrls: ['./login.component.scss']
+    styleUrls: ['./login.component.scss'],
+    providers: [ RoutingPathPipe ]
 })
 export class LoginComponent implements OnInit {
 
@@ -25,7 +28,8 @@ export class LoginComponent implements OnInit {
         private reCaptchaV3Service: ReCaptchaV3Service,
         private loginGql: LoginGQL,
         private snackBar: MatSnackBar,
-        private router: Router
+        private router: Router,
+        private path: RoutingPathPipe
     ) {
         this.siteKey = environment.reCaptcha.siteKey;
         this.isLoading = false;
@@ -70,7 +74,13 @@ export class LoginComponent implements OnInit {
             .subscribe(data => {
                 this.openSnackBar(data.validatedUser ? '登录成功 🎉' : data.errorCodes.toString());
                 this.isLoading = false;
-                this.router.navigate(['/general/dashboards/analytics']);
+                this.router.navigate([
+                    this.path.transform([
+                        routingPathConfig.app.general,
+                        routingPathConfig.general.dashboards,
+                        routingPathConfig.dashboards.analytics
+                    ])
+                ]);
             });
     }
 
