@@ -50,7 +50,8 @@ export const locale = {
             Services: 'Services',
             ExcelExport: 'Excel Export',
             AdvancedUi: 'Advanced UI',
-            FileUpload: 'File Upload'
+            FileUpload: 'File Upload',
+            JsonSchemaForm: 'Json Schema Form'
         }
     }
 };

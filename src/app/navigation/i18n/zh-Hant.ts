@@ -50,7 +50,8 @@ export const locale = {
             Services: 'Services',
             ExcelExport: '導出 Excel',
             AdvancedUi: '高級組件',
-            FileUpload: '文件上傳'
+            FileUpload: '文件上傳',
+            JsonSchemaForm: 'Json Schema Form'
         }
     }
 };

@@ -41,6 +41,7 @@ export const routingPathConfig = {
         advancedUi: 'advanced-ui'
     },
     basicUi: {
+        default: '',
         buttons: 'buttons',
         cards: 'cards',
         icons: 'icons',
@@ -55,15 +56,22 @@ export const routingPathConfig = {
         gridList: 'grid-list'
     },
     ngMaterial2: {
+        default: '',
         alert: 'alert',
         carousel: 'carousel',
         cascadeDropdownlist: 'cascade-dropdownlist'
     },
     angularCdk: {
+        default: '',
         virtualList: 'virtual-list'
     },
+    dataTable: {
+        default: ''
+    },
     advancedUi: {
-        fileUpload: 'file-upload'
+        default: '',
+        fileUpload: 'file-upload',
+        jsonSchemaForm: 'json-schema-form'
     },
 
     /* services */

@@ -13,6 +13,7 @@ import { NotaddSharedModule } from '@notadd/shared.module';
 import { NotaddFileUploadModule } from '@notadd/components';
 import { FileUploadComponent } from './file-upload/file-upload.component';
 import { AdvancedUiRoutingModule } from './advanced-ui-routing.module';
+import { JsonSchemaFormComponent } from './json-schema-form/json-schema-form.component';
 
 @NgModule({
     imports: [
@@ -29,7 +30,8 @@ import { AdvancedUiRoutingModule } from './advanced-ui-routing.module';
         AdvancedUiRoutingModule
     ],
     declarations: [
-        FileUploadComponent
+        FileUploadComponent,
+        JsonSchemaFormComponent
     ]
 })
 export class AdvancedUiModule {

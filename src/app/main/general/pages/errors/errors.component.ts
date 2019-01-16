@@ -33,11 +33,9 @@ export class ErrorsComponent implements OnInit {
                     this.path.transform([
                         routingPathConfig.app.general,
                         routingPathConfig.general.pages,
-                        routingPathConfig.pages.errors,
-                        'test/:id'
+                        routingPathConfig.pages.errors
                     ], {
-                        code: 404,
-                        id: '你大爷'
+                        code: 404
                     })
                 ]);
             }

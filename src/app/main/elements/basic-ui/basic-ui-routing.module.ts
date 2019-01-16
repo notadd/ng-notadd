@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+import { routingPathConfig } from '@config/routing-path.config';
 import { ButtonsComponent } from './buttons/buttons.component';
 import { CardsComponent } from './cards/cards.component';
 import { IconsComponent } from './icons/icons.component';
@@ -16,26 +17,26 @@ import { GridListComponent } from './grid-list/grid-list.component';
 
 const routes: Routes = [
     {
-        path: '',
+        path: routingPathConfig.basicUi.default,
         redirectTo: 'buttons',
         pathMatch: 'full',
     },
     {
-        path: 'buttons',
+        path: routingPathConfig.basicUi.buttons,
         component: ButtonsComponent,
         data: {
             title: '按钮'
         }
     },
     {
-        path: 'cards',
+        path: routingPathConfig.basicUi.cards,
         component: CardsComponent,
         data: {
             title: '卡片'
         }
     },
     {
-        path: 'icons',
+        path: routingPathConfig.basicUi.icons,
         component: IconsComponent,
         data: {
             title: '图标',
@@ -43,63 +44,63 @@ const routes: Routes = [
         }
     },
     {
-        path: 'list',
+        path: routingPathConfig.basicUi.list,
         component: ListComponent,
         data: {
             title: '列表'
         }
     },
     {
-        path: 'badges',
+        path: routingPathConfig.basicUi.badges,
         component: BadgesComponent,
         data: {
             title: '徽章'
         }
     },
     {
-        path: 'progress-bar',
+        path: routingPathConfig.basicUi.progressBar,
         component: ProgressBarComponent,
         data: {
             title: '进度条'
         }
     },
     {
-        path: 'button-toggle',
+        path: routingPathConfig.basicUi.buttonToggle,
         component: ButtonToggleComponent,
         data: {
             title: '开关按钮'
         }
     },
     {
-        path: 'chips',
+        path: routingPathConfig.basicUi.chips,
         component: ChipsComponent,
         data: {
             title: '标签'
         }
     },
     {
-        path: 'expansion-panel',
+        path: routingPathConfig.basicUi.expansionPanel,
         component: ExpansionPanelComponent,
         data: {
             title: '可展开面板'
         }
     },
     {
-        path: 'tabs',
+        path: routingPathConfig.basicUi.tabs,
         component: TabsComponent,
         data: {
             title: '选项卡'
         }
     },
     {
-        path: 'stepper',
+        path: routingPathConfig.basicUi.stepper,
         component: StepperComponent,
         data: {
             title: '步进器'
         }
     },
     {
-        path: 'grid-list',
+        path: routingPathConfig.basicUi.gridList,
         component: GridListComponent,
         data: {
             title: '网格列表'
