@@ -8,7 +8,6 @@ import 'hammerjs';
 import { TranslateModule } from '@ngx-translate/core';
 import { NgForageModule, NgForageConfig, Driver } from 'ngforage';
 import { NgxPermissionsModule } from 'ngx-permissions';
-import { MaterialDesignFrameworkModule } from 'angular6-json-schema-form';
 
 import { NotaddModule } from '@notadd/notadd.module';
 import { NotaddMatIconsModule } from '@notadd/mat-icons/mat-icons.module';
@@ -39,7 +38,6 @@ import { environment } from '@env';
 
         TranslateModule.forRoot(),
         NgxPermissionsModule.forRoot(),
-        MaterialDesignFrameworkModule,
 
         /* @notadd modules */
         NotaddModule.forRoot(notaddConfig),

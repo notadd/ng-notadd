@@ -22,7 +22,8 @@ const routes: Routes = [
         path: routingPathConfig.advancedUi.jsonSchemaForm,
         component: JsonSchemaFormComponent,
         data: {
-            title: 'json schema form'
+            title: 'json schema form',
+            hasContentHeader: false
         }
     }
 ];

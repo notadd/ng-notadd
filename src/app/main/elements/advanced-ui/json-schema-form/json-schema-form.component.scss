@@ -1,0 +1,59 @@
+.demo-page-header {
+    margin-bottom: 12px;
+
+    .header-content {
+        line-height: 1.4em;
+        padding: 12px;
+
+        .menu-label {
+            margin-right: 12px;
+            font-weight: bold;
+        }
+    }
+}
+
+.ace_active-line {
+    background: none !important;
+}
+
+[ace-editor], .data-good, .data-bad {
+    border-radius: 3px;
+    padding: 6px;
+    border: 1px solid #ccc !important;
+}
+
+[ace-editor] {
+    background-color: rgb(253, 253, 253) !important;
+}
+
+.avoidwrap {
+    display: inline-block;
+}
+
+.data-good {
+    background-color: #dfd;
+}
+
+.data-bad {
+    background-color: #fcc;
+}
+
+.default-cursor:hover {
+    cursor: default;
+}
+
+.check-row {
+    margin-top: 8px;
+}
+
+.cdk-overlay-container .cdk-overlay-pane .mat-menu-panel {
+    max-width: 560px;
+}
+
+.debug {
+    border: 1px solid red !important;
+}
+
+.mat-input-container.mat-form-field {
+    width: 100%;
+}

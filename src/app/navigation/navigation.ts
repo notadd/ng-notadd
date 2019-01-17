@@ -436,6 +436,17 @@ export const navigation: Array<NotaddNavigationItem> = [
                             routingPathConfig.elements.advancedUi,
                             routingPathConfig.advancedUi.fileUpload
                         ]
+                    },
+                    {
+                        id: 'json-schema-form',
+                        title: 'json schema form',
+                        i18n: 'Navigation.JsonSchemaForm',
+                        type: 'item',
+                        url: [
+                            routingPathConfig.app.elements,
+                            routingPathConfig.elements.advancedUi,
+                            routingPathConfig.advancedUi.jsonSchemaForm
+                        ]
                     }
                 ]
             }
