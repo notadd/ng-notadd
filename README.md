@@ -54,17 +54,9 @@ Medium-Background solution based on Angular7 Material2
 
 ## Roadmap
 
-**0.15.0**
-- [x] Ordinary form
-- [x] data form
-- [x] Dynamic form
-- [x] excel import and export
-- [x] selected row and column export excel
-
-
 **0.16.0**
-- [ ] Progressive Application (PWA)
-- [ ] json generate form
+- [x] Progressive Application (PWA)
+- [x] json generate form
 
 **0.17.0**
 - [ ] built-in permission component
