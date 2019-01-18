@@ -78,5 +78,23 @@ export const routingPathConfig = {
     services: {
         default: '',
         excelExport: 'excel-export'
+    },
+
+    /* applications */
+    applications: {
+        default: '',
+        rolesPermissions: 'roles-permissions',
+        users: 'users'
+    },
+    rolesPermissions: {
+        default: '',
+        roles: 'roles',
+        role: 'roles/:id',
+        permission: 'permission',
+    },
+    users: {
+        default: '',
+        user: 'user',
+        userGroup: 'user-group'
     }
 };

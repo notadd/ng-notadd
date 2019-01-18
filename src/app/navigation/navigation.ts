@@ -466,18 +466,26 @@ export const navigation: Array<NotaddNavigationItem> = [
                 icon: 'lock',
                 children: [
                     {
-                        id: 'role',
+                        id: 'roles',
                         title: '角色',
                         i18n: 'Navigation.Role',
                         type: 'item',
-                        url: '/applications/roles-permissions/roles'
+                        url: [
+                            routingPathConfig.app.applications,
+                            routingPathConfig.applications.rolesPermissions,
+                            routingPathConfig.rolesPermissions.roles
+                        ]
                     },
                     {
                         id: 'permission',
                         title: '权限',
                         i18n: 'Navigation.Permission',
                         type: 'item',
-                        url: '/applications/roles-permissions/permissions'
+                        url: [
+                            routingPathConfig.app.applications,
+                            routingPathConfig.applications.rolesPermissions,
+                            routingPathConfig.rolesPermissions.permission
+                        ]
                     }
                 ]
             },
@@ -490,17 +498,25 @@ export const navigation: Array<NotaddNavigationItem> = [
                 children: [
                     {
                         id: 'user-group',
-                        title: '用户',
+                        title: '用户组',
                         i18n: 'Navigation.UserGroup',
                         type: 'item',
-                        url: '/applications/users/user-group'
+                        url: [
+                            routingPathConfig.app.applications,
+                            routingPathConfig.applications.users,
+                            routingPathConfig.users.userGroup
+                        ]
                     },
                     {
                         id: 'user',
-                        title: '用户组',
+                        title: '用户',
                         i18n: 'Navigation.User',
                         type: 'item',
-                        url: '/applications/users/user'
+                        url: [
+                            routingPathConfig.app.applications,
+                            routingPathConfig.applications.users,
+                            routingPathConfig.users.user
+                        ]
                     }
                 ]
             }

@@ -1,17 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+import { routingPathConfig } from '@config/routing-path.config';
 import { UserGroupComponent } from './user-group/user-group.component';
 import { UserComponent } from './user/user.component';
 
 const routes: Routes = [
     {
-        path: '',
-        redirectTo: 'user-group',
+        path: routingPathConfig.users.default,
+        redirectTo: routingPathConfig.users.userGroup,
         pathMatch: 'full',
     },
     {
-        path: 'user-group',
+        path: routingPathConfig.users.userGroup,
         component: UserGroupComponent,
         data: {
             title: '用户组',
@@ -19,10 +20,10 @@ const routes: Routes = [
         }
     },
     {
-        path: 'user',
+        path: routingPathConfig.users.user,
         component: UserComponent,
         data: {
-            title: '权限',
+            title: '用户',
             hasContentHeader: true
         }
     }

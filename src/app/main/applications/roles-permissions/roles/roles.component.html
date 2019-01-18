@@ -66,8 +66,8 @@
                 <ng-container matColumnDef="status">
                     <mat-header-cell *matHeaderCellDef mat-sort-header fxHide fxShow.gt-xs>状态</mat-header-cell>
                     <mat-cell *matCellDef="let element" fxHide fxShow.gt-xs>
-                        <mat-icon *ngIf="element.status" class="active-icon green-600 s-16">check_circle</mat-icon>
-                        <mat-icon *ngIf="!element.status" class="active-icon red-500 s-16">cancel</mat-icon>
+                        <mat-icon *ngIf="element.status" matTooltip="正常" matTooltipPosition="above" class="active-icon green-600 s-16">check_circle</mat-icon>
+                        <mat-icon *ngIf="!element.status" matTooltip="禁用" matTooltipPosition="above" class="active-icon red-500 s-16">cancel</mat-icon>
                     </mat-cell>
                 </ng-container>
 

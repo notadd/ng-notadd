@@ -12,6 +12,7 @@ import { TodoItemNode, TodoItemFlatNode, PermissionsChecklistDatabase } from './
 export interface PermissionType {
     value: string;
     label: string;
+    tabIndex: number;
 }
 
 @Component({
@@ -22,7 +23,7 @@ export interface PermissionType {
 export class PermissionsComponent implements OnInit {
 
     permissionType: Array<PermissionType>;
-    currentPermissionType: string;
+    currentPermissionType: PermissionType;
     roles: Array<Role>;
     currentRole: string;
     featurePermissions: Array<any>;
@@ -51,15 +52,18 @@ export class PermissionsComponent implements OnInit {
         this.permissionType = [
             {
                 value: 'page',
-                label: '页面权限'
+                label: '页面权限',
+                tabIndex: 0
             },
             {
                 value: 'data',
-                label: '数据权限'
+                label: '数据权限',
+                tabIndex: 1,
             },
             {
                 value: 'feature',
-                label: '功能权限'
+                label: '功能权限',
+                tabIndex: 2
             }
         ];
 
@@ -78,7 +82,7 @@ export class PermissionsComponent implements OnInit {
             }
         ];
 
-        this.currentPermissionType = (this.permissionType[0] as PermissionType).value;
+        this.currentPermissionType = this.permissionType[0];
 
         this.currentRole = (this.roles[0] as Role).id;
 
@@ -241,8 +245,9 @@ export class PermissionsComponent implements OnInit {
     ngOnInit() {
     }
 
-    onPermissionTypeItemClick(permissionType): void {
-        this.currentPermissionType = permissionType;
+    onPermissionTypeItemClick(item: PermissionType): void {
+        this.currentPermissionType = item;
+        console.log(this.currentPermissionType);
     }
 
     onRoleItemClick(roleId): void {
