@@ -1,0 +1,15 @@
+.mat-tab-group {
+    /* no mat label */
+    &[no-header] {
+        .mat-tab-header {
+            display: none !important;
+        }
+    }
+
+    /* body height 100% */
+    &[full-height-body] {
+        .mat-tab-body-wrapper {
+            height: 100%;
+        }
+    }
+}
