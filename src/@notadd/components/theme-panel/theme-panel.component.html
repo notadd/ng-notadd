@@ -1,108 +1,96 @@
 <div class="theme-options-panel" notaddPerfectScrollbar>
-    <div class="header mat-elevation-z2">
-
-        <span class="title" [translate]="'ThemePanel.Title'">主题选项</span>
-
-        <button mat-icon-button class="close-button" (click)="toggleSidebarOpen('themeOptionsPanel')">
-            <mat-icon>close</mat-icon>
-        </button>
-
-    </div>
-
     <form [formGroup]="form">
         <!-- layout style-->
-        <div class="group" formGroupName="layout">
+        <mat-tab-group formGroupName="layout" class="theme-panel" color="accent">
 
             <!-- layout width -->
-            <div class="group" fxHide fxShow.gt-xs>
+            <mat-tab *ngIf="!isMobile" label="{{'ThemePanel.LayoutWidth' | translate}}">
+                <div class="group">
 
-                <h2 class="mb-12" [translate]="'ThemePanel.LayoutWidth'">布局宽度</h2>
-                <mat-radio-group fxLayout="column" fxLayoutAlign="start start" formControlName="width">
-                    <mat-radio-button class="ml-12 mb-12" value="fullwidth">Fullwidth</mat-radio-button>
-                    <mat-radio-button class="ml-12 mb-12" value="boxed">Boxed</mat-radio-button>
-                </mat-radio-group>
+                    <h3 class="ml-12">{{'ThemePanel.LayoutWidth' | translate}}</h3>
+                    <mat-radio-group fxLayout="column" fxLayoutAlign="start start" formControlName="width">
+                        <mat-radio-button class="ml-12 mb-12" value="fullwidth">Fullwidth</mat-radio-button>
+                        <mat-radio-button class="ml-12 mb-12" value="boxed">Boxed</mat-radio-button>
+                    </mat-radio-group>
 
-            </div>
-
-            <mat-divider fxHide fxShow.gt-xs></mat-divider>
+                </div>
+            </mat-tab>
 
             <!-- toolbar -->
-            <div class="group mt-24" formGroupName="toolbar">
+            <mat-tab label="{{'ThemePanel.Toolbar.Title' | translate}}">
+                <div class="group" formGroupName="toolbar">
 
-                <h2 class="mb-12" [translate]="'ThemePanel.Toolbar.Title'">工具栏</h2>
+                    <h3 class="ml-12" fxHide fxShow.gt-xs fxLayout="row nowrap" fxLayoutAlign="space-between center">
+                        <span>{{'ThemePanel.Toolbar.Hidden' | translate}}</span>
+                        <mat-slide-toggle class="mr-12" formControlName="hidden"></mat-slide-toggle>
+                    </h3>
 
-                <mat-slide-toggle class="ml-12" formControlName="hidden" [translate]="'ThemePanel.Toolbar.Hidden'" fxHide fxShow.gt-xs>
-                    隐藏
-                </mat-slide-toggle>
+                    <h3 class="ml-12" fxHide fxShow.gt-xs>{{'ThemePanel.Toolbar.Position' | translate}}</h3>
+                    <mat-radio-group class="ml-12" fxLayout="column" fxLayoutAlign="start start" formControlName="position" fxHide fxShow.gt-xs>
+                        <mat-radio-button class="mb-12" value="above">Above</mat-radio-button>
+                        <mat-radio-button class="mb-12" value="below-static">Below Static</mat-radio-button>
+                        <mat-radio-button class="mb-12" value="below-fixed">Below Fixed</mat-radio-button>
+                    </mat-radio-group>
 
-                <h3 class="ml-12 mt-24" [translate]="'ThemePanel.Toolbar.Position'" fxHide fxShow.gt-xs>位置:</h3>
-                <mat-radio-group fxLayout="column" fxLayoutAlign="start start" formControlName="position" fxHide fxShow.gt-xs>
-                    <mat-radio-button class="ml-12 mb-12" value="above">Above</mat-radio-button>
-                    <mat-radio-button class="ml-12 mb-12" value="below-static">Below Static</mat-radio-button>
-                    <mat-radio-button class="ml-12 mb-12" value="below-fixed">Below Fixed</mat-radio-button>
-                </mat-radio-group>
+                    <h3 class="ml-12 mt-16">{{'ThemePanel.Toolbar.Background' | translate}}</h3>
+                    <notadd-material-color-picker class="ml-12" formControlName="background">
+                    </notadd-material-color-picker>
 
-                <h3 class="ml-12 mt-24 mb-8" [translate]="'ThemePanel.Toolbar.Background'">背景颜色:</h3>
-                <notadd-material-color-picker class="ml-12 mb-16" formControlName="background">
-                </notadd-material-color-picker>
-
-            </div>
-
-            <mat-divider></mat-divider>
-
-            <!-- footer -->
-            <div class="group mt-24" formGroupName="footer">
-
-                <h2 class="mb-12" [translate]="'ThemePanel.Footer.Title'">页脚</h2>
-
-                <mat-slide-toggle class="ml-12" formControlName="hidden" [translate]="'ThemePanel.Footer.Hidden'">
-                    隐藏
-                </mat-slide-toggle>
-
-                <h3 class="ml-12 mt-24" [translate]="'ThemePanel.Footer.Position'" fxHide fxShow.gt-xs>位置:</h3>
-                <mat-radio-group fxLayout="column" fxLayoutAlign="start start" formControlName="position" fxHide fxShow.gt-xs>
-                    <mat-radio-button class="ml-12 mb-12" value="above">Above</mat-radio-button>
-                    <mat-radio-button class="ml-12 mb-12" value="below-static">Below Static</mat-radio-button>
-                    <mat-radio-button class="ml-12 mb-12" value="below-fixed">Below Fixed</mat-radio-button>
-                </mat-radio-group>
-
-                <h3 class="ml-12 mt-24 mb-8" [translate]="'ThemePanel.Footer.Background'">背景颜色:</h3>
-                <notadd-material-color-picker class="ml-12 mb-16" formControlName="background">
-                </notadd-material-color-picker>
-
-            </div>
-
-            <mat-divider></mat-divider>
+                </div>
+            </mat-tab>
 
             <!-- navbar -->
-            <div class="group mt-24" formGroupName="navbar">
+            <mat-tab label="{{'ThemePanel.Navbar.Title' | translate}}">
+                <div class="group" formGroupName="navbar">
 
-                <h2 class="mb-12" [translate]="'ThemePanel.Navbar.Title'">导航栏</h2>
+                    <h3 class="ml-12" fxHide fxShow.gt-xs fxLayout="row nowrap" fxLayoutAlign="space-between center">
+                        <span>{{'ThemePanel.Navbar.Hidden' | translate}}</span>
+                        <mat-slide-toggle class="mr-12" formControlName="hidden"></mat-slide-toggle>
+                    </h3>
 
-                <mat-slide-toggle class="ml-12" formControlName="hidden" [translate]="'ThemePanel.Navbar.Hidden'">
-                    隐藏
-                </mat-slide-toggle>
+                    <h3 class="ml-12" fxLayout="row nowrap" fxLayoutAlign="space-between center">
+                        <span>{{'ThemePanel.Navbar.Collapsed' | translate}}</span>
+                        <mat-slide-toggle class="mr-12" formControlName="collapsed"></mat-slide-toggle>
+                    </h3>
 
-                <mat-slide-toggle class="ml-12 mt-24" formControlName="collapsed" [translate]="'ThemePanel.Navbar.Collapsed'" fxHide fxShow.gt-xs>
-                    折叠
-                </mat-slide-toggle>
+                    <h3 class="ml-12" fxHide fxShow.gt-xs>{{'ThemePanel.Navbar.Position' | translate}}</h3>
+                    <mat-radio-group class="ml-12" fxLayout="column" fxLayoutAlign="start start" formControlName="position" fxHide fxShow.gt-xs>
+                        <mat-radio-button class="mb-12" value="start">Left</mat-radio-button>
+                        <mat-radio-button class="mb-12" value="end">Right</mat-radio-button>
+                    </mat-radio-group>
 
-                <h3 class="ml-12 mt-24" [translate]="'ThemePanel.Navbar.Position'" fxHide fxShow.gt-xs>位置:</h3>
-                <mat-radio-group class="ml-12" fxLayout="column" fxLayoutAlign="start start" formControlName="position" fxHide fxShow.gt-xs>
-                    <mat-radio-button class="mb-16" value="start">Left</mat-radio-button>
-                    <mat-radio-button class="mb-16" value="end">Right</mat-radio-button>
-                </mat-radio-group>
+                    <h3 class="ml-12 mt-16">{{'ThemePanel.Navbar.Color' | translate}}</h3>
+                    <div>
+                        <notadd-material-color-picker class="ml-12 mb-16" formControlName="secondaryBackground"></notadd-material-color-picker>
+                        <notadd-material-color-picker class="ml-12 mb-16" formControlName="background"></notadd-material-color-picker>
+                    </div>
 
-                <h3 class="ml-12 mt-24 mb-8" [translate]="'ThemePanel.Navbar.Color'">颜色:</h3>
-                <div fxFlex="row" fxLayoutAlign="star center">
-                    <notadd-material-color-picker class="ml-12 mb-16" formControlName="secondaryBackground">
-                    </notadd-material-color-picker>
-                    <notadd-material-color-picker class="ml-12 mb-16" formControlName="background">
-                    </notadd-material-color-picker>
                 </div>
-            </div>
 
-        </div>
+            </mat-tab>
+
+            <!-- footer -->
+            <mat-tab label="{{'ThemePanel.Footer.Title' | translate}}">
+                <div class="group mt-24" formGroupName="footer">
+
+                    <h3 class="ml-12" fxLayout="row nowrap" fxLayoutAlign="space-between center">
+                        <span>{{'ThemePanel.Footer.Hidden' | translate}}</span>
+                        <mat-slide-toggle class="mr-12" formControlName="hidden"></mat-slide-toggle>
+                    </h3>
+
+                    <h3 class="ml-12" fxHide fxShow.gt-xs>{{'ThemePanel.Footer.Position' | translate}}</h3>
+                    <mat-radio-group class="ml-12" fxLayout="column" fxLayoutAlign="start start" formControlName="position" fxHide fxShow.gt-xs>
+                        <mat-radio-button class="mb-12" value="above">Above</mat-radio-button>
+                        <mat-radio-button class="mb-12" value="below-static">Below Static</mat-radio-button>
+                        <mat-radio-button class="mb-12" value="below-fixed">Below Fixed</mat-radio-button>
+                    </mat-radio-group>
+
+                    <h3 class="ml-12 mt-16">{{'ThemePanel.Footer.Background' | translate}}</h3>
+                    <notadd-material-color-picker class="ml-12 mb-16" formControlName="background"></notadd-material-color-picker>
+
+                </div>
+            </mat-tab>
+        </mat-tab-group>
 
     </form>
 </div>

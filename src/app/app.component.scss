@@ -8,6 +8,16 @@
     height: 100%;
     min-width: 0;
 
+    .theme-options-sidebar {
+        margin-top: 64px;
+        margin-bottom: 64px;
+
+        @include media-breakpoint-down('xs') {
+            margin-top: 0;
+            margin-bottom: 56px;
+        }
+    }
+
     .theme-options-button {
         position: absolute;
         top: 64px;

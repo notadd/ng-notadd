@@ -10,7 +10,8 @@ import {
     MatOptionModule,
     MatRadioModule,
     MatSelectModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    MatTabsModule
 } from '@angular/material';
 import { TranslateModule } from '@ngx-translate/core';
 
@@ -36,6 +37,7 @@ import { NotaddThemePanelComponent } from './theme-panel.component';
         MatRadioModule,
         MatSelectModule,
         MatSlideToggleModule,
+        MatTabsModule,
 
         TranslateModule.forChild(),
 

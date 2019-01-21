@@ -1,7 +1,9 @@
 import { Component, HostBinding, OnDestroy, OnInit, Renderer2 } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+
 import { Subject } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
+import { takeUntil, map } from 'rxjs/operators';
 
 import { notaddAnimations } from '@notadd/animations';
 import { NotaddConfigService } from '@notadd/services/config.service';
@@ -22,6 +24,7 @@ export class NotaddThemePanelComponent implements OnInit, OnDestroy {
 
     notaddConfig: any;
     form: FormGroup;
+    isMobile: boolean;
 
     @HostBinding('class.bar-closed')
     barClosed: boolean;
@@ -33,7 +36,8 @@ export class NotaddThemePanelComponent implements OnInit, OnDestroy {
         private renderer: Renderer2,
         private configService: NotaddConfigService,
         private sidebarService: NotaddSidebarService,
-        private translationService: NotaddTranslationService
+        private translationService: NotaddTranslationService,
+        private breakpointObserver: BreakpointObserver
     ) {
         this.barClosed = true;
 
@@ -79,6 +83,15 @@ export class NotaddThemePanelComponent implements OnInit, OnDestroy {
                 this.form.setValue(config, {emitEvent: false});
             });
 
+        this.breakpointObserver.observe([ Breakpoints.Handset ])
+            .pipe(
+                takeUntil(this.ngUnsubscribe),
+                map(match => match.matches)
+            )
+            .subscribe(matches => {
+                this.isMobile = matches;
+            });
+
         this.form.valueChanges
             .pipe(takeUntil(this.ngUnsubscribe))
             .subscribe((config) => {
@@ -91,7 +104,6 @@ export class NotaddThemePanelComponent implements OnInit, OnDestroy {
     ngOnDestroy(): void {
         this.ngUnsubscribe.next();
         this.ngUnsubscribe.complete();
-
     }
 
     private resetFormValues(type): void {

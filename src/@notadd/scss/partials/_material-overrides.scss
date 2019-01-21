@@ -12,4 +12,16 @@
             height: 100%;
         }
     }
+
+    /* theme panel tab */
+    &.theme-panel {
+        .mat-tab-label {
+            min-width: 80px;
+            padding: 5px;
+
+            @include media-breakpoint-down('xs') {
+                min-width: 70px;
+            }
+        }
+    }
 }

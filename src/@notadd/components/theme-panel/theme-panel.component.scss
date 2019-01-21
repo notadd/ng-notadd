@@ -13,78 +13,27 @@
     display: flex;
     overflow: hidden;
 
-    .theme-options-panel {
-        position: relative;
+    .group {
         display: flex;
-        flex-direction: column;
         flex: 1 0 auto;
-        overflow: auto;
-        -webkit-overflow-scrolling: touch;
-    }
-
-    .header {
-        min-height: 64px;
-        padding: 0 24px;
-        display: flex;
-        flex: 0 1 auto;
-        align-items: center;
-        justify-content: space-between;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.12);
-        position: sticky;
-        top: 0;
-        right: 0;
-        background: #FFF;
-        z-index: 2;
-
-        @include media-breakpoint-down('xs') {
-            min-height: 56px;
-            padding: 0;
-        }
-
-        .title {
-            font-size: 20px;
-            font-weight: 500;
-            padding-left: 4px;
-
-            @include media-breakpoint-down('xs') {
-                font-size: 16px;
-                padding-left: 12px;
-            }
-        }
-    }
-
-    form {
-        display: flex;
-        flex: 1 1 auto;
         flex-direction: column;
-        padding: 0 24px;
+        margin: 12px;
 
-        .group {
-            display: flex;
-            flex: 1 0 auto;
-            flex-direction: column;
-            margin: 16px 0;
+        h3 {
+            font-size: 16px;
+            font-weight: 500;
+            color: rgba(0, 0, 0, 0.54);
+            margin: 10px 0 16px 0;
+            padding: 0;
 
-            h2 {
-                margin: 0;
-                padding: 0 8px;
-                border-left: 4px solid #03A9F4;
-                font-size: 16px;
-                font-weight: 500;
-                color: rgba(0, 0, 0, 0.54);
-            }
-
-            h3 {
-                font-size: 14px;
-                font-weight: 500;
-                color: rgba(0, 0, 0, 0.54);
-                margin: 24px 0 16px 0;
-                padding: 0;
-
-                &:first-of-type {
-                    margin-top: 0;
-                }
+            &:first-of-type {
+                margin-top: 0;
             }
         }
+
+        .mat-radio-button {
+            font-size: 14px;
+        }
     }
+
 }
