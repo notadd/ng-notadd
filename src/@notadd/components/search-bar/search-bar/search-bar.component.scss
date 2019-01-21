@@ -5,7 +5,7 @@
     .notadd-search-bar {
         display: flex;
         flex: 0 1 auto;
-        min-width: 64px;
+        min-width: 48px;
         height: 64px;
         font-size: 13px;
 
@@ -22,11 +22,10 @@
             .notadd-search-bar-expander,
             .notadd-search-bar-collapser {
                 cursor: pointer;
-                padding: 0 20px;
                 margin: 0;
-                width: 64px !important;
-                height: 64px !important;
-                line-height: 64px !important;
+                width: 48px !important;
+                height: 48px !important;
+                line-height: 48px !important;
 
                 @include media-breakpoint-down('xs') {
                     height: 56px !important;

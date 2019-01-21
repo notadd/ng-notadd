@@ -33,8 +33,8 @@
     }
 
     .toolbar-button {
-        min-width: 64px;
-        height: 64px;
+        min-width: 48px;
+        height: 48px;
 
         @include media-breakpoint-down('xs') {
             min-width: 56px;
@@ -62,16 +62,6 @@
 
         .more-divider {
             width: 100%;
-        }
-
-        .avatar {
-            $mobileAviatarSize: 30px;
-            @include media-breakpoint-down('xs') {
-                width: $mobileAviatarSize;
-                min-width: $mobileAviatarSize;
-                height: $mobileAviatarSize;
-                line-height: $mobileAviatarSize;
-            }
         }
     }
 }
