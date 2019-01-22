@@ -18,9 +18,10 @@ install:
     - sudo chmod +x /usr/bin/upx
     - cd ./dist 
     - upx login ng-notadd "$NG" "$UPYUN"
-    - upx rm -a /
-    - sleep(30)
-    - upx put ./   /
+    - upx sync ./ /
+#     - upx rm -a /
+#     - sleep(30)
+#     - upx put ./   /
 script:
     - cd ../
     - npm run test
