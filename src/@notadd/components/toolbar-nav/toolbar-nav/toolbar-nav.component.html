@@ -1,0 +1,44 @@
+<button class="cursor-pointer" mat-button cdk-overlay-origin (click)="showPanel()">
+    <div fxLayout="row" fxLayoutAlign="center center">
+        <span class="secondary-text">菜单</span>
+        <mat-icon class="s-20">keyboard_arrow_down</mat-icon>
+    </div>
+</button>
+<ng-template cdk-portal #navPanelTemplate="cdkPortal">
+    <div [@slideInTop]>
+        <div class="nav-panel mat-elevation-z8" fxLayout="row nowrap" fxLayoutAlign="start start">
+
+            <mat-nav-list notaddPerfectScrollbar [notaddPerfectScrollbarOptions]="{suppressScrollX: true}">
+                <mat-list-item class="item-pl-30" (click)="selectNav(groupItem)" [ngClass]="{'active': groupItem.id === currentNavItem.id}" *ngFor="let groupItem of navigation">{{groupItem.title}}</mat-list-item>
+            </mat-nav-list>
+
+            <div class="nav-container" fxLayout="row nowrap" fxLayoutAlign="start start"
+                 notaddPerfectScrollbar [notaddPerfectScrollbarOptions]="{suppressScrollX: true}">
+                <mat-nav-list class="mr-36" *ngFor="let collapseItem of currentNavItem.children">
+                    <div class="list-title">{{collapseItem.title}}</div>
+                    <mat-divider></mat-divider>
+
+                    <ng-container *ngIf="collapseItem.type !== 'item'; else notItemType">
+                        <a mat-list-item
+                           *ngFor="let item of collapseItem.children"
+                           [routerLink]="[item.url | path: item.urlParam]"
+                           [routerLinkActive]="['active']"
+                           class="item-padding-0">
+                            {{item.title}}
+                        </a>
+                    </ng-container>
+
+                    <ng-template #notItemType>
+                        <a [routerLink]="[collapseItem.url | path: collapseItem.urlParam]"
+                           [routerLinkActive]="['active']"
+                           class="item-padding-0"
+                           mat-list-item>
+                            {{collapseItem.title}}
+                        </a>
+                    </ng-template>
+                </mat-nav-list>
+            </div>
+
+        </div>
+    </div>
+</ng-template>

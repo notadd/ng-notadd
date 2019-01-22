@@ -25,3 +25,17 @@
         }
     }
 }
+
+.mat-list-item {
+    &.item-padding-0 {
+        .mat-list-item-content {
+            padding: 0 !important;
+        }
+    }
+
+    &.item-pl-30 {
+        .mat-list-item-content {
+            padding-left: 30px !important;
+        }
+    }
+}

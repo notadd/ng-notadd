@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { MatButtonModule, MatIconModule, MatMenuModule, MatToolbarModule, MatDividerModule } from '@angular/material';
 
 import { NotaddSharedModule } from '@notadd/shared.module';
-import { NotaddSearchBarModule } from '@notadd/components';
+import { NotaddSearchBarModule, NotaddToolbarNavModule } from '@notadd/components';
 
 import { ToolbarComponent } from './toolbar.component';
 
@@ -20,7 +20,8 @@ import { ToolbarComponent } from './toolbar.component';
         MatDividerModule,
 
         NotaddSharedModule,
-        NotaddSearchBarModule
+        NotaddSearchBarModule,
+        NotaddToolbarNavModule
     ],
     declarations: [ ToolbarComponent ],
     exports: [ ToolbarComponent ]

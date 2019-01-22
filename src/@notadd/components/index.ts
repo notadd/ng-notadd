@@ -7,3 +7,4 @@ export * from './navigation/navigation.module';
 export * from './breadcrumb/breadcrumb.module';
 export * from './table-export/table-export.module';
 export * from './file-upload/file-upload.module';
+export * from './toolbar-nav/toolbar-nav.module';

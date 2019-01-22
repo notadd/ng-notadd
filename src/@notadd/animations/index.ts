@@ -155,8 +155,8 @@ export const notaddAnimations = [
             display  : 'none'
         })),
         state('*', style({
+            display  : 'flex',
             transform: 'translateY(0)',
-            display  : 'flex'
         })),
         transition('void => *', animate('300ms')),
         transition('* => void', animate('300ms'))

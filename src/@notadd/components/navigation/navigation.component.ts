@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, ViewEncapsulation, Inject, Renderer2, ComponentFactoryResolver, ApplicationRef, ViewContainerRef, Injector } from '@angular/core';
+import { Component, Input, OnInit, OnDestroy, ViewEncapsulation, Inject, Renderer2, ComponentFactoryResolver, ApplicationRef, ViewContainerRef, Injector } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { CdkPortal, DomPortalOutlet } from '@angular/cdk/portal';
 import { Subject } from 'rxjs';
@@ -12,8 +12,7 @@ import { NotaddNavigationService } from '@notadd/components/navigation/navigatio
     styleUrls: ['./navigation.component.scss'],
     encapsulation: ViewEncapsulation.None
 })
-export class NotaddNavigationComponent implements OnInit {
-
+export class NotaddNavigationComponent implements OnInit, OnDestroy {
     @Input()
     navigation: any;
 
@@ -59,5 +58,10 @@ export class NotaddNavigationComponent implements OnInit {
 
     addTemplatePortal() {
         // this.domPortalOutlet.attachTemplatePortal();
+    }
+
+    ngOnDestroy(): void {
+        this.ngUnsubscribe.next();
+        this.ngUnsubscribe.complete();
     }
 }
