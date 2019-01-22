@@ -15,7 +15,10 @@ export class NotaddExcelExportService {
     }
 
     public exportNormal(dataSource, excelFileName, headers?, sheetNames?) {
-        this.exportExcel(dataSource, excelFileName, Object.keys(headers), sheetNames);
+        const exportHeaders = Object.keys(headers).map(header => {
+            return headers[header];
+        });
+        this.exportExcel(dataSource, excelFileName, exportHeaders, sheetNames);
     }
 
     exportSpecified(dataSource, excelFileName, headers?, sheetNames?) {

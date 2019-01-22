@@ -45,7 +45,7 @@ export class NotaddTableExportPickerComponent implements OnInit {
         });
     }
 
-    get headers() { return this.pickerForm.get('headers'); }
+    get headers() { return this.pickerForm.get('headers') as FormArray; }
     get row() { return this.pickerForm.get('row'); }
     get length() { return this.row.get('length'); }
     get type() { return this.row.get('type'); }

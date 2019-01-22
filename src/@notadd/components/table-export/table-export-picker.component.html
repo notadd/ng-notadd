@@ -2,7 +2,7 @@
 <mat-dialog-content class="mb-12">
     <form [formGroup]="pickerForm">
         <div class="mb-12 h3">表头</div>
-        <label class="mr-16" formArrayName="headers" *ngFor="let header of pickerForm.controls.headers.controls; let i = index">
+        <label class="mr-16" formArrayName="headers" *ngFor="let header of headers?.controls; let i = index">
             <mat-checkbox class="accent" [formControlName]="i">
                 {{optionHeaders[i].label}}
             </mat-checkbox>
