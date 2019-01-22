@@ -1,5 +1,5 @@
 <div class="theme-options-panel" notaddPerfectScrollbar>
-    <form [formGroup]="form">
+    <form [formGroup]="form" class="h-60-p">
         <!-- layout style-->
         <mat-tab-group formGroupName="layout" class="theme-panel" color="accent">
 
@@ -91,6 +91,8 @@
                 </div>
             </mat-tab>
         </mat-tab-group>
-
     </form>
+    <div fxLayout="row wrap" fxLayoutAlign="center center">
+        <button class="w-80-p" (click)="resetConfig()" mat-raised-button color="accent">重置主题配置</button>
+    </div>
 </div>

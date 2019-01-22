@@ -138,4 +138,8 @@ export class NotaddThemePanelComponent implements OnInit, OnDestroy {
     toggleSidebarOpen(key): void {
         this.sidebarService.getSidebar(key).toggleOpen();
     }
+
+    resetConfig(): void {
+        this.configService.resetToDefaults();
+    }
 }

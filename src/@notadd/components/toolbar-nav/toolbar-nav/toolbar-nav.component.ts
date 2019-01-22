@@ -81,7 +81,9 @@ export class NotaddToolbarNavComponent implements OnInit, OnDestroy {
 
         /* 屏幕断点切换时隐藏 */
         this.breakpointObserver.observe([ Breakpoints.Handset, Breakpoints.Web ])
-            .subscribe(this.overlayRef.detach);
+            .subscribe(_ => {
+                this.overlayRef && this.overlayRef.hasAttached() && this.overlayRef.detach();
+            });
     }
 
     showPanel() {

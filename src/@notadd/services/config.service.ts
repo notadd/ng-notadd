@@ -83,5 +83,6 @@ export class NotaddConfigService {
     /* 重置为默认config */
     resetToDefaults(): void {
         this.configSubject.next(_.cloneDeep(this.defaultConfig));
+        this.setStorageConfig(_.cloneDeep(this.defaultConfig));
     }
 }
