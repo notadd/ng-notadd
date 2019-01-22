@@ -46,17 +46,14 @@ export class NotaddToolbarNavComponent implements OnInit, OnDestroy {
             .pipe(takeUntil(this.ngUnsubscribe))
             .subscribe(() => {
                 this.navigation = this.navigationService.getCurrentNavigation();
+                this.setCurrentNavItem(window.location.href);
             });
 
         // 设置当前导航
         this.router.events
             .pipe(filter(event => event instanceof NavigationEnd))
             .subscribe((event: NavigationEnd) => {
-                this.navigation.map((item) => {
-                    if (event.url.includes(item.id)) {
-                        this.currentNavItem = item;
-                    }
-                });
+                this.setCurrentNavItem(event.url);
             });
 
         const config = new OverlayConfig({
@@ -84,6 +81,14 @@ export class NotaddToolbarNavComponent implements OnInit, OnDestroy {
             .subscribe(_ => {
                 this.overlayRef && this.overlayRef.hasAttached() && this.overlayRef.detach();
             });
+    }
+
+    private setCurrentNavItem(url) {
+        this.navigation.map((item) => {
+            if (url.includes(item.id)) {
+                this.currentNavItem = item;
+            }
+        });
     }
 
     showPanel() {
