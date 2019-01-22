@@ -79,7 +79,7 @@ navbar {
             text-align: center;
 
             @include media-breakpoint-down('xs') {
-                @include mat-icon-size(30px);
+                font-size: 30px !important;
             }
 
             width: 100% !important;
