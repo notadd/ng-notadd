@@ -19,6 +19,7 @@ install:
     - cd ./dist 
     - upx login ng-notadd "$NG" "$UPYUN"
     - upx rm -a /
+    - sleep(30)
     - upx put ./   /
 script:
     - cd ../
