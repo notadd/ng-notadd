@@ -12,9 +12,9 @@
                 <mat-list-item class="item-pl-30" (click)="selectNav(groupItem)" [ngClass]="{'active': groupItem.id === currentNavItem.id}" *ngFor="let groupItem of navigation">{{groupItem.title}}</mat-list-item>
             </mat-nav-list>
 
-            <div class="nav-container" fxLayout="row nowrap" fxLayoutAlign="start start"
+            <div class="nav-container" fxLayout.gt-xs="row nowrap" fxLayoutAlign.gt-xs="start start"
                  notaddPerfectScrollbar [notaddPerfectScrollbarOptions]="{suppressScrollX: true}">
-                <mat-nav-list class="mr-36" *ngFor="let collapseItem of currentNavItem.children">
+                <mat-nav-list [ngClass.xs]="'mb-12'" [ngClass.gt-xs]="'mr-36'" *ngFor="let collapseItem of currentNavItem.children">
                     <div class="list-title">{{collapseItem.title}}</div>
                     <mat-divider></mat-divider>
 

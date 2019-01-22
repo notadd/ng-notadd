@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy, ViewChild, ViewContainerRef, Input } from
 import { NavigationEnd, Router } from '@angular/router';
 import { CdkOverlayOrigin, Overlay, OverlayConfig, OverlayRef } from '@angular/cdk/overlay';
 import { Portal, TemplatePortalDirective } from '@angular/cdk/portal';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Subject } from 'rxjs';
 import { takeUntil, filter } from 'rxjs/operators';
 
@@ -31,7 +32,8 @@ export class NotaddToolbarNavComponent implements OnInit, OnDestroy {
     constructor(
         private overlay: Overlay,
         private navigationService: NotaddNavigationService,
-        private router: Router
+        private router: Router,
+        private breakpointObserver: BreakpointObserver
     ) {
         this.ngUnsubscribe = new Subject<any>();
     }
@@ -76,6 +78,10 @@ export class NotaddToolbarNavComponent implements OnInit, OnDestroy {
         this.overlayRef.backdropClick().subscribe(() => {
             this.overlayRef.detach();
         });
+
+        /* 屏幕断点切换时隐藏 */
+        this.breakpointObserver.observe([ Breakpoints.Handset, Breakpoints.Web ])
+            .subscribe(this.overlayRef.detach);
     }
 
     showPanel() {

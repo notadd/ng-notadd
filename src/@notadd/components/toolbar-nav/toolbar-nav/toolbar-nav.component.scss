@@ -1,8 +1,15 @@
+@import 'src/@notadd/scss/notadd';
+
 .nav-panel{
     background-color: #FFF;
     margin-top: 25px;
     min-height: 430px;
     min-width: 800px;
+
+    @include media-breakpoint('xs') {
+        height: 430px;
+        min-width: 338px;
+    }
 
     &>.mat-nav-list {
         height: 100%;
@@ -22,9 +29,18 @@
     .nav-container {
         padding: 20px;
 
+        @include media-breakpoint('xs') {
+            height: 100%;
+            overflow: auto;
+        }
+
         .mat-nav-list {
             min-width: 140px;
             overflow: hidden;
+
+            @include media-breakpoint('xs') {
+                min-width: 155px;
+            }
 
             .list-title {
                 padding: 5px 0 8px 0;
