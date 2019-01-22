@@ -1,6 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
-import { FormBuilder, FormControl, FormGroup, Validators, AbstractControl, ValidatorFn } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, FormArray, Validators, AbstractControl, ValidatorFn } from '@angular/forms';
 import { filter } from 'rxjs/operators';
 
 import { NotaddUtils } from '@notadd/utils';
@@ -21,6 +21,7 @@ export class NotaddTableExportPickerComponent implements OnInit {
         value: string,
         label: string
     }> = [];
+
     constructor(
         public dialogRef: MatDialogRef<NotaddTableExportPickerComponent>,
         @Inject(MAT_DIALOG_DATA) public data: DialogData,
@@ -36,26 +37,31 @@ export class NotaddTableExportPickerComponent implements OnInit {
 
     ngOnInit() {
         this.pickerForm = this.formBuilder.group({
-            headers: [Object.keys(this.data.headers), noEmpty],
+            headers: new FormArray(this.optionHeaders.map(_ => new FormControl(true)), noEmpty()),
             row: this.formBuilder.group({
                 type: ['all', Validators.required],
                 length: ['']
             }, { validator: rowValidator(this.data.rowLength) })
         });
     }
+
     get headers() { return this.pickerForm.get('headers'); }
     get row() { return this.pickerForm.get('row'); }
     get length() { return this.row.get('length'); }
     get type() { return this.row.get('type'); }
     get result(): DialogData {
+        const selectedHeaderValues = this.pickerForm.value.headers
+            .map((v, i) => v ? this.optionHeaders[i].value : void (0))
+            .filter(v => v !== void (0));
+
         return {
-            headers: this.headers.value,
+            headers: selectedHeaderValues,
             rowLength: this.type.value === 'all' ? this.data.rowLength : this.length.value
         };
     }
 
     cancel(): void {
-        this.dialogRef.close();
+        this.dialogRef.close(false);
     }
 
     onLengthFocus() {
@@ -69,8 +75,16 @@ export class NotaddTableExportPickerComponent implements OnInit {
     }
 }
 
-export const noEmpty = (control: AbstractControl): {[propName: string]: boolean} => {
-    return !!control.value.length ? void (0) : { empty: true };
+export const noEmpty = (): ValidatorFn => {
+    return (control: FormArray): {[propName: string]: boolean} => {
+        const totalSelected = control.controls
+            // get a list of checkbox values (boolean)
+            .map(control => control.value)
+            // total up the number of checked checkboxes
+            .reduce((prev, next) => next ? prev + next : prev, 0);
+
+        return totalSelected > 0 ? void (0) : { empty: true };
+    };
 };
 
 export const rowValidator = (maxLength: number): ValidatorFn => {

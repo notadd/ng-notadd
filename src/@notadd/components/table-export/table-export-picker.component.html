@@ -2,12 +2,11 @@
 <mat-dialog-content class="mb-12">
     <form [formGroup]="pickerForm">
         <div class="mb-12 h3">表头</div>
-        <mat-button-toggle-group multiple formControlName="headers">
-            <mat-button-toggle *ngFor="let header of optionHeaders" class="accent" [value]="header.value">
-                <mat-icon color="accent" *ngIf="headers.value.includes(header.value)">check</mat-icon>
-                {{header.label}}
-            </mat-button-toggle>
-        </mat-button-toggle-group>
+        <label class="mr-16" formArrayName="headers" *ngFor="let header of pickerForm.controls.headers.controls; let i = index">
+            <mat-checkbox class="accent" [formControlName]="i">
+                {{optionHeaders[i].label}}
+            </mat-checkbox>
+        </label>
         <mat-error class="mt-12" *ngIf="headers.errors?.empty">至少选择一项</mat-error>
 
         <div class="mt-28 mb-12 h3">行数</div>

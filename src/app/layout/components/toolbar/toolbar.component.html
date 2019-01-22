@@ -94,7 +94,8 @@
 <!-- user -->
 <ng-template #user>
     <button mat-button [matMenuTriggerFor]="userMenu"
-            class="toolbar-button">
+            class="toolbar-button"
+            [ngClass.gt-xs]="'h-64'">
         <div fxLayout="row" fxLayoutAlign="center center">
             <img class="avatar" src="assets/images/avatars/tianhun.jpg">
             <span class="secondary-text">天魂</span>
@@ -129,6 +130,7 @@
 <ng-template #language>
     <button mat-button
             class="toolbar-button"
+            [ngClass.gt-xs]="'h-64'"
             [matMenuTriggerFor]="languageMenu">
         <div fxLayout="row" fxLayoutAlign="center center">
             <mat-icon class="s-20 mr-4 secondary-text">language</mat-icon>

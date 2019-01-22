@@ -27,6 +27,8 @@ export class NotaddExcelExportService {
         });
 
         dialogRef.afterClosed().subscribe(result => {
+            if (!result) { return; }
+
             const maxLength = dataSource.length;
             const rows = result.rowLength === maxLength ? maxLength : NotaddUtils.rowRangeTextToRowList(result.rowLength, maxLength) as Array<number>;
             const sheet = this.pickSheet(dataSource, rows, result.headers);

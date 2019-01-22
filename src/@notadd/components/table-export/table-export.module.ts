@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
     MatDialogModule,
-    MatButtonToggleModule,
+    MatCheckboxModule,
     MatIconModule,
     MatDividerModule,
     MatRadioModule,
@@ -24,7 +24,7 @@ import { NotaddTableExportPickerComponent } from './table-export-picker.componen
         FormsModule,
         ReactiveFormsModule,
         MatDialogModule,
-        MatButtonToggleModule,
+        MatCheckboxModule,
         MatIconModule,
         MatDividerModule,
         MatRadioModule,
