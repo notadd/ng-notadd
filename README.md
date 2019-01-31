@@ -54,26 +54,25 @@ Medium-Background solution based on Angular7 Material2
 
 ## Roadmap
 
-**0.16.0**
-- [x] Progressive Application (PWA)
-- [x] json generate form
 
 **0.17.0**
-- [ ] built-in permission component
+- [x] screenshot generation
+
 
 **0.18.0**
 - [ ] component phone end compatible
+- [ ] firebase (not available domestically) or other alternative support
 
 
 **0.19.0**
-- [ ] screenshot generation
-- [ ] firebase (not available domestically) or other alternative support
-
-**0.20.0**
 - [ ] DIY Dashboard
 - [ ] JSON generates a simple dashboard
 
+**0.20.0**
+- [ ] 2K/4K screen adaptation
+
 **0.21.0**
+- [ ] built-in permission component
 - [ ] Preliminary e2e unit test
 
 **1.0**
