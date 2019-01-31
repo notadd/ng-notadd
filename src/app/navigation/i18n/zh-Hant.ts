@@ -49,6 +49,7 @@ export const locale = {
             DataTable: '數據表',
             Services: 'Services',
             ExcelExport: '導出 Excel',
+            Screenshot: '屏幕截圖',
             AdvancedUi: '高級組件',
             FileUpload: '文件上傳',
             JsonSchemaForm: 'Json Schema Form'

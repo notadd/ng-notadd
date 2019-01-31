@@ -1,0 +1,15 @@
+:host {
+    .mat-dialog-content {
+        padding-top: 2px;
+        padding-bottom: 2px;
+    }
+
+    .mark {
+        outline: 2px dashed #CCC;
+        cursor: crosshair;
+    }
+
+    .download {
+        display: none;
+    }
+}

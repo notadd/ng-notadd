@@ -77,7 +77,8 @@ export const routingPathConfig = {
     /* services */
     services: {
         default: '',
-        excelExport: 'excel-export'
+        excelExport: 'excel-export',
+        screenshot: 'screenshot'
     },
 
     /* applications */

@@ -538,6 +538,17 @@ export const navigation: Array<NotaddNavigationItem> = [
                     routingPathConfig.app.services,
                     routingPathConfig.services.excelExport
                 ]
+            },
+            {
+                id: 'screenshot',
+                title: '屏幕截图',
+                i18n: 'Navigation.Screenshot',
+                type: 'item',
+                icon: 'wallpaper',
+                url: [
+                    routingPathConfig.app.services,
+                    routingPathConfig.services.screenshot
+                ]
             }
         ]
     }

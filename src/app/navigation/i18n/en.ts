@@ -49,6 +49,7 @@ export const locale = {
             DataTable: 'Data Table',
             Services: 'Services',
             ExcelExport: 'Excel Export',
+            Screenshot: 'Screenshot',
             AdvancedUi: 'Advanced UI',
             FileUpload: 'File Upload',
             JsonSchemaForm: 'Json Schema Form'

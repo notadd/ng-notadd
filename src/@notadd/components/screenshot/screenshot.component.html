@@ -1,0 +1,16 @@
+<div mat-dialog-title>
+    <button color="accent" (click)="mark()" mat-button>{{isMark ? '完成' : '标注'}}</button>
+</div>
+<mat-dialog-content class="mb-20">
+    <div class="capture-wrapper"
+         [ngClass]="{'mark': isMark}"
+         #captureWrapper
+         notaddPerfectScrollbar
+         [notaddPerfectScrollbarOptions]="{suppressScrollX: true, suppressScrollY: true}"></div>
+</mat-dialog-content>
+<mat-divider></mat-divider>
+<mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>取消</button>
+    <button color="accent" (click)="saveAsImg()" mat-button cdkFocusInitial>保存为图片</button>
+</mat-dialog-actions>
+<a class="download" #downloadLink></a>

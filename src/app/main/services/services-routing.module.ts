@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { routingPathConfig } from '@config/routing-path.config';
 import { ExcelExportComponent } from './excel-export/excel-export.component';
+import { ScreenshotComponent } from './screenshot/screenshot.component';
 
 const routes: Routes = [
     {
@@ -15,6 +16,14 @@ const routes: Routes = [
         component: ExcelExportComponent,
         data: {
             title: '导出 Excel',
+            hasContentHeader: true
+        }
+    },
+    {
+        path: routingPathConfig.services.screenshot,
+        component: ScreenshotComponent,
+        data: {
+            title: '屏幕截图',
             hasContentHeader: true
         }
     }

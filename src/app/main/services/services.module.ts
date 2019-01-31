@@ -6,10 +6,12 @@ import {
 } from '@angular/material';
 
 import { NotaddSharedModule } from '@notadd/shared.module';
-import { NotaddTableExportModule } from '@notadd/components';
+import { NotaddTableExportModule, NotaddScreenshotModule } from '@notadd/components';
 
-import { ServicesRoutingModule } from './services-routing.module';
 import { ExcelExportComponent } from './excel-export/excel-export.component';
+import { ScreenshotComponent } from './screenshot/screenshot.component';
+import { ServicesRoutingModule } from './services-routing.module';
+
 @NgModule({
     imports: [
         CommonModule,
@@ -18,11 +20,13 @@ import { ExcelExportComponent } from './excel-export/excel-export.component';
 
         NotaddSharedModule,
         NotaddTableExportModule,
+        NotaddScreenshotModule,
 
         ServicesRoutingModule
     ],
     declarations: [
         ExcelExportComponent,
+        ScreenshotComponent,
     ]
 })
 export class ServicesModule {
