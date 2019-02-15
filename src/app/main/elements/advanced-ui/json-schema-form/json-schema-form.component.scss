@@ -1,13 +1,15 @@
-.demo-page-header {
-    margin-bottom: 12px;
-
-    .header-content {
-        line-height: 1.4em;
-        padding: 12px;
-
-        .menu-label {
-            margin-right: 12px;
-            font-weight: bold;
+.element-jsonform {
+    .header {
+        margin-bottom: 12px;
+    
+        .header-content {
+            line-height: 1.4em;
+            padding: 12px 0;
+    
+            .menu-label {
+                margin-right: 12px;
+                font-weight: bold;
+            }
         }
     }
 }
