@@ -1,76 +1,76 @@
-<div class="page-layout card fullwidth">
-    <div class="content center" fxLayout="row wrap" fxLayout.gt-sm="row nowrap"
+<div class="element-stepper page-layout card fullwidth">
+    <div class="content center mt-32" fxLayout="row wrap" fxLayout.gt-sm="row nowrap"
         fxLayoutAlign="space-between start" fxLayoutGap.md="15px" fxLayoutGap.gt-md="30px">
         
-        <div fxFlex="49" fxFlex.lt-md="100" ngClass.lt-md="mb-20">
-            <h3>Horizontal Stepper</h3>
-            <mat-horizontal-stepper #stepper color="accent">
+        <div class="bg-white" fxFlex="49" fxFlex.lt-md="100" ngClass.lt-md="mb-20">
+            <h3 class="pl-24 mt-32">Horizontal Stepper</h3>
+            <mat-horizontal-stepper #stepper>
                 <mat-step [stepControl]="firstFormGroup">
                     <form [formGroup]="firstFormGroup">
                         <ng-template matStepLabel>Fill out your name</ng-template>
-                        <mat-form-field>
+                        <mat-form-field class="w-100-p">
                             <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
                         </mat-form-field>
-                        <div>
-                            <button mat-button matStepperNext>Next</button>
+                        <div class="text-right">
+                            <button mat-flat-button matStepperNext color="accent">Next</button>
                         </div>
                     </form>
                 </mat-step>
                 <mat-step [stepControl]="secondFormGroup">
                     <form [formGroup]="secondFormGroup">
                         <ng-template matStepLabel>Fill out your address</ng-template>
-                        <mat-form-field>
+                        <mat-form-field class="w-100-p">
                             <input matInput placeholder="Address" formControlName="secondCtrl" required>
                         </mat-form-field>
-                        <div>
-                            <button mat-button matStepperPrevious>Back</button>
-                            <button mat-button matStepperNext>Next</button>
+                        <div fxLayout="row nowrap" fxLayoutAlign="space-between center">
+                            <button mat-flat-button matStepperPrevious class="back-btn">Back</button>
+                            <button mat-flat-button matStepperNext color="accent">Next</button>
                         </div>
                     </form>
                 </mat-step>
                 <mat-step>
                     <ng-template matStepLabel>Done</ng-template>
-                    You are now done.
-                    <div>
-                        <button mat-button matStepperPrevious>Back</button>
-                        <button mat-button (click)="stepper.reset()">Reset</button>
+                    <h3>You are now done.</h3>
+                    <div fxLayout="row nowrap" fxLayoutAlign="space-between center">
+                        <button mat-flat-button matStepperPrevious class="back-btn">Back</button>
+                        <button mat-flat-button color="accent" (click)="stepper.reset()">Reset</button>
                     </div>
                 </mat-step>
             </mat-horizontal-stepper>
         </div>
 
-        <div fxFlex="49" fxFlex.lt-md="100">
-            <h3>Vertical Stepper</h3>
+        <div class="bg-white" fxFlex="49" fxFlex.lt-md="100">
+            <h3 class="pl-24 mt-32">Vertical Stepper</h3>
             <mat-vertical-stepper #stepper2>
                 <mat-step [stepControl]="firstFormGroup">
                     <form [formGroup]="firstFormGroup">
                         <ng-template matStepLabel>Fill out your name</ng-template>
-                        <mat-form-field>
+                        <mat-form-field class="w-100-p">
                             <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
                         </mat-form-field>
-                        <div>
-                            <button mat-button matStepperNext>Next</button>
+                        <div class="text-right">
+                            <button mat-flat-button matStepperNext color="accent">Next</button>
                         </div>
                     </form>
                 </mat-step>
                 <mat-step [stepControl]="secondFormGroup">
                     <form [formGroup]="secondFormGroup">
                         <ng-template matStepLabel>Fill out your address</ng-template>
-                        <mat-form-field>
+                        <mat-form-field class="w-100-p">
                             <input matInput placeholder="Address" formControlName="secondCtrl" required>
                         </mat-form-field>
-                        <div>
-                            <button mat-button matStepperPrevious>Back</button>
-                            <button mat-button matStepperNext>Next</button>
+                        <div fxLayout="row nowrap" fxLayoutAlign="space-between center">
+                            <button mat-flat-button matStepperPrevious class="back-btn">Back</button>
+                            <button mat-flat-button matStepperNext color="accent">Next</button>
                         </div>
                     </form>
                 </mat-step>
                 <mat-step>
                     <ng-template matStepLabel>Done</ng-template>
-                    You are now done.
-                    <div>
-                        <button mat-button matStepperPrevious>Back</button>
-                        <button mat-button (click)="stepper2.reset()">Reset</button>
+                    <h3>You are now done.</h3>
+                    <div fxLayout="row nowrap" fxLayoutAlign="space-between center">
+                        <button mat-flat-button matStepperPrevious class="back-btn">Back</button>
+                        <button mat-flat-button color="accent" (click)="stepper2.reset()">Reset</button>
                     </div>
                 </mat-step>
             </mat-vertical-stepper>
