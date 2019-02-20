@@ -39,5 +39,15 @@
                 </nm-cascade-dropdownlist>
             </div>
         </div>
+
+        <div fxLayout="row wrap" fxLayout.gt-sm="row nowrap" fxLayoutAlign="space-between start"
+            fxLayoutGap.gt-sm="30px">
+            <div class="bg-white p-24" fxFlex="32" fxFlex.lt-md="100">
+                <h3>Touch UI</h3>
+                <nm-cascade-dropdownlist [options]="options" 
+                    [touchUi]="true">
+                </nm-cascade-dropdownlist>
+            </div>
+        </div>
     </div>
 </div>

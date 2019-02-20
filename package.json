@@ -31,7 +31,7 @@
     "@angular/service-worker": "^7.2.0",
     "@mdi/angular-material": "^3.3.92",
     "@ngx-translate/core": "^11.0.1",
-    "@notadd/ng-material2": "0.0.6",
+    "@notadd/ng-material2": "0.0.8",
     "@notadd/ngx-xlsx": "^1.0.1",
     "@types/html2canvas": "0.0.35",
     "angular6-json-schema-form": "^7.0.2",
