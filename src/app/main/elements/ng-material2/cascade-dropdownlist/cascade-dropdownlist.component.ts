@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { Observable, Subject } from 'rxjs';
+import { map, takeUntil } from 'rxjs/operators'
 
 @Component({
     selector: 'cascade-dropdownlist',
@@ -65,9 +68,18 @@ export class CascadeDropdownlistComponent implements OnInit {
         }],
     }];
 
-    constructor() { }
+    isHandset: Observable<boolean>;
+
+    constructor(
+        private breakpointObserver: BreakpointObserver
+    ) { }
 
     ngOnInit() {
+        this.isHandset = this.breakpointObserver
+            .observe(Breakpoints.Handset)
+            .pipe(
+                map(match => match.matches)
+            );
     }
 
     changeHandle(event: { path: Array<string>, value: string }): void {

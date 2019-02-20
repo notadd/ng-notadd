@@ -212,7 +212,7 @@ export class PermissionsComponent implements OnInit {
             },
             {
                 value: 'self-group-subordinate',
-                label: '本用户组的数据'
+                label: '本用户组及下属用户组的数据'
             },
             {
                 value: 'all',
