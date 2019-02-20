@@ -60,7 +60,7 @@ Medium-Background solution based on Angular7 Material2
 
 
 **0.18.0**
-- [ ] component phone end compatible
+- [x] component phone end compatible
 - [ ] firebase (not available domestically) or other alternative support
 
 
