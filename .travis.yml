@@ -20,7 +20,7 @@ install:
     - upx login ng-notadd "$NG" "$UPYUN"
     - upx sync ./ /
 #     - upx rm -a /
-#     - sleep(30)
+#     - sleep(20)
 #     - upx put ./   /
 script:
     - cd ../
