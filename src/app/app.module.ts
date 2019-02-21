@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { MatPaginatorIntl, MatIconModule, MatButtonModule, MatDialogModule } from '@angular/material';
+import { AngularFireModule } from '@angular/fire';
 import 'hammerjs';
 
 import { TranslateModule } from '@ngx-translate/core';
@@ -32,6 +33,7 @@ import { environment } from '@env';
     imports: [
         BrowserModule,
         BrowserAnimationsModule,
+        AngularFireModule.initializeApp(environment.firebase),
         MatIconModule,
         MatButtonModule,
         MatDialogModule,

@@ -9,10 +9,11 @@ import {
     MatInputModule,
     MatCheckboxModule,
     MatSnackBarModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    MatTooltipModule
 } from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { AngularFireAuthModule } from '@angular/fire/auth';
 import { NgxCaptchaModule } from 'ngx-captcha';
 
 import { NotaddSharedModule } from '@notadd/shared.module';
@@ -40,8 +41,10 @@ import { RegisterV2Component } from './register-v2/register-v2.component';
         MatCheckboxModule,
         MatSnackBarModule,
         MatProgressBarModule,
+        MatTooltipModule,
         FormsModule,
         ReactiveFormsModule,
+        AngularFireAuthModule,
 
         NgxCaptchaModule,
 

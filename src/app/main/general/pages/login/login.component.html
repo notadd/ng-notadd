@@ -40,13 +40,13 @@
                 <p>WEBSITE BY Notadd</p>
                 <p>© 2018. All RIGHT RESERVED.</p>
                 <div class="social pt-10">
-                    <button mat-icon-button>
+                    <button mat-icon-button matTooltipPosition="above" matTooltip="Login With Github">
                         <mat-icon size="1" svgIcon="mdi:github-circle" class="secondary-text s-24"></mat-icon>
                     </button>
-                    <button mat-icon-button>
+                    <button mat-icon-button matTooltipPosition="above" matTooltip="Login With Twitter">
                         <mat-icon size="1" svgIcon="mdi:twitter" class="secondary-text s-24"></mat-icon>
                     </button>
-                    <button mat-icon-button>
+                    <button mat-icon-button matTooltipPosition="above" matTooltip="Login With Google" (click)="loginWith('google')">
                         <mat-icon size="1" svgIcon="mdi:google" class="secondary-text s-24"></mat-icon>
                     </button>
                 </div>

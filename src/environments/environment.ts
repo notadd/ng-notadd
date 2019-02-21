@@ -11,6 +11,14 @@ export const environment = {
     caiyunApi: {
         url: 'https://caiyun-api.ibenchu.net/',
         key: 'notadd'
+    },
+    firebase: {
+        apiKey: 'AIzaSyB5cAu56ovnONxj26eBYazACx-M-H0fO6A',
+        authDomain: 'social-sign-in-860e9.firebaseapp.com',
+        databaseURL: 'https://social-sign-in-860e9.firebaseio.com',
+        projectId: 'social-sign-in-860e9',
+        storageBucket: 'social-sign-in-860e9.appspot.com',
+        messagingSenderId: '41281455559'
     }
 };
 

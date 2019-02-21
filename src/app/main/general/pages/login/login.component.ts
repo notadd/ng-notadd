@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material';
 import { Router } from '@angular/router';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { auth } from 'firebase/app';
 import { map } from 'rxjs/operators';
 import { ReCaptchaV3Service } from 'ngx-captcha';
 
@@ -29,7 +31,8 @@ export class LoginComponent implements OnInit {
         private loginGql: LoginGQL,
         private snackBar: MatSnackBar,
         private router: Router,
-        private path: RoutingPathPipe
+        private path: RoutingPathPipe,
+        private angularFireAuth: AngularFireAuth
     ) {
         this.siteKey = environment.reCaptcha.siteKey;
         this.isLoading = false;
@@ -74,13 +77,20 @@ export class LoginComponent implements OnInit {
             .subscribe(data => {
                 this.openSnackBar(data.validatedUser ? '登录成功 🎉' : data.errorCodes.toString());
                 this.isLoading = false;
-                this.router.navigate([
-                    this.path.transform([
-                        routingPathConfig.app.general,
-                        routingPathConfig.general.dashboards,
-                        routingPathConfig.dashboards.analytics
-                    ])
-                ]);
+                this.navigateWithLoginSuccess();
+            });
+    }
+
+    loginWith(mode) {
+        const loginModes = {
+            google: new auth.GoogleAuthProvider()
+        };
+        this.angularFireAuth.auth.signInWithPopup(loginModes[mode])
+            .then((res: any) => {
+                this.openSnackBar(`${res.additionalUserInfo.profile.name}, 登录成功  🎉`);
+                this.navigateWithLoginSuccess();
+            }, err => {
+                this.openSnackBar(err);
             });
     }
 
@@ -90,5 +100,15 @@ export class LoginComponent implements OnInit {
             horizontalPosition: 'center',
             verticalPosition: 'top'
         });
+    }
+
+    navigateWithLoginSuccess() {
+        this.router.navigate([
+            this.path.transform([
+                routingPathConfig.app.general,
+                routingPathConfig.general.dashboards,
+                routingPathConfig.dashboards.analytics
+            ])
+        ]);
     }
 }
