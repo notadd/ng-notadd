@@ -54,14 +54,9 @@ Medium-Background solution based on Angular7 Material2
 
 ## Roadmap
 
-
-**0.17.0**
-- [x] screenshot generation
-
-
 **0.18.0**
 - [x] component phone end compatible
-- [ ] firebase (not available domestically) or other alternative support
+- [x] firebase (not available domestically) or other alternative support
 
 
 **0.19.0**
