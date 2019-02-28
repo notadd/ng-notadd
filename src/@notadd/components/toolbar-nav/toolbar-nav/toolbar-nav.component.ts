@@ -46,14 +46,13 @@ export class NotaddToolbarNavComponent implements OnInit, OnDestroy {
             .pipe(takeUntil(this.ngUnsubscribe))
             .subscribe(() => {
                 this.navigation = this.navigationService.getCurrentNavigation();
-                this.setCurrentNavItem(window.location.href);
             });
 
         // 设置当前导航
         this.router.events
             .pipe(filter(event => event instanceof NavigationEnd))
             .subscribe((event: NavigationEnd) => {
-                this.setCurrentNavItem(event.url);
+                this.setCurrentNavItem(event.url === '/' ? event.urlAfterRedirects : event.url);
             });
 
         const config = new OverlayConfig({
