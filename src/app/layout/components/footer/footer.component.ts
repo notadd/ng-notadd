@@ -7,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
+    get copyrightYear() {
+        return new Date().getFullYear();
+    }
+
     constructor() {
     }
 
