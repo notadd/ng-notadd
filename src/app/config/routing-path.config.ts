@@ -17,7 +17,8 @@ export const routingPathConfig = {
     },
     dashboards: {
         default: '',
-        analytics: 'analytics'
+        analytics: 'analytics',
+        workspace: 'workspace'
     },
     pages: {
         default: '',

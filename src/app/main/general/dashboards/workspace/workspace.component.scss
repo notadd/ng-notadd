@@ -1,0 +1,17 @@
+:host {
+    gridster {
+        background-color: inherit;
+
+        gridster-item {
+            background-color: inherit;
+        }
+    }
+
+    .operation-button {
+        z-index: 2;
+        position: absolute;
+        bottom: 35px;
+        right: 30px;
+    }
+
+}

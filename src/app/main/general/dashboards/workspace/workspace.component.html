@@ -1,0 +1,35 @@
+<gridster [options]="options">
+    <gridster-item [item]="item" *ngFor="let item of widgets; let index = index">
+
+        <ng-container *ngIf="item?.widget; else notWidget">
+            <ndc-dynamic [ndcDynamicComponent]="widgetComponents.get(item.widget)"></ndc-dynamic>
+        </ng-container>
+
+        <ng-template #notWidget>
+            <notadd-widget>
+                <mat-card class="widget">
+                    <mat-card-header>
+                        <mat-card-title>
+                            {{index}}
+                            <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
+                                <mat-icon>more_vert</mat-icon>
+                            </button>
+                            <mat-menu #menu="matMenu" xPosition="before">
+                                <button mat-menu-item>Expand</button>
+                                <button mat-menu-item>Remove</button>
+                            </mat-menu>
+                        </mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content>
+                        <div>Card Content Here</div>
+                    </mat-card-content>
+                </mat-card>
+            </notadd-widget>
+        </ng-template>
+
+    </gridster-item>
+</gridster>
+
+<button class="operation-button" mat-mini-fab (click)="edit()">
+    <mat-icon>{{editable ? 'done' : 'edit'}}</mat-icon>
+</button>

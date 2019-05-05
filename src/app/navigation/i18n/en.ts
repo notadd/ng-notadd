@@ -5,6 +5,7 @@ export const locale = {
             General: 'GENERAL',
             Dashboard: 'Dashboard',
             Analytics: 'analytics',
+            Workspace: 'workspace',
             Element: 'ELEMENT',
             BasicUi: 'BasicUi',
             Button: 'Buttons',

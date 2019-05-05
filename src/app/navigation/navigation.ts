@@ -30,6 +30,17 @@ export const navigation: Array<NotaddNavigationItem> = [
                             bg: '#1189fb',
                             fg: '#FFFFFF'
                         }
+                    },
+                    {
+                        id: 'workspace',
+                        title: '工作台',
+                        i18n: 'Navigation.Workspace',
+                        type: 'item',
+                        url: [
+                            routingPathConfig.app.general,
+                            routingPathConfig.general.dashboards,
+                            routingPathConfig.dashboards.workspace
+                        ]
                     }
                 ]
             },

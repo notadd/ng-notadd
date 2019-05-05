@@ -5,6 +5,7 @@ export const locale = {
             General: '常规',
             Dashboard: '仪表盘',
             Analytics: '分析页',
+            Workspace: '工作台',
             Element: 'UI 元素',
             BasicUi: '基础 UI',
             Button: '按钮',

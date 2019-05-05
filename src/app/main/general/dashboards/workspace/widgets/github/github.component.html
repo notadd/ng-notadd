@@ -1,0 +1,25 @@
+<notadd-widget>
+    <button class="remove-button">❌</button>
+    <mat-card *ngIf="repoData | async as repo" fxLayout="column nowrap" fxLayoutAlign="space-between start">
+        <mat-card-header>
+            <img mat-card-avatar src="{{repo.owner.avatar_url}}&s=48" alt="{{repo.owner.login}}">
+            <mat-card-title>{{repo.name}}</mat-card-title>
+            <mat-card-subtitle>{{repo.language}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <p>{{repo.description}}</p>
+            <p>{{repo.homepage}}</p>
+            <div class="contributors" fxLayout="row wrap" fxLayoutAlign="star center">
+                <a href="https://github.com/{{repo.full_name}}/graphs/contributors">contributors： </a>
+                <a *ngFor="let user of repo.contributors" href="{{user.html_url}}" target="_blank">
+                    <img src="{{user.avatar_url}}&s=48" alt="{{user.login}}">
+                </a>
+            </div>
+        </mat-card-content>
+        <mat-card-actions align="end" class="w-100-p m-0 bt">
+            <a mat-button target="_blank" href="https://github.com/{{repo.full_name}}/network">{{repo.forks_count}} Forks</a>
+            <a mat-button target="_blank" href="https://github.com/{{repo.full_name}}/stargazers">{{repo.stargazers_count}} Stars</a>
+        </mat-card-actions>
+    </mat-card>
+
+</notadd-widget>

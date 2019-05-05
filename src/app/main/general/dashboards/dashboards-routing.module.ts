@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { routingPathConfig } from '@config/routing-path.config';
 import { AnalysisComponent } from './analysis/analysis.component';
+import { WorkspaceComponent } from './workspace/workspace.component';
 
 const routes: Routes = [
     {
@@ -15,6 +16,14 @@ const routes: Routes = [
         component: AnalysisComponent,
         data: {
             title: '分析页',
+            hasContentHeader: false
+        }
+    },
+    {
+        path: routingPathConfig.dashboards.workspace,
+        component: WorkspaceComponent,
+        data: {
+            title: '工作台',
             hasContentHeader: false
         }
     }
