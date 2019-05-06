@@ -29,7 +29,14 @@
 
     </gridster-item>
 </gridster>
-
-<button class="operation-button" mat-mini-fab (click)="edit()">
-    <mat-icon>{{editable ? 'done' : 'edit'}}</mat-icon>
-</button>
+<notadd-speed-dial-fab>
+    <button class="operation-button" color="secondary" mat-mini-fab (click)="edit()">
+        <mat-icon>{{editable ? 'done' : 'edit'}}</mat-icon>
+    </button>
+    <button class="operation-button" color="secondary" mat-mini-fab>
+        <mat-icon>add</mat-icon>
+    </button>
+    <button class="operation-button" color="secondary" mat-mini-fab>
+        <mat-icon>settings</mat-icon>
+    </button>
+</notadd-speed-dial-fab>

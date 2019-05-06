@@ -40,6 +40,7 @@ export class WorkspaceComponent implements OnInit {
             resizable: {
                 enabled: false,
             },
+            disableWarnings: true
         };
 
         this.widgets = [

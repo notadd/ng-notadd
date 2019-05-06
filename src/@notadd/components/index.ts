@@ -10,3 +10,4 @@ export * from './file-upload/file-upload.module';
 export * from './toolbar-nav/toolbar-nav.module';
 export * from './screenshot/screenshot.module';
 export * from './widget/widget.module';
+export * from './speed-dial-fab/speed-dial-fab.module';

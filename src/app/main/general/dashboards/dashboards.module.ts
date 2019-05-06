@@ -14,7 +14,7 @@ import { NgxEchartsModule } from 'ngx-echarts';
 import { GridsterModule } from 'angular-gridster2';
 import { NotaddSharedModule } from '@notadd/shared.module';
 import { NotaddPipesModule } from '@notadd/pipes/pipes.module';
-import { NotaddWidgetModule } from '@notadd/components';
+import { NotaddWidgetModule, NotaddSpeedDialFabModule } from '@notadd/components';
 
 import { DashboardsRoutingModule } from './dashboards-routing.module';
 
@@ -39,6 +39,7 @@ import { WorkspaceComponent } from './workspace/workspace.component';
         NotaddSharedModule,
         NotaddPipesModule,
         NotaddWidgetModule,
+        NotaddSpeedDialFabModule,
 
         WidgetsModule,
 
