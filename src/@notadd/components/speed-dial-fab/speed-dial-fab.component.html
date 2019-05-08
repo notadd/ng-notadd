@@ -1,4 +1,4 @@
-<button mat-fab (click)="onShowActions()" cdk-overlay-origin class="notadd-speed-dial-fab-trigger">
+<button mat-fab (click)="toggleActions()" cdk-overlay-origin class="notadd-speed-dial-fab-trigger">
     <mat-icon class="mat-18" [@fabToggle]="fabTriggerState">add</mat-icon>
 </button>
 <ng-template cdk-portal #notaddSpeedDialFabActionsTemplate="cdkPortal">

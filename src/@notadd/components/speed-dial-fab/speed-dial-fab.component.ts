@@ -25,8 +25,7 @@ export class NotaddSpeedDialFabComponent implements OnInit {
 
     ngOnInit() {
         const config = new OverlayConfig({
-            hasBackdrop: true,
-            backdropClass: 'cdk-overlay-transparent-backdrop',
+            hasBackdrop: false,
             scrollStrategy: this.overlay.scrollStrategies.block()
         });
 
@@ -41,17 +40,16 @@ export class NotaddSpeedDialFabComponent implements OnInit {
 
         this.overlayRef = this.overlay.create(config);
 
-        this.overlayRef.backdropClick().subscribe(() => {
-            if (this.overlayRef && this.overlayRef.hasAttached()) {
-                this.overlayRef.detach();
-                this.fabTriggerState = 'inactive';
-            }
-        });
     }
 
-    onShowActions(): void {
-        this.overlayRef.attach(this.notaddSpeedDialFabActionsTemplate);
-        this.fabTriggerState = 'active';
+    toggleActions(): void {
+        if (this.overlayRef && this.overlayRef.hasAttached()) {
+            this.overlayRef.detach();
+            this.fabTriggerState = 'inactive';
+        } else {
+            this.overlayRef.attach(this.notaddSpeedDialFabActionsTemplate);
+            this.fabTriggerState = 'active';
+        }
     }
 
 }
