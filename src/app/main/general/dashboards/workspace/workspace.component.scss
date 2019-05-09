@@ -4,6 +4,13 @@
 
         gridster-item {
             background-color: inherit;
+
+            .remove-button {
+                z-index: 2;
+                position: absolute;
+                top: 0;
+                right: 0;
+            }
         }
     }
 

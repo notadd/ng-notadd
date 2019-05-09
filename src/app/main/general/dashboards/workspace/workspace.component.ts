@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, TemplateRef } from '@angular/core';
+import { MatDialog } from '@angular/material';
+import { FormBuilder, FormControl, FormGroup, FormArray, Validators, AbstractControl, ValidatorFn } from '@angular/forms';
+
 import { GridsterConfig, GridsterItem } from 'angular-gridster2';
 
 import { GithubComponent } from './widgets/github/github.component';
@@ -14,17 +17,17 @@ export class WorkspaceComponent implements OnInit {
     widgets: Array<GridsterItem>;
     widgetComponents: Map<string, any>;
     editable: boolean;
+    addWidgetForm: FormGroup;
 
-    constructor() {
+    @ViewChild('addWidgetDialog') addWidgetDialog: TemplateRef<any>;
+
+    get widgetComponent() { return this.addWidgetForm.get('widgetComponent'); }
+
+    constructor(
+        private dialog: MatDialog,
+        private formBuilder: FormBuilder
+    ) {
         this.editable = false;
-    }
-
-    static itemChange(item, itemComponent) {
-        console.info('itemChanged', item, itemComponent);
-    }
-
-    static itemResize(item, itemComponent) {
-        console.info('itemResized', item, itemComponent);
     }
 
     ngOnInit() {
@@ -57,19 +60,46 @@ export class WorkspaceComponent implements OnInit {
             {cols: 1, rows: 1, y: 1, x: 0},
             {cols: 1, rows: 1, y: 1, x: 0},
             {cols: 1, rows: 1, y: 0, x: 0},
-            {cols: 1, rows: 1, y: 0, x: 0},
-            {cols: 1, rows: 1, y: 5, x: 5},
+            {cols: 1, rows: 1, y: 0, x: 0}
         ];
 
         this.widgetComponents = new Map<string, any>([
-            ['github', GithubComponent]
+            [
+                'github',
+                {
+                    label: 'github',
+                    component: GithubComponent
+                }
+            ]
         ]);
+
+        this.addWidgetForm = this.formBuilder.group({
+            widgetComponent: ['', Validators.required],
+        });
     }
 
-    edit() {
+    edit(): void {
         this.editable = !this.editable;
         this.options.draggable.enabled = this.options.resizable.enabled = this.editable;
         this.changedOptions();
+    }
+
+    addWidget(): void {
+        const dialogRef = this.dialog.open(this.addWidgetDialog, {
+            width: '300px',
+            hasBackdrop: true,
+            disableClose: true
+        });
+
+        dialogRef.afterClosed().subscribe(result => {
+            result && this.widgets.push({ x: 0, y: 0, cols: 1, rows: 1, widget: this.addWidgetForm.value.widgetComponent});
+        });
+    }
+
+    removeWidget(event, item): void {
+        event.preventDefault();
+        event.stopPropagation();
+        this.widgets.splice(this.widgets.indexOf(item), 1);
     }
 
     changedOptions() {

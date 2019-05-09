@@ -7,8 +7,11 @@ import {
     MatSelectModule,
     MatTabsModule,
     MatCardModule,
-    MatListModule
+    MatListModule,
+    MatDialogModule,
+    MatDividerModule,
 } from '@angular/material';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { NgxEchartsModule } from 'ngx-echarts';
 import { GridsterModule } from 'angular-gridster2';
@@ -33,6 +36,10 @@ import { WorkspaceComponent } from './workspace/workspace.component';
         MatTabsModule,
         MatCardModule,
         MatListModule,
+        MatDialogModule,
+        MatDividerModule,
+        FormsModule,
+        ReactiveFormsModule,
 
         NgxEchartsModule,
         GridsterModule,

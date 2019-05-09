@@ -1,5 +1,4 @@
 <notadd-widget>
-    <button class="remove-button">❌</button>
     <mat-card *ngIf="repoData | async as repo" fxLayout="column nowrap" fxLayoutAlign="space-between start">
         <mat-card-header>
             <img mat-card-avatar src="{{repo.owner.avatar_url}}&s=48" alt="{{repo.owner.login}}">
@@ -21,5 +20,4 @@
             <a mat-button target="_blank" href="https://github.com/{{repo.full_name}}/stargazers">{{repo.stargazers_count}} Stars</a>
         </mat-card-actions>
     </mat-card>
-
 </notadd-widget>

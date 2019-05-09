@@ -1,8 +1,12 @@
 <gridster [options]="options">
     <gridster-item [item]="item" *ngFor="let item of widgets; let index = index">
 
+        <button mat-icon-button class="remove-button" *ngIf="editable" (mousedown)="removeWidget($event, item)" (touchstart)="removeWidget($event, item)">
+            <mat-icon>delete</mat-icon>
+        </button>
+
         <ng-container *ngIf="item?.widget; else notWidget">
-            <ndc-dynamic [ndcDynamicComponent]="widgetComponents.get(item.widget)"></ndc-dynamic>
+            <ndc-dynamic [ndcDynamicComponent]="widgetComponents.get(item.widget).component"></ndc-dynamic>
         </ng-container>
 
         <ng-template #notWidget>
@@ -29,14 +33,37 @@
 
     </gridster-item>
 </gridster>
+
 <notadd-speed-dial-fab>
     <button class="operation-button" color="secondary" mat-mini-fab (click)="edit()">
         <mat-icon>{{editable ? 'done' : 'edit'}}</mat-icon>
     </button>
-    <button class="operation-button" color="secondary" mat-mini-fab>
+    <button class="operation-button" color="secondary" mat-mini-fab (click)="addWidget()">
         <mat-icon>add</mat-icon>
     </button>
     <button class="operation-button" color="secondary" mat-mini-fab>
         <mat-icon>settings</mat-icon>
     </button>
 </notadd-speed-dial-fab>
+
+<ng-template #addWidgetDialog>
+    <h2 mat-dialog-title>widget 配置</h2>
+    <mat-dialog-content class="mb-12">
+        <form [formGroup]="addWidgetForm">
+            <mat-form-field class="w-100-p">
+                <mat-label>小部件</mat-label>
+                <mat-select formControlName="widgetComponent">
+                    <mat-option *ngFor="let recipient of widgetComponents | keyvalue" [value]="recipient.key">
+                        {{recipient.value.label}}
+                    </mat-option>
+                </mat-select>
+                <mat-error *ngIf="widgetComponent.hasError('required')">请选择小部件</mat-error>
+            </mat-form-field>
+        </form>
+    </mat-dialog-content>
+    <mat-divider></mat-divider>
+    <mat-dialog-actions align="end">
+        <button mat-button mat-dialog-close>取消</button>
+        <button mat-button color="accent" [disabled]="addWidgetForm.invalid" [mat-dialog-close]="true">添加</button>
+    </mat-dialog-actions>
+</ng-template>

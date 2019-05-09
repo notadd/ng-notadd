@@ -7,8 +7,7 @@ import { NotaddWidgetComponent } from './widget.component';
         NotaddWidgetComponent
     ],
     imports: [
-        CommonModule
-    ],
+        CommonModule,    ],
     exports: [
         NotaddWidgetComponent
     ]
