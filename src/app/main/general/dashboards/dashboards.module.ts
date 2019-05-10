@@ -10,6 +10,7 @@ import {
     MatListModule,
     MatDialogModule,
     MatDividerModule,
+    MatTooltipModule
 } from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -38,6 +39,7 @@ import { WorkspaceComponent } from './workspace/workspace.component';
         MatListModule,
         MatDialogModule,
         MatDividerModule,
+        MatTooltipModule,
         FormsModule,
         ReactiveFormsModule,
 

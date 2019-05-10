@@ -35,13 +35,13 @@
 </gridster>
 
 <notadd-speed-dial-fab>
-    <button class="operation-button" color="secondary" mat-mini-fab (click)="edit()">
+    <button class="operation-button" color="secondary" mat-mini-fab (click)="edit()" matTooltip="编辑" matTooltipPosition="before">
         <mat-icon>{{editable ? 'done' : 'edit'}}</mat-icon>
     </button>
-    <button class="operation-button" color="secondary" mat-mini-fab (click)="addWidget()">
-        <mat-icon>add</mat-icon>
+    <button class="operation-button" color="secondary" mat-mini-fab (click)="addWidget()" matTooltip="添加小部件" matTooltipPosition="before">
+        <mat-icon>extension</mat-icon>
     </button>
-    <button class="operation-button" color="secondary" mat-mini-fab>
+    <button class="operation-button" color="secondary" mat-mini-fab matTooltip="编辑" matTooltipPosition="before">
         <mat-icon>settings</mat-icon>
     </button>
 </notadd-speed-dial-fab>
