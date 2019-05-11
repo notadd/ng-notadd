@@ -48,7 +48,7 @@
     "browser-md5-file": "1.1.1",
     "core-js": "2.6.2",
     "echarts": "4.2.0-rc.2",
-    "file-saver": "2.0.0",
+    "file-saver": "2.0.1",
     "firebase": "5.8.3",
     "graphql": "14.0.2",
     "graphql-tag": "2.10.1",
