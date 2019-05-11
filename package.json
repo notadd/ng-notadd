@@ -69,7 +69,7 @@
     "tslib": "1.9.3",
     "web-animations-js": "2.3.1",
     "xlsx": "0.14.3",
-    "zone.js": "0.8.27"
+    "zone.js": "0.9.1"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "0.13.9",
