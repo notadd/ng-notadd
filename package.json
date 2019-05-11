@@ -99,6 +99,6 @@
     "protractor": "5.4.2",
     "ts-node": "7.0.1",
     "tslint": "5.16.0",
-    "typescript": "3.2.2"
+    "typescript": "3.4.5"
   }
 }
