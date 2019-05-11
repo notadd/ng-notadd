@@ -50,7 +50,7 @@
     "file-saver": "2.0.0",
     "core-js": "2.6.5",
     "file-saver": "2.0.1",
-    "firebase": "5.11.1",
+    "firebase": "6.0.2",
     "graphql": "14.3.0",
     "graphql-tag": "2.10.1",
     "hammerjs": "2.0.8",
