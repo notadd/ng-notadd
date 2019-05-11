@@ -82,7 +82,7 @@
     "codelyzer": "4.5.0",
     "graphql-code-generator": "0.18.1",
     "graphql-codegen-add": "0.15.2",
-    "graphql-codegen-apollo-angular-template": "0.15.2",
+    "graphql-codegen-apollo-angular-template": "0.18.1",
     "graphql-codegen-introspection-template": "0.15.2",
     "graphql-codegen-typescript-apollo-angular": "0.15.2",
     "graphql-codegen-typescript-client": "0.15.2",
