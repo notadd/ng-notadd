@@ -54,7 +54,7 @@
     "graphql": "14.3.0",
     "graphql-tag": "2.10.1",
     "hammerjs": "2.0.8",
-    "html2canvas": "1.0.0-alpha.12",
+    "html2canvas": "1.0.0-rc.1",
     "localforage": "1.7.3",
     "lodash": "4.17.11",
     "ng-dynamic-component": "4.0.3",
