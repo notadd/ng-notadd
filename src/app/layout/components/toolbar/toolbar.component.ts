@@ -15,7 +15,7 @@ import { routingPathConfig } from '@config/routing-path.config';
     selector: 'toolbar',
     templateUrl: './toolbar.component.html',
     styleUrls: ['./toolbar.component.scss'],
-    providers: [ RoutingPathPipe ]
+    providers: [RoutingPathPipe]
 })
 export class ToolbarComponent implements OnInit, OnDestroy {
 
@@ -83,9 +83,13 @@ export class ToolbarComponent implements OnInit, OnDestroy {
      * 切换全屏
      */
     toggleFullscreen() {
-        if (screenfull.enabled) {
-            screenfull.toggle();
-            this.isFullscreen = !this.isFullscreen;
+        if (typeof screenfull === 'boolean') {
+
+        } else {
+            if (screenfull.enabled) {
+                screenfull.toggle();
+                this.isFullscreen = !this.isFullscreen;
+            }
         }
     }
 
