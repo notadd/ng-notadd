@@ -1,4 +1,6 @@
 {
+  "semanticCommits":true,
+  "masterIssue":true,
   "extends": [
     "config:base"
   ]
