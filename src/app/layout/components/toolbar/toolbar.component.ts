@@ -5,6 +5,7 @@ import { takeUntil } from 'rxjs/operators';
 import { TranslateService } from '@ngx-translate/core';
 
 import * as screenfull from 'screenfull';
+import { Screenfull } from 'screenfull';
 
 import { RoutingPathPipe } from '@notadd/pipes/routing-path.pipe';
 import { NotaddConfigService } from '@notadd/services/config.service';
@@ -83,13 +84,9 @@ export class ToolbarComponent implements OnInit, OnDestroy {
      * 切换全屏
      */
     toggleFullscreen() {
-        if (typeof screenfull === 'boolean') {
-
-        } else {
-            if (screenfull.enabled) {
-                screenfull.toggle();
-                this.isFullscreen = !this.isFullscreen;
-            }
+        if ((<Screenfull>screenfull).enabled) {
+            (<Screenfull>screenfull).toggle();
+            this.isFullscreen = !this.isFullscreen;
         }
     }
 
