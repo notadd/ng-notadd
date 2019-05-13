@@ -10,6 +10,7 @@ import { ReCaptchaV3Service } from 'ngx-captcha';
 import { environment } from '@env';
 import { LoginGQL } from '@graphql/graphql.service';
 import { RoutingPathPipe } from '@notadd/pipes/routing-path.pipe';
+import { NotaddNotificationService } from '@notadd/services/notadd-notification.service';
 import { routingPathConfig } from '@config/routing-path.config';
 
 @Component({
@@ -32,7 +33,8 @@ export class LoginComponent implements OnInit {
         private snackBar: MatSnackBar,
         private router: Router,
         private path: RoutingPathPipe,
-        private angularFireAuth: AngularFireAuth
+        private angularFireAuth: AngularFireAuth,
+        private notificationService: NotaddNotificationService
     ) {
         this.siteKey = environment.reCaptcha.siteKey;
         this.isLoading = false;
@@ -75,7 +77,7 @@ export class LoginComponent implements OnInit {
                 map(res => res.data.login)
             )
             .subscribe(data => {
-                this.openSnackBar(data.validatedUser ? '登录成功 🎉' : data.errorCodes.toString());
+                this.notificationService.notify(data.validatedUser ? '登录成功 🎉' : data.errorCodes.toString());
                 this.isLoading = false;
                 this.navigateWithLoginSuccess();
             });
@@ -87,19 +89,11 @@ export class LoginComponent implements OnInit {
         };
         this.angularFireAuth.auth.signInWithPopup(loginModes[mode])
             .then((res: any) => {
-                this.openSnackBar(`${res.additionalUserInfo.profile.name}, 登录成功  🎉`);
+                this.notificationService.notify(`${res.additionalUserInfo.profile.name}, 登录成功  🎉`);
                 this.navigateWithLoginSuccess();
             }, err => {
-                this.openSnackBar(err);
+                this.notificationService.notify(err);
             });
-    }
-
-    openSnackBar(message) {
-        this.snackBar.open(message, 'OK 👌', {
-            duration: 3000,
-            horizontalPosition: 'center',
-            verticalPosition: 'top'
-        });
     }
 
     navigateWithLoginSuccess() {

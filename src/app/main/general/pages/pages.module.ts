@@ -8,7 +8,6 @@ import {
     MatFormFieldModule,
     MatInputModule,
     MatCheckboxModule,
-    MatSnackBarModule,
     MatProgressBarModule,
     MatTooltipModule
 } from '@angular/material';
@@ -39,7 +38,6 @@ import { RegisterV2Component } from './register-v2/register-v2.component';
         MatFormFieldModule,
         MatInputModule,
         MatCheckboxModule,
-        MatSnackBarModule,
         MatProgressBarModule,
         MatTooltipModule,
         FormsModule,
