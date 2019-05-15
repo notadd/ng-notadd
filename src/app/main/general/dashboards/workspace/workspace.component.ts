@@ -20,6 +20,7 @@ export class WorkspaceComponent implements OnInit {
     addWidgetForm: FormGroup;
 
     @ViewChild('addWidgetDialog') addWidgetDialog: TemplateRef<any>;
+    @ViewChild('editGridsterDialog') editGridsterDialog: TemplateRef<any>;
 
     get widgetComponent() { return this.addWidgetForm.get('widgetComponent'); }
 
@@ -32,10 +33,15 @@ export class WorkspaceComponent implements OnInit {
 
     ngOnInit() {
         this.options = {
+            gridType: 'fit',
+            displayGrid: 'none',
             maxCols: 5,
             maxRows: 5,
             maxItemCols: 2,
             maxItemRows: 3,
+            fixedColWidth: 150,
+            fixedRowHeight: 150,
+            swap: false,
             pushItems: true,
             draggable: {
                 enabled: false,
@@ -102,8 +108,18 @@ export class WorkspaceComponent implements OnInit {
         this.widgets.splice(this.widgets.indexOf(item), 1);
     }
 
+    editGridsterConfig() {
+        const dialogRef = this.dialog.open(this.editGridsterDialog, {
+            width: '500px',
+            hasBackdrop: true,
+            disableClose: true
+        });
+    }
+
     changedOptions() {
-        this.options.api.optionsChanged();
+        if (this.options.api && this.options.api.optionsChanged) {
+            this.options.api.optionsChanged();
+        }
     }
 
 }
