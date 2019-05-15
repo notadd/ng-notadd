@@ -41,7 +41,7 @@
     <button class="operation-button" color="secondary" mat-mini-fab (click)="addWidget()" matTooltip="添加小部件" matTooltipPosition="before">
         <mat-icon>extension</mat-icon>
     </button>
-    <button class="operation-button" color="secondary" mat-mini-fab matTooltip="编辑" matTooltipPosition="before">
+    <button class="operation-button" color="secondary" mat-mini-fab (click)="editGridsterConfig()" matTooltip="修改配置" matTooltipPosition="before">
         <mat-icon>settings</mat-icon>
     </button>
 </notadd-speed-dial-fab>
@@ -65,5 +65,80 @@
     <mat-dialog-actions align="end">
         <button mat-button mat-dialog-close>取消</button>
         <button mat-button color="accent" [disabled]="addWidgetForm.invalid" [mat-dialog-close]="true">添加</button>
+    </mat-dialog-actions>
+</ng-template>
+
+<ng-template #editGridsterDialog>
+    <h2 mat-dialog-title>Gridster 配置</h2>
+    <mat-dialog-content class="mb-12">
+        <form #gridsterOptionForm="ngForm" fxLayout="row wrap" fxLayoutAlign="start center">
+            <mat-form-field fxFlex="48" fxFlex.xs="100" ngClass.gt-xs="mr-4-p">
+                <mat-select aria-label="Grid type" [(ngModel)]="options.gridType" name="gridType" placeholder="Grid Type" required>
+                    <mat-option value="fit">Fit to screen</mat-option>
+                    <mat-option value="scrollVertical">Scroll Vertical</mat-option>
+                    <mat-option value="scrollHorizontal">Scroll Horizontal</mat-option>
+                    <mat-option value="fixed">Fixed</mat-option>
+                    <mat-option value="verticalFixed">Vertical Fixed</mat-option>
+                    <mat-option value="horizontalFixed">Horizontal Fixed</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field fxFlex="48" fxFlex.xs="100">
+                <mat-select aria-label="Display grid lines" [(ngModel)]="options.displayGrid" name="displayGrid" placeholder="Display grid lines" required>
+                    <mat-option value="always">Always</mat-option>
+                    <mat-option value="onDrag&Resize">On Drag & Resize</mat-option>
+                    <mat-option value="none">None</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field fxFlex="48" fxFlex.xs="100" ngClass.gt-xs="mr-4-p">
+                <input matInput [(ngModel)]="options.fixedColWidth" name="fixedColWidth" type="number" placeholder="Fixed Col Width"
+                    required min="1" pattern="^([1-9]{1}\d*)(\.\d{0,3})?$">
+                <mat-error>请设置正确的列固定宽度</mat-error>
+            </mat-form-field>
+            <mat-form-field fxFlex="48" fxFlex.xs="100">
+                <input matInput [(ngModel)]="options.fixedRowHeight" name="fixedRowHeight" type="number" placeholder="Fixed Row Height"
+                    required min="1" pattern="^([1-9]{1}\d*)(\.\d{0,3})?$">
+                <mat-error>请设置正确的行固定宽度</mat-error>
+            </mat-form-field>
+
+            <p fxFlex="48" fxFlex.xs="100" class="mt-10 mb-10" ngClass.gt-xs="mr-4-p mb-24">
+                <mat-checkbox [(ngModel)]="options.swap" name="swap">
+                    Swap Items
+                </mat-checkbox>
+            </p>
+            <p fxFlex="48" fxFlex.xs="100" class="mt-10 mb-24">
+                <mat-checkbox [(ngModel)]="options.pushItems" name="pushItems">
+                    Push Items
+                </mat-checkbox>
+            </p>
+
+            <mat-form-field fxFlex="48" fxFlex.xs="100" ngClass.gt-xs="mr-4-p">
+                <input matInput [(ngModel)]="options.maxCols" name="maxCols" type="number" placeholder="Max Grid Cols"
+                    required min="1" pattern="^([1-9]{1}\d*)$">
+                <mat-error>请设置正确的最大网格列数</mat-error>
+            </mat-form-field>
+            <mat-form-field fxFlex="48" fxFlex.xs="100">
+                <input matInput [(ngModel)]="options.maxRows" name="maxRows" type="number" placeholder="Max Grid Rows"
+                    required min="1" pattern="^([1-9]{1}\d*)$">
+                <mat-error>请设置正确的最大网格行数</mat-error>
+            </mat-form-field>
+
+            <mat-form-field fxFlex="48" fxFlex.xs="100" ngClass.gt-xs="mr-4-p">
+                <input matInput [(ngModel)]="options.maxItemCols" name="maxItemCols" type="number" placeholder="Max Item Cols"
+                    required min="1" pattern="^([1-9]{1}\d*)$">
+                <mat-error>请设置正确的模块的最大所占列数</mat-error>
+            </mat-form-field>
+            <mat-form-field fxFlex="48" fxFlex.xs="100">
+                <input matInput [(ngModel)]="options.maxItemRows" name="maxItemRows" type="number" placeholder="Max Item Rows"
+                    required min="1" pattern="^([1-9]{1}\d*)$">
+                <mat-error>请设置正确的模块的最大所占行数</mat-error>
+            </mat-form-field>
+
+        </form>
+    </mat-dialog-content>
+    <mat-divider></mat-divider>
+    <mat-dialog-actions align="end">
+        <button mat-button mat-dialog-close>取消</button>
+        <button mat-button color="accent" [disabled]="gridsterOptionForm.invalid" [mat-dialog-close]="true" (click)="changedOptions()">确定修改</button>
     </mat-dialog-actions>
 </ng-template>
