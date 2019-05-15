@@ -1,0 +1,41 @@
+<div class="pages-errors layout-full">
+    <div class="h-100-p text-center vertical-align">
+        <div class="error-box vertical-align-middle">
+            <h1>{{code}} {{ errorInfo?.status }}</h1>
+            <p class="error-info">{{errorDescription.get(code)}}</p>
+            <p class="error-advise">Error in {{ errorInfo?.url }} page, sorry {{ errorInfo?.user }} :(</p>
+            <button mat-flat-button
+                    class="mr-12"
+                    color="accent"
+                    [routerLink]="errorInfo?.url"
+                    *ngIf="errorInfo?.url && errorInfo.status !== '404'">
+                Go Back to {{errorInfo?.url}}
+            </button>
+            <button mat-flat-button color="accent"
+                    routerLink="/">
+                GO TO HOME PAGE
+            </button>
+            <div class="error-pre" *ngIf="errorInfo?.message">
+                <p *ngIf="errorInfo?.id">This error has been reported to the Administrator with the ID: {{ errorInfo?.id}}</p>
+                <pre>
+                    <code class="warn">{{ errorInfo?.stack | json}}</code>
+                </pre>
+            </div>
+            <div class="copyright">
+                <p>WEBSITE BY NOTADD</p>
+                <p>© 2019. All RIGHT RESERVED.</p>
+                <div class="social pt-10">
+                    <button mat-icon-button>
+                        <mat-icon size="1" svgIcon="mdi:github-circle" class="secondary-text s-24"></mat-icon>
+                    </button>
+                    <button mat-icon-button>
+                        <mat-icon size="1" svgIcon="mdi:twitter" class="secondary-text s-24"></mat-icon>
+                    </button>
+                    <button mat-icon-button>
+                        <mat-icon size="1" svgIcon="mdi:google" class="secondary-text s-24"></mat-icon>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

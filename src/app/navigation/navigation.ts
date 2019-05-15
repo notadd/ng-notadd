@@ -74,9 +74,7 @@ export const navigation: Array<NotaddNavigationItem> = [
                                 i18n: 'Navigation.Errors_400',
                                 type: 'item',
                                 url: [
-                                    routingPathConfig.app.general,
-                                    routingPathConfig.general.pages,
-                                    routingPathConfig.pages.errors,
+                                    routingPathConfig.app.error,
                                 ],
                                 urlParam: {
                                     code: 400
@@ -88,9 +86,7 @@ export const navigation: Array<NotaddNavigationItem> = [
                                 i18n: 'Navigation.Errors_403',
                                 type: 'item',
                                 url: [
-                                    routingPathConfig.app.general,
-                                    routingPathConfig.general.pages,
-                                    routingPathConfig.pages.errors,
+                                    routingPathConfig.app.error,
                                 ],
                                 urlParam: {
                                     code: 403
@@ -102,9 +98,7 @@ export const navigation: Array<NotaddNavigationItem> = [
                                 i18n: 'Navigation.Errors_404',
                                 type: 'item',
                                 url: [
-                                    routingPathConfig.app.general,
-                                    routingPathConfig.general.pages,
-                                    routingPathConfig.pages.errors,
+                                    routingPathConfig.app.error,
                                 ],
                                 urlParam: {
                                     code: 404
@@ -116,9 +110,7 @@ export const navigation: Array<NotaddNavigationItem> = [
                                 i18n: 'Navigation.Errors_500',
                                 type: 'item',
                                 url: [
-                                    routingPathConfig.app.general,
-                                    routingPathConfig.general.pages,
-                                    routingPathConfig.pages.errors,
+                                    routingPathConfig.app.error,
                                 ],
                                 urlParam: {
                                     code: 500
@@ -130,9 +122,7 @@ export const navigation: Array<NotaddNavigationItem> = [
                                 i18n: 'Navigation.Errors_503',
                                 type: 'item',
                                 url: [
-                                    routingPathConfig.app.general,
-                                    routingPathConfig.general.pages,
-                                    routingPathConfig.pages.errors
+                                    routingPathConfig.app.error
                                 ],
                                 urlParam: {
                                     code: 503

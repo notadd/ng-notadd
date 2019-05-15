@@ -6,6 +6,7 @@ export const routingPathConfig = {
         elements: 'elements',
         applications: 'applications',
         services: 'services',
+        error: 'error/:code',
         wildcard: '**'
     },
 
@@ -23,7 +24,6 @@ export const routingPathConfig = {
     pages: {
         default: '',
         profile: 'profile',
-        errors: 'errors/:code',
         login: 'login',
         loginV2: 'login-v2',
         register: 'register',

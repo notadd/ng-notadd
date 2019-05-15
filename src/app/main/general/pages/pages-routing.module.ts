@@ -4,7 +4,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { routingPathConfig } from '@config/routing-path.config';
 
 import { ProfileComponent } from './profile/profile.component';
-import { ErrorsComponent } from './errors/errors.component';
 import { LoginComponent } from './login/login.component';
 import { LoginV2Component } from './login-v2/login-v2.component';
 import { RegisterComponent } from './register/register.component';
@@ -24,14 +23,6 @@ const routes: Routes = [
         data: {
             title: '个人主页',
             hasContentHeader: false
-        }
-    },
-    {
-        path: routingPathConfig.pages.errors,
-        component: ErrorsComponent,
-        data: {
-            title: '错误页',
-            isFullScreen: true
         }
     },
     {

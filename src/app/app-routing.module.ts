@@ -31,7 +31,7 @@ const routes: Routes = [
     },
     {
         path: routingPathConfig.app.wildcard,
-        redirectTo: 'general/pages/errors/404'
+        redirectTo: '/error/404'
     }
 ];
 
