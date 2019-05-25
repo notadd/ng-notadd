@@ -14,14 +14,17 @@ before_install:
 install: 
     - npm i
     - ng build --prod
+
+#     - upx rm -a /
+#     - sleep(20)
+#     - upx put ./   /
+after_install:
     - sudo curl  -L http://collection.b0.upaiyun.com/softwares/upx/upx-linux-amd64-v0.2.3 -o /usr/bin/upx
     - sudo chmod +x /usr/bin/upx
     - cd ./dist 
     - upx login ng-notadd "$NG" "$UPYUN"
     - upx sync ./ /
-#     - upx rm -a /
-#     - sleep(20)
-#     - upx put ./   /
-script:
-    - cd ../
-    - npm run test
+
+# script:
+#     - cd ../
+#     - npm run test
