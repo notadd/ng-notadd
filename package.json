@@ -32,7 +32,7 @@
     "@angular/service-worker": "~7.2.15",
     "@mdi/angular-material": "~3.6.95",
     "@ngx-translate/core": "~11.0.1",
-    "@notadd/ng-material2": "~0.0.8",
+    "@notadd/ng-material-pro": "0.0.9",
     "@notadd/ngx-xlsx": "~1.0.1",
     "@types/html2canvas": "~0.0.35",
     "angular-gridster2": "~7.1.0",

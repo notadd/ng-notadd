@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { NotaddSharedModule } from '@notadd/shared.module';
 
-import { NmAlertModule, NmCarouselModule, NmCascadeDropdownlistModule } from '@notadd/ng-material2';
+import { NmAlertModule, NmCarouselModule, NmCascadeDropdownlistModule } from '@notadd/ng-material-pro';
 
 import { NmMaterial2RoutingModule } from './ng-material2-routing.module';
 
