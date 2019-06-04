@@ -1,4 +1,4 @@
-import { MatPaginatorIntl } from '@angular/material';
+import { MatPaginatorIntl } from '@angular/material/paginator';
 
 export class NotaddMatPaginatorIntlService extends MatPaginatorIntl {
     itemsPerPageLabel = '每页条数';

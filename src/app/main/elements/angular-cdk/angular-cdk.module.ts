@@ -4,7 +4,7 @@ import { ScrollDispatchModule } from '@angular/cdk/scrolling';
 
 import { NotaddSharedModule } from '@notadd/shared.module';
 
-import { MatButtonModule } from '@angular/material';
+import { MatButtonModule } from '@angular/material/button';
 
 import { AngularCdkRoutingModule } from './angular-cdk-routing.module';
 

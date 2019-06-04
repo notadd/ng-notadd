@@ -1,9 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {
-    MatTableModule,
-    MatButtonModule,
-} from '@angular/material';
+import { MatButtonModule } from '@angular/material/button';
+import { MatTableModule } from '@angular/material/table';
 
 import { NotaddSharedModule } from '@notadd/shared.module';
 import { NotaddTableExportModule, NotaddScreenshotModule } from '@notadd/components';

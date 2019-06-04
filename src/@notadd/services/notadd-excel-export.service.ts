@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { MatDialog } from '@angular/material';
+import { MatDialog } from '@angular/material/dialog';
 
 import { NgxXLSXService } from '@notadd/ngx-xlsx';
 import { NotaddTableExportPickerComponent } from '@notadd/components/table-export/table-export-picker.component';

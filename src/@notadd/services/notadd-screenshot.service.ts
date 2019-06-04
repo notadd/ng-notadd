@@ -1,5 +1,6 @@
 import { Injectable, ElementRef, OnInit } from '@angular/core';
-import { MatDialog, MatSnackBar } from '@angular/material';
+import { MatDialog } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import * as html2canvas from 'html2canvas';
 
 import { NotaddScreenshotComponent } from '@notadd/components/screenshot/screenshot.component';

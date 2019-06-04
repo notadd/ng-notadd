@@ -1,5 +1,5 @@
 import { Component, ViewChild, OnInit, Inject, OnDestroy } from '@angular/core';
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { forkJoin, Subject } from 'rxjs';
 import { takeUntil, filter } from 'rxjs/operators';
 

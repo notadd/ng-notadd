@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild, TemplateRef } from '@angular/core';
-import { MatDialog } from '@angular/material';
+import { MatDialog } from '@angular/material/dialog';
 import { FormBuilder, FormControl, FormGroup, FormArray, Validators, AbstractControl, ValidatorFn } from '@angular/forms';
 
 import { GridsterConfig, GridsterItem } from 'angular-gridster2';

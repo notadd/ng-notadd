@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule, ErrorHandler } from '@angular/core';
-import { MatButtonModule, MatIconModule } from '@angular/material';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 import { NotaddErrorsHandler } from './errors-handler/errors-handler.service';
 import { NotaddErrorsService } from './errors.service';

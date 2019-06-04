@@ -1,6 +1,6 @@
 import { Component, HostBinding, Input, OnDestroy, OnInit, ViewEncapsulation, ViewChild, HostListener } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
-import { MatMenuTrigger } from '@angular/material';
+import { MatMenuTrigger } from '@angular/material/menu';
 import { Subject } from 'rxjs';
 import { filter, takeUntil } from 'rxjs/operators';
 

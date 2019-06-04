@@ -3,7 +3,7 @@ import { DOCUMENT } from '@angular/common';
 import { Platform } from '@angular/cdk/platform';
 import { Router, ActivatedRoute, NavigationEnd, Params } from '@angular/router';
 import { SwUpdate } from '@angular/service-worker';
-import { MatDialog } from '@angular/material';
+import { MatDialog } from '@angular/material/dialog';
 
 import { Subject, from } from 'rxjs';
 import { takeUntil, filter, map, mergeMap, pairwise } from 'rxjs/operators';

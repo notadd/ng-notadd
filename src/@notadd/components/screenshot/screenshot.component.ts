@@ -1,5 +1,6 @@
 import { Component, OnInit, Inject, Renderer2, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
-import { MatDialogRef, MAT_DIALOG_DATA, MatSnackBar } from '@angular/material';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { fromEvent } from 'rxjs';
 import { switchMap, takeUntil, pairwise, filter } from 'rxjs/operators';
 import { cloneDeep } from 'lodash';

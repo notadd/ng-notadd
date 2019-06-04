@@ -2,14 +2,12 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { HttpClientModule } from '@angular/common/http';
-import {
-    MatIconModule,
-    MatProgressSpinnerModule,
-    MatButtonModule,
-    MatDialogModule,
-    MatListModule,
-    MatProgressBarModule,
-} from '@angular/material';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 import { NotaddFileUploadService as UploadService } from '@notadd/services/notadd-file-upload.service';
 import { NotaddPipesModule } from '@notadd/pipes/pipes.module';

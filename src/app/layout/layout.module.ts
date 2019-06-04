@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatSidenavModule } from '@angular/material';
+import { MatSidenavModule } from '@angular/material/sidenav';
 import { LayoutModule as CDKLayoutModule } from '@angular/cdk/layout';
 
 import { NotaddSharedModule } from '@notadd/shared.module';
