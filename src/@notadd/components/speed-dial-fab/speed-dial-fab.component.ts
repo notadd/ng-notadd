@@ -12,8 +12,8 @@ import { notaddSpeedDialFabAnimations } from './speed-dial-fab.animations';
 })
 export class NotaddSpeedDialFabComponent implements OnInit {
 
-    @ViewChild(CdkOverlayOrigin) overlayOrigin: CdkOverlayOrigin;
-    @ViewChild('notaddSpeedDialFabActionsTemplate') notaddSpeedDialFabActionsTemplate: TemplatePortalDirective;
+    @ViewChild(CdkOverlayOrigin, { static: true }) overlayOrigin: CdkOverlayOrigin;
+    @ViewChild('notaddSpeedDialFabActionsTemplate', { static: true }) notaddSpeedDialFabActionsTemplate: TemplatePortalDirective;
     overlayRef: OverlayRef;
     fabTriggerState: string;
 

@@ -37,10 +37,10 @@ export class DataTableComponent implements OnInit {
     ];
 
     paginatorTableDataSource: MatTableDataSource<Array<any>>;
-    @ViewChild(MatPaginator) paginator: MatPaginator;
+    @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
 
     sortingTableDataSource: MatTableDataSource<Array<any>>;
-    @ViewChild(MatSort) sort: MatSort;
+    @ViewChild(MatSort, { static: true }) sort: MatSort;
 
     filteringTableDataSource: MatTableDataSource<Array<any>>;
 

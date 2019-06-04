@@ -15,8 +15,8 @@ export interface DialogData {
 })
 export class NotaddScreenshotComponent implements OnInit, AfterViewInit {
 
-    @ViewChild('captureWrapper') captureWrapper: ElementRef;
-    @ViewChild('downloadLink') downloadLink: ElementRef;
+    @ViewChild('captureWrapper', { static: true }) captureWrapper: ElementRef;
+    @ViewChild('downloadLink', { static: true }) downloadLink: ElementRef;
 
     isMark: boolean;
     private ctx: CanvasRenderingContext2D;

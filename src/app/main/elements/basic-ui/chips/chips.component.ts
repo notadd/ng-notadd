@@ -24,7 +24,7 @@ export class ChipsComponent implements OnInit {
     allFruits: Array<string> = ['Apple', 'Lemon', 'Lime', 'Orange', 'Strawberry'];
     inputChips: Array<string> = ['chip1', 'chip2', 'chip3'];
 
-    @ViewChild('fruitInput') fruitInput: ElementRef<HTMLInputElement>;
+    @ViewChild('fruitInput', { static: true }) fruitInput: ElementRef<HTMLInputElement>;
 
     constructor() {
         this.filteredFruits = this.fruitCtrl.valueChanges.pipe(

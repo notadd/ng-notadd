@@ -18,8 +18,8 @@ import { NotaddNavigationItem } from '@notadd/types';
 })
 export class NotaddToolbarNavComponent implements OnInit, OnDestroy {
 
-    @ViewChild(CdkOverlayOrigin) overlayOrigin: CdkOverlayOrigin;
-    @ViewChild('navPanelTemplate') navPanelTemplate: TemplatePortalDirective;
+    @ViewChild(CdkOverlayOrigin, { static: true }) overlayOrigin: CdkOverlayOrigin;
+    @ViewChild('navPanelTemplate', { static: true }) navPanelTemplate: TemplatePortalDirective;
     overlayRef: OverlayRef;
 
     @Input()

@@ -19,8 +19,8 @@ export class WorkspaceComponent implements OnInit {
     editable: boolean;
     addWidgetForm: FormGroup;
 
-    @ViewChild('addWidgetDialog') addWidgetDialog: TemplateRef<any>;
-    @ViewChild('editGridsterDialog') editGridsterDialog: TemplateRef<any>;
+    @ViewChild('addWidgetDialog', { static: true }) addWidgetDialog: TemplateRef<any>;
+    @ViewChild('editGridsterDialog', { static: true }) editGridsterDialog: TemplateRef<any>;
 
     get widgetComponent() { return this.addWidgetForm.get('widgetComponent'); }
 

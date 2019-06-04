@@ -9,7 +9,7 @@ import { NotaddScreenshotService } from '@notadd/services/notadd-screenshot.serv
 })
 export class ScreenshotComponent implements OnInit {
 
-    @ViewChild('screen') screen: ElementRef;
+    @ViewChild('screen', { static: true }) screen: ElementRef;
 
     constructor(
         private screenshotService: NotaddScreenshotService,

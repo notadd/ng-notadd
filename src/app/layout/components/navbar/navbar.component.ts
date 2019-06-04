@@ -33,7 +33,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
     }
 
     // Directive
-    @ViewChild(NotaddPerfectScrollbarDirective)
+    @ViewChild(NotaddPerfectScrollbarDirective, { static: true })
     set directive(theDirective: NotaddPerfectScrollbarDirective) {
         if (!theDirective) {
             return;

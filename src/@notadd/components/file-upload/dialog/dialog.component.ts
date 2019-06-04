@@ -21,7 +21,7 @@ export interface DialogData {
 })
 export class NotaddFileUploadDialogComponent implements OnInit, OnDestroy {
 
-    @ViewChild('file') file;
+    @ViewChild('file', { static: true }) file;
 
     files: Set<File>;
     primaryButtonText: string;

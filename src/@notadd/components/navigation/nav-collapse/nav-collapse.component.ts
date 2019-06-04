@@ -28,7 +28,7 @@ export class NotaddNavCollapseComponent implements OnInit, OnDestroy {
     @HostBinding('class.open')
     isCollapsed = false;
 
-    @ViewChild(MatMenuTrigger) menuTrigger: MatMenuTrigger;
+    @ViewChild(MatMenuTrigger, { static: false }) menuTrigger: MatMenuTrigger;
 
     notaddConfig: any;
 

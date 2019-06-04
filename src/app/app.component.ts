@@ -34,7 +34,7 @@ export class AppComponent implements OnInit, OnDestroy {
     isFullScreen: boolean;
 
     private ngUnsubscribe: Subject<any>;
-    @ViewChild('updateConfirmDialog') updateConfirmDialog: TemplateRef<any>;
+    @ViewChild('updateConfirmDialog', { static: true }) updateConfirmDialog: TemplateRef<any>;
 
     constructor(
         private router: Router,
