@@ -8,7 +8,7 @@
 
 # ng-notadd
 
-Medium-Background solution based on Angular7 Material2
+Medium-Background solution based on Angular8 Material2
 
 
 **[中文说明](README_zh.md)**
@@ -60,11 +60,11 @@ Medium-Background solution based on Angular7 Material2
 
 
 **0.19.0**
-- [ ] DIY Dashboard
-- [ ] JSON generates a simple dashboard
+- [x] DIY Dashboard
+- [x] JSON generates a simple dashboard
 
 **0.20.0**
-- [ ] 2K/4K screen adaptation
+- [x] upgrade angular 8.0
 
 **0.21.0**
 - [ ] built-in permission component
