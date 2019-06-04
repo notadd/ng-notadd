@@ -8,7 +8,7 @@
 
 # ng-notadd
 
-基于 Angular7  Material2  的中后台解决方案
+基于 Angular8  Material2  的中后台解决方案
 
 **[English](README.md)**
 
@@ -61,12 +61,12 @@
 - [x] firebase 支持
 
 **0.19.0**
-- [ ] 可 DIY 仪表盘
-- [ ] json 生成简单仪表盘
+- [x] 可 DIY 仪表盘
+- [x] json 生成简单仪表盘
 
 
 **0.20.0**
-- [ ] 2K/4K 屏适配
+- [x] 升级 Angular 版本到8
 
 
 **0.21.0**
