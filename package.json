@@ -11,7 +11,9 @@
     "graphql": "npm run graphql:introspect && npm run graphql:generate",
     "graphql:generate": "gql-gen --config ./codegen.generate.yml",
     "graphql:introspect": "gql-gen --config ./codegen.introspect.yml",
-    "deploy": "ng build --prod --base-href /ng-notadd/ && angular-cli-ghpages --dir ./dist/"
+    "deploy": "ng build --prod --base-href /ng-notadd/ && angular-cli-ghpages --dir ./dist/",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "private": true,
   "dependencies": {
@@ -69,7 +71,8 @@
     "tslib": "~1.9.3",
     "web-animations-js": "~2.3.1",
     "xlsx": "~0.14.3",
-    "zone.js": "~0.9.1"
+    "zone.js": "~0.9.1",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.800.1",
@@ -101,5 +104,6 @@
     "ts-node": "~8.1.0",
     "tslint": "~5.16.0",
     "typescript": "~3.4.5"
-  }
+  },
+  "snyk": true
 }
