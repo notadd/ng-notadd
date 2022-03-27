@@ -57,7 +57,7 @@
     "html2canvas": "~1.0.0-rc.1",
     "localforage": "~1.7.3",
     "lodash": "~4.17.13",
-    "lodash-es": "~4.17.14",
+    "lodash-es": "~4.17.21",
     "ng-dynamic-component": "~4.0.3",
     "ngforage": "~4.0.3",
     "ngx-captcha": "~6.4.0",
